@@ -68,8 +68,8 @@ const IndustryTabs = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-[40px] font-bold text-foreground leading-[1.12] tracking-[-0.02em] font-display">
-            Dock Scheduling Software Built for <span className="text-primary">Your Operation</span>
+          <h2 className="text-3xl md:text-[40px] font-light text-foreground leading-[1.12] tracking-[-0.02em]">
+            Dock Scheduling Software Built for <span className="text-primary font-normal">Your Operation</span>
           </h2>
         </motion.div>
 

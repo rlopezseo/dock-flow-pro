@@ -37,9 +37,9 @@ const TestimonialSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-[40px] font-bold text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-14 font-display"
+          className="text-3xl md:text-[40px] font-light text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-14"
         >
-          What Operations Teams Say After <span className="text-primary">90 Days</span>
+          What Operations Teams Say After <span className="text-primary font-normal">90 Days</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-6">

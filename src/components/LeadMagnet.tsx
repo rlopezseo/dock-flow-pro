@@ -7,7 +7,7 @@ const LeadMagnet = () => {
       <div className="max-w-[640px] mx-auto px-6 relative z-10">
         <div className="glass-card rounded-[20px] p-12 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.08em] text-accent">📄 Free Download</p>
-          <h3 className="text-2xl font-bold text-foreground mt-3 font-display">The 2026 Dock Scheduling Playbook</h3>
+          <h3 className="text-2xl font-light text-foreground mt-3">The 2026 <span className="text-primary font-normal">Dock Scheduling</span> Playbook</h3>
           <p className="text-[15px] text-muted-foreground leading-relaxed mt-3">
             How the top-performing warehouses reduced driver wait times by 60% and eliminated detention charges. 14 pages. Includes benchmarks, implementation checklist, and carrier communication templates.
           </p>

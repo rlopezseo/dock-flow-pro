@@ -51,10 +51,10 @@ const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-[40px] font-bold text-foreground leading-[1.12] tracking-[-0.02em] font-display">
+          <h2 className="text-3xl md:text-[40px] font-light text-foreground leading-[1.12] tracking-[-0.02em]">
             Loading Dock Management Features
             <br className="hidden md:block" />
-            That Actually <span className="text-primary">Get Used</span>
+            That Actually <span className="text-primary font-normal">Get Used</span>
           </h2>
         </motion.div>
 
