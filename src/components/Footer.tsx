@@ -1,12 +1,12 @@
+import logo from "@/assets/logo-trucksonthemap.png";
+
 const Footer = () => {
   return (
     <footer className="bg-background text-muted-foreground py-20 px-6 md:px-10 border-t border-border">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div className="col-span-2 md:col-span-1">
-            <p className="text-foreground text-base font-bold">
-              trucks<span className="text-primary">ON</span><span className="font-light text-muted-foreground/50">the</span>map
-            </p>
+            <img src={logo} alt="TrucksOnTheMap" className="h-8 brightness-200" />
             <p className="text-[13px] text-muted-foreground/60 mt-2">Dock scheduling software for modern warehouses</p>
             <div className="mt-6 text-xs space-y-1 text-muted-foreground/50">
               <p>128 City Road</p>
