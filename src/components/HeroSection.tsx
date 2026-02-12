@@ -45,7 +45,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-body font-normal text-foreground bg-primary hover:bg-primary/90 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-body font-normal text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-300"
             >
               LET'S TALK
               <ArrowUpRight className="w-4 h-4" />
