@@ -1,20 +1,12 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import LogoBar from "@/components/LogoBar";
-import ProblemSection from "@/components/ProblemSection";
-import SolutionBridge from "@/components/SolutionBridge";
+import PainSection from "@/components/PainSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import IndustryTabs from "@/components/IndustryTabs";
-import MetricsSection from "@/components/MetricsSection";
+import StatsSection from "@/components/StatsSection";
+import LogosSection from "@/components/LogosSection";
 import TestimonialSection from "@/components/TestimonialSection";
-import HowItWorks from "@/components/HowItWorks";
-import ComparisonTable from "@/components/ComparisonTable";
-import ObjectionsSection from "@/components/ObjectionsSection";
-import FAQSection from "@/components/FAQSection";
-import LeadMagnet from "@/components/LeadMagnet";
-import FinalCTA from "@/components/FinalCTA";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 const Index = () => {
   return (
@@ -22,22 +14,14 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <LogoBar />
-        <ProblemSection />
-        <SolutionBridge />
+        <PainSection />
         <FeaturesSection />
-        <IndustryTabs />
-        <MetricsSection />
+        <StatsSection />
+        <LogosSection />
         <TestimonialSection />
-        <HowItWorks />
-        <ComparisonTable />
-        <ObjectionsSection />
-        <FAQSection />
-        <LeadMagnet />
-        <FinalCTA />
+        <CTASection />
       </main>
       <Footer />
-      <MobileStickyCTA />
     </>
   );
 };

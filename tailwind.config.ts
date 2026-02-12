@@ -14,9 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Roboto", "system-ui", "sans-serif"],
-        sans: ["Roboto", "system-ui", "-apple-system", "sans-serif"],
-        slab: ["Roboto Slab", "Georgia", "serif"],
+        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -87,17 +86,12 @@ export default {
           from: { opacity: "0", transform: "scale(0.8)" },
           to: { opacity: "1", transform: "scale(1)" },
         },
-        "logo-scroll": {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.8s ease-out forwards",
         "count-up": "count-up 0.6s ease-out forwards",
-        "logo-scroll": "logo-scroll 25s linear infinite",
       },
     },
   },

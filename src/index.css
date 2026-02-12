@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Roboto+Slab:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,60 +6,50 @@
 
 @layer base {
   :root {
-    /* Dark theme - used for hero/navbar/footer */
-    --background: 229 57% 7%;
-    --foreground: 210 40% 98%;
+    --background: 220 20% 7%;
+    --foreground: 210 20% 95%;
 
-    --card: 217 33% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 217 33% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 207 90% 54%;
+    --primary-foreground: 220 20% 7%;
 
-    --secondary: 217 33% 14%;
-    --secondary-foreground: 215 20% 65%;
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 210 20% 85%;
 
-    --muted: 217 33% 14%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 24 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 207 90% 54%;
+    --accent-foreground: 220 20% 7%;
 
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 217 91% 60%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 207 90% 54%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --surface: 217 33% 12%;
-    --glow: 217 91% 60%;
+    --sidebar-background: 220 20% 7%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 207 90% 54%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 207 90% 54%;
 
-    --sidebar-background: 222 47% 7%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 33% 17%;
-    --sidebar-ring: 217 91% 60%;
-
-    --success: 160 84% 39%;
-    --warning: 24 95% 53%;
-
-    /* Light section tokens */
-    --light-bg: 210 20% 98%;
-    --light-bg-alt: 210 14% 95%;
-    --light-fg: 220 30% 15%;
-    --light-fg-muted: 215 15% 45%;
-    --light-border: 215 15% 88%;
-    --light-card: 0 0% 100%;
-    --light-surface: 210 14% 96%;
+    /* Custom tokens */
+    --glow: 207 90% 54%;
+    --surface: 220 16% 12%;
+    --surface-foreground: 210 20% 90%;
+    --hero-overlay: 220 30% 5%;
   }
 }
 
@@ -69,51 +59,34 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+    @apply bg-background text-foreground font-body antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', system-ui, sans-serif;
+    @apply font-display;
   }
 }
 
 @layer utilities {
-  .dot-grid {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 24px 24px;
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(190,80%,60%)];
   }
 
-  .dot-grid-light {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size: 20px 20px;
+  .glow-line {
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    height: 1px;
   }
 
-  .glass-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(12px);
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--hero-overlay) / 0.7) 0%,
+      hsl(var(--hero-overlay) / 0.5) 40%,
+      hsl(var(--hero-overlay) / 0.8) 100%
+    );
   }
 
-  /* Light section utility */
-  .light-section {
-    background: hsl(var(--light-bg));
-    color: hsl(var(--light-fg));
-  }
-
-  .light-section-alt {
-    background: hsl(var(--light-bg-alt));
-    color: hsl(var(--light-fg));
-  }
-
-  .light-card {
-    background: hsl(var(--light-card));
-    border: 1px solid hsl(var(--light-border));
-    border-radius: var(--radius);
-  }
-
-  .subtle-grid {
-    background-image: radial-gradient(circle, hsl(215 15% 85% / 0.4) 1px, transparent 1px);
-    background-size: 28px 28px;
+  .stat-glow {
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.4);
   }
 }

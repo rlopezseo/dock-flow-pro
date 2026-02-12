@@ -1,90 +1,71 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
-import type { Easing } from "framer-motion";
-
-const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: "easeOut" as Easing },
-});
+import { ArrowDown } from "lucide-react";
+import heroImage from "@/assets/hero-dock.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-surface" />
-      <div className="absolute inset-0 dot-grid opacity-40" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[120px]" />
-      
-      <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
-        <motion.div {...fadeUp(0)}>
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-medium tracking-wider uppercase rounded-full border border-primary/20">
-            Capacity · Visibility · Schedule — on.one.map
-          </span>
-        </motion.div>
+    <section className="relative min-h-screen flex items-end pb-20 pt-32 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Modern logistics loading dock with automated scheduling"
+          className="w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="hero-overlay absolute inset-0" />
+      </div>
 
-        <motion.h1
-          {...fadeUp(0.1)}
-          className="mt-6 text-4xl sm:text-5xl md:text-[58px] font-light text-foreground leading-[1.08] tracking-[-0.03em] max-w-[780px] mx-auto uppercase"
+      <div className="container relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="max-w-4xl"
         >
-          Time Is the Most
-          <br />
-          <span className="text-primary">Precious Asset</span>
-        </motion.h1>
+          <p className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-4">
+            Dock Scheduling Software
+          </p>
 
-        <motion.p
-          {...fadeUp(0.2)}
-          className="mt-5 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[580px] mx-auto"
-        >
-          We add the 4th dimension to your freight management:
-          <br />
-          <span className="text-foreground font-medium">the Time.</span>
-        </motion.p>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-[0.95] tracking-tight mb-6">
+            DOCK SCHEDULING
+            <br />
+            <span className="text-gradient">&amp; TIME SLOT</span>
+            <br />
+            MANAGEMENT
+          </h1>
 
-        <motion.div {...fadeUp(0.3)} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-9 py-4 bg-primary text-primary-foreground font-medium text-base rounded-xl shadow-[0_4px_20px_hsl(217_91%_60%/0.3)] hover:shadow-[0_8px_30px_hsl(217_91%_60%/0.4)] hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Let's Talk <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
-            href="#features"
-            className="inline-flex items-center gap-2 px-9 py-4 text-foreground font-medium text-base border border-border rounded-xl hover:border-muted-foreground/30 hover:bg-secondary transition-all duration-200"
-          >
-            Watch Product Tour <Play className="w-4 h-4" />
-          </a>
+          <p className="text-lg sm:text-xl text-secondary-foreground max-w-xl font-body font-light leading-relaxed mb-8">
+            Eliminate dock congestion with automated scheduling.
+            <br />
+            <strong className="text-foreground font-medium">Reduce waiting times by 60%</strong> and optimize loading dock utilization.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-display font-semibold text-sm tracking-wide rounded-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_30px_hsl(207,90%,54%,0.3)]"
+            >
+              LET'S TALK
+            </a>
+            <a
+              href="#features"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-border text-foreground font-body text-sm rounded-sm hover:bg-secondary transition-colors"
+            >
+              Explore Features
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-          className="mt-16 max-w-[960px] mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2"
         >
-          <div
-            className="rounded-[20px] border border-border shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden bg-gradient-to-br from-card to-surface aspect-video flex items-center justify-center"
-            style={{
-              transform: "perspective(1200px) rotateX(2deg)",
-              animation: "float 3s ease-in-out infinite",
-            }}
-          >
-            <div className="text-center">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 border border-primary/20">
-                <Play className="w-8 h-8 text-primary ml-1" />
-              </div>
-              <p className="text-sm text-muted-foreground font-medium">Product Dashboard Preview</p>
-              <p className="text-xs text-muted-foreground/60 mt-1">Dock Schedule · Real-Time View</p>
-            </div>
-          </div>
+          <ArrowDown className="w-5 h-5 text-muted-foreground animate-bounce" />
         </motion.div>
       </div>
-
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: perspective(1200px) rotateX(2deg) translateY(0px); }
-          50% { transform: perspective(1200px) rotateX(2deg) translateY(-8px); }
-        }
-      `}</style>
     </section>
   );
 };
