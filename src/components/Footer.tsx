@@ -4,8 +4,8 @@ const Footer = () => {
       <div className="container">
         <div className="grid md:grid-cols-3 gap-8 text-sm text-muted-foreground font-body">
           <div>
-            <p className="font-display font-semibold text-foreground mb-2">
-              trucks<span className="text-primary font-bold">ON</span><span className="font-light text-muted-foreground">the</span>map
+            <p className="font-display text-foreground mb-2">
+              <span className="font-normal">trucks</span><span className="text-primary font-semibold">ON</span><span className="font-light text-muted-foreground">the</span><span className="font-normal">map</span>
             </p>
             <p>128 City Road</p>
             <p>London EC1V 2NX, United Kingdom</p>

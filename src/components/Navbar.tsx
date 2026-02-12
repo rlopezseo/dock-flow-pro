@@ -29,8 +29,8 @@ const Navbar = () => {
         <div className="container flex items-center justify-between py-3">
           {/* Real logo */}
           <a href="/" className="flex items-center gap-3">
-            <span className="text-xl font-display font-semibold tracking-tight text-white">
-              trucks<span className="font-bold text-primary">ON</span><span className="font-light text-[hsl(210,15%,60%)]">the</span>map<span className="text-primary ml-0.5">✳</span>
+            <span className="text-xl font-display tracking-tight text-white">
+              <span className="font-normal">trucks</span><span className="font-semibold text-primary">ON</span><span className="font-light text-[hsl(210,15%,60%)]">the</span><span className="font-normal">map</span><span className="text-primary ml-0.5 text-lg">✳</span>
             </span>
           </a>
 
