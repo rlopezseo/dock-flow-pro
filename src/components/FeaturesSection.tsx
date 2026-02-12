@@ -6,32 +6,32 @@ const features = [
   {
     icon: GripVertical,
     title: "Drag-and-Drop Time Slot Management",
-    description: "Build your dock schedule in minutes, not hours. Set slot durations by load type, commodity, or carrier tier. Drag to reschedule. Click to reassign doors. The schedule updates for your whole team and every carrier in real time. Double-bookings become physically impossible.",
+    description: "Build your dock schedule in minutes, not hours. Set slot durations by load type, commodity, or carrier tier. Drag to reschedule. Click to reassign doors. The schedule updates for your whole team and every carrier in real time.",
   },
   {
     icon: Users,
     title: "Carrier Self-Service Booking Portal",
-    description: "Your carriers get a branded portal with your logo, your rules, and your available slots. They book. They get confirmed. Automatically. No email chains. No phone tag. Carrier adoption rate across our customers: 94% in 2 weeks.",
+    description: "Your carriers get a branded portal with your logo, your rules, and your available slots. They book. They get confirmed. Automatically. Carrier adoption rate: 94% in 2 weeks.",
   },
   {
     icon: MonitorDot,
     title: "Real-Time Dock Door Visibility",
-    description: "One screen. Every door. Color-coded by status — open, occupied, running late, next up. Know what's happening at every dock position without walking the floor. See what's coming in the next hour, the next shift, the next day.",
+    description: "One screen. Every door. Color-coded by status — open, occupied, running late, next up. See what's coming in the next hour, the next shift, the next day.",
   },
   {
     icon: Bell,
     title: "Automated Driver Notifications",
-    description: "SMS and email confirmations on booking. Reminders 24 hours before arrival. Check-in alerts when the truck hits your geofence. Late warnings when they're off-track. No-show flags when they don't appear. Your team reacts to data, not surprises.",
+    description: "SMS and email confirmations on booking. Reminders 24 hours before arrival. Check-in alerts when the truck hits your geofence. Your team reacts to data, not surprises.",
   },
   {
     icon: MapPin,
     title: "Yard & Gate Management",
-    description: "Track every truck from gate check-in to dock door assignment to departure. See your entire yard in real time on a visual map. Assign parking spots, manage queues, log timestamps. No more windshield walks. No more walkie-talkie chaos.",
+    description: "Track every truck from gate check-in to dock door assignment to departure. See your entire yard in real time on a visual map. No more windshield walks.",
   },
   {
     icon: BarChart3,
     title: "Dock Utilization Analytics",
-    description: "Utilization by door, by day, by hour. Carrier on-time rates. Average dwell and turnaround times. Bottleneck identification. Exportable reports. Automated weekly summaries. The data your ops team needs to optimize — and your leadership needs to see.",
+    description: "Utilization by door, by day, by hour. Carrier on-time rates. Average dwell and turnaround times. The data your ops team needs to optimize.",
   },
 ];
 
@@ -41,9 +41,8 @@ const FeaturesSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="py-28 md:py-36 relative" ref={ref}>
-      <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 dot-grid opacity-20" />
+    <section id="features" className="py-28 md:py-36 relative light-section-alt" ref={ref}>
+      <div className="absolute inset-0 subtle-grid opacity-30" />
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,10 +50,10 @@ const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-[40px] font-light text-foreground leading-[1.12] tracking-[-0.02em]">
-            Loading Dock Management Features
+          <h2 className="text-3xl md:text-[40px] font-light text-[hsl(var(--light-fg))] leading-[1.12] tracking-[-0.02em]">
+            The Latest <span className="text-primary">Freight-Tech</span>
             <br className="hidden md:block" />
-            That Actually <span className="text-primary font-normal">Get Used</span>
+            to Book, Schedule & Track
           </h2>
         </motion.div>
 
@@ -66,13 +65,13 @@ const FeaturesSection = () => {
                 onClick={() => setActive(i)}
                 className={`w-full text-left px-6 py-5 border-l-[3px] transition-all duration-200 rounded-r-xl ${
                   active === i
-                    ? "glass-card border-l-primary shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
-                    : "border-l-transparent hover:bg-white/[0.02]"
+                    ? "light-card border-l-primary shadow-md"
+                    : "border-l-transparent hover:bg-[hsl(var(--light-bg))]"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <feat.icon className={`w-4 h-4 ${active === i ? "text-primary" : "text-muted-foreground/50"}`} />
-                  <span className={`text-[15px] ${active === i ? "font-bold text-foreground" : "font-semibold text-muted-foreground"}`}>
+                  <feat.icon className={`w-4 h-4 ${active === i ? "text-primary" : "text-[hsl(var(--light-fg-muted))]/50"}`} />
+                  <span className={`text-[15px] ${active === i ? "font-medium text-[hsl(var(--light-fg))]" : "font-normal text-[hsl(var(--light-fg-muted))]"}`}>
                     {feat.title}
                   </span>
                 </div>
@@ -83,7 +82,7 @@ const FeaturesSection = () => {
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.2 }}
-                      className="text-sm text-muted-foreground leading-relaxed mt-2 md:hidden"
+                      className="text-sm text-[hsl(var(--light-fg-muted))] leading-relaxed mt-2 md:hidden"
                     >
                       {feat.description}
                     </motion.p>
@@ -94,7 +93,7 @@ const FeaturesSection = () => {
           </div>
 
           <div className="hidden md:flex flex-col">
-            <div className="glass-card rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.3)] p-8 flex-1 flex flex-col justify-center">
+            <div className="light-card rounded-2xl shadow-lg p-8 flex-1 flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active}
@@ -105,11 +104,11 @@ const FeaturesSection = () => {
                 >
                   <div className="flex items-center gap-3 mb-4">
                     {(() => { const Icon = features[active].icon; return <Icon className="w-6 h-6 text-primary" />; })()}
-                    <h3 className="text-xl font-bold text-foreground font-display">{features[active].title}</h3>
+                    <h3 className="text-xl font-light text-[hsl(var(--light-fg))]">{features[active].title}</h3>
                   </div>
-                  <p className="text-[15px] text-muted-foreground leading-[1.7]">{features[active].description}</p>
-                  <div className="mt-8 rounded-xl bg-gradient-to-br from-card to-surface border border-border aspect-video flex items-center justify-center">
-                    <p className="text-sm text-muted-foreground/50">Feature screenshot placeholder</p>
+                  <p className="text-[15px] text-[hsl(var(--light-fg-muted))] leading-[1.7]">{features[active].description}</p>
+                  <div className="mt-8 rounded-xl bg-[hsl(var(--light-bg-alt))] border border-[hsl(var(--light-border))] aspect-video flex items-center justify-center">
+                    <p className="text-sm text-[hsl(var(--light-fg-muted))]/50">Feature screenshot placeholder</p>
                   </div>
                 </motion.div>
               </AnimatePresence>

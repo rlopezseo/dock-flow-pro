@@ -2,10 +2,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const metrics = [
-  { target: 60, suffix: "%", label: "Reduction in driver wait times" },
-  { target: 85, suffix: "%+", label: "Dock door utilization rate" },
-  { target: 0, prefix: "~$", suffix: "", label: "Monthly detention charges" },
-  { target: 5, suffix: " days", label: "From signup to go-live" },
+  { target: 20, prefix: "", suffix: "x", label: "Quicker to book capacity" },
+  { target: 80, prefix: "", suffix: "%", label: "Less waiting at the gates" },
+  { target: 7, prefix: "", suffix: " weeks", label: "To get all 3: capacity, visibility, schedule" },
+  { target: 5, prefix: "", suffix: " days", label: "From signup to go-live" },
 ];
 
 const CountUp = ({ target, prefix = "", suffix = "", inView }: { target: number; prefix?: string; suffix?: string; inView: boolean }) => {
@@ -33,17 +33,16 @@ const MetricsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 relative" ref={ref}>
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-      <div className="absolute inset-0 dot-grid opacity-40" />
+    <section className="py-24 relative light-section-alt" ref={ref}>
+      <div className="absolute inset-0 subtle-grid opacity-30" />
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-4xl font-light text-foreground text-center tracking-[-0.02em]"
+          className="text-2xl md:text-4xl font-light text-[hsl(var(--light-fg))] text-center tracking-[-0.02em]"
         >
-          Dock Scheduling Results Measured in <span className="text-accent font-normal">Days</span> — Not Months
+          Results Measured in <span className="text-primary">Days</span> — Not Months
         </motion.h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
@@ -53,12 +52,12 @@ const MetricsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="glass-card rounded-2xl p-9 text-center hover:border-accent/20 transition-colors"
+              className="light-card rounded-2xl p-9 text-center shadow-sm hover:shadow-md transition-shadow"
             >
-              <p className="text-4xl md:text-[52px] font-bold text-accent font-display">
+              <p className="text-4xl md:text-[52px] font-light text-primary">
                 <CountUp target={m.target} prefix={m.prefix} suffix={m.suffix} inView={inView} />
               </p>
-              <p className="text-sm text-muted-foreground mt-2">{m.label}</p>
+              <p className="text-sm text-[hsl(var(--light-fg-muted))] mt-2">{m.label}</p>
             </motion.div>
           ))}
         </div>

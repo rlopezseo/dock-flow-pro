@@ -17,38 +17,39 @@ const HeroSection = () => {
       
       <div className="max-w-[1200px] mx-auto px-6 text-center relative z-10">
         <motion.div {...fadeUp(0)}>
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-semibold tracking-wider uppercase rounded-full border border-primary/20">
-            Dock Scheduling Software
+          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-xs font-medium tracking-wider uppercase rounded-full border border-primary/20">
+            Capacity · Visibility · Schedule — on.one.map
           </span>
         </motion.div>
 
         <motion.h1
           {...fadeUp(0.1)}
-          className="mt-6 text-4xl sm:text-5xl md:text-[58px] font-light text-foreground leading-[1.08] tracking-[-0.03em] max-w-[780px] mx-auto"
+          className="mt-6 text-4xl sm:text-5xl md:text-[58px] font-light text-foreground leading-[1.08] tracking-[-0.03em] max-w-[780px] mx-auto uppercase"
         >
-          Dock Scheduling Software
+          Time Is the Most
           <br />
-          for <span className="font-bold">Warehouses</span> & Distribution Centers
+          <span className="text-primary">Precious Asset</span>
         </motion.h1>
 
         <motion.p
           {...fadeUp(0.2)}
           className="mt-5 text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed max-w-[580px] mx-auto"
         >
-          The time slot management platform that cuts driver wait times
-          by 60% and pushes dock utilization past 85%. Go live in 5 days.
+          We add the 4th dimension to your freight management:
+          <br />
+          <span className="text-foreground font-medium">the Time.</span>
         </motion.p>
 
         <motion.div {...fadeUp(0.3)} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-9 py-4 bg-primary text-primary-foreground font-bold text-base rounded-xl shadow-[0_4px_20px_hsl(217_91%_60%/0.3)] hover:shadow-[0_8px_30px_hsl(217_91%_60%/0.4)] hover:-translate-y-0.5 transition-all duration-200"
+            className="inline-flex items-center gap-2 px-9 py-4 bg-primary text-primary-foreground font-medium text-base rounded-xl shadow-[0_4px_20px_hsl(217_91%_60%/0.3)] hover:shadow-[0_8px_30px_hsl(217_91%_60%/0.4)] hover:-translate-y-0.5 transition-all duration-200"
           >
-            Book a Demo <ArrowRight className="w-4 h-4" />
+            Let's Talk <ArrowRight className="w-4 h-4" />
           </a>
           <a
             href="#features"
-            className="inline-flex items-center gap-2 px-9 py-4 text-foreground font-semibold text-base border border-border rounded-xl hover:border-muted-foreground/30 hover:bg-secondary transition-all duration-200"
+            className="inline-flex items-center gap-2 px-9 py-4 text-foreground font-medium text-base border border-border rounded-xl hover:border-muted-foreground/30 hover:bg-secondary transition-all duration-200"
           >
             Watch Product Tour <Play className="w-4 h-4" />
           </a>

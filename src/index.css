@@ -6,6 +6,7 @@
 
 @layer base {
   :root {
+    /* Dark theme - used for hero/navbar/footer */
     --background: 229 57% 7%;
     --foreground: 210 40% 98%;
 
@@ -50,6 +51,15 @@
 
     --success: 160 84% 39%;
     --warning: 24 95% 53%;
+
+    /* Light section tokens */
+    --light-bg: 210 20% 98%;
+    --light-bg-alt: 210 14% 95%;
+    --light-fg: 220 30% 15%;
+    --light-fg-muted: 215 15% 45%;
+    --light-border: 215 15% 88%;
+    --light-card: 0 0% 100%;
+    --light-surface: 210 14% 96%;
   }
 }
 
@@ -83,5 +93,27 @@
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     backdrop-filter: blur(12px);
+  }
+
+  /* Light section utility */
+  .light-section {
+    background: hsl(var(--light-bg));
+    color: hsl(var(--light-fg));
+  }
+
+  .light-section-alt {
+    background: hsl(var(--light-bg-alt));
+    color: hsl(var(--light-fg));
+  }
+
+  .light-card {
+    background: hsl(var(--light-card));
+    border: 1px solid hsl(var(--light-border));
+    border-radius: var(--radius);
+  }
+
+  .subtle-grid {
+    background-image: radial-gradient(circle, hsl(215 15% 85% / 0.4) 1px, transparent 1px);
+    background-size: 28px 28px;
   }
 }
