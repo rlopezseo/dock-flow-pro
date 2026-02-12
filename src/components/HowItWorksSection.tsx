@@ -54,7 +54,7 @@ const HowItWorksSection = () => {
             How It Works
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
-            From freight appointment booking to real-time analytics
+            How loading dock appointment scheduling works — in five steps
           </h2>
         </motion.div>
 

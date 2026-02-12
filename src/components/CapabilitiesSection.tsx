@@ -81,7 +81,7 @@ const CapabilitiesSection = () => {
             Key Capabilities
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
-            Loading bay management built for every job-to-be-done
+            Dock door scheduling capabilities built for every operation
           </h2>
         </motion.div>
 
