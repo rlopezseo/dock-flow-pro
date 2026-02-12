@@ -55,7 +55,7 @@ const FeaturesSection = () => {
           <p className="text-primary font-display text-sm tracking-[0.25em] uppercase mb-3">
             The Latest Freight-Tech
           </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4 text-foreground">
+          <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight mb-4 text-foreground">
             TO BOOK, SCHEDULE
             <br />
             <span className="text-primary">& TRACK TRUCKLOAD</span>
@@ -80,7 +80,7 @@ const FeaturesSection = () => {
                   <span className="text-xs font-display tracking-[0.2em] text-muted-foreground uppercase">{feat.label}</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-3xl font-display font-bold text-foreground">{feat.stat}</span>
+                  <span className="text-3xl font-display font-semibold text-foreground">{feat.stat}</span>
                   <p className="text-[10px] font-display tracking-wider text-primary uppercase">{feat.statLabel}</p>
                 </div>
               </div>

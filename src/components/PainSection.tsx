@@ -37,7 +37,7 @@ const PainSection = () => {
           <p className="text-primary font-display text-sm tracking-[0.25em] uppercase mb-3">
             The Problem
           </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-foreground">
+          <h2 className="text-3xl md:text-5xl font-display font-semibold tracking-tight text-foreground">
             DOCK CONGESTION
             <br />
             <span className="text-muted-foreground">COSTS YOU MORE THAN YOU THINK</span>
@@ -54,7 +54,7 @@ const PainSection = () => {
               className="bg-card border border-border rounded-sm p-8 hover:border-primary/30 transition-colors duration-500"
             >
               <pain.icon className="w-8 h-8 text-primary mb-5" />
-              <h3 className="text-lg font-display font-semibold mb-3 text-foreground">{pain.title}</h3>
+              <h3 className="text-lg font-display font-medium mb-3 text-foreground">{pain.title}</h3>
               <p className="text-muted-foreground font-body text-sm leading-relaxed">{pain.description}</p>
             </motion.div>
           ))}

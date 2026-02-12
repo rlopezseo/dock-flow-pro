@@ -17,7 +17,7 @@ const CTASection = () => {
           <p className="text-primary font-display text-sm tracking-[0.25em] uppercase mb-4">
             We Understand Logistics
           </p>
-          <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tight mb-6 text-white">
+          <h2 className="text-4xl md:text-6xl font-display font-semibold tracking-tight mb-6 text-white">
             LET'S TALK
           </h2>
           <p className="text-[hsl(210,15%,55%)] font-body max-w-lg mx-auto mb-10 text-lg">

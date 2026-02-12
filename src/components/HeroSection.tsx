@@ -27,7 +27,7 @@ const HeroSection = () => {
             Dock Scheduling Software
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-[0.95] tracking-tight mb-6 text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-semibold leading-[0.95] tracking-tight mb-6 text-white">
             DOCK SCHEDULING
             <br />
             <span className="text-gradient">&amp; TIME SLOT</span>
