@@ -26,7 +26,7 @@ const StatsSection = () => {
               transition={{ duration: 0.5, delay: 0.12 * i }}
               className="text-center"
             >
-              <span className="block text-4xl md:text-6xl font-display font-bold text-white stat-glow">
+              <span className="block text-4xl md:text-6xl font-display font-semibold text-white stat-glow">
                 {stat.value}
               </span>
               <p className="text-xs md:text-sm text-[hsl(210,15%,55%)] font-body mt-2 tracking-wide uppercase">
