@@ -24,8 +24,8 @@ const ProblemSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-[40px] font-bold text-foreground leading-[1.12] tracking-[-0.02em] max-w-[640px] mx-auto font-display">
-            Your Dock Is Running on Phone Calls, Spreadsheets, and <span className="text-destructive">Luck</span>
+          <h2 className="text-3xl md:text-[40px] font-light text-foreground leading-[1.12] tracking-[-0.02em] max-w-[640px] mx-auto">
+            Your Dock Is Running on Phone Calls, Spreadsheets, and <span className="text-destructive font-normal">Luck</span>
           </h2>
           <div className="text-lg text-muted-foreground leading-[1.7] max-w-[640px] mx-auto mt-8 space-y-4">
             <p>

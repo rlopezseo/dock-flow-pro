@@ -41,9 +41,9 @@ const MetricsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-4xl font-bold text-foreground text-center tracking-[-0.02em] font-display"
+          className="text-2xl md:text-4xl font-light text-foreground text-center tracking-[-0.02em]"
         >
-          Dock Scheduling Results Measured in <span className="text-accent">Days</span> — Not Months
+          Dock Scheduling Results Measured in <span className="text-accent font-normal">Days</span> — Not Months
         </motion.h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">

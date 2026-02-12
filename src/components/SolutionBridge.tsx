@@ -15,8 +15,8 @@ const SolutionBridge = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-[40px] font-bold text-foreground leading-[1.12] tracking-[-0.02em] font-display">
-            Dock Appointment Scheduling That <span className="text-primary">Runs Itself</span>
+          <h2 className="text-3xl md:text-[40px] font-light text-foreground leading-[1.12] tracking-[-0.02em]">
+            Dock Appointment Scheduling That <span className="text-primary font-normal">Runs Itself</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-[1.7] max-w-[600px] mx-auto mt-6">
             TrucksOnTheMap replaces the whiteboard, the group chat, and the "who's coming when?" panic with one real-time scheduling platform. Carriers book their own slots. Your team sees every door, every truck, every arrival — before it happens.

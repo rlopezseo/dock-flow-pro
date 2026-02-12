@@ -26,7 +26,7 @@ const FAQSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-[40px] font-bold text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-12 font-display"
+          className="text-3xl md:text-[40px] font-light text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-12"
         >
           Frequently Asked Questions
         </motion.h2>

@@ -20,9 +20,9 @@ const HowItWorks = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-[40px] font-bold text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-16 font-display"
+          className="text-3xl md:text-[40px] font-light text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-16"
         >
-          How to Implement Dock Scheduling Software in <span className="text-accent">5 Days</span>
+          How to Implement Dock Scheduling Software in <span className="text-accent font-normal">5 Days</span>
         </motion.h2>
 
         <div className="hidden md:grid grid-cols-4 gap-6 relative">
