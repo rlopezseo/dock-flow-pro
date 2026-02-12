@@ -113,7 +113,7 @@ const OutcomesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.24 }}
-            className="md:col-span-4 bg-gradient-to-br from-primary/6 to-primary/2 border border-primary/10 rounded-2xl p-7 transition-all duration-500 hover:shadow-lg relative overflow-hidden"
+            className="md:col-span-4 bg-card rounded-2xl p-7 card-elevated transition-all duration-500 relative overflow-hidden"
           >
             <Users className="w-6 h-6 text-primary/40 mb-4" />
             <span className="block text-4xl font-display font-light number-accent leading-none mb-2">
