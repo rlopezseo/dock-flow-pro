@@ -24,11 +24,11 @@ const HeroSection = () => {
 
         <motion.h1
           {...fadeUp(0.1)}
-          className="mt-6 text-4xl sm:text-5xl md:text-[58px] font-bold text-foreground leading-[1.08] tracking-[-0.03em] max-w-[780px] mx-auto font-display"
+          className="mt-6 text-4xl sm:text-5xl md:text-[58px] font-light text-foreground leading-[1.08] tracking-[-0.03em] max-w-[780px] mx-auto"
         >
           Dock Scheduling Software
           <br />
-          <span className="text-primary">for Warehouses</span> & Distribution Centers
+          for <span className="font-bold">Warehouses</span> & Distribution Centers
         </motion.h1>
 
         <motion.p
