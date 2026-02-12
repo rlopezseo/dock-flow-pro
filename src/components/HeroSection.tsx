@@ -23,16 +23,16 @@ const HeroSection = () => {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="max-w-3xl text-right"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-semibold leading-[1.05] tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-light leading-[1.05] tracking-tight mb-6">
             Don't look at this site
             <br />
-            if <span className="text-primary">your docks</span> are
+            if <span className="text-primary">your customers</span> are
             <br />
-            running smoothly
+            fully satisfied
           </h1>
 
-          <p className="text-base sm:text-lg text-secondary-foreground max-w-xl ml-auto font-body font-normal leading-relaxed mb-8">
-            We believe dock scheduling is a service for efficiency, NOT JUST A TASK
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl ml-auto font-body font-normal leading-relaxed mb-8">
+            We believe that logistics is a service for the customer, NOT JUST A TASK
           </p>
 
           <div className="flex justify-end">
@@ -40,7 +40,7 @@ const HeroSection = () => {
               href="#contact"
               className="inline-flex items-center gap-2 px-8 py-3 bg-muted/60 backdrop-blur-sm text-foreground font-body font-normal text-sm rounded-full border border-border/50 hover:bg-muted/80 transition-all duration-300"
             >
-              turn your docks into profit
+              turn your customers into fans
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
