@@ -39,9 +39,9 @@ const FeaturesSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="features" className="py-24 relative overflow-hidden" ref={ref}>
+    <section id="features" className="py-24 relative overflow-hidden bg-background" ref={ref}>
       {/* Background image faded */}
-      <div className="absolute inset-0 opacity-[0.06]">
+      <div className="absolute inset-0 opacity-[0.03]">
         <img src={featuresImage} alt="" className="w-full h-full object-cover" aria-hidden="true" />
       </div>
 
@@ -55,10 +55,10 @@ const FeaturesSection = () => {
           <p className="text-primary font-display text-sm tracking-[0.25em] uppercase mb-3">
             The Latest Freight-Tech
           </p>
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight mb-4 text-foreground">
             TO BOOK, SCHEDULE
             <br />
-            <span className="text-gradient">& TRACK TRUCKLOAD</span>
+            <span className="text-primary">& TRACK TRUCKLOAD</span>
           </h2>
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">
             Get all 3 in just 7 weeks — capacity, visibility, and scheduling on one platform.
@@ -72,7 +72,7 @@ const FeaturesSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="group bg-card/80 backdrop-blur-sm border border-border rounded-sm p-8 hover:border-primary/40 transition-all duration-500"
+              className="group bg-card border border-border rounded-sm p-8 hover:border-primary/40 transition-all duration-500"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -80,11 +80,11 @@ const FeaturesSection = () => {
                   <span className="text-xs font-display tracking-[0.2em] text-muted-foreground uppercase">{feat.label}</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-3xl font-display font-bold text-foreground stat-glow">{feat.stat}</span>
+                  <span className="text-3xl font-display font-bold text-foreground">{feat.stat}</span>
                   <p className="text-[10px] font-display tracking-wider text-primary uppercase">{feat.statLabel}</p>
                 </div>
               </div>
-              <p className="text-sm text-secondary-foreground font-body leading-relaxed">{feat.description}</p>
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">{feat.description}</p>
             </motion.div>
           ))}
         </div>

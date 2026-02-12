@@ -21,7 +21,7 @@ const TestimonialSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 bg-secondary/30" ref={ref}>
+    <section className="py-24 bg-muted" ref={ref}>
       <div className="container max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ const TestimonialSection = () => {
                 "{t.quote}"
               </p>
               <footer>
-                <p className="font-display font-semibold text-sm">{t.author}</p>
+                <p className="font-display font-semibold text-sm text-foreground">{t.author}</p>
                 <p className="text-xs text-muted-foreground font-body">
                   {t.role}, {t.company}
                 </p>

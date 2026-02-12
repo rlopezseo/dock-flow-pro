@@ -27,7 +27,7 @@ const HeroSection = () => {
             Dock Scheduling Software
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-[0.95] tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-[0.95] tracking-tight mb-6 text-white">
             DOCK SCHEDULING
             <br />
             <span className="text-gradient">&amp; TIME SLOT</span>
@@ -35,22 +35,22 @@ const HeroSection = () => {
             MANAGEMENT
           </h1>
 
-          <p className="text-lg sm:text-xl text-secondary-foreground max-w-xl font-body font-light leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl text-[hsl(210,20%,75%)] max-w-xl font-body font-light leading-relaxed mb-8">
             Eliminate dock congestion with automated scheduling.
             <br />
-            <strong className="text-foreground font-medium">Reduce waiting times by 60%</strong> and optimize loading dock utilization.
+            <strong className="text-white font-medium">Reduce waiting times by 60%</strong> and optimize loading dock utilization.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-display font-semibold text-sm tracking-wide rounded-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_30px_hsl(207,90%,54%,0.3)]"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-display font-semibold text-sm tracking-wide rounded-sm hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_30px_hsl(207,90%,42%,0.3)]"
             >
               LET'S TALK
             </a>
             <a
               href="#features"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-border text-foreground font-body text-sm rounded-sm hover:bg-secondary transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[hsl(220,15%,25%)] text-white font-body text-sm rounded-sm hover:bg-[hsl(220,15%,16%)] transition-colors"
             >
               Explore Features
             </a>
@@ -63,7 +63,7 @@ const HeroSection = () => {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="absolute bottom-6 left-1/2 -translate-x-1/2"
         >
-          <ArrowDown className="w-5 h-5 text-muted-foreground animate-bounce" />
+          <ArrowDown className="w-5 h-5 text-[hsl(210,15%,55%)] animate-bounce" />
         </motion.div>
       </div>
     </section>

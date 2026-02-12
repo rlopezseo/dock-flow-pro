@@ -13,7 +13,7 @@ const StatsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-20 bg-secondary/30" ref={ref}>
+    <section className="py-20 bg-[hsl(220,20%,7%)] text-white" ref={ref}>
       <div className="container">
         <div className="glow-line mb-16 mx-auto max-w-md" />
 
@@ -26,10 +26,10 @@ const StatsSection = () => {
               transition={{ duration: 0.5, delay: 0.12 * i }}
               className="text-center"
             >
-              <span className="block text-4xl md:text-6xl font-display font-bold text-foreground stat-glow">
+              <span className="block text-4xl md:text-6xl font-display font-bold text-white stat-glow">
                 {stat.value}
               </span>
-              <p className="text-xs md:text-sm text-muted-foreground font-body mt-2 tracking-wide uppercase">
+              <p className="text-xs md:text-sm text-[hsl(210,15%,55%)] font-body mt-2 tracking-wide uppercase">
                 {stat.label}
               </p>
             </motion.div>
