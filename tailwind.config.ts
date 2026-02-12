@@ -14,9 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Arial", "Helvetica", "sans-serif"],
-        secondary: ["Roboto Slab", "Georgia", "serif"],
-        body: ["Roboto", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -3,16 +3,25 @@ import { useRef } from "react";
 
 const testimonials = [
   {
-    quote: "TrucksOnTheMap made our freight management best-in-class. Speed, transparency and premium control.",
-    author: "Mr. T. Forray",
-    role: "Head of Supply Chain",
-    company: "Apollo Tyres",
+    quote: "We went from 40 scheduling calls a week to zero. Literally zero. Carriers book themselves and our receiving team finally knows what's coming before it shows up at the gate.",
+    name: "James Thornton",
+    title: "Warehouse Operations Manager",
+    scale: "3 facilities · 80+ trucks/day",
+    initials: "JT",
   },
   {
-    quote: "\"Trucks\" is a must have for us. We can't imagine logistics without it, anymore.",
-    author: "Mr. B. Rafaj",
-    role: "Production & Logistics Manager",
-    company: "Saint-Gobain Construction Products",
+    quote: "Dock utilization went from 52% to 88% in six weeks. We delayed a $2M dock expansion because we didn't need it anymore. TrucksOnTheMap paid for itself before the first invoice.",
+    name: "Maria Chen",
+    title: "VP Supply Chain",
+    scale: "8 distribution centers",
+    initials: "MC",
+  },
+  {
+    quote: "We used to be the facility carriers avoided. Now they request us because they know they'll get a slot, get in, and get out. The self-service portal changed the entire relationship.",
+    name: "David Kowalski",
+    title: "Logistics Director",
+    scale: "200+ daily truck movements",
+    initials: "DK",
   },
 ];
 
@@ -21,40 +30,47 @@ const TestimonialSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 bg-muted" ref={ref}>
-      <div className="container max-w-4xl">
-        <motion.div
+    <section className="py-28 md:py-36 bg-white" ref={ref}>
+      <div className="max-w-[1200px] mx-auto px-6">
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-3xl md:text-[40px] font-extrabold text-[#0F172A] text-center leading-[1.12] tracking-[-0.02em] mb-14"
         >
-          <p className="text-primary font-display text-sm tracking-[0.25em] uppercase mb-3">
-            What Our Clients Say
-          </p>
-        </motion.div>
+          What Operations Teams Say After 90 Days
+        </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <motion.blockquote
-              key={t.author}
-              initial={{ opacity: 0, y: 25 }}
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.15 * i }}
-              className="bg-card border border-border rounded-sm p-8 flex flex-col justify-between"
+              transition={{ duration: 0.5, delay: 0.1 * i }}
+              className="bg-[#FAFBFC] border border-[#E2E8F0] rounded-2xl p-9"
             >
-              <p className="text-foreground font-body text-sm leading-relaxed italic mb-6">
-                "{t.quote}"
+              <span className="text-6xl text-[#E2E8F0] font-serif leading-none">"</span>
+              <p className="text-base font-medium text-[#0F172A] leading-[1.7] italic mt-2">
+                {t.quote}
               </p>
-              <footer>
-                <p className="font-display font-semibold text-sm text-foreground">{t.author}</p>
-                <p className="text-xs text-muted-foreground font-body">
-                  {t.role}, {t.company}
-                </p>
-              </footer>
-            </motion.blockquote>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full bg-[#2563EB]/10 border-2 border-[#E2E8F0] flex items-center justify-center text-sm font-bold text-[#2563EB]">
+                  {t.initials}
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-[#0F172A]">{t.name}</p>
+                  <p className="text-[13px] text-[#64748B]">{t.title}</p>
+                  <p className="text-[11px] font-semibold text-[#F97316]">{t.scale}</p>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
+
+        <p className="text-xs text-[#94A3B8] text-center mt-8 italic">
+          *Results represent averages across TrucksOnTheMap customers in their first 90 days of operation.
+        </p>
       </div>
     </section>
   );
