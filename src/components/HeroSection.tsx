@@ -31,12 +31,12 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-display font-light leading-[1.08] tracking-tight mb-6 text-foreground">
             Dock scheduling is
             <br />
-            <span className="text-muted-foreground">a cost center</span> until
+            <span className="text-[#7a7a7a]">a cost center</span> until
             <br />
             you automate it
           </h1>
 
-          <p className="text-sm sm:text-base text-muted-foreground max-w-lg font-body font-normal leading-relaxed mb-10">
+          <p className="text-sm sm:text-base text-white max-w-lg font-body font-normal leading-relaxed mb-10">
             Eliminate congestion. Reduce waiting times by 60%.
             <br />
             Optimize every loading dock slot, automatically.
