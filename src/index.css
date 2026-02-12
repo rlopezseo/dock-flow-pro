@@ -90,3 +90,26 @@
     text-shadow: 0 0 40px hsl(var(--primary) / 0.4);
   }
 }
+
+/* Light sections override */
+.light-sections {
+  --background: 0 0% 98%;
+  --foreground: 220 20% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 20% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 20% 12%;
+  --secondary: 220 10% 94%;
+  --secondary-foreground: 220 15% 30%;
+  --muted: 220 10% 93%;
+  --muted-foreground: 220 10% 42%;
+  --border: 220 10% 90%;
+  --input: 220 10% 90%;
+  --surface: 220 10% 96%;
+  --accent: 207 60% 30%;
+  --accent-foreground: 0 0% 100%;
+}
+
+.light-sections .stat-glow {
+  text-shadow: 0 0 30px hsl(var(--primary) / 0.25);
+}
