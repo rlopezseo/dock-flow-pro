@@ -13,7 +13,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-[hsl(210,20%,4%/0.82)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(210,20%,3%/0.92)] via-[hsl(210,20%,4%/0.75)] to-[hsl(210,20%,4%/0.45)]" />
       </div>
 
       <div className="container relative z-10">
