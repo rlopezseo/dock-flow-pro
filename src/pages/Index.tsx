@@ -1,10 +1,16 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import PainSection from "@/components/PainSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import StatsSection from "@/components/StatsSection";
-import LogosSection from "@/components/LogosSection";
-import TestimonialSection from "@/components/TestimonialSection";
+import TrustBarSection from "@/components/TrustBarSection";
+import ProblemSection from "@/components/ProblemSection";
+import OutcomesSection from "@/components/OutcomesSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import CapabilitiesSection from "@/components/CapabilitiesSection";
+import UseCasesSection from "@/components/UseCasesSection";
+import IntegrationsSection from "@/components/IntegrationsSection";
+import ROISection from "@/components/ROISection";
+import ProofSection from "@/components/ProofSection";
+import CompareSection from "@/components/CompareSection";
+import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -14,14 +20,22 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <PainSection />
-        <FeaturesSection />
-        <StatsSection />
-        <LogosSection />
-        <TestimonialSection />
-        <CTASection />
+        <div className="light-sections bg-[hsl(0,0%,98%)]">
+          <TrustBarSection />
+          <ProblemSection />
+          <OutcomesSection />
+          <HowItWorksSection />
+          <CapabilitiesSection />
+          <UseCasesSection />
+          <IntegrationsSection />
+          <ROISection />
+          <ProofSection />
+          <CompareSection />
+          <FAQSection />
+          <CTASection />
+          <Footer />
+        </div>
       </main>
-      <Footer />
     </>
   );
 };
