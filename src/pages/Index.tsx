@@ -23,9 +23,9 @@ const Index = () => {
         <HeroSection />
         <div className="light-sections bg-[hsl(0,0%,98%)]">
           <TrustBarSection />
-          <LogoCarouselSection />
           <ProblemSection />
           <OutcomesSection />
+          <LogoCarouselSection />
           <HowItWorksSection />
           <CapabilitiesSection />
           <UseCasesSection />
