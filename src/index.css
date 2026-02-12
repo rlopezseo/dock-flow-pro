@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Slab:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,50 +6,58 @@
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 210 20% 95%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 15%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 210 20% 95%;
+    --card: 0 0% 98%;
+    --card-foreground: 220 20% 15%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
 
-    --primary: 207 90% 54%;
-    --primary-foreground: 220 20% 7%;
+    --primary: 207 90% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 210 20% 85%;
+    --secondary: 210 15% 95%;
+    --secondary-foreground: 220 15% 35%;
 
-    --muted: 220 14% 14%;
-    --muted-foreground: 215 15% 55%;
+    --muted: 210 12% 93%;
+    --muted-foreground: 215 10% 45%;
 
-    --accent: 207 90% 54%;
-    --accent-foreground: 220 20% 7%;
+    --accent: 207 90% 42%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 207 90% 54%;
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 207 90% 42%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 220 20% 7%;
     --sidebar-foreground: 210 20% 95%;
-    --sidebar-primary: 207 90% 54%;
-    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-primary: 207 90% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 15% 16%;
     --sidebar-accent-foreground: 210 20% 85%;
     --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 207 90% 54%;
+    --sidebar-ring: 207 90% 42%;
 
     /* Custom tokens */
-    --glow: 207 90% 54%;
-    --surface: 220 16% 12%;
-    --surface-foreground: 210 20% 90%;
+    --glow: 207 90% 42%;
+    --surface: 210 10% 96%;
+    --surface-foreground: 220 15% 25%;
     --hero-overlay: 220 30% 5%;
+
+    /* Dark section tokens (hero, navbar, CTA) */
+    --dark-bg: 220 20% 7%;
+    --dark-fg: 210 20% 95%;
+    --dark-muted: 215 15% 55%;
+    --dark-border: 220 15% 18%;
+    --dark-card: 220 18% 10%;
+    --dark-secondary: 220 15% 16%;
   }
 }
 

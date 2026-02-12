@@ -17,7 +17,7 @@ const LogosSection = () => {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="py-20" ref={ref}>
+    <section className="py-20 bg-background" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ const LogosSection = () => {
           <p className="text-primary font-display text-sm tracking-[0.25em] uppercase mb-3">
             Co-Developed With Industry
           </p>
-          <h2 className="text-2xl md:text-4xl font-display font-bold tracking-tight">
+          <h2 className="text-2xl md:text-4xl font-display font-bold tracking-tight text-foreground">
             JOIN THE RANKS OF
             <br />
             <span className="text-muted-foreground">SATISFIED CUSTOMERS</span>

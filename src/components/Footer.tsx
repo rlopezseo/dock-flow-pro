@@ -1,11 +1,11 @@
 const Footer = () => {
   return (
-    <footer className="py-10 border-t border-border">
+    <footer className="py-10 border-t border-border bg-background">
       <div className="container">
         <div className="grid md:grid-cols-3 gap-8 text-sm text-muted-foreground font-body">
           <div>
             <p className="font-display font-semibold text-foreground mb-2">
-              trucks<span className="text-primary">O</span>nthemap
+              trucks<span className="text-primary font-bold">ON</span><span className="font-light text-muted-foreground">the</span>map
             </p>
             <p>128 City Road</p>
             <p>London EC1V 2NX, United Kingdom</p>

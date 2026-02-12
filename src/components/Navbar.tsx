@@ -8,16 +8,16 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top bar */}
-      <div className="bg-secondary/80 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between py-1.5 text-xs text-muted-foreground">
+      <div className="bg-[hsl(220,20%,10%)] border-b border-[hsl(220,15%,18%)]">
+        <div className="container flex items-center justify-between py-1.5 text-xs text-[hsl(210,20%,70%)]">
           <span className="hidden sm:block font-body">
-            TrucksOnTheMap — modular, invite-only Transportation Management Platform
+            A Platform for Freight Management, Transportation Visibility and Time Slot Management
           </span>
           <div className="flex items-center gap-4 ml-auto">
-            <a href="tel:+442038078493" className="flex items-center gap-1 hover:text-foreground transition-colors">
+            <a href="tel:+442038078493" className="flex items-center gap-1 hover:text-white transition-colors">
               <Phone className="w-3 h-3" /> +44 (20) 3807 84 93
             </a>
-            <a href="mailto:ihaveaquestion@trucksonthemap.com" className="hidden sm:flex items-center gap-1 hover:text-foreground transition-colors">
+            <a href="mailto:ihaveaquestion@trucksonthemap.com" className="hidden sm:flex items-center gap-1 hover:text-white transition-colors">
               <Mail className="w-3 h-3" /> ihaveaquestion@trucksonthemap.com
             </a>
           </div>
@@ -25,40 +25,41 @@ const Navbar = () => {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-background/70 backdrop-blur-xl border-b border-border/50">
+      <nav className="bg-[hsl(220,20%,7%/0.85)] backdrop-blur-xl border-b border-[hsl(220,15%,18%/0.5)]">
         <div className="container flex items-center justify-between py-3">
-          <a href="/" className="flex items-center gap-2">
-            <span className="text-xl font-display font-bold tracking-tight">
-              trucks<span className="text-primary">O</span>n<span className="text-muted-foreground font-light">the</span>map
-              <span className="text-primary text-xs align-super">✳</span>
+          {/* Real logo */}
+          <a href="/" className="flex items-center gap-3">
+            <span className="text-xl font-display font-semibold tracking-tight text-white">
+              trucks<span className="font-bold text-primary">ON</span><span className="font-light text-[hsl(210,15%,60%)]">the</span>map<span className="text-primary ml-0.5">✳</span>
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-1 text-sm text-muted-foreground font-body">
+          <div className="hidden md:flex items-center gap-1 text-xs text-[hsl(210,15%,55%)] font-body tracking-wider">
             <span>capacity</span>
-            <span className="text-border">|</span>
+            <span className="text-[hsl(220,15%,30%)]">|</span>
             <span>visibility</span>
-            <span className="text-border">|</span>
+            <span className="text-[hsl(220,15%,30%)]">|</span>
             <span>schedule</span>
+            <span className="block text-[10px] ml-2 text-[hsl(210,15%,45%)]">on.one.map</span>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">
+            <a href="#" className="text-sm text-[hsl(210,20%,80%)] hover:text-white transition-colors font-body underline underline-offset-4">
               home
             </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors font-body">
+            <a href="#contact" className="text-sm text-[hsl(210,20%,80%)] hover:text-white transition-colors font-body">
               get in contact
             </a>
-            <a href="#contact" className="flex items-center gap-1 px-4 py-2 border border-border rounded-sm text-sm font-body hover:bg-secondary transition-colors">
+            <a href="#contact" className="flex items-center gap-1 px-5 py-2 border border-[hsl(220,15%,25%)] rounded-sm text-sm font-body text-[hsl(210,20%,80%)] hover:bg-[hsl(220,15%,16%)] transition-colors">
               register <ArrowUpRight className="w-3 h-3" />
             </a>
-            <a href="#contact" className="flex items-center gap-1 px-4 py-2 bg-primary text-primary-foreground rounded-sm text-sm font-display font-semibold hover:bg-primary/90 transition-colors">
+            <a href="#contact" className="flex items-center gap-1 px-5 py-2 bg-primary text-white rounded-sm text-sm font-display font-semibold hover:bg-primary/90 transition-colors">
               log in <ArrowUpRight className="w-3 h-3" />
             </a>
           </div>
 
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-white"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -74,16 +75,16 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
+            className="md:hidden bg-[hsl(220,20%,7%/0.95)] backdrop-blur-xl border-b border-[hsl(220,15%,18%)]"
           >
             <div className="container py-6 flex flex-col gap-4">
-              <a href="#contact" className="text-foreground font-body py-2">home</a>
-              <a href="#contact" className="text-foreground font-body py-2">get in contact</a>
+              <a href="#" className="text-white font-body py-2">home</a>
+              <a href="#contact" className="text-white font-body py-2">get in contact</a>
               <div className="flex gap-3 pt-2">
-                <a href="#contact" className="flex-1 text-center px-4 py-2.5 border border-border rounded-sm text-sm font-body">
+                <a href="#contact" className="flex-1 text-center px-4 py-2.5 border border-[hsl(220,15%,25%)] rounded-sm text-sm font-body text-white">
                   register
                 </a>
-                <a href="#contact" className="flex-1 text-center px-4 py-2.5 bg-primary text-primary-foreground rounded-sm text-sm font-display font-semibold">
+                <a href="#contact" className="flex-1 text-center px-4 py-2.5 bg-primary text-white rounded-sm text-sm font-display font-semibold">
                   log in
                 </a>
               </div>
