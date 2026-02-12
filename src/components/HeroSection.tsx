@@ -13,7 +13,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       <div className="container relative z-10">
@@ -31,7 +31,7 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-display font-light leading-[1.08] tracking-tight mb-6 text-foreground">
             Dock scheduling is
             <br />
-            <span className="text-[#7a7a7a]">a cost center</span> until
+            <span className="text-[#999]">a cost center</span> until
             <br />
             you automate it
           </h1>
