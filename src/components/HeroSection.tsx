@@ -13,7 +13,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-[hsl(210,20%,10%/0.55)]" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,6%/0.72)]" />
       </div>
 
       <div className="container relative z-10">
@@ -24,7 +24,7 @@ const HeroSection = () => {
           className="max-w-3xl"
         >
           {/* SEO keyword tag */}
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-body font-normal tracking-widest uppercase text-muted-foreground border border-[hsl(210,10%,40%/0.3)] bg-[hsl(210,10%,20%/0.4)] backdrop-blur-sm mb-6">
+          <span className="inline-block px-5 py-2 rounded-full text-xs font-body font-normal tracking-widest uppercase text-foreground border border-[hsl(210,10%,50%/0.4)] bg-[hsl(210,10%,25%/0.5)] backdrop-blur-sm mb-6">
             Dock Scheduling Software
           </span>
 
