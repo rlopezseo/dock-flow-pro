@@ -41,16 +41,14 @@ const HowItWorksSection = () => {
 
   return (
     <section className="relative py-28 bg-section-alt overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 dot-pattern opacity-30" />
-
       <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-20"
         >
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
+          <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-4">
             How It Works
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
@@ -58,50 +56,71 @@ const HowItWorksSection = () => {
           </h2>
         </motion.div>
 
-        {/* Horizontal stepper */}
-        <div className="hidden lg:flex items-start justify-between relative max-w-5xl mx-auto mb-0">
-          {/* Connecting line */}
-          <div className="absolute top-8 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
+        {/* Desktop: timeline layout */}
+        <div className="hidden lg:block relative max-w-5xl mx-auto">
+          {/* Central vertical line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-primary/30 via-primary/15 to-transparent" />
 
-          {steps.map((item, i) => (
-            <motion.div
-              key={item.step}
-              initial={{ opacity: 0, y: 25 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.12 * i }}
-              className="flex flex-col items-center text-center flex-1 px-3 relative"
-            >
-              {/* Circle */}
-              <div className="w-16 h-16 rounded-2xl bg-card card-elevated flex items-center justify-center mb-5 relative z-10 transition-all duration-500 group-hover:shadow-xl">
-                <item.icon className="w-6 h-6 text-primary" />
-              </div>
+          {steps.map((item, i) => {
+            const isLeft = i % 2 === 0;
+            return (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.15 * i }}
+                className={`relative flex items-center mb-16 last:mb-0 ${isLeft ? "justify-start" : "justify-end"}`}
+              >
+                {/* Dot on timeline */}
+                <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-primary bg-[hsl(0,0%,98%)] z-10" />
 
-              <span className="text-[10px] font-display tracking-[0.2em] text-primary uppercase mb-2">
-                Step {item.step}
-              </span>
-              <h3 className="text-[13px] font-display font-normal text-foreground mb-2">{item.title}</h3>
-              <p className="text-[11px] text-muted-foreground font-body font-normal leading-relaxed max-w-[180px]">{item.description}</p>
-            </motion.div>
-          ))}
+                {/* Card */}
+                <div className={`w-[44%] bg-card rounded-2xl p-7 card-elevated group hover:shadow-lg transition-all duration-500 ${isLeft ? "mr-auto text-right" : "ml-auto text-left"}`}>
+                  <div className={`flex items-center gap-4 mb-4 ${isLeft ? "flex-row-reverse" : "flex-row"}`}>
+                    <div className="w-14 h-14 rounded-2xl bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/12 transition-colors duration-300">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-body tracking-[0.2em] text-primary/60 uppercase block">
+                        Step {item.step}
+                      </span>
+                      <h3 className="text-sm font-display font-light text-foreground mt-0.5">{item.title}</h3>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* Mobile: vertical */}
-        <div className="lg:hidden space-y-4">
+        {/* Mobile: vertical cards */}
+        <div className="lg:hidden relative pl-8">
+          {/* Vertical line */}
+          <div className="absolute left-3 top-0 bottom-0 w-px bg-gradient-to-b from-primary/30 via-primary/15 to-transparent" />
+
           {steps.map((item, i) => (
             <motion.div
               key={item.step}
               initial={{ opacity: 0, x: -15 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="bg-card rounded-xl p-6 card-elevated flex gap-5 items-start"
+              className="relative mb-6 last:mb-0"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center shrink-0">
-                <item.icon className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <span className="text-[10px] font-display tracking-[0.2em] text-primary uppercase">Step {item.step}</span>
-                <h3 className="text-[13px] font-display font-normal text-foreground mt-1 mb-1.5">{item.title}</h3>
-                <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed">{item.description}</p>
+              {/* Dot */}
+              <div className="absolute -left-8 top-7 w-3 h-3 rounded-full border-2 border-primary bg-[hsl(0,0%,98%)] z-10" style={{ transform: "translateX(8px)" }} />
+
+              <div className="bg-card rounded-xl p-6 card-elevated">
+                <div className="flex gap-4 items-start">
+                  <div className="w-11 h-11 rounded-xl bg-primary/8 flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-body tracking-[0.2em] text-primary/60 uppercase">Step {item.step}</span>
+                    <h3 className="text-[13px] font-display font-light text-foreground mt-1 mb-1.5">{item.title}</h3>
+                    <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
