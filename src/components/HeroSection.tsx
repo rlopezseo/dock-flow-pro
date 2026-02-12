@@ -24,7 +24,7 @@ const HeroSection = () => {
           className="max-w-3xl"
         >
           {/* SEO keyword tag */}
-          <span className="inline-block px-5 py-2 rounded-full text-xs font-body font-normal tracking-widest uppercase text-foreground border border-[hsl(210,10%,50%/0.4)] bg-[hsl(210,10%,25%/0.5)] backdrop-blur-sm mb-6">
+          <span className="inline-block px-5 py-2 rounded-full text-xs font-body font-normal tracking-widest uppercase text-white/90 border border-white/15 bg-white/10 backdrop-blur-md mb-6">
             Dock Scheduling Software
           </span>
 
