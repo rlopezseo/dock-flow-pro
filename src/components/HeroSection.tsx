@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-dock.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-end pb-24 pt-32 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -13,18 +13,22 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        {/* Dark overlay matching the site */}
         <div className="absolute inset-0 bg-[hsl(210,20%,10%/0.55)]" />
       </div>
 
-      <div className="container relative z-10 flex justify-end">
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-3xl text-right"
+          className="max-w-3xl"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-display font-light leading-[1.1] tracking-tight mb-6 text-foreground">
+          {/* SEO keyword tag */}
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-body font-normal tracking-widest uppercase text-muted-foreground border border-[hsl(210,10%,40%/0.3)] bg-[hsl(210,10%,20%/0.4)] backdrop-blur-sm mb-6">
+            Dock Scheduling Software
+          </span>
+
+          <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-display font-light leading-[1.08] tracking-tight mb-6 text-foreground">
             Dock scheduling is
             <br />
             <span className="text-muted-foreground">a cost center</span> until
@@ -32,16 +36,25 @@ const HeroSection = () => {
             you automate it
           </h1>
 
-          <p className="text-sm sm:text-base text-muted-foreground max-w-lg ml-auto font-body font-normal leading-relaxed mb-8">
-            Eliminate congestion. Reduce waiting times by 60%. Optimize every loading dock slot, automatically.
+          <p className="text-sm sm:text-base text-muted-foreground max-w-lg font-body font-normal leading-relaxed mb-10">
+            Eliminate congestion. Reduce waiting times by 60%.
+            <br />
+            Optimize every loading dock slot, automatically.
           </p>
 
-          <div className="flex justify-end">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full text-sm font-body font-normal text-foreground bg-[hsl(210,10%,30%/0.5)] backdrop-blur-sm border border-[hsl(210,10%,40%/0.3)] hover:bg-[hsl(210,10%,35%/0.6)] transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-body font-normal text-foreground bg-primary hover:bg-primary/90 transition-all duration-300"
             >
-              find out how
+              LET'S TALK
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+            <a
+              href="#features"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full text-sm font-body font-normal text-foreground bg-[hsl(210,10%,30%/0.45)] backdrop-blur-sm border border-[hsl(210,10%,40%/0.3)] hover:bg-[hsl(210,10%,35%/0.6)] transition-all duration-300"
+            >
+              Explore Features
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
