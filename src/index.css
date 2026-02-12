@@ -89,27 +89,84 @@
   .stat-glow {
     text-shadow: 0 0 40px hsl(var(--primary) / 0.4);
   }
+
+  /* Premium card with elevated shadow */
+  .card-elevated {
+    box-shadow: 
+      0 1px 3px hsl(220 20% 20% / 0.04),
+      0 8px 24px hsl(220 20% 20% / 0.06);
+  }
+
+  .card-elevated:hover {
+    box-shadow:
+      0 2px 6px hsl(220 20% 20% / 0.06),
+      0 16px 40px hsl(220 20% 20% / 0.10);
+    transform: translateY(-2px);
+  }
+
+  /* Gradient accent line */
+  .accent-line {
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(207 80% 55%), hsl(190 70% 50%));
+    border-radius: 2px;
+  }
+
+  /* Subtle section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+  }
+
+  /* Premium gradient bg for alternating sections */
+  .bg-section-alt {
+    background: linear-gradient(180deg, hsl(220 15% 96%) 0%, hsl(220 10% 94%) 100%);
+  }
+
+  .bg-section-warm {
+    background: linear-gradient(180deg, hsl(210 15% 97%) 0%, hsl(215 12% 95%) 100%);
+  }
+
+  /* Number highlight */
+  .number-accent {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(207 70% 42%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle dot pattern */
+  .dot-pattern {
+    background-image: radial-gradient(hsl(220 15% 85% / 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
 }
 
 /* Light sections override */
 .light-sections {
   --background: 0 0% 98%;
-  --foreground: 220 20% 12%;
+  --foreground: 220 20% 15%;
   --card: 0 0% 100%;
-  --card-foreground: 220 20% 12%;
+  --card-foreground: 220 20% 15%;
   --popover: 0 0% 100%;
-  --popover-foreground: 220 20% 12%;
-  --secondary: 220 10% 94%;
-  --secondary-foreground: 220 15% 30%;
+  --popover-foreground: 220 20% 15%;
+  --secondary: 220 12% 95%;
+  --secondary-foreground: 220 15% 25%;
   --muted: 220 10% 93%;
-  --muted-foreground: 220 10% 42%;
-  --border: 220 10% 90%;
-  --input: 220 10% 90%;
+  --muted-foreground: 220 8% 46%;
+  --border: 220 12% 91%;
+  --input: 220 12% 91%;
   --surface: 220 10% 96%;
   --accent: 207 60% 30%;
   --accent-foreground: 0 0% 100%;
 }
 
 .light-sections .stat-glow {
-  text-shadow: 0 0 30px hsl(var(--primary) / 0.25);
+  text-shadow: none;
+}
+
+.light-sections .card-elevated {
+  box-shadow: 
+    0 1px 2px hsl(220 20% 50% / 0.04),
+    0 4px 16px hsl(220 20% 50% / 0.06),
+    0 12px 32px hsl(220 20% 50% / 0.04);
 }

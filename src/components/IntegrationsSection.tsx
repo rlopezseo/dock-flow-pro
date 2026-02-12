@@ -23,7 +23,7 @@ const IntegrationsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24" ref={ref}>
+    <section className="relative py-28" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -31,15 +31,16 @@ const IntegrationsSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-3">
+          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
             Integrations & Implementation
           </p>
-          <h2 className="text-3xl md:text-4xl font-display font-light tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
             Connects to your existing stack — live in 7 weeks
           </h2>
+          <div className="accent-line w-16 mx-auto" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Integrations */}
           <motion.div
             initial={{ opacity: 0, x: -15 }}
@@ -51,7 +52,7 @@ const IntegrationsSection = () => {
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
               {stack.map((s) => (
-                <div key={s.name} className="bg-card border border-border rounded-lg p-4 text-center hover:border-primary/20 transition-colors">
+                <div key={s.name} className="bg-card rounded-xl p-5 text-center card-elevated transition-all duration-500">
                   <p className="text-sm font-display font-normal text-foreground">{s.name}</p>
                   <p className="text-[10px] text-muted-foreground font-body tracking-wider uppercase mt-1">{s.category}</p>
                 </div>
@@ -59,18 +60,16 @@ const IntegrationsSection = () => {
             </div>
 
             <div className="space-y-3">
-              <div className="flex items-center gap-3 px-4 py-3 bg-secondary/70 rounded-lg">
-                <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-xs font-body font-normal text-foreground">ISO 27001 certified infrastructure — enterprise-grade security</span>
-              </div>
-              <div className="flex items-center gap-3 px-4 py-3 bg-secondary/70 rounded-lg">
-                <Layers className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-xs font-body font-normal text-foreground">API-first architecture with full documentation and sandbox environment</span>
-              </div>
-              <div className="flex items-center gap-3 px-4 py-3 bg-secondary/70 rounded-lg">
-                <Clock className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-xs font-body font-normal text-foreground">Average time-to-value: 7 weeks from kickoff to full production</span>
-              </div>
+              {[
+                { icon: ShieldCheck, text: "ISO 27001 certified infrastructure — enterprise-grade security" },
+                { icon: Layers, text: "API-first architecture with full documentation and sandbox environment" },
+                { icon: Clock, text: "Average time-to-value: 7 weeks from kickoff to full production" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3.5 px-5 py-3.5 bg-gradient-to-r from-primary/5 to-transparent rounded-xl border border-primary/8">
+                  <item.icon className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-xs font-body font-normal text-foreground">{item.text}</span>
+                </div>
+              ))}
             </div>
           </motion.div>
 
@@ -81,18 +80,24 @@ const IntegrationsSection = () => {
             transition={{ duration: 0.6, delay: 0.25 }}
           >
             <h3 className="text-sm font-display font-normal text-foreground mb-6">Implementation Roadmap</h3>
-            <div className="space-y-4">
-              {phases.map((p) => (
-                <div key={p.step} className="bg-card border border-border rounded-lg p-5 hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center text-xs font-display text-primary">
+            <div className="space-y-3.5">
+              {phases.map((p, i) => (
+                <motion.div
+                  key={p.step}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.3 + 0.08 * i }}
+                  className="bg-card rounded-xl p-5 card-elevated transition-all duration-500"
+                >
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center text-xs font-display text-primary">
                       {p.step}
                     </span>
-                    <h4 className="text-sm font-display font-normal text-foreground">{p.title}</h4>
-                    <span className="ml-auto text-[10px] font-body text-primary tracking-wider uppercase">{p.duration}</span>
+                    <h4 className="text-[13px] font-display font-normal text-foreground">{p.title}</h4>
+                    <span className="ml-auto text-[10px] font-body number-accent tracking-wider uppercase">{p.duration}</span>
                   </div>
-                  <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed pl-10">{p.description}</p>
-                </div>
+                  <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed pl-11">{p.description}</p>
+                </motion.div>
               ))}
             </div>
           </motion.div>
