@@ -53,32 +53,35 @@ const UseCasesSection = () => {
   const active = useCases.find((u) => u.id === activeCase) || useCases[0];
 
   return (
-    <section className="py-24 bg-secondary/50" ref={ref}>
-      <div className="container">
+    <section className="relative py-28 bg-section-warm overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 dot-pattern opacity-20" />
+
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
           className="text-center max-w-2xl mx-auto mb-14"
         >
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-3">
+          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
             Use Cases
           </p>
-          <h2 className="text-3xl md:text-4xl font-display font-light tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
             Dock scheduling software for every operation
           </h2>
+          <div className="accent-line w-16 mx-auto" />
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="flex flex-wrap justify-center gap-2.5 mb-12">
           {useCases.map((uc) => (
             <button
               key={uc.id}
               onClick={() => setActiveCase(uc.id)}
-              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-body font-normal transition-all duration-300 ${
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-body font-normal transition-all duration-400 ${
                 activeCase === uc.id
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-card border border-border text-foreground hover:border-primary/20"
+                  ? "bg-gradient-to-r from-primary to-[hsl(207,50%,35%)] text-primary-foreground shadow-lg shadow-primary/15"
+                  : "bg-card card-elevated text-foreground"
               }`}
             >
               <uc.icon className="w-3.5 h-3.5" />
@@ -93,14 +96,14 @@ const UseCasesSection = () => {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="max-w-4xl mx-auto bg-card border border-border rounded-lg p-8 md:p-10"
+          className="max-w-4xl mx-auto bg-card rounded-xl p-8 md:p-10 card-elevated"
         >
           <h3 className="text-lg font-display font-light text-foreground mb-3">{active.headline}</h3>
-          <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed mb-8">{active.description}</p>
+          <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed mb-8 max-w-2xl">{active.description}</p>
           <div className="grid sm:grid-cols-2 gap-3">
             {active.benefits.map((b, i) => (
-              <div key={i} className="flex items-center gap-3 px-4 py-3 bg-secondary/70 rounded-lg">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+              <div key={i} className="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-primary/5 to-transparent rounded-xl border border-primary/8">
+                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-[hsl(207,60%,45%)] shrink-0" />
                 <span className="text-xs font-body font-normal text-foreground">{b}</span>
               </div>
             ))}

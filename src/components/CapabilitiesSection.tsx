@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { CalendarClock, Users, ScanLine, Plug, BarChart3 } from "lucide-react";
+import { CalendarClock, Users, ScanLine, Plug, BarChart3, ChevronRight } from "lucide-react";
 
 const groups = [
   {
@@ -28,7 +28,7 @@ const groups = [
   {
     id: "checkin",
     icon: ScanLine,
-    title: "Check-In, Check-Out & Status Visibility",
+    title: "Check-In/Out & Visibility",
     features: [
       "Digital gate check-in with driver ID and document capture",
       "Real-time dock status board: available, occupied, delayed",
@@ -68,7 +68,7 @@ const CapabilitiesSection = () => {
   const active = groups.find((g) => g.id === activeGroup) || groups[0];
 
   return (
-    <section className="py-24" ref={ref}>
+    <section className="relative py-28" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -76,34 +76,36 @@ const CapabilitiesSection = () => {
           transition={{ duration: 0.7 }}
           className="max-w-2xl mb-14"
         >
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-3">
+          <div className="accent-line w-12 mb-6" />
+          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
             Key Capabilities
           </p>
-          <h2 className="text-3xl md:text-4xl font-display font-light tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
             Loading bay management built for every job-to-be-done
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-[280px_1fr] gap-6">
+        <div className="grid lg:grid-cols-[300px_1fr] gap-5">
           {/* Tab nav */}
           <motion.div
             initial={{ opacity: 0, x: -15 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0"
+            className="flex flex-row lg:flex-col gap-2.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0"
           >
             {groups.map((g) => (
               <button
                 key={g.id}
                 onClick={() => setActiveGroup(g.id)}
-                className={`flex items-center gap-3 px-5 py-3.5 rounded-lg text-left text-sm font-body font-normal transition-all duration-300 shrink-0 ${
+                className={`flex items-center gap-3 px-5 py-4 rounded-xl text-left text-sm font-body font-normal transition-all duration-400 shrink-0 ${
                   activeGroup === g.id
-                    ? "bg-primary text-primary-foreground shadow-md"
-                    : "bg-card border border-border text-foreground hover:border-primary/20"
+                    ? "bg-gradient-to-r from-primary to-[hsl(207,50%,35%)] text-primary-foreground shadow-lg shadow-primary/15"
+                    : "bg-card card-elevated text-foreground hover:shadow-lg"
                 }`}
               >
                 <g.icon className="w-4 h-4 shrink-0" />
-                <span className="whitespace-nowrap">{g.title}</span>
+                <span className="whitespace-nowrap text-[13px]">{g.title}</span>
+                {activeGroup === g.id && <ChevronRight className="w-3.5 h-3.5 ml-auto shrink-0" />}
               </button>
             ))}
           </motion.div>
@@ -114,20 +116,26 @@ const CapabilitiesSection = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-card border border-border rounded-lg p-8 md:p-10"
+            className="bg-card rounded-xl p-8 md:p-10 card-elevated"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center">
-                <active.icon className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                <active.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-lg font-display font-light text-foreground">{active.title}</h3>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-5">
               {active.features.map((feat, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: 0.08 * i }}
+                  className="flex items-start gap-4"
+                >
+                  <span className="mt-2 w-2 h-2 rounded-full bg-gradient-to-r from-primary to-[hsl(207,60%,45%)] shrink-0" />
                   <span className="text-sm text-muted-foreground font-body font-normal leading-relaxed">{feat}</span>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </motion.div>

@@ -52,7 +52,7 @@ const OutcomesSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24" ref={ref}>
+    <section className="relative py-28" ref={ref}>
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -60,35 +60,37 @@ const OutcomesSection = () => {
           transition={{ duration: 0.7 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-3">
+          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
             What You Get
           </p>
-          <h2 className="text-3xl md:text-4xl font-display font-light tracking-tight text-foreground mb-4">
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
             Dock scheduling that delivers measurable results
           </h2>
-          <p className="text-muted-foreground font-body font-normal text-sm">
-            Every feature is designed around one goal: making your loading bay operations faster, predictable, and cost-efficient.
-          </p>
+          <div className="accent-line w-16 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {outcomes.map((item, i) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.08 * i }}
-              className="bg-card border border-border rounded-lg p-7 hover:shadow-lg hover:border-primary/20 transition-all duration-400 group relative overflow-hidden"
+              className="bg-card rounded-xl p-7 card-elevated transition-all duration-500 group relative overflow-hidden"
             >
-              <div className="absolute top-6 right-6 text-right">
-                <span className="text-2xl font-display font-light text-primary/80">{item.metric}</span>
-                <p className="text-[10px] font-body text-muted-foreground tracking-wider uppercase">{item.metricLabel}</p>
+              {/* Metric badge top-right */}
+              <div className="absolute top-5 right-5">
+                <div className="bg-gradient-to-br from-primary/8 to-primary/4 rounded-lg px-3 py-1.5">
+                  <span className="text-lg font-display font-light number-accent leading-none">{item.metric}</span>
+                  <p className="text-[9px] font-body text-muted-foreground tracking-wider uppercase">{item.metricLabel}</p>
+                </div>
               </div>
-              <div className="w-10 h-10 rounded-lg bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
+
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-5">
                 <item.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="text-sm font-display font-normal text-foreground mb-2">{item.title}</h3>
-              <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed pr-12">{item.description}</p>
+              <h3 className="text-[13px] font-display font-normal text-foreground mb-2.5 tracking-wide">{item.title}</h3>
+              <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7] pr-16">{item.description}</p>
             </motion.div>
           ))}
         </div>
