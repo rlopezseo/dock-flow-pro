@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TrustBarSection from "@/components/TrustBarSection";
+import LogoCarouselSection from "@/components/LogoCarouselSection";
 import ProblemSection from "@/components/ProblemSection";
 import OutcomesSection from "@/components/OutcomesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -22,6 +23,7 @@ const Index = () => {
         <HeroSection />
         <div className="light-sections bg-[hsl(0,0%,98%)]">
           <TrustBarSection />
+          <LogoCarouselSection />
           <ProblemSection />
           <OutcomesSection />
           <HowItWorksSection />

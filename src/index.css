@@ -170,3 +170,13 @@
     0 4px 16px hsl(220 20% 50% / 0.06),
     0 12px 32px hsl(220 20% 50% / 0.04);
 }
+
+@keyframes logo-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-logo-scroll {
+  animation: logo-scroll 25s linear infinite;
+  width: max-content;
+}
