@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FileSpreadsheet, PhoneOff, TrafficCone, Users, DollarSign, Eye } from "lucide-react";
+import bgHowItWorks from "@/assets/bg-howitworks.jpg";
 
 const problems = [
   {
@@ -40,9 +41,12 @@ const ProblemSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-28 bg-section-alt overflow-hidden" ref={ref}>
-      {/* Dot pattern decoration */}
-      <div className="absolute inset-0 dot-pattern opacity-40" />
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img src={bgHowItWorks} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/85" />
+      </div>
 
       <div className="container relative z-10">
         <motion.div
