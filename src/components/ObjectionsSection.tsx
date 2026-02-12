@@ -29,15 +29,16 @@ const ObjectionsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-28 md:py-36 bg-[#FAFBFC]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="py-28 md:py-36 relative" ref={ref}>
+      <div className="absolute inset-0 bg-surface" />
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-[40px] font-extrabold text-[#0F172A] text-center leading-[1.12] tracking-[-0.02em] mb-14"
+          className="text-3xl md:text-[40px] font-bold text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-14 font-display"
         >
-          Why Operations Teams Switch to TrucksOnTheMap
+          Why Operations Teams Switch to <span className="text-primary">TrucksOnTheMap</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-5">
@@ -47,11 +48,11 @@ const ObjectionsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="bg-white border border-[#E2E8F0] rounded-2xl p-8 hover:border-[#2563EB] hover:shadow-[0_4px_16px_rgba(37,99,235,0.08)] transition-all duration-200"
+              className="glass-card rounded-2xl p-8 hover:border-primary/30 transition-all duration-200"
             >
-              <p className="text-[17px] font-bold text-[#0F172A] mb-3">{obj.objection}</p>
-              <p className="text-[15px] text-[#64748B] leading-[1.7]">
-                {obj.response} <span className="font-semibold text-[#0F172A]">{obj.highlight}</span>
+              <p className="text-[17px] font-bold text-foreground mb-3 font-display">{obj.objection}</p>
+              <p className="text-[15px] text-muted-foreground leading-[1.7]">
+                {obj.response} <span className="font-semibold text-foreground">{obj.highlight}</span>
               </p>
             </motion.div>
           ))}

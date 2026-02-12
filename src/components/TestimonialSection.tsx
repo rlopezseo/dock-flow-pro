@@ -30,15 +30,16 @@ const TestimonialSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-28 md:py-36 bg-white" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="py-28 md:py-36 relative" ref={ref}>
+      <div className="absolute inset-0 bg-background" />
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-[40px] font-extrabold text-[#0F172A] text-center leading-[1.12] tracking-[-0.02em] mb-14"
+          className="text-3xl md:text-[40px] font-bold text-foreground text-center leading-[1.12] tracking-[-0.02em] mb-14 font-display"
         >
-          What Operations Teams Say After 90 Days
+          What Operations Teams Say After <span className="text-primary">90 Days</span>
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -48,27 +49,27 @@ const TestimonialSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="bg-[#FAFBFC] border border-[#E2E8F0] rounded-2xl p-9"
+              className="glass-card rounded-2xl p-9 hover:border-primary/20 transition-colors"
             >
-              <span className="text-6xl text-[#E2E8F0] font-serif leading-none">"</span>
-              <p className="text-base font-medium text-[#0F172A] leading-[1.7] italic mt-2">
+              <span className="text-6xl text-border font-serif leading-none">"</span>
+              <p className="text-base font-medium text-foreground leading-[1.7] italic mt-2">
                 {t.quote}
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-[#2563EB]/10 border-2 border-[#E2E8F0] flex items-center justify-center text-sm font-bold text-[#2563EB]">
+                <div className="w-11 h-11 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-sm font-bold text-primary">
                   {t.initials}
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-[#0F172A]">{t.name}</p>
-                  <p className="text-[13px] text-[#64748B]">{t.title}</p>
-                  <p className="text-[11px] font-semibold text-[#F97316]">{t.scale}</p>
+                  <p className="text-sm font-bold text-foreground">{t.name}</p>
+                  <p className="text-[13px] text-muted-foreground">{t.title}</p>
+                  <p className="text-[11px] font-semibold text-accent">{t.scale}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <p className="text-xs text-[#94A3B8] text-center mt-8 italic">
+        <p className="text-xs text-muted-foreground/50 text-center mt-8 italic">
           *Results represent averages across TrucksOnTheMap customers in their first 90 days of operation.
         </p>
       </div>

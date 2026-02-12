@@ -59,16 +59,17 @@ const IndustryTabs = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-28 md:py-36 bg-white" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="py-28 md:py-36 relative" ref={ref}>
+      <div className="absolute inset-0 bg-surface" />
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-[40px] font-extrabold text-[#0F172A] leading-[1.12] tracking-[-0.02em]">
-            Dock Scheduling Software Built for Your Operation
+          <h2 className="text-3xl md:text-[40px] font-bold text-foreground leading-[1.12] tracking-[-0.02em] font-display">
+            Dock Scheduling Software Built for <span className="text-primary">Your Operation</span>
           </h2>
         </motion.div>
 
@@ -79,8 +80,8 @@ const IndustryTabs = () => {
               onClick={() => setActive(i)}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 ${
                 active === i
-                  ? "bg-[#0F172A] text-white font-semibold"
-                  : "border-[1.5px] border-[#E2E8F0] text-[#64748B] hover:border-[#CBD5E1] hover:text-[#0F172A]"
+                  ? "bg-primary text-primary-foreground font-semibold shadow-[0_4px_16px_hsl(217_91%_60%/0.3)]"
+                  : "border border-border text-muted-foreground hover:border-muted-foreground/30 hover:text-foreground"
               }`}
             >
               {ind.tab}
@@ -89,20 +90,20 @@ const IndustryTabs = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="rounded-2xl bg-gradient-to-br from-[#F8FAFC] to-[#EEF2FF] border border-[#E2E8F0] aspect-[4/3] flex items-center justify-center">
-            <p className="text-sm text-[#94A3B8]">{industries[active].tab} illustration</p>
+          <div className="rounded-2xl bg-gradient-to-br from-card to-background border border-border aspect-[4/3] flex items-center justify-center">
+            <p className="text-sm text-muted-foreground/50">{industries[active].tab} illustration</p>
           </div>
 
           <div>
             {industries[active].content.map((p, i) => (
-              <p key={i} className="text-base text-[#64748B] leading-[1.7] mb-4">{p}</p>
+              <p key={i} className="text-base text-muted-foreground leading-[1.7] mb-4">{p}</p>
             ))}
 
-            <p className="text-sm font-bold text-[#0F172A] mt-6 mb-3">Key capabilities:</p>
+            <p className="text-sm font-bold text-foreground mt-6 mb-3 font-display">Key capabilities:</p>
             <ul className="space-y-2">
               {industries[active].capabilities.map((cap) => (
-                <li key={cap} className="flex items-start gap-2 text-sm font-medium text-[#0F172A]">
-                  <Check className="w-4 h-4 text-[#10B981] mt-0.5 shrink-0" />
+                <li key={cap} className="flex items-start gap-2 text-sm font-medium text-foreground">
+                  <Check className="w-4 h-4 text-[hsl(var(--success))] mt-0.5 shrink-0" />
                   {cap}
                 </li>
               ))}
