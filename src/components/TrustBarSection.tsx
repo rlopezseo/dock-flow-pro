@@ -2,11 +2,10 @@ import { motion, useInView, animate } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const kpis = [
-  { target: 60, suffix: "%", label: "Less Dwell Time" },
-  { target: 80, suffix: "%", label: "Less Gate Waiting" },
-  { target: 85, suffix: "%+", label: "Dock Utilization" },
-  { target: 20, suffix: "×", label: "Faster Booking" },
-  { target: 0, suffix: "", label: "ISO 27001 Certified", isText: true },
+  { target: 500, suffix: "+", label: "Clients Worldwide" },
+  { target: 12, suffix: "", label: "Countries" },
+  { target: 3, suffix: "M+", label: "Shipments Managed" },
+  { target: 98, suffix: "%", label: "Customer Retention" },
 ];
 
 const Counter = ({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) => {
@@ -55,18 +54,7 @@ const TrustBarSection = () => {
               )}
 
               <span className="text-4xl md:text-5xl lg:text-[3.5rem] font-display font-light tracking-tight number-accent leading-none mb-2">
-                {kpi.isText ? (
-                  <motion.span
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.6, delay: 0.5, type: "spring" }}
-                    className="inline-flex w-12 h-12 md:w-14 md:h-14 items-center justify-center rounded-full border-2 border-primary/30 text-primary text-xl"
-                  >
-                    ✓
-                  </motion.span>
-                ) : (
-                  <Counter target={kpi.target} suffix={kpi.suffix} inView={inView} />
-                )}
+                <Counter target={kpi.target} suffix={kpi.suffix} inView={inView} />
               </span>
               <span className="text-[11px] md:text-xs font-body font-normal text-muted-foreground tracking-[0.15em] uppercase mt-1">
                 {kpi.label}
