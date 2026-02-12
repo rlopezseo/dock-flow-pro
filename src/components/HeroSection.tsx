@@ -31,7 +31,7 @@ const HeroSection = () => {
           <h1 className="text-4xl sm:text-5xl md:text-[4.5rem] font-display font-light leading-[1.08] tracking-tight mb-6 text-foreground">
             Dock scheduling is
             <br />
-            <span className="text-[#999]">a cost center</span> until
+            <span className="text-[#bbb]">a cost center</span> until
             <br />
             you automate it
           </h1>
