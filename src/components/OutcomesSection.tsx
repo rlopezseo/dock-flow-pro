@@ -1,51 +1,20 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Clock, BarChart3, UserCheck, Users, Truck, CalendarCheck } from "lucide-react";
+import { motion, useInView, animate } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { Clock, BarChart3, UserCheck, Users, Truck, CalendarCheck, ArrowUpRight } from "lucide-react";
 
-const outcomes = [
-  {
-    icon: Clock,
-    title: "Reduce Truck Wait Times",
-    description: "Cut carrier dwell time by up to 60% with automated time slot management and staggered arrivals.",
-    metric: "60%",
-    metricLabel: "less waiting",
-  },
-  {
-    icon: BarChart3,
-    title: "Maximize Dock Utilization",
-    description: "Push dock door utilization above 85% by eliminating gaps, no-shows, and scheduling blind spots.",
-    metric: "85%+",
-    metricLabel: "utilization",
-  },
-  {
-    icon: UserCheck,
-    title: "Fewer No-Shows",
-    description: "Automated reminders and carrier accountability reduce no-show rates to near zero.",
-    metric: "~0%",
-    metricLabel: "no-shows",
-  },
-  {
-    icon: Users,
-    title: "Smarter Labor Planning",
-    description: "Know exactly when trucks arrive so you can staff docks precisely — no more overtime surprises.",
-    metric: "30%",
-    metricLabel: "labor savings",
-  },
-  {
-    icon: Truck,
-    title: "Better Carrier Experience",
-    description: "Give carriers a self-service portal to book, reschedule, and check in — no phone calls needed.",
-    metric: "24/7",
-    metricLabel: "self-service",
-  },
-  {
-    icon: CalendarCheck,
-    title: "Complete Appointment Control",
-    description: "Enforce capacity rules by load type, dock door, and time window. Every slot is optimized automatically.",
-    metric: "100%",
-    metricLabel: "controlled",
-  },
-];
+const Counter = ({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) => {
+  const [display, setDisplay] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, target, {
+      duration: 2,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      onUpdate: (v) => setDisplay(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [inView, target]);
+  return <>{display}{suffix}</>;
+};
 
 const OutcomesSection = () => {
   const ref = useRef(null);
@@ -58,42 +27,148 @@ const OutcomesSection = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="max-w-2xl mb-16"
         >
+          <div className="accent-line w-12 mb-6" />
           <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
             What You Get
           </p>
-          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
-            Dock scheduling that delivers measurable results
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
+            Reduce truck wait times and maximize dock utilization — automatically
           </h2>
-          <div className="accent-line w-16 mx-auto mt-6" />
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {outcomes.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.08 * i }}
-              className="bg-card rounded-xl p-7 card-elevated transition-all duration-500 group relative overflow-hidden"
-            >
-              {/* Metric badge top-right */}
-              <div className="absolute top-5 right-5">
-                <div className="bg-gradient-to-br from-primary/8 to-primary/4 rounded-lg px-3 py-1.5">
-                  <span className="text-lg font-display font-light number-accent leading-none">{item.metric}</span>
-                  <p className="text-[9px] font-body text-muted-foreground tracking-wider uppercase">{item.metricLabel}</p>
-                </div>
-              </div>
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-auto">
 
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-5">
-                <item.icon className="w-5 h-5 text-primary" />
+          {/* HERO CARD — Reduce Wait Times (spans 7 cols) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="md:col-span-7 bg-gradient-to-br from-[hsl(207,60%,28%)] to-[hsl(207,45%,22%)] rounded-2xl p-8 md:p-10 relative overflow-hidden group"
+          >
+            {/* Decorative circles */}
+            <div className="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/5" />
+            <div className="absolute -right-8 -bottom-20 w-48 h-48 rounded-full bg-white/3" />
+
+            <div className="relative z-10">
+              <Clock className="w-7 h-7 text-white/60 mb-6" />
+              <div className="flex items-end gap-3 mb-4">
+                <span className="text-6xl md:text-7xl font-display font-light text-white leading-none">
+                  <Counter target={60} suffix="%" inView={inView} />
+                </span>
+                <span className="text-sm font-body font-normal text-white/50 mb-2">less dwell time</span>
               </div>
-              <h3 className="text-[13px] font-display font-normal text-foreground mb-2.5 tracking-wide">{item.title}</h3>
-              <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7] pr-16">{item.description}</p>
-            </motion.div>
-          ))}
+              <h3 className="text-lg md:text-xl font-display font-light text-white mb-3">
+                Reduce carrier dwell time with automated time slot management
+              </h3>
+              <p className="text-sm text-white/60 font-body font-normal leading-relaxed max-w-md">
+                Staggered arrivals, enforced buffer times, and smart dock allocation cut average wait from 2+ hours to under 50 minutes.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Dock Utilization (spans 5 cols) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="md:col-span-5 bg-card rounded-2xl p-8 card-elevated transition-all duration-500 relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+            <BarChart3 className="w-6 h-6 text-primary/40 mb-5" />
+            <div className="flex items-end gap-2 mb-3">
+              <span className="text-5xl font-display font-light number-accent leading-none">
+                <Counter target={85} suffix="%+" inView={inView} />
+              </span>
+            </div>
+            <h3 className="text-[13px] font-display font-normal text-foreground mb-2">Maximize dock door utilization</h3>
+            <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">
+              Eliminate idle gaps and fill every loading bay. Push utilization above 85% by removing scheduling blind spots.
+            </p>
+          </motion.div>
+
+          {/* No-Shows (spans 4 cols) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.16 }}
+            className="md:col-span-4 bg-card rounded-2xl p-7 card-elevated transition-all duration-500 relative overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+            <UserCheck className="w-6 h-6 text-primary/40 mb-4" />
+            <span className="block text-4xl font-display font-light number-accent leading-none mb-2">
+              <Counter target={0} suffix="%" inView={inView} />
+            </span>
+            <p className="text-[10px] font-body text-muted-foreground tracking-wider uppercase mb-3">no-show rate</p>
+            <h3 className="text-[13px] font-display font-normal text-foreground mb-1.5">Fewer carrier no-shows</h3>
+            <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">
+              Automated reminders and carrier accountability drive no-show rates to near zero.
+            </p>
+          </motion.div>
+
+          {/* Labor Planning (spans 4 cols) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.24 }}
+            className="md:col-span-4 bg-gradient-to-br from-primary/6 to-primary/2 border border-primary/10 rounded-2xl p-7 transition-all duration-500 hover:shadow-lg relative overflow-hidden"
+          >
+            <Users className="w-6 h-6 text-primary/40 mb-4" />
+            <span className="block text-4xl font-display font-light number-accent leading-none mb-2">
+              <Counter target={30} suffix="%" inView={inView} />
+            </span>
+            <p className="text-[10px] font-body text-muted-foreground tracking-wider uppercase mb-3">labor savings</p>
+            <h3 className="text-[13px] font-display font-normal text-foreground mb-1.5">Smarter workforce planning</h3>
+            <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">
+              Know exactly when trucks arrive. Staff docks precisely — no overtime surprises.
+            </p>
+          </motion.div>
+
+          {/* Carrier Portal + Appointment Control (spans 4 cols, stacked) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.32 }}
+            className="md:col-span-4 flex flex-col gap-4"
+          >
+            <div className="bg-card rounded-2xl p-6 card-elevated flex-1 relative overflow-hidden transition-all duration-500">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+              <Truck className="w-5 h-5 text-primary/40 mb-3" />
+              <span className="block text-2xl font-display font-light number-accent leading-none mb-1">24/7</span>
+              <h3 className="text-[12px] font-display font-normal text-foreground mb-1">Carrier self-service portal</h3>
+              <p className="text-[11px] text-muted-foreground font-body font-normal leading-relaxed">
+                Book, reschedule, check in — no phone calls.
+              </p>
+            </div>
+            <div className="bg-card rounded-2xl p-6 card-elevated flex-1 relative overflow-hidden transition-all duration-500">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+              <CalendarCheck className="w-5 h-5 text-primary/40 mb-3" />
+              <span className="block text-2xl font-display font-light number-accent leading-none mb-1">100%</span>
+              <h3 className="text-[12px] font-display font-normal text-foreground mb-1">Appointment control</h3>
+              <p className="text-[11px] text-muted-foreground font-body font-normal leading-relaxed">
+                Enforce capacity rules by load type and dock door.
+              </p>
+            </div>
+          </motion.div>
+
         </div>
+
+        {/* CTA inline */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-10 text-center"
+        >
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 text-sm font-body font-normal text-primary hover:text-primary/80 transition-colors"
+          >
+            See how it works <ArrowUpRight className="w-3.5 h-3.5" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

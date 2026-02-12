@@ -56,7 +56,7 @@ const ProblemSection = () => {
             The Problem
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
-            Why loading docks get congested
+            Why warehouse dock scheduling still fails without automation
           </h2>
           <p className="text-muted-foreground font-body font-normal text-sm leading-relaxed max-w-lg">
             Most warehouses still manage dock scheduling with phone calls, emails, and spreadsheets. The result is predictable — and expensive.

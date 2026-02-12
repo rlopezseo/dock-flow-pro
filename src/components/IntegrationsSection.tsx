@@ -35,7 +35,7 @@ const IntegrationsSection = () => {
             Integrations & Implementation
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
-            Connects to your existing stack — live in 7 weeks
+            WMS, TMS, and ERP integration — go live in 7 weeks
           </h2>
           <div className="accent-line w-16 mx-auto" />
         </motion.div>

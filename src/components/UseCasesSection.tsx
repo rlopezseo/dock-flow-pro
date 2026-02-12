@@ -67,7 +67,7 @@ const UseCasesSection = () => {
             Use Cases
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
-            Dock scheduling software for every operation
+            Yard management and dock scheduling for every industry
           </h2>
           <div className="accent-line w-16 mx-auto" />
         </motion.div>

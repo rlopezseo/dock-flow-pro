@@ -34,7 +34,7 @@ const CompareSection = () => {
             Compare
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
-            Dock scheduling software vs. spreadsheets and emails
+            Automated dock scheduling vs. spreadsheets and email
           </h2>
           <div className="accent-line w-16 mx-auto" />
         </motion.div>

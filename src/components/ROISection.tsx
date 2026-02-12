@@ -77,7 +77,7 @@ const ROISection = () => {
             The Business Case
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
-            Dock utilization optimization that pays for itself
+            Freight appointment booking ROI that pays for itself
           </h2>
           <p className="text-muted-foreground font-body font-normal text-sm">
             The ROI is clear. Here's what our customers achieve within the first 90 days.
