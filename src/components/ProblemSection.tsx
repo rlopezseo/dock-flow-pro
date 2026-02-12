@@ -14,25 +14,27 @@ const ProblemSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-28 md:py-36 bg-[#FAFBFC]" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="py-28 md:py-36 relative" ref={ref}>
+      <div className="absolute inset-0 bg-surface" />
+      <div className="absolute inset-0 dot-grid opacity-30" />
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-[40px] font-extrabold text-[#0F172A] leading-[1.12] tracking-[-0.02em] max-w-[640px] mx-auto">
-            Your Dock Is Running on Phone Calls, Spreadsheets, and Luck
+          <h2 className="text-3xl md:text-[40px] font-bold text-foreground leading-[1.12] tracking-[-0.02em] max-w-[640px] mx-auto font-display">
+            Your Dock Is Running on Phone Calls, Spreadsheets, and <span className="text-destructive">Luck</span>
           </h2>
-          <div className="text-lg text-[#64748B] leading-[1.7] max-w-[640px] mx-auto mt-8 space-y-4">
+          <div className="text-lg text-muted-foreground leading-[1.7] max-w-[640px] mx-auto mt-8 space-y-4">
             <p>
               It's 6:15 AM. Three trucks are already at the gate. Two more just called — they're 20 minutes out. Your receiving team doesn't start until 7. Nobody knows which truck goes to which door.
             </p>
             <p>
               By 9 AM, you have 6 drivers sitting in the yard, engines running, dispatchers calling you to complain. By Friday, one of those carriers stops accepting your loads.
             </p>
-            <p className="font-medium text-[#0F172A]">
+            <p className="font-medium text-foreground">
               This isn't a bad day. This is every day without dock scheduling.
             </p>
           </div>
@@ -45,18 +47,18 @@ const ProblemSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="bg-white border border-[#FEE2E2] rounded-2xl p-7 text-center"
+              className="glass-card rounded-2xl p-7 text-center border-destructive/20 hover:border-destructive/40 transition-colors"
             >
-              <div className="w-12 h-12 rounded-full bg-[#FEF2F2] mx-auto flex items-center justify-center">
-                <pain.icon className="w-5 h-5 text-[#DC2626]" />
+              <div className="w-12 h-12 rounded-full bg-destructive/10 mx-auto flex items-center justify-center">
+                <pain.icon className="w-5 h-5 text-destructive" />
               </div>
-              <p className="text-4xl font-extrabold text-[#DC2626] mt-4">{pain.value}</p>
-              <p className="text-[13px] text-[#64748B] mt-2 leading-snug">{pain.label}</p>
+              <p className="text-4xl font-bold text-destructive mt-4 font-display">{pain.value}</p>
+              <p className="text-[13px] text-muted-foreground mt-2 leading-snug">{pain.label}</p>
             </motion.div>
           ))}
         </div>
 
-        <p className="text-[11px] text-[#94A3B8] text-center mt-6">
+        <p className="text-[11px] text-muted-foreground/50 text-center mt-6">
           Sources: FTR Transportation Intelligence, DAT Freight Analytics
         </p>
       </div>

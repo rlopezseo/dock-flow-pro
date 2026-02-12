@@ -2,12 +2,13 @@ import { ArrowRight, Play } from "lucide-react";
 
 const FinalCTA = () => {
   return (
-    <section id="contact" className="px-6 md:px-10 py-28 md:py-36">
-      <div className="max-w-[1000px] mx-auto">
-        <div className="relative bg-gradient-to-br from-[#2563EB] to-[#1E3A8A] rounded-3xl px-8 md:px-16 py-20 text-center overflow-hidden shadow-[0_32px_64px_rgba(37,99,235,0.2)]">
+    <section id="contact" className="px-6 md:px-10 py-28 md:py-36 relative">
+      <div className="absolute inset-0 bg-surface" />
+      <div className="max-w-[1000px] mx-auto relative z-10">
+        <div className="relative bg-gradient-to-br from-primary to-[hsl(222_47%_20%)] rounded-3xl px-8 md:px-16 py-20 text-center overflow-hidden shadow-[0_32px_64px_hsl(217_91%_60%/0.2)]">
           <div className="absolute inset-0 dot-grid-light" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-[1.15]">
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-[1.15] font-display">
               Your Dock Has a Scheduling Problem.
               <br />
               Fix It This Week.
@@ -18,7 +19,7 @@ const FinalCTA = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-9">
               <a
                 href="mailto:ihaveaquestion@trucksonthemap.com"
-                className="inline-flex items-center gap-2 px-9 py-4 bg-white text-[#2563EB] font-bold text-base rounded-xl hover:bg-[#F8FAFC] hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-9 py-4 bg-white text-primary font-bold text-base rounded-xl hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-200"
               >
                 Book a Demo <ArrowRight className="w-4 h-4" />
               </a>

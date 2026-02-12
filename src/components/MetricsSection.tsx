@@ -33,16 +33,17 @@ const MetricsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 bg-[#0C1222] relative" ref={ref}>
-      <div className="absolute inset-0 dot-grid" />
+    <section className="py-24 relative" ref={ref}>
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+      <div className="absolute inset-0 dot-grid opacity-40" />
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-2xl md:text-4xl font-extrabold text-white text-center tracking-[-0.02em]"
+          className="text-2xl md:text-4xl font-bold text-foreground text-center tracking-[-0.02em] font-display"
         >
-          Dock Scheduling Results Measured in Days — Not Months
+          Dock Scheduling Results Measured in <span className="text-accent">Days</span> — Not Months
         </motion.h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14">
@@ -52,12 +53,12 @@ const MetricsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-9 text-center"
+              className="glass-card rounded-2xl p-9 text-center hover:border-accent/20 transition-colors"
             >
-              <p className="text-4xl md:text-[52px] font-extrabold text-[#F97316]">
+              <p className="text-4xl md:text-[52px] font-bold text-accent font-display">
                 <CountUp target={m.target} prefix={m.prefix} suffix={m.suffix} inView={inView} />
               </p>
-              <p className="text-sm text-[#94A3B8] mt-2">{m.label}</p>
+              <p className="text-sm text-muted-foreground mt-2">{m.label}</p>
             </motion.div>
           ))}
         </div>
