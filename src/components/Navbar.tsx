@@ -32,12 +32,12 @@ const Navbar = () => {
             <a href="/" className="flex items-center">
               <img src={logo} alt="TrucksOnTheMap" className="h-6 sm:h-7" />
             </a>
-            <div className="hidden md:flex items-center gap-5 text-xs text-muted-foreground font-body font-normal">
+            <div className="hidden md:flex items-center gap-6 text-xs text-muted-foreground font-body font-normal">
               <a href="/platform" className="hover:text-foreground transition-colors">platform</a>
-              <span className="text-white/20">|</span>
+              <a href="/solutions" className="hover:text-foreground transition-colors">solutions</a>
               <a href="/industries" className="hover:text-foreground transition-colors">industries</a>
-              <span className="text-white/20">|</span>
               <a href="/blog" className="hover:text-foreground transition-colors">blog</a>
+              <a href="/about" className="hover:text-foreground transition-colors">about</a>
             </div>
           </div>
 
