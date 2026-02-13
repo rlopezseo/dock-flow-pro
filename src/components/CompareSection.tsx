@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Check, X, ArrowRight } from "lucide-react";
+import { Check, X, ArrowRight, FileSpreadsheet, Mail } from "lucide-react";
+import iconTotm from "@/assets/icon-totm.png";
 
 const features = [
   "Automated dock scheduling",
@@ -47,8 +48,9 @@ const CompareSection = () => {
           {/* Manual / Old way */}
           <div className="rounded-2xl border border-border/60 bg-card p-8 relative">
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center">
-                <X className="w-5 h-5 text-muted-foreground/60" />
+              <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center gap-1">
+                <FileSpreadsheet className="w-4 h-4 text-muted-foreground/60" />
+                <Mail className="w-4 h-4 text-muted-foreground/60" />
               </div>
               <div>
                 <p className="text-sm font-display font-normal text-foreground">Spreadsheets & Email</p>
@@ -76,8 +78,8 @@ const CompareSection = () => {
               </span>
             </div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Check className="w-5 h-5 text-primary" />
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center overflow-hidden">
+                <img src={iconTotm} alt="TrucksOnTheMap" className="w-7 h-7 object-contain" />
               </div>
               <div>
                 <p className="text-sm font-display font-normal text-foreground">TrucksOnTheMap</p>

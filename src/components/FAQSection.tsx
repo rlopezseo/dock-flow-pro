@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import bgHowItWorks from "@/assets/bg-howitworks.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -68,13 +69,18 @@ const FAQSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-28" ref={ref}>
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      {/* Background image same as How It Works */}
+      <div className="absolute inset-0">
+        <img src={bgHowItWorks} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/85" />
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <div className="container max-w-4xl">
+      <div className="container max-w-4xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
