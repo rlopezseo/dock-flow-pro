@@ -1,83 +1,99 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Quote } from "lucide-react";
+import { Star } from "lucide-react";
+import bgTestimonials from "@/assets/bg-testimonials.jpg";
+import avatarForray from "@/assets/avatar-forray.jpg";
+import avatarDomonkos from "@/assets/avatar-domonkos.jpg";
+import avatarRafaj from "@/assets/avatar-rafaj.jpg";
 
 const testimonials = [
   {
-    quote: "TrucksOnTheMap made our freight management best-in-class. Speed, transparency and premium control — exactly what we needed.",
-    author: "Mr. T. Forray",
-    role: "Head of Supply Chain",
-    company: "Apollo Tyres",
-    metric: "60% faster dock turnaround",
+    quote: "TrucksOnTheMap made our freight management best-in-class. Speed, transparency and premium control.",
+    author: "Mr. T. Forray,",
+    role: "Head of Supply Chain, Apollo Tyres HU",
+    avatar: avatarForray,
   },
   {
-    quote: "\"Trucks\" is a must have for us. We can't imagine logistics without it, anymore. Our dock scheduling went from chaos to clockwork.",
-    author: "Mr. B. Rafaj",
-    role: "Production & Logistics Manager",
-    company: "Saint-Gobain Construction Products",
-    metric: "Zero scheduling conflicts",
+    quote: "The latest technology & beautiful design in every tool we create. So, road freight becomes fun again.",
+    author: "Mr. T. Domonkos, MBA,",
+    role: "CEO, TrucksOnTheMap",
+    avatar: avatarDomonkos,
   },
   {
-    quote: "The carrier self-service portal eliminated hundreds of phone calls per week. Our operations team finally focuses on what matters.",
-    author: "Logistics Director",
-    role: "Operations",
-    company: "European 3PL Provider",
-    metric: "85% dock utilization achieved",
+    quote: "With the online procurement we managed to cut costs and minimize the risk of disruption in our supply chain.",
+    author: "Mr. B. Rafaj,",
+    role: "Production and Logistics Manager, Saint-Gobain Construction Products SK",
+    avatar: avatarRafaj,
   },
 ];
+
+const Stars = () => (
+  <div className="flex gap-1 mb-4">
+    {[...Array(5)].map((_, i) => (
+      <Star key={i} className="w-4 h-4 fill-white/60 text-white/60" />
+    ))}
+  </div>
+);
 
 const ProofSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-28" ref={ref}>
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
-            Customer Stories
-          </p>
-          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
-            Trusted by supply chain leaders across Europe
-          </h2>
-        </motion.div>
+    <section className="relative overflow-hidden" ref={ref}>
+      {/* Full-width background image */}
+      <div className="relative w-full py-24 md:py-32">
+        <img
+          src={bgTestimonials}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[hsl(207,60%,10%)]/75" />
 
-        <div className="grid md:grid-cols-3 gap-4">
-          {testimonials.map((t, i) => (
-            <motion.blockquote
-              key={t.author}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 * i }}
-              className="bg-card rounded-xl p-8 flex flex-col justify-between card-elevated transition-all duration-500 relative overflow-hidden"
-            >
-              {/* Gradient accent top */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/20 via-primary/40 to-primary/20" />
+        <div className="container relative z-10">
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-white/50 font-body text-xs tracking-[0.25em] uppercase mb-14"
+          >
+            About TrucksOnTheMap firsthand
+          </motion.p>
 
-              <div>
-                <Quote className="w-6 h-6 text-primary/20 mb-5" />
-                <p className="text-sm text-foreground font-body font-normal leading-[1.8] mb-6">
+          <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            {testimonials.map((t, i) => (
+              <motion.blockquote
+                key={t.author}
+                initial={{ opacity: 0, y: 25 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.12 * i }}
+                className="flex flex-col"
+              >
+                {/* Quote mark */}
+                <span className="text-5xl font-display font-light text-white/30 leading-none mb-4">"</span>
+
+                <p className="text-lg md:text-xl font-display font-light text-white leading-relaxed mb-6 flex-1">
                   {t.quote}
                 </p>
-              </div>
-              <div>
-                <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-primary/8 to-primary/4 rounded-full mb-5 border border-primary/10">
-                  <span className="text-[10px] font-display text-primary tracking-wider uppercase">{t.metric}</span>
+
+                <Stars />
+
+                <div className="flex items-center gap-3 mt-2">
+                  <img
+                    src={t.avatar}
+                    alt={t.author}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
+                  />
+                  <div>
+                    <p className="text-sm font-body font-normal text-white">{t.author}</p>
+                    <p className="text-xs text-white/50 font-body font-normal leading-snug">{t.role}</p>
+                  </div>
                 </div>
-                <footer>
-                  <p className="text-[13px] font-display font-normal text-foreground">{t.author}</p>
-                  <p className="text-xs text-muted-foreground font-body mt-0.5">
-                    {t.role}, {t.company}
-                  </p>
-                </footer>
-              </div>
-            </motion.blockquote>
-          ))}
+              </motion.blockquote>
+            ))}
+          </div>
         </div>
       </div>
     </section>

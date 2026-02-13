@@ -1,13 +1,13 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { CalendarClock, Users, ScanLine, Plug, BarChart3, Check } from "lucide-react";
-import bgCapabilities from "@/assets/bg-capabilities.jpg";
 
 const groups = [
   {
     id: "appointments",
     icon: CalendarClock,
     title: "Appointment & Capacity Rules",
+    subtitle: "Full control over every dock door",
     features: [
       "Define time slots per dock door, load type, and direction",
       "Set maximum concurrent appointments and enforce buffer times",
@@ -19,6 +19,7 @@ const groups = [
     id: "carrier",
     icon: Users,
     title: "Carrier Self-Service Portal",
+    subtitle: "Zero friction for your carriers",
     features: [
       "24/7 online booking — no phone calls or emails required",
       "Carriers can reschedule, cancel, and view appointment history",
@@ -30,6 +31,7 @@ const groups = [
     id: "checkin",
     icon: ScanLine,
     title: "Check-In/Out & Visibility",
+    subtitle: "Real-time operational awareness",
     features: [
       "Digital gate check-in with driver ID and document capture",
       "Real-time dock status board: available, occupied, delayed",
@@ -41,6 +43,7 @@ const groups = [
     id: "integrations",
     icon: Plug,
     title: "Integrations — WMS, TMS, ERP",
+    subtitle: "Connects to your existing stack",
     features: [
       "API-first architecture for seamless WMS and TMS connectivity",
       "EDI support for legacy ERP systems (SAP, Oracle, JDE)",
@@ -52,6 +55,7 @@ const groups = [
     id: "reporting",
     icon: BarChart3,
     title: "Reporting & Analytics",
+    subtitle: "Data-driven dock optimization",
     features: [
       "Wait time dashboards: average dwell, peak hours, bottlenecks",
       "Dock utilization heatmaps by day, shift, and door",
@@ -63,20 +67,19 @@ const groups = [
 
 const CapabilitiesSection = () => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "-60px" });
   const [activeGroup, setActiveGroup] = useState("appointments");
 
   const active = groups.find((g) => g.id === activeGroup) || groups[0];
 
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
-      {/* Header */}
-      <div className="container relative z-10 mb-14">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto"
+          className="text-center max-w-2xl mx-auto mb-16"
         >
           <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-4">
             Key Capabilities
@@ -85,93 +88,81 @@ const CapabilitiesSection = () => {
             Dock door scheduling capabilities built for every operation
           </h2>
         </motion.div>
-      </div>
 
-      {/* Full-width immersive block */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={active.id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-          className="relative w-full"
-        >
-          <div className="relative w-full h-[520px] md:h-[560px] overflow-hidden">
-            <motion.img
-              src={bgCapabilities}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(207,60%,10%)]/90 via-[hsl(207,60%,10%)]/70 to-[hsl(207,60%,10%)]/40" />
+        {/* Icon row — clickable capability cards */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
+          {groups.map((g, i) => (
+            <motion.button
+              key={g.id}
+              initial={{ opacity: 0, y: 15 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 0.06 * i }}
+              onClick={() => setActiveGroup(g.id)}
+              className={`relative rounded-xl p-5 text-center transition-all duration-400 group ${
+                activeGroup === g.id
+                  ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20"
+                  : "bg-card card-elevated text-foreground hover:shadow-lg hover:-translate-y-0.5"
+              }`}
+            >
+              <g.icon className={`w-7 h-7 mx-auto mb-3 ${activeGroup === g.id ? "text-white" : "text-primary"}`} />
+              <span className="block text-[11px] md:text-xs font-body font-normal leading-tight">
+                {g.title.length > 25 ? g.title.split(" — ")[0] : g.title}
+              </span>
+            </motion.button>
+          ))}
+        </div>
 
-            {/* Content */}
-            <div className="absolute inset-0 flex items-center">
-              <div className="container">
-                <div className="max-w-xl">
-                  <motion.div
-                    key={active.id + "-content"}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.45, delay: 0.1 }}
-                  >
-                    {/* Active capability badge */}
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white text-[10px] font-body tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6">
-                      <active.icon className="w-3.5 h-3.5" />
-                      {active.title}
-                    </div>
+        {/* Expanded detail panel */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.35 }}
+            className="bg-card rounded-2xl overflow-hidden shadow-[0_4px_24px_hsl(220_20%_50%/0.08),0_16px_48px_hsl(220_20%_50%/0.05)]"
+          >
+            <div className="grid md:grid-cols-2">
+              {/* Left: visual info panel */}
+              <div className="bg-gradient-to-br from-[hsl(207,60%,28%)] to-[hsl(207,45%,18%)] p-10 md:p-12 flex flex-col justify-center relative overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5" />
+                <div className="absolute -left-10 -bottom-16 w-48 h-48 rounded-full bg-white/3" />
 
-                    <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-8 leading-snug">
-                      {active.title}
-                    </h3>
+                <div className="relative z-10">
+                  <active.icon className="w-10 h-10 text-white/50 mb-6" />
+                  <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-3 leading-snug">
+                    {active.title}
+                  </h3>
+                  <p className="text-sm text-white/60 font-body font-normal">
+                    {active.subtitle}
+                  </p>
+                </div>
+              </div>
 
-                    <div className="space-y-4">
-                      {active.features.map((feat, i) => (
-                        <motion.div
-                          key={feat}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: 0.06 * i + 0.15 }}
-                          className="flex items-start gap-3"
-                        >
-                          <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                            <Check className="w-3 h-3 text-white/80" />
-                          </div>
-                          <span className="text-[13px] md:text-sm font-body font-normal text-white/85 leading-relaxed">{feat}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
+              {/* Right: feature list */}
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <div className="space-y-5">
+                  {active.features.map((feat, i) => (
+                    <motion.div
+                      key={feat}
+                      initial={{ opacity: 0, x: 12 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.07 * i + 0.1 }}
+                      className="flex items-start gap-4"
+                    >
+                      <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-primary" />
+                      </div>
+                      <span className="text-sm text-muted-foreground font-body font-normal leading-relaxed">{feat}</span>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Tabs overlapping bottom */}
-          <div className="relative z-10 -mt-7">
-            <div className="container">
-              <div className="flex flex-wrap justify-center gap-2">
-                {groups.map((g) => (
-                  <button
-                    key={g.id}
-                    onClick={() => setActiveGroup(g.id)}
-                    className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs font-body font-normal transition-all duration-400 shadow-lg ${
-                      activeGroup === g.id
-                        ? "bg-primary text-primary-foreground shadow-primary/25"
-                        : "bg-card text-foreground hover:shadow-xl"
-                    }`}
-                  >
-                    <g.icon className="w-3.5 h-3.5" />
-                    <span className="hidden sm:inline">{g.title}</span>
-                    <span className="sm:hidden">{g.title.split(" ")[0]}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </section>
   );
 };
