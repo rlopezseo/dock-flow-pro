@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/logo-trucksonthemap.png";
+import MegaMenu from "./MegaMenu";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,13 +40,7 @@ const Navbar = () => {
             <a href="/" className="flex items-center">
               <img src={logo} alt="TrucksOnTheMap" className="h-6 sm:h-7" />
             </a>
-            <div className="hidden lg:flex items-center gap-6 text-xs text-muted-foreground font-body font-normal">
-              <a href="/platform" className="hover:text-foreground transition-colors">platform</a>
-              <a href="/solutions" className="hover:text-foreground transition-colors">solutions</a>
-              <a href="/industries" className="hover:text-foreground transition-colors">industries</a>
-              <a href="/blog" className="hover:text-foreground transition-colors">blog</a>
-              <a href="/about" className="hover:text-foreground transition-colors">about</a>
-            </div>
+            <MegaMenu />
           </div>
 
           <div className="hidden lg:flex items-center gap-6">
