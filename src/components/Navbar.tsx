@@ -26,7 +26,7 @@ const Navbar = () => {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-[hsl(220,20%,7%)]/40 backdrop-blur-md border-b border-white/15">
+      <nav className="border-b border-white/15">
         <div className="container flex items-center justify-between py-3">
           <div className="flex items-center gap-10">
             <a href="/" className="flex items-center">
