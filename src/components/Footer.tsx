@@ -6,10 +6,10 @@ const Footer = () => {
     <footer className="border-t border-border">
       <div className="container py-16">
         {/* Main grid: Brand | Platform | Industries | Resources | Company */}
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 mb-14">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-10 mb-14">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-3 pr-0 md:pr-6">
-            <img src={logo} alt="TrucksOnTheMap" className="h-6 mb-4 grayscale opacity-70" />
+          <div className="col-span-2 md:col-span-4 pr-0 md:pr-8">
+            <img src={logo} alt="TrucksOnTheMap" className="h-7 mb-4" />
             <p className="text-[13px] text-muted-foreground font-body font-normal leading-relaxed">
               TrucksOnTheMap is the all-in-one logistics platform that helps shippers, carriers, and warehouses coordinate dock scheduling, gain real-time freight visibility, and optimise time slot management across Europe. From inbound coordination to last-mile tracking, we bring transparency to every mile.
             </p>
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
 
           {/* Company */}
-          <div className="col-span-1 md:col-span-3">
+          <div className="col-span-1 md:col-span-2">
             <p className="text-xs font-display font-normal text-foreground tracking-[0.15em] uppercase mb-4">Company</p>
             <ul className="space-y-2.5">
               <li><a href="/about" className="text-[13px] text-muted-foreground hover:text-primary font-body font-normal transition-colors">About Us</a></li>
