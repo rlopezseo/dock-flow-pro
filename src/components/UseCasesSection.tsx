@@ -65,13 +65,12 @@ const UseCasesSection = () => {
 
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
-      {/* Header inside container */}
-      <div className="container relative z-10 mb-14">
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto"
+          className="text-center max-w-2xl mx-auto mb-14"
         >
           <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-4">
             Use Cases
@@ -80,109 +79,101 @@ const UseCasesSection = () => {
             Yard management and dock scheduling for every industry
           </h2>
         </motion.div>
-      </div>
 
-      {/* Full-width immersive block */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={active.id}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-          className="relative w-full"
-        >
-          {/* Full-bleed background image */}
-          <div className="relative w-full h-[520px] md:h-[580px] overflow-hidden">
-            <motion.img
-              key={active.image}
-              src={active.image}
-              alt={active.label}
-              className="absolute inset-0 w-full h-full object-cover"
-              initial={{ scale: 1.05, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-            />
-            {/* Dark overlay for legibility */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(207,60%,12%)]/85 via-[hsl(207,60%,12%)]/60 to-transparent" />
-            {/* Bottom fade */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(207,60%,12%)]/40 to-transparent" />
+        {/* Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {useCases.map((uc) => (
+            <button
+              key={uc.id}
+              onClick={() => setActiveCase(uc.id)}
+              className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-body font-normal transition-all duration-400 ${
+                activeCase === uc.id
+                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                  : "bg-card card-elevated text-foreground hover:shadow-md"
+              }`}
+            >
+              <uc.icon className="w-3.5 h-3.5" />
+              {uc.label}
+            </button>
+          ))}
+        </div>
 
-            {/* Content overlay */}
-            <div className="absolute inset-0 flex items-center">
-              <div className="container">
-                <div className="max-w-xl">
-                  <motion.div
-                    key={active.id + "-content"}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                  >
-                    {/* Industry badge */}
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white text-[10px] font-body tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6">
-                      <active.icon className="w-3.5 h-3.5" />
-                      {active.label}
-                    </div>
+        {/* Content block — wider */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35 }}
+            className="max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-[0_4px_24px_hsl(220_20%_50%/0.08),0_16px_56px_hsl(220_20%_50%/0.06)]"
+          >
+            <div className="grid md:grid-cols-2">
+              {/* Image — 50% */}
+              <div className="relative h-72 md:h-[500px] overflow-hidden">
+                <motion.img
+                  key={active.image}
+                  src={active.image}
+                  alt={active.label}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  initial={{ scale: 1.06, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.7 }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 hidden md:block" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent md:hidden" />
 
-                    <h3 className="text-2xl md:text-4xl font-display font-light text-white mb-4 leading-snug">
-                      {active.headline}
-                    </h3>
-                    <p className="text-sm md:text-base text-white/70 font-body font-normal leading-relaxed mb-8 max-w-md">
-                      {active.description}
-                    </p>
-
-                    <div className="grid grid-cols-2 gap-3 mb-8">
-                      {active.benefits.map((b, i) => (
-                        <motion.div
-                          key={b}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: 0.06 * i + 0.2 }}
-                          className="flex items-center gap-2.5"
-                        >
-                          <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                            <Check className="w-3 h-3 text-white/80" />
-                          </div>
-                          <span className="text-[12px] md:text-[13px] font-body font-normal text-white/90">{b}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xs font-body font-normal px-6 py-3 rounded-full transition-all duration-300 tracking-wide"
-                    >
-                      Learn more <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
-                  </motion.div>
+                {/* Industry badge */}
+                <div className="absolute top-6 left-6 bg-primary/90 backdrop-blur-sm text-white text-[10px] font-body tracking-[0.15em] uppercase px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
+                  <active.icon className="w-3.5 h-3.5" />
+                  {active.label}
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Tabs bar at bottom, overlapping image */}
-          <div className="relative z-10 -mt-8">
-            <div className="container">
-              <div className="flex flex-wrap justify-center gap-2">
-                {useCases.map((uc) => (
-                  <button
-                    key={uc.id}
-                    onClick={() => setActiveCase(uc.id)}
-                    className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs font-body font-normal transition-all duration-400 shadow-lg ${
-                      activeCase === uc.id
-                        ? "bg-primary text-primary-foreground shadow-primary/25"
-                        : "bg-card text-foreground hover:shadow-xl"
-                    }`}
+              {/* Text content — 50% */}
+              <div className="bg-card p-8 md:p-12 flex flex-col justify-center">
+                <motion.div
+                  key={active.id + "-text"}
+                  initial={{ opacity: 0, x: 15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                >
+                  <h3 className="text-xl md:text-[1.75rem] font-display font-light text-foreground mb-4 leading-snug">
+                    {active.headline}
+                  </h3>
+                  <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed mb-8">
+                    {active.description}
+                  </p>
+
+                  <div className="space-y-3.5 mb-8">
+                    {active.benefits.map((b, i) => (
+                      <motion.div
+                        key={b}
+                        initial={{ opacity: 0, x: 12 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: 0.06 * i + 0.15 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                          <Check className="w-3 h-3 text-primary" />
+                        </div>
+                        <span className="text-[13px] font-body font-normal text-foreground">{b}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-xs font-body font-normal text-primary hover:text-primary/80 transition-colors tracking-wide"
                   >
-                    <uc.icon className="w-3.5 h-3.5" />
-                    {uc.label}
-                  </button>
-                ))}
+                    Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </motion.div>
               </div>
             </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </section>
   );
 };
