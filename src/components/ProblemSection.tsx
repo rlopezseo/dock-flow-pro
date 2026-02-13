@@ -79,17 +79,8 @@ const ProblemSection = () => {
               {/* Top accent */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 transition-all duration-500 ${
-                item.title === "Excel & Email Scheduling" 
-                  ? "bg-gradient-to-br from-[hsl(140,60%,40%)]/15 to-[hsl(140,60%,40%)]/5 group-hover:from-[hsl(140,60%,40%)]/20 group-hover:to-[hsl(140,60%,40%)]/10" 
-                  : "bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/15 group-hover:to-primary/8"
-              }`}>
-                <item.icon className={`w-5 h-5 ${
-                  item.title === "Excel & Email Scheduling" ? "text-[hsl(140,60%,35%)]"
-                  : item.title === "Carrier No-Shows & Late Arrivals" ? "text-[hsl(0,65%,50%)]"
-                  : item.title === "Detention & Demurrage Costs" ? "text-[hsl(40,85%,50%)]"
-                  : "text-primary"
-                }`} />
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-5 group-hover:from-primary/15 group-hover:to-primary/8 transition-all duration-500">
+                <item.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-[13px] font-display font-normal text-foreground mb-2.5 tracking-wide">{item.title}</h3>
               <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">{item.description}</p>
