@@ -16,14 +16,14 @@ const LogoCarouselSection = () => {
   const allLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="relative bg-[hsl(220,20%,7%)] py-14 overflow-hidden">
-      <p className="text-center text-xs font-body font-normal tracking-[0.25em] uppercase text-white/40 mb-10">
+    <section className="relative bg-primary py-14 overflow-hidden">
+      <p className="text-center text-xs font-body font-normal tracking-[0.25em] uppercase text-white/50 mb-10">
         Trusted by Industry Leaders
       </p>
 
       {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-[hsl(220,20%,7%)] to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-[hsl(220,20%,7%)] to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-primary to-transparent pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-primary to-transparent pointer-events-none" />
 
       <div className="flex animate-logo-scroll items-center">
         {allLogos.map((logo, i) => (
