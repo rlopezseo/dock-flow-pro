@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import logo from "@/assets/logo-trucksonthemap.png";
 
 const Footer = () => {
@@ -13,14 +13,6 @@ const Footer = () => {
             <p className="text-[13px] text-muted-foreground font-body font-normal leading-relaxed">
               The all-in-one platform for dock scheduling, freight visibility, and time slot management across Europe.
             </p>
-            <div className="mt-5 space-y-2">
-              <a href="tel:+442038078493" className="flex items-center gap-2 text-xs text-primary font-body font-normal">
-                <Phone className="w-3 h-3" /> +44 (20) 3807 84 93
-              </a>
-              <a href="mailto:ihaveaquestion@trucksonthemap.com" className="flex items-center gap-2 text-xs text-primary font-body font-normal">
-                <Mail className="w-3 h-3" /> ihaveaquestion@trucksonthemap.com
-              </a>
-            </div>
           </div>
 
           {/* Platform */}
