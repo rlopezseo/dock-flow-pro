@@ -50,7 +50,7 @@ const ProofSection = () => {
           loading="lazy"
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-[hsl(207,60%,10%)]/75" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/75" />
 
         <div className="container relative z-10">
           <motion.p
