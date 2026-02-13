@@ -204,8 +204,8 @@ const PanelContent = ({ config, menuKey }: { config: PanelConfig; menuKey: strin
             />
           </div>
           <div>
-            <p className="text-sm font-display font-normal text-foreground mb-1.5">{config.featured.title}</p>
-            <p className="text-[11px] text-muted-foreground font-body leading-relaxed mb-5">{config.featured.desc}</p>
+            <p className="text-sm font-display font-normal text-[hsl(207,30%,12%)] mb-1.5">{config.featured.title}</p>
+            <p className="text-[11px] text-[hsl(207,15%,50%)] font-body leading-relaxed mb-5">{config.featured.desc}</p>
           </div>
           <a
             href={config.featured.href}
@@ -229,10 +229,10 @@ const MenuLink = ({ item }: { item: MenuItem }) => (
       <item.icon className="w-4 h-4 text-primary" />
     </div>
     <div className="min-w-0">
-      <p className="text-[13px] font-display font-normal text-foreground group-hover:text-primary transition-colors duration-200">
+      <p className="text-[13px] font-display font-normal text-[hsl(207,30%,12%)] group-hover:text-primary transition-colors duration-200">
         {item.title}
       </p>
-      <p className="text-[11px] text-muted-foreground font-body leading-snug mt-0.5">{item.desc}</p>
+      <p className="text-[11px] text-[hsl(207,15%,55%)] font-body leading-snug mt-0.5">{item.desc}</p>
     </div>
   </a>
 );
