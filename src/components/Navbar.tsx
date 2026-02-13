@@ -73,7 +73,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-[hsl(210,20%,8%/0.95)] backdrop-blur-xl border-b border-white/15"
+            className="md:hidden bg-[hsl(210,20%,8%)] border-b border-white/15"
           >
             <div className="container py-6 flex flex-col gap-4">
               <a href="/" className="text-foreground font-body font-normal py-2">home</a>
