@@ -140,8 +140,13 @@ const MegaMenu = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
             onMouseEnter={cancelClose}
             onMouseLeave={close}
-            className="fixed left-1/2 -translate-x-1/2 mt-1 z-[100]"
-            style={{ top: containerRef.current ? containerRef.current.getBoundingClientRect().bottom + window.scrollY : 80, width: "780px" }}
+            className="fixed z-[100]"
+            style={{
+              top: containerRef.current ? containerRef.current.getBoundingClientRect().bottom + 4 : 80,
+              left: "50%",
+              marginLeft: "-390px",
+              width: "780px",
+            }}
           >
             <div className="bg-white rounded-2xl shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.04)] overflow-hidden">
               <AnimatePresence mode="wait">
