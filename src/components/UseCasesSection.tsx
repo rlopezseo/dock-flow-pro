@@ -173,6 +173,21 @@ const UseCasesSection = () => {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-14"
+        >
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground rounded-full text-sm font-body font-normal hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+          >
+            Get Started with Your Industry <ArrowRight className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

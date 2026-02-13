@@ -36,10 +36,12 @@ const Navbar = () => {
       {/* Main nav */}
       <nav className={`border-b transition-colors duration-500 ${scrolled ? "border-white/10" : "border-white/5"}`}>
         <div className="container flex items-center justify-between py-3">
-          <div className="flex items-center gap-10">
-            <a href="/" className="flex items-center">
-              <img src={logo} alt="TrucksOnTheMap" className="h-6 sm:h-7" />
-            </a>
+          <a href="/" className="flex items-center shrink-0">
+            <img src={logo} alt="TrucksOnTheMap" className="h-6 sm:h-7" />
+          </a>
+
+          {/* Centered nav */}
+          <div className="hidden lg:flex flex-1 justify-center">
             <MegaMenu />
           </div>
 
