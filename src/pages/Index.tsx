@@ -5,6 +5,7 @@ import LogoCarouselSection from "@/components/LogoCarouselSection";
 import ProblemSection from "@/components/ProblemSection";
 import OutcomesSection from "@/components/OutcomesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import CTABannerSection from "@/components/CTABannerSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import UseCasesSection from "@/components/UseCasesSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
@@ -27,6 +28,7 @@ const Index = () => {
           <OutcomesSection />
           <LogoCarouselSection />
           <HowItWorksSection />
+          <CTABannerSection />
           <CapabilitiesSection />
           <UseCasesSection />
           <IntegrationsSection />
