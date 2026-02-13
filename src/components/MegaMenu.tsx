@@ -9,9 +9,14 @@ import {
 
 import imgDock from "@/assets/features-dock.jpg";
 import imgRetail from "@/assets/usecase-retail.jpg";
+import imgColdchain from "@/assets/usecase-coldchain.jpg";
+import imgManufacturing from "@/assets/usecase-manufacturing.jpg";
+import img3pl from "@/assets/usecase-3pl.jpg";
 
 /* ─── Menu Data ─── */
-const platformItems = [
+type MenuItem = { icon: typeof CalendarClock; title: string; desc: string; href: string };
+
+const platformItems: MenuItem[] = [
   { icon: CalendarClock, title: "Dock Scheduling", desc: "Automated appointment booking & capacity management", href: "/dock-scheduling" },
   { icon: Eye, title: "Freight Visibility", desc: "Real-time tracking from gate to departure", href: "/freight-visibility" },
   { icon: Truck, title: "Load Matching", desc: "Reduce empty miles with intelligent matching", href: "/load-matching" },
@@ -20,7 +25,7 @@ const platformItems = [
   { icon: Plug, title: "API & Integrations", desc: "Connect SAP, Oracle, WMS, TMS & more", href: "/api-integrations" },
 ];
 
-const solutionsItems = [
+const solutionsItems: MenuItem[] = [
   { icon: Package, title: "3PL & Logistics", desc: "Multi-client dock management at scale", href: "/solutions/3pl" },
   { icon: ArrowDownUp, title: "Inbound & Outbound", desc: "Unified scheduling for both directions", href: "/solutions/inbound-outbound" },
   { icon: Snowflake, title: "Cold Chain", desc: "Temperature-controlled dock operations", href: "/solutions/cold-chain" },
@@ -28,7 +33,7 @@ const solutionsItems = [
   { icon: ShoppingCart, title: "Retail Distribution", desc: "High-volume DC appointment management", href: "/solutions/retail" },
 ];
 
-const industriesItems = [
+const industriesItems: MenuItem[] = [
   { icon: Factory, title: "Automotive & JIT", desc: "Just-in-time supply chain precision", href: "/industries/automotive" },
   { icon: Pill, title: "Pharmaceutical", desc: "Compliance-ready scheduling", href: "/industries/pharmaceutical" },
   { icon: ShoppingCart, title: "FMCG & Retail", desc: "Peak season capacity planning", href: "/industries/fmcg-retail" },
@@ -37,7 +42,7 @@ const industriesItems = [
   { icon: Package, title: "3PL Providers", desc: "Multi-tenant warehouse scheduling", href: "/industries/3pl" },
 ];
 
-const resourcesItems = [
+const resourcesItems: MenuItem[] = [
   { icon: BookOpen, title: "Blog", desc: "Insights on dock scheduling & logistics", href: "/blog" },
   { icon: FileText, title: "Case Studies", desc: "Real results from real customers", href: "/resources/case-studies" },
   { icon: BookOpen, title: "Glossary", desc: "Logistics terminology explained", href: "/resources/glossary" },
@@ -45,7 +50,7 @@ const resourcesItems = [
   { icon: Calculator, title: "Empty Miles Calculator", desc: "Calculate your waste reduction", href: "/tools/empty-miles-calculator" },
 ];
 
-const companyItems = [
+const companyItems: MenuItem[] = [
   { icon: Users, title: "About Us", desc: "Our mission & team", href: "/about" },
   { icon: Users, title: "Careers", desc: "Join our growing team", href: "/careers" },
   { icon: Handshake, title: "Partners", desc: "Partner ecosystem", href: "/partners" },
@@ -53,111 +58,105 @@ const companyItems = [
   { icon: Mail, title: "Contact", desc: "Get in touch", href: "#contact" },
 ];
 
-type MenuItem = { icon: typeof CalendarClock; title: string; desc: string; href: string };
-
-interface MenuConfig {
+interface PanelConfig {
   items: MenuItem[];
   featured?: { image: string; title: string; desc: string; href: string; label: string };
   columns?: number;
+  cta?: { icon: typeof DollarSign; text: string; href: string };
 }
 
-const menuConfigs: Record<string, MenuConfig> = {
+const panels: Record<string, PanelConfig> = {
   platform: {
     items: platformItems,
-    featured: {
-      image: imgDock,
-      title: "See the platform in action",
-      desc: "Watch how TrucksOnTheMap transforms dock scheduling from chaos to clockwork.",
-      href: "#contact",
-      label: "Request a Demo",
-    },
+    featured: { image: imgDock, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms dock scheduling from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
+    cta: { icon: DollarSign, text: "View Pricing", href: "/pricing" },
   },
   solutions: {
     items: solutionsItems,
-    featured: {
-      image: imgRetail,
-      title: "Find your use case",
-      desc: "Every operation is different. Discover the solution built for yours.",
-      href: "/solutions",
-      label: "Explore Solutions",
-    },
+    featured: { image: imgRetail, title: "Find your use case", desc: "Every operation is different. Discover the solution built for yours.", href: "/solutions", label: "Explore Solutions" },
   },
   industries: {
     items: industriesItems,
     columns: 2,
+    featured: { image: imgManufacturing, title: "Industry expertise", desc: "Dock scheduling solutions tailored to your sector's unique demands.", href: "/industries", label: "All Industries" },
   },
   blog: {
     items: resourcesItems,
+    featured: { image: imgColdchain, title: "Latest insights", desc: "Stay ahead with logistics intelligence, case studies, and tools.", href: "/blog", label: "Read the Blog" },
   },
   about: {
     items: companyItems,
+    featured: { image: img3pl, title: "Our story", desc: "Built by logistics professionals, for logistics professionals.", href: "/about", label: "Learn More" },
   },
 };
+
+const menuKeys = ["platform", "solutions", "industries", "blog", "about"];
 
 /* ─── Component ─── */
 const MegaMenu = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleEnter = useCallback((key: string) => {
+  const open = useCallback((key: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setActiveMenu(key);
   }, []);
 
-  const handleLeave = useCallback(() => {
-    timeoutRef.current = setTimeout(() => setActiveMenu(null), 150);
+  const close = useCallback(() => {
+    timeoutRef.current = setTimeout(() => setActiveMenu(null), 180);
   }, []);
 
-  const handlePanelEnter = useCallback(() => {
+  const cancelClose = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   }, []);
 
-  const menuKeys = ["platform", "solutions", "industries", "blog", "about"];
+  const isOpen = activeMenu !== null;
 
   return (
-    <div className="hidden lg:flex items-center gap-1 relative">
+    <div ref={containerRef} className="hidden lg:flex items-center gap-0.5 relative" onMouseLeave={close}>
+      {/* Nav buttons */}
       {menuKeys.map((key) => (
-        <div
+        <button
           key={key}
-          onMouseEnter={() => handleEnter(key)}
-          onMouseLeave={handleLeave}
-          className="relative"
+          onMouseEnter={() => open(key)}
+          className={`px-3.5 py-2 text-xs font-body font-normal transition-colors duration-200 rounded-md ${
+            activeMenu === key
+              ? "text-foreground bg-white/10"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
         >
-          <button
-            className={`px-3 py-2 text-xs font-body font-normal transition-colors duration-200 rounded-md ${
-              activeMenu === key
-                ? "text-foreground bg-white/10"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            {key}
-          </button>
-        </div>
+          {key}
+        </button>
       ))}
 
-      {/* Dropdown Panel */}
+      {/* Single fixed-size panel — content crossfades */}
       <AnimatePresence>
-        {activeMenu && menuConfigs[activeMenu] && (
+        {isOpen && (
           <motion.div
-            key={activeMenu}
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
+            exit={{ opacity: 0, y: 6 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            onMouseEnter={handlePanelEnter}
-            onMouseLeave={handleLeave}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-[100]"
-            style={{ minWidth: menuConfigs[activeMenu].featured ? "720px" : "420px" }}
+            onMouseEnter={cancelClose}
+            onMouseLeave={close}
+            className="fixed left-1/2 -translate-x-1/2 mt-1 z-[100]"
+            style={{ top: containerRef.current ? containerRef.current.getBoundingClientRect().bottom + window.scrollY : 80, width: "780px" }}
           >
-            {/* Arrow */}
-            <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 rounded-sm shadow-sm" />
-
             <div className="bg-white rounded-2xl shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.04)] overflow-hidden">
-              {menuConfigs[activeMenu].featured ? (
-                <FeaturedPanel config={menuConfigs[activeMenu]} />
-              ) : (
-                <SimplePanel config={menuConfigs[activeMenu]} />
-              )}
+              <AnimatePresence mode="wait">
+                {activeMenu && (
+                  <motion.div
+                    key={activeMenu}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <PanelContent config={panels[activeMenu]} menuKey={activeMenu} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
         )}
@@ -166,69 +165,69 @@ const MegaMenu = () => {
   );
 };
 
-/* ─── Panel with Featured Image ─── */
-const FeaturedPanel = ({ config }: { config: MenuConfig }) => (
-  <div className="grid grid-cols-5">
-    {/* Links */}
-    <div className="col-span-3 p-5">
-      <div className="space-y-0.5">
+/* ─── Universal Panel Layout ─── */
+const PanelContent = ({ config, menuKey }: { config: PanelConfig; menuKey: string }) => (
+  <div className="grid grid-cols-5 min-h-[340px]">
+    {/* Left — Links */}
+    <div className="col-span-3 p-6 flex flex-col">
+      <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-gray-400 mb-3 px-3">
+        {menuKey}
+      </p>
+      <div className={`flex-1 ${config.columns === 2 ? "grid grid-cols-2 gap-x-2 gap-y-0.5 content-start" : "space-y-0.5"}`}>
         {config.items.map((item) => (
           <MenuLink key={item.title} item={item} />
         ))}
       </div>
-      <div className="mt-4 pt-3 border-t border-gray-100">
-        <a href="/pricing" className="flex items-center gap-2 px-3 py-2 text-xs font-body text-primary hover:text-primary/80 transition-colors">
-          <DollarSign className="w-3.5 h-3.5" /> View Pricing <ArrowRight className="w-3 h-3 ml-auto" />
-        </a>
-      </div>
+      {config.cta && (
+        <div className="mt-auto pt-3 border-t border-gray-100">
+          <a href={config.cta.href} className="flex items-center gap-2 px-3 py-2 text-xs font-body text-primary hover:text-primary/80 transition-colors">
+            <config.cta.icon className="w-3.5 h-3.5" /> {config.cta.text} <ArrowRight className="w-3 h-3 ml-auto" />
+          </a>
+        </div>
+      )}
     </div>
 
-    {/* Featured card */}
-    <div className="col-span-2 bg-gray-50 p-5 flex flex-col">
-      <div className="rounded-xl overflow-hidden mb-4 flex-shrink-0">
-        <img
-          src={config.featured!.image}
-          alt={config.featured!.title}
-          className="w-full h-32 object-cover hover:scale-105 transition-transform duration-500"
-        />
-      </div>
-      <p className="text-sm font-display font-normal text-gray-900 mb-1.5">{config.featured!.title}</p>
-      <p className="text-[11px] text-gray-500 font-body leading-relaxed mb-4">{config.featured!.desc}</p>
-      <a
-        href={config.featured!.href}
-        className="mt-auto inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-body rounded-full hover:bg-primary/90 transition-colors w-fit"
-      >
-        {config.featured!.label} <ChevronRight className="w-3 h-3" />
-      </a>
-    </div>
-  </div>
-);
-
-/* ─── Simple Panel ─── */
-const SimplePanel = ({ config }: { config: MenuConfig }) => (
-  <div className="p-5">
-    <div className={`grid gap-0.5 ${config.columns === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
-      {config.items.map((item) => (
-        <MenuLink key={item.title} item={item} />
-      ))}
+    {/* Right — Featured visual */}
+    <div className="col-span-2 bg-[hsl(220,15%,97%)] p-6 flex flex-col justify-between">
+      {config.featured && (
+        <>
+          <div className="rounded-xl overflow-hidden mb-4">
+            <img
+              src={config.featured.image}
+              alt={config.featured.title}
+              className="w-full h-36 object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div>
+            <p className="text-sm font-display font-normal text-foreground mb-1.5">{config.featured.title}</p>
+            <p className="text-[11px] text-muted-foreground font-body leading-relaxed mb-5">{config.featured.desc}</p>
+          </div>
+          <a
+            href={config.featured.href}
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary text-primary-foreground text-xs font-body rounded-full hover:bg-primary/90 transition-colors w-fit"
+          >
+            {config.featured.label} <ChevronRight className="w-3 h-3" />
+          </a>
+        </>
+      )}
     </div>
   </div>
 );
 
-/* ─── Shared Link Row ─── */
+/* ─── Link Row ─── */
 const MenuLink = ({ item }: { item: MenuItem }) => (
   <a
     href={item.href}
-    className="flex items-start gap-3.5 px-3 py-2.5 rounded-xl hover:bg-gray-50 transition-colors duration-200 group"
+    className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-[hsl(220,15%,95%)] transition-colors duration-200 group"
   >
-    <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/12 transition-colors duration-200">
+    <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors duration-200">
       <item.icon className="w-4 h-4 text-primary" />
     </div>
     <div className="min-w-0">
-      <p className="text-[13px] font-display font-normal text-gray-900 group-hover:text-primary transition-colors duration-200">
+      <p className="text-[13px] font-display font-normal text-foreground group-hover:text-primary transition-colors duration-200">
         {item.title}
       </p>
-      <p className="text-[11px] text-gray-400 font-body leading-snug mt-0.5">{item.desc}</p>
+      <p className="text-[11px] text-muted-foreground font-body leading-snug mt-0.5">{item.desc}</p>
     </div>
   </a>
 );
