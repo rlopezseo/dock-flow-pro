@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top bar */}
-      <div className="bg-[hsl(210,20%,8%)] border-b border-white/10">
+      <div className="bg-[hsl(210,15%,13%/0.85)] backdrop-blur-md border-b border-white/10">
         <div className="container flex items-center justify-between py-1.5 text-xs text-muted-foreground font-body font-normal">
           <span className="hidden sm:block">
             A Platform for Freight Management, Transportation Visibility and Time Slot Management
@@ -26,7 +26,7 @@ const Navbar = () => {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-[hsl(210,20%,8%)] border-b border-white/15">
+      <nav className="bg-[hsl(210,15%,13%/0.85)] backdrop-blur-md border-b border-white/15">
         <div className="container flex items-center justify-between py-3">
           <div className="flex items-center gap-10">
             <a href="/" className="flex items-center">
@@ -73,7 +73,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-[hsl(210,20%,8%)] border-b border-white/15"
+            className="md:hidden bg-[hsl(210,15%,13%)] border-b border-white/15"
           >
             <div className="container py-6 flex flex-col gap-4">
               <a href="/" className="text-foreground font-body font-normal py-2">home</a>
