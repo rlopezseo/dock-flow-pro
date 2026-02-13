@@ -98,7 +98,7 @@ const ProofSection = () => {
         >
           <a
             href="#reviews"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-body font-normal text-sm rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/25 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary/30 text-primary hover:bg-primary/5 font-body font-normal text-sm rounded-full transition-all duration-300"
           >
             See More Reviews <ArrowRight className="w-4 h-4" />
           </a>
