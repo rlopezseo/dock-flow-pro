@@ -1,6 +1,7 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import { CalendarClock, Users, ScanLine, Plug, BarChart3, ChevronRight } from "lucide-react";
+import { CalendarClock, Users, ScanLine, Plug, BarChart3, Check } from "lucide-react";
+import bgCapabilities from "@/assets/bg-capabilities.jpg";
 
 const groups = [
   {
@@ -8,7 +9,7 @@ const groups = [
     icon: CalendarClock,
     title: "Appointment & Capacity Rules",
     features: [
-      "Define time slots per dock door, load type, and direction (inbound/outbound)",
+      "Define time slots per dock door, load type, and direction",
       "Set maximum concurrent appointments and enforce buffer times",
       "Block-out periods for maintenance, shifts, or special operations",
       "Multi-site support with location-specific capacity rules",
@@ -68,79 +69,109 @@ const CapabilitiesSection = () => {
   const active = groups.find((g) => g.id === activeGroup) || groups[0];
 
   return (
-    <section className="relative py-28" ref={ref}>
-      <div className="container">
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      {/* Header */}
+      <div className="container relative z-10 mb-14">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="max-w-2xl mb-14"
+          className="text-center max-w-2xl mx-auto"
         >
-          <div className="accent-line w-12 mb-6" />
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
+          <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-4">
             Key Capabilities
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
             Dock door scheduling capabilities built for every operation
           </h2>
         </motion.div>
-
-        <div className="grid lg:grid-cols-[300px_1fr] gap-5">
-          {/* Tab nav */}
-          <motion.div
-            initial={{ opacity: 0, x: -15 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-row lg:flex-col gap-2.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0"
-          >
-            {groups.map((g) => (
-              <button
-                key={g.id}
-                onClick={() => setActiveGroup(g.id)}
-                className={`flex items-center gap-3 px-5 py-4 rounded-xl text-left text-sm font-body font-normal transition-all duration-400 shrink-0 ${
-                  activeGroup === g.id
-                    ? "bg-gradient-to-r from-primary to-[hsl(207,50%,35%)] text-primary-foreground shadow-lg shadow-primary/15"
-                    : "bg-card card-elevated text-foreground hover:shadow-lg"
-                }`}
-              >
-                <g.icon className="w-4 h-4 shrink-0" />
-                <span className="whitespace-nowrap text-[13px]">{g.title}</span>
-                {activeGroup === g.id && <ChevronRight className="w-3.5 h-3.5 ml-auto shrink-0" />}
-              </button>
-            ))}
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            key={active.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="bg-card rounded-xl p-8 md:p-10 card-elevated"
-          >
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                <active.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-display font-light text-foreground">{active.title}</h3>
-            </div>
-            <ul className="space-y-5">
-              {active.features.map((feat, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: 0.08 * i }}
-                  className="flex items-start gap-4"
-                >
-                  <span className="mt-2 w-2 h-2 rounded-full bg-gradient-to-r from-primary to-[hsl(207,60%,45%)] shrink-0" />
-                  <span className="text-sm text-muted-foreground font-body font-normal leading-relaxed">{feat}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
       </div>
+
+      {/* Full-width immersive block */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={active.id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          className="relative w-full"
+        >
+          <div className="relative w-full h-[520px] md:h-[560px] overflow-hidden">
+            <motion.img
+              src={bgCapabilities}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Dark overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(207,60%,10%)]/90 via-[hsl(207,60%,10%)]/70 to-[hsl(207,60%,10%)]/40" />
+
+            {/* Content */}
+            <div className="absolute inset-0 flex items-center">
+              <div className="container">
+                <div className="max-w-xl">
+                  <motion.div
+                    key={active.id + "-content"}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: 0.1 }}
+                  >
+                    {/* Active capability badge */}
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white text-[10px] font-body tracking-[0.2em] uppercase px-4 py-2 rounded-full mb-6">
+                      <active.icon className="w-3.5 h-3.5" />
+                      {active.title}
+                    </div>
+
+                    <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-8 leading-snug">
+                      {active.title}
+                    </h3>
+
+                    <div className="space-y-4">
+                      {active.features.map((feat, i) => (
+                        <motion.div
+                          key={feat}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: 0.06 * i + 0.15 }}
+                          className="flex items-start gap-3"
+                        >
+                          <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <Check className="w-3 h-3 text-white/80" />
+                          </div>
+                          <span className="text-[13px] md:text-sm font-body font-normal text-white/85 leading-relaxed">{feat}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tabs overlapping bottom */}
+          <div className="relative z-10 -mt-7">
+            <div className="container">
+              <div className="flex flex-wrap justify-center gap-2">
+                {groups.map((g) => (
+                  <button
+                    key={g.id}
+                    onClick={() => setActiveGroup(g.id)}
+                    className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-xs font-body font-normal transition-all duration-400 shadow-lg ${
+                      activeGroup === g.id
+                        ? "bg-primary text-primary-foreground shadow-primary/25"
+                        : "bg-card text-foreground hover:shadow-xl"
+                    }`}
+                  >
+                    <g.icon className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">{g.title}</span>
+                    <span className="sm:hidden">{g.title.split(" ")[0]}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </section>
   );
 };
