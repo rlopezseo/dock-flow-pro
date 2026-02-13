@@ -32,13 +32,12 @@ const Navbar = () => {
             <a href="/" className="flex items-center">
               <img src={logo} alt="TrucksOnTheMap" className="h-6 sm:h-7" />
             </a>
-            <div className="hidden md:flex items-center gap-1 text-xs text-muted-foreground font-body font-normal">
-              <span>capacity</span>
+            <div className="hidden md:flex items-center gap-5 text-xs text-muted-foreground font-body font-normal">
+              <a href="/platform" className="hover:text-foreground transition-colors">platform</a>
               <span className="text-white/20">|</span>
-              <span>visibility</span>
+              <a href="/industries" className="hover:text-foreground transition-colors">industries</a>
               <span className="text-white/20">|</span>
-              <span>schedule</span>
-              <div className="text-[10px] text-muted-foreground -mt-0.5 ml-1">on.one.map</div>
+              <a href="/blog" className="hover:text-foreground transition-colors">blog</a>
             </div>
           </div>
 

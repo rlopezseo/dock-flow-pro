@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo-trucksonthemap.png";
 
 const footerLinks = {
@@ -74,28 +74,16 @@ const footerLinks = {
   },
 };
 
-const corridors = [
-  { label: "UK–EU Corridor", href: "/routes/uk-eu" },
-  { label: "Germany–Poland", href: "/routes/germany-poland" },
-  { label: "CEE Corridors", href: "/routes/cee" },
-  { label: "Benelux Hub", href: "/routes/benelux" },
-  { label: "Iberian Corridor", href: "/routes/iberian" },
-  { label: "Nordic Corridor", href: "/routes/nordic" },
-  { label: "Italy–Germany", href: "/routes/italy-germany" },
-  { label: "TEN-T Corridors", href: "/routes/ten-t" },
-];
-
 const Footer = () => {
   return (
-    <footer className="bg-[hsl(220,20%,7%)] text-white">
-      {/* Main footer */}
+    <footer className="border-t border-border">
       <div className="container py-16">
         {/* Top row: logo + CTA */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-14 pb-10 border-b border-white/10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-14 pb-10 border-b border-border">
           <div>
-            <img src={logo} alt="TrucksOnTheMap" className="h-7 mb-3" />
-            <p className="text-sm text-white/40 font-body font-normal max-w-sm">
-              Freight management, transportation visibility and time slot management — on.one" .map
+            <img src={logo} alt="TrucksOnTheMap" className="h-7 mb-3 brightness-0" />
+            <p className="text-sm text-muted-foreground font-body font-normal max-w-sm">
+              Freight management, transportation visibility and time slot management — on.one.map
             </p>
           </div>
           <div className="flex items-center gap-3">
@@ -107,7 +95,7 @@ const Footer = () => {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/15 text-white text-sm font-body font-normal rounded-full border border-white/15 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 text-foreground text-sm font-body font-normal rounded-full border border-border transition-all duration-300"
             >
               Register Free
             </a>
@@ -118,7 +106,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-14">
           {Object.values(footerLinks).map((section) => (
             <div key={section.title}>
-              <p className="text-xs font-display font-normal text-white/60 tracking-[0.15em] uppercase mb-4">
+              <p className="text-xs font-display font-normal text-foreground tracking-[0.15em] uppercase mb-4">
                 {section.title}
               </p>
               <ul className="space-y-2.5">
@@ -126,7 +114,7 @@ const Footer = () => {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-[13px] text-white/40 hover:text-white font-body font-normal transition-colors duration-200"
+                      className="text-[13px] text-muted-foreground hover:text-primary font-body font-normal transition-colors duration-200"
                     >
                       {link.label}
                     </a>
@@ -137,44 +125,48 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* European Corridors row */}
-        <div className="pb-10 mb-10 border-b border-white/10">
-          <p className="text-xs font-display font-normal text-white/60 tracking-[0.15em] uppercase mb-4">
-            European Freight Corridors
-          </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            {corridors.map((c) => (
-              <a
-                key={c.label}
-                href={c.href}
-                className="text-[13px] text-white/40 hover:text-white font-body font-normal transition-colors duration-200"
-              >
-                {c.label}
-              </a>
-            ))}
+        {/* Offices */}
+        <div className="grid sm:grid-cols-2 gap-6 mb-14 pb-14 border-b border-border">
+          <div className="flex items-start gap-4 p-6 bg-secondary/50 rounded-xl">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <p className="text-sm font-display font-normal text-foreground mb-1">London Office</p>
+              <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed">
+                128 City Road, London EC1V 2NX<br />United Kingdom · Company No. 9567296
+              </p>
+              <div className="flex items-center gap-4 mt-3">
+                <a href="tel:+442038078493" className="inline-flex items-center gap-1.5 text-xs text-primary font-body font-normal hover:text-primary/80 transition-colors">
+                  <Phone className="w-3 h-3" /> +44 (20) 3807 84 93
+                </a>
+                <a href="mailto:ihaveaquestion@trucksonthemap.com" className="inline-flex items-center gap-1.5 text-xs text-primary font-body font-normal hover:text-primary/80 transition-colors">
+                  <Mail className="w-3 h-3" /> Email
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-start gap-4 p-6 bg-secondary/50 rounded-xl">
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <MapPin className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <p className="text-sm font-display font-normal text-foreground mb-1">Hungary Office</p>
+              <p className="text-xs text-muted-foreground font-body font-normal leading-relaxed">
+                Práter utca 9., 3. em 5.a<br />Győr 9024, Hungary · Tax ID: 26205621-2-08
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="flex flex-col sm:flex-row gap-6 text-xs text-white/30 font-body font-normal">
-            <div>
-              <p className="text-white/50 mb-1">London Office</p>
-              <p>128 City Road, London EC1V 2NX, United Kingdom</p>
-              <p>Company Number 9567296</p>
-            </div>
-            <div>
-              <p className="text-white/50 mb-1">Hungary Office</p>
-              <p>Práter utca 9., 3. em 5.a, Győr 9024, Hungary</p>
-              <p>Tax ID: 26205621-2-08</p>
-            </div>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap gap-4 text-xs text-muted-foreground font-body font-normal">
+            <a href="/terms" className="hover:text-foreground transition-colors">Terms & Conditions</a>
+            <a href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="/security" className="hover:text-foreground transition-colors">Security</a>
           </div>
-          <div className="flex flex-wrap gap-4 text-xs text-white/30 font-body font-normal">
-            <a href="/terms" className="hover:text-white/60 transition-colors">Terms & Conditions</a>
-            <a href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</a>
-            <a href="/security" className="hover:text-white/60 transition-colors">Security</a>
-            <span>©2025 TrucksOnTheMap</span>
-          </div>
+          <span className="text-xs text-muted-foreground font-body font-normal">©2025 TrucksOnTheMap</span>
         </div>
       </div>
     </footer>
