@@ -8,6 +8,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import CTABannerSection from "@/components/CTABannerSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import UseCasesSection from "@/components/UseCasesSection";
+import ProofSection from "@/components/ProofSection";
 import CompareSection from "@/components/CompareSection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -28,6 +29,7 @@ const Index = () => {
           <CTABannerSection />
           <UseCasesSection />
           <HowItWorksSection />
+          <ProofSection />
           <CompareSection />
           <FAQSection />
           <CTASection />
