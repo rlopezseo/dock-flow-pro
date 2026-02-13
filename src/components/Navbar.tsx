@@ -49,8 +49,8 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-6">
-            <a href="/" className="text-sm text-foreground font-body font-normal underline underline-offset-4 transition-colors">
-              home
+            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground font-body font-normal transition-colors">
+              get in contact
             </a>
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground font-body font-normal transition-colors">
               get in contact
@@ -83,7 +83,7 @@ const Navbar = () => {
             className="md:hidden bg-[hsl(207,30%,12%)] border-b border-white/10"
           >
             <div className="container py-8 flex flex-col gap-1">
-              <a href="/" className="text-foreground font-body font-normal py-3 border-b border-white/5">home</a>
+              <a href="/platform" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">platform</a>
               <a href="/platform" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">platform</a>
               <a href="/solutions" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">solutions</a>
               <a href="/industries" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">industries</a>
