@@ -74,7 +74,7 @@ const FAQSection = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      <div className="container max-w-3xl">
+      <div className="container max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -100,12 +100,12 @@ const FAQSection = () => {
               <AccordionItem
                 key={i}
                 value={`faq-${i}`}
-                className="bg-card rounded-xl px-6 card-elevated data-[state=open]:shadow-lg transition-all duration-300 border-none"
+                className="bg-card rounded-2xl px-7 py-1 shadow-sm hover:shadow-md data-[state=open]:shadow-lg transition-all duration-300 border border-border/40 data-[state=open]:border-primary/20"
               >
-                <AccordionTrigger className="text-sm font-display font-normal text-foreground hover:no-underline py-5">
+                <AccordionTrigger className="text-[0.925rem] font-display font-normal text-foreground hover:no-underline py-5 [&[data-state=open]]:text-primary transition-colors">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground font-body font-normal leading-[1.8] pb-6">
+                <AccordionContent className="text-sm text-muted-foreground font-body font-normal leading-[1.85] pb-6 pr-8">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
