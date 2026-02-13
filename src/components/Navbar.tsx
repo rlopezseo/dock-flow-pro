@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/logo-trucksonthemap.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top bar */}
-      <div className="bg-[hsl(210,18%,11%)] border-b border-white/10">
+      <div className={`border-b border-white/10 transition-colors duration-300 ${scrolled ? "bg-[hsl(210,18%,11%)]" : "bg-transparent"}`}>
         <div className="container flex items-center justify-between py-1.5 text-xs text-muted-foreground font-body font-normal">
           <span className="hidden sm:block">
             A Platform for Freight Management, Transportation Visibility and Time Slot Management
@@ -26,7 +33,7 @@ const Navbar = () => {
       </div>
 
       {/* Main nav */}
-      <nav className="bg-[hsl(210,18%,11%)] border-b border-white/15">
+      <nav className={`border-b border-white/15 transition-colors duration-300 ${scrolled ? "bg-[hsl(210,18%,11%)]" : "bg-transparent"}`}>
         <div className="container flex items-center justify-between py-3">
           <div className="flex items-center gap-10">
             <a href="/" className="flex items-center">
