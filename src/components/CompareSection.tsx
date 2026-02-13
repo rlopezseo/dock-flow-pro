@@ -47,10 +47,14 @@ const CompareSection = () => {
         >
           {/* Manual / Old way */}
           <div className="rounded-2xl border border-border/60 bg-card p-8 relative">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center gap-1">
-                <FileSpreadsheet className="w-4 h-4 text-[hsl(140,60%,35%)]" />
-                <Mail className="w-4 h-4 text-[hsl(0,70%,50%)]" />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-2">
+                <div className="w-11 h-11 rounded-xl bg-[hsl(140,55%,92%)] flex items-center justify-center shadow-sm">
+                  <FileSpreadsheet className="w-5.5 h-5.5 text-[hsl(140,60%,32%)]" strokeWidth={1.8} />
+                </div>
+                <div className="w-11 h-11 rounded-xl bg-[hsl(0,65%,94%)] flex items-center justify-center shadow-sm">
+                  <Mail className="w-5.5 h-5.5 text-[hsl(0,70%,48%)]" strokeWidth={1.8} />
+                </div>
               </div>
               <div>
                 <p className="text-sm font-display font-normal text-foreground">Spreadsheets & Email</p>
