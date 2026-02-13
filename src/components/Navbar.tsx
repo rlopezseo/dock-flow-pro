@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-[hsl(207,30%,12%)] shadow-lg shadow-black/20" : ""}`}>
       {/* Top bar — hidden on mobile */}
-      <div className={`hidden sm:block border-b transition-colors duration-500 ${scrolled ? "border-white/10" : "border-transparent"}`}>
+      <div className={`hidden lg:block border-b transition-colors duration-500 ${scrolled ? "border-white/10" : "border-transparent"}`}>
         <div className="container flex items-center justify-between py-1.5 text-xs text-muted-foreground font-body font-normal">
           <span>
             A Platform for Freight Management, Transportation Visibility and Time Slot Management
@@ -39,7 +39,7 @@ const Navbar = () => {
             <a href="/" className="flex items-center">
               <img src={logo} alt="TrucksOnTheMap" className="h-6 sm:h-7" />
             </a>
-            <div className="hidden md:flex items-center gap-6 text-xs text-muted-foreground font-body font-normal">
+            <div className="hidden lg:flex items-center gap-6 text-xs text-muted-foreground font-body font-normal">
               <a href="/platform" className="hover:text-foreground transition-colors">platform</a>
               <a href="/solutions" className="hover:text-foreground transition-colors">solutions</a>
               <a href="/industries" className="hover:text-foreground transition-colors">industries</a>
@@ -48,7 +48,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-6">
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground font-body font-normal transition-colors">
               get in contact
             </a>
@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
 
           <button
-            className="md:hidden text-foreground"
+            className="lg:hidden text-foreground"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -77,10 +77,9 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden bg-[hsl(207,30%,12%)] border-b border-white/10"
+            className="lg:hidden bg-[hsl(207,30%,12%)] border-b border-white/10"
           >
             <div className="container py-8 flex flex-col gap-1">
-              <a href="/platform" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">platform</a>
               <a href="/platform" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">platform</a>
               <a href="/solutions" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">solutions</a>
               <a href="/industries" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">industries</a>
