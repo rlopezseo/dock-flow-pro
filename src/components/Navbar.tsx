@@ -15,17 +15,17 @@ const Navbar = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-[hsl(207,30%,12%)] shadow-lg shadow-black/20" : ""}`}>
-      {/* Top bar */}
-      <div className={`border-b transition-colors duration-500 ${scrolled ? "border-white/10" : "border-transparent"}`}>
+      {/* Top bar — hidden on mobile */}
+      <div className={`hidden sm:block border-b transition-colors duration-500 ${scrolled ? "border-white/10" : "border-transparent"}`}>
         <div className="container flex items-center justify-between py-1.5 text-xs text-muted-foreground font-body font-normal">
-          <span className="hidden sm:block">
+          <span>
             A Platform for Freight Management, Transportation Visibility and Time Slot Management
           </span>
           <div className="flex items-center gap-4 ml-auto">
             <a href="tel:+442038078493" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
               <Phone className="w-3 h-3" /> +44 (20) 3807 84 93
             </a>
-            <a href="mailto:ihaveaquestion@trucksonthemap.com" className="hidden sm:flex items-center gap-1.5 hover:text-foreground transition-colors">
+            <a href="mailto:ihaveaquestion@trucksonthemap.com" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
               <Mail className="w-3 h-3" /> ihaveaquestion@trucksonthemap.com
             </a>
           </div>
@@ -82,14 +82,19 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -10 }}
             className="md:hidden bg-[hsl(207,30%,12%)] border-b border-white/10"
           >
-            <div className="container py-6 flex flex-col gap-4">
-              <a href="/" className="text-foreground font-body font-normal py-2">home</a>
-              <a href="#contact" className="text-muted-foreground font-body font-normal py-2">get in contact</a>
-              <div className="flex gap-3 pt-2">
-                <a href="#contact" className="flex-1 text-center px-4 py-2.5 border border-white/20 rounded-full text-sm font-body font-normal text-foreground">
+            <div className="container py-8 flex flex-col gap-1">
+              <a href="/" className="text-foreground font-body font-normal py-3 border-b border-white/5">home</a>
+              <a href="/platform" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">platform</a>
+              <a href="/solutions" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">solutions</a>
+              <a href="/industries" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">industries</a>
+              <a href="/blog" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">blog</a>
+              <a href="/about" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">about</a>
+              <a href="#contact" className="text-muted-foreground font-body font-normal py-3">get in contact</a>
+              <div className="flex gap-3 pt-4">
+                <a href="#contact" className="flex-1 text-center px-4 py-3 border border-white/20 rounded-full text-sm font-body font-normal text-foreground">
                   register
                 </a>
-                <a href="#contact" className="flex-1 text-center px-4 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-body font-normal">
+                <a href="#contact" className="flex-1 text-center px-4 py-3 bg-primary text-primary-foreground rounded-full text-sm font-body font-normal">
                   log in
                 </a>
               </div>
