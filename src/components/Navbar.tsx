@@ -52,9 +52,6 @@ const Navbar = () => {
             <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground font-body font-normal transition-colors">
               get in contact
             </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground font-body font-normal transition-colors">
-              get in contact
-            </a>
             <a href="#contact" className="inline-flex items-center gap-1.5 px-5 py-2 border border-white/20 rounded-full text-sm font-body font-normal text-foreground hover:bg-white/5 transition-colors">
               register <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
