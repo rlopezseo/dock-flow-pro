@@ -20,7 +20,7 @@ const CompareSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-28 overflow-hidden" ref={ref}>
+    <section className="relative py-28 overflow-hidden bg-gradient-to-b from-[hsl(220,15%,95%)] to-[hsl(220,12%,92%)]" ref={ref}>
       <div className="container max-w-5xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
