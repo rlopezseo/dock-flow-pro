@@ -13,7 +13,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,7%)]/85 via-[hsl(220,20%,7%)]/50 to-[hsl(220,20%,7%)]/30" />
       </div>
 
       <div className="container relative z-10">
@@ -36,7 +36,7 @@ const HeroSection = () => {
             you automate it
           </h1>
 
-          <p className="text-sm sm:text-base text-white max-w-lg font-body font-normal leading-relaxed mb-10">
+          <p className="text-sm sm:text-base text-white/80 max-w-lg font-body font-normal leading-relaxed mb-10">
             Reduce carrier dwell time by 60%. Fill every dock slot without a single phone call. Full visibility from gate check-in to departure.
           </p>
 
