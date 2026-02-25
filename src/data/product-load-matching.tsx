@@ -14,14 +14,14 @@ const config: ProductPageConfig = {
     slug: "load-matching",
   },
   hero: {
-    badge: "Digital Freight Matching",
+    badge: "Load Matching Software",
     headline: (
       <>
-        Stop chasing carriers.
+        Load matching software
         <br />
-        <span className="text-[#bbb]">Let the algorithm</span>
+        <span className="text-[#bbb]">that finds carriers</span>
         <br />
-        find the match
+        before you pick up the phone
       </>
     ),
     subtext: "Match available loads with qualified carriers in seconds — not hours. AI-powered freight matching that fills trucks faster, reduces empty miles, and cuts procurement costs by up to 35%.",

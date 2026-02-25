@@ -14,14 +14,14 @@ const config: ProductPageConfig = {
     slug: "freight-visibility",
   },
   hero: {
-    badge: "Real-Time Freight Visibility",
+    badge: "Real-Time Freight Visibility Platform",
     headline: (
       <>
-        You can't optimize
+        Real-time freight visibility
         <br />
-        <span className="text-[#bbb]">what you can't</span>
+        <span className="text-[#bbb]">for what you can't</span>
         <br />
-        see
+        afford to lose sight of
       </>
     ),
     subtext: "Real-time visibility across every shipment, every carrier, every mode. Proactive alerts, live ETAs, and exception management that keeps your supply chain on track.",

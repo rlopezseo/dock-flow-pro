@@ -14,14 +14,14 @@ const config: ProductPageConfig = {
     slug: "predictive-eta",
   },
   hero: {
-    badge: "AI Predictive ETA",
+    badge: "Predictive ETA Software",
     headline: (
       <>
-        ETAs should be
+        Predictive ETA software
         <br />
-        <span className="text-[#bbb]">predictions,</span> not
+        <span className="text-[#bbb]">that turns guesses</span>
         <br />
-        guesses
+        into guarantees
       </>
     ),
     subtext: "Machine learning ETAs that account for traffic, weather, driver behavior, and historical lane data. 95% accuracy. Continuously recalculated. Trusted by operations teams who can't afford surprises.",

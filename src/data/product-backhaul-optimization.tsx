@@ -14,14 +14,14 @@ const config: ProductPageConfig = {
     slug: "backhaul-optimization",
   },
   hero: {
-    badge: "Backhaul Optimization",
+    badge: "Backhaul Optimization Software",
     headline: (
       <>
-        Every empty truck
+        Backhaul optimization software
         <br />
-        <span className="text-[#bbb]">is burning money</span>
+        <span className="text-[#bbb]">that stops trucks</span>
         <br />
-        on the way back
+        burning money on the way back
       </>
     ),
     subtext: "AI-powered backhaul matching that fills return trips automatically. Reduce deadhead miles by 45%, cut transport costs, and lower your carbon footprint — all without a single phone call.",
