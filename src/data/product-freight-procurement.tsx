@@ -39,7 +39,7 @@ const config: ProductPageConfig = {
   },
   problem: {
     label: "The Problem",
-    headline: "Why traditional freight procurement is broken — and expensive",
+    headline: "Why freight procurement software is replacing Excel tenders in 2025",
     subtext: "Most logistics teams still run freight tenders through Excel, email, and manual comparison. The inefficiency is staggering — and so is the cost.",
     items: [
       { icon: FileText, title: "Excel-Based RFPs", description: "Building and distributing RFPs via spreadsheets leads to version conflicts, data entry errors, and weeks of wasted time per tender cycle." },
@@ -53,7 +53,7 @@ const config: ProductPageConfig = {
   },
   outcomes: {
     label: "What You Get",
-    headline: "Run freight tenders faster, smarter, and with full transparency",
+    headline: "How freight procurement software cuts costs by 25% and speeds up RFPs 5x",
     heroCard: {
       icon: TrendingDown,
       target: 25,
@@ -70,7 +70,7 @@ const config: ProductPageConfig = {
   },
   capabilities: {
     label: "Key Capabilities",
-    headline: "End-to-end freight procurement digitization",
+    headline: "Freight procurement software features: RFP builder, rate benchmarking, and carrier sourcing",
     groups: [
       { id: "rfp", icon: FileText, title: "Digital RFP Builder", subtitle: "Create tenders in minutes", features: ["Template library for recurring lanes and commodity types", "Custom evaluation criteria: price, transit time, service level", "Bulk lane upload from CSV or TMS export", "Multi-round bidding with revision tracking"] },
       { id: "benchmark", icon: BarChart3, title: "Rate Benchmarking", subtitle: "Know if the price is right", features: ["Real-time lane-level rate indices from market data", "Automatic bid scoring against benchmark rates", "Historical rate trend analysis per lane", "Spot vs. contract rate comparison tools"] },
@@ -93,7 +93,7 @@ const config: ProductPageConfig = {
   },
   useCases: {
     label: "Use Cases",
-    headline: "Freight procurement solutions for every supply chain",
+    headline: "Freight procurement software for shippers, 3PLs, retail, and pharma",
     cases: [
       { id: "enterprise", icon: Factory, label: "Enterprise Shippers", image: imgManufacturing, headline: "Strategic freight procurement for large-scale operations", description: "Run multi-lane, multi-region tenders across your entire network. Consolidate carrier evaluation and award decisions in one platform.", benefits: ["Multi-region, multi-lane RFPs", "Weighted scoring by lane", "Split award management", "Executive procurement dashboards"] },
       { id: "3pl", icon: Package, label: "3PL Providers", image: img3pl, headline: "Carrier sourcing for third-party logistics operations", description: "Source carriers on behalf of your clients with separate rate cards, evaluation criteria, and award workflows per account.", benefits: ["Client-specific procurement workflows", "Separate carrier pools per account", "White-label RFP portal", "Margin and markup management"] },
@@ -105,7 +105,7 @@ const config: ProductPageConfig = {
   },
   howItWorks: {
     label: "How It Works",
-    headline: "Freight procurement — digitized in five steps",
+    headline: "How does freight procurement software work? Five steps to digital tenders",
     steps: [
       { icon: FileText, step: "01", title: "Create Your RFP", description: "Build your tender from templates or import lanes from your TMS. Define evaluation criteria, deadlines, and carrier requirements." },
       { icon: Users, step: "02", title: "Invite & Distribute", description: "Send the RFP to hundreds of carriers simultaneously. They bid through the portal — no email chains or spreadsheet attachments." },
@@ -115,10 +115,10 @@ const config: ProductPageConfig = {
     ],
   },
   compare: {
-    label: "Compare",
+    label: "Freight Procurement Software vs. Excel",
     headline: (
       <>
-        Digital freight procurement vs.<br className="hidden sm:block" /> spreadsheet-based tenders
+        Freight procurement software vs.<br className="hidden sm:block" /> spreadsheet-based carrier sourcing
       </>
     ),
     features: [
@@ -138,16 +138,18 @@ const config: ProductPageConfig = {
   },
   faq: {
     label: "Frequently Asked Questions",
-    headline: "Everything you need to know about digital freight procurement",
+    headline: "Freight procurement software FAQ: costs, features, and implementation",
     items: [
-      { q: "What is digital freight procurement?", a: "Digital freight procurement replaces manual, spreadsheet-based tendering with an online platform where shippers can create RFPs, invite carriers, collect bids, benchmark rates, and make award decisions — all in one place with full audit trail." },
-      { q: "How much can I save with digital procurement?", a: "Customers typically achieve 20–30% freight cost savings through increased carrier competition, real-time rate benchmarking, and data-driven award decisions. The biggest savings come from evaluating more carriers per lane." },
-      { q: "How long does a digital RFP cycle take?", a: "What used to take 4–8 weeks can be completed in 5–7 days. Automated distribution, online bidding, and AI-powered evaluation eliminate the bottlenecks of manual procurement." },
-      { q: "Can I run multi-round bidding?", a: "Yes. The platform supports multiple bidding rounds with full revision tracking. Carriers see only their own bids, and you can narrow the field between rounds." },
-      { q: "How does rate benchmarking work?", a: "Bids are automatically scored against real-time market rate indices for each lane. You'll see instantly if a bid is above, at, or below market — so you never overpay." },
-      { q: "Does it integrate with our TMS and ERP?", a: "Yes. Awarded rate cards can be exported directly to SAP, Oracle, JDE, Blue Yonder, and other TMS/ERP systems via API or EDI. Lane data can also be imported automatically for RFP creation." },
-      { q: "How do carriers participate?", a: "Carriers receive an invitation link and bid through a secure online portal. No software installation required. They can view lane details, submit rates, and track their bid status 24/7." },
-      { q: "Is there an audit trail for compliance?", a: "Every action — bid submission, evaluation, award decision — is logged with timestamps and user attribution. Reports are exportable for compliance audits and management review." },
+      { q: "What is freight procurement software?", a: "Freight procurement software is a digital platform that replaces manual, spreadsheet-based tendering with automated RFP creation, carrier bidding, rate benchmarking, and award management — all in one place with full audit trail and compliance." },
+      { q: "How much can freight procurement software save on freight costs?", a: "Customers typically achieve 20–30% freight cost savings through increased carrier competition, real-time rate benchmarking, and data-driven award decisions. The biggest savings come from evaluating 10x more carriers per lane than manual processes allow." },
+      { q: "How long does a freight RFP take with procurement software?", a: "What used to take 4–8 weeks can be completed in 5–7 days. Automated distribution, online carrier bidding, and AI-powered evaluation eliminate the bottlenecks of manual freight procurement." },
+      { q: "What is the best freight procurement software for shippers?", a: "The best freight procurement software combines digital RFP creation, real-time rate benchmarking, automated carrier evaluation, and TMS integration. TrucksOnTheMap offers all of these with enterprise-grade security and multi-region support." },
+      { q: "Can freight procurement software benchmark carrier rates?", a: "Yes. Bids are automatically scored against real-time market rate indices for each lane. You'll see instantly if a carrier's bid is above, at, or below market — so you never overpay on freight." },
+      { q: "Does freight procurement software integrate with SAP, Oracle, and other ERPs?", a: "Yes. Awarded rate cards can be exported directly to SAP, Oracle, JDE, Blue Yonder, and other TMS/ERP systems via API or EDI. Lane data can also be imported automatically for RFP creation." },
+      { q: "How do carriers participate in digital freight procurement?", a: "Carriers receive an invitation link and bid through a secure online portal. No software installation required. They can view lane details, submit rates, track bid status, and manage multi-round bidding 24/7." },
+      { q: "Is freight procurement software suitable for small to mid-size shippers?", a: "Absolutely. The platform scales from SMB shippers running 10-lane tenders to enterprise operations with 1,000+ lanes across multiple regions. Smaller shippers often see the highest ROI because they're replacing entirely manual processes." },
+      { q: "What compliance features does freight procurement software offer?", a: "Every action — bid submission, evaluation criteria, award decision — is logged with timestamps and user attribution. Reports are exportable for compliance audits, management review, and regulatory requirements." },
+      { q: "How long does it take to implement freight procurement software?", a: "Most implementations go live within 2–3 weeks including platform configuration, TMS/ERP integration, user training, and carrier onboarding. No hardware installation required." },
     ],
   },
   ctaFinal: {

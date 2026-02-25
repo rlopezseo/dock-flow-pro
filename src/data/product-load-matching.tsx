@@ -39,7 +39,7 @@ const config: ProductPageConfig = {
   },
   problem: {
     label: "The Problem",
-    headline: "Why manual load matching is costing you money every single day",
+    headline: "Why manual load matching costs freight brokers thousands every week",
     subtext: "Freight brokers and shippers still rely on phone calls, email chains, and load boards to find carriers. The result: wasted hours, empty trucks, and missed revenue.",
     items: [
       { icon: Clock, title: "Hours Spent on Phone Calls", description: "Dispatchers spend 3–4 hours per day calling carriers to fill loads. That's time and money you'll never get back." },
@@ -53,7 +53,7 @@ const config: ProductPageConfig = {
   },
   outcomes: {
     label: "What You Get",
-    headline: "Fill every truck faster with intelligent freight matching",
+    headline: "How load matching software reduces empty miles and fills trucks faster",
     heroCard: {
       icon: Truck,
       target: 40,
@@ -70,7 +70,7 @@ const config: ProductPageConfig = {
   },
   capabilities: {
     label: "Key Capabilities",
-    headline: "Digital freight matching features built for scale",
+    headline: "Load matching software features: AI engine, marketplace, and carrier management",
     groups: [
       { id: "matching", icon: Brain, title: "AI Matching Engine", subtitle: "Smart carrier-load pairing", features: ["Multi-factor scoring: lane history, on-time %, capacity, price", "Real-time carrier availability from GPS and TMS integration", "Automatic re-matching when carriers reject or cancel", "Configurable matching rules by shipper, lane, and commodity"] },
       { id: "marketplace", icon: Globe, title: "Digital Freight Marketplace", subtitle: "One platform for all loads", features: ["Centralized load board with real-time availability", "Carrier self-service: browse, bid, and accept loads 24/7", "Multi-modal support: FTL, LTL, intermodal, and last-mile", "Rate transparency with benchmark pricing per lane"] },
@@ -93,7 +93,7 @@ const config: ProductPageConfig = {
   },
   useCases: {
     label: "Use Cases",
-    headline: "Digital freight matching across every logistics scenario",
+    headline: "Who uses load matching software? Brokers, shippers, 3PLs, and more",
     cases: [
       { id: "broker", icon: Package, label: "Freight Brokers", image: img3pl, headline: "Load matching for freight brokerages at scale", description: "Stop spending hours on the phone. Match thousands of daily loads with your carrier network automatically — and focus on growing your book of business.", benefits: ["Instant carrier matching from your network", "Real-time rate benchmarking per lane", "Automated tender workflows", "Carrier performance tracking"] },
       { id: "shipper", icon: Factory, label: "Shippers & Manufacturers", image: imgManufacturing, headline: "Direct carrier matching for enterprise shippers", description: "Bypass the broker markup. Connect directly with qualified carriers for your lanes and build long-term freight relationships that reduce costs.", benefits: ["Direct shipper-to-carrier matching", "Contract vs. spot rate optimization", "Preferred carrier routing", "Compliance verification built in"] },
@@ -105,7 +105,7 @@ const config: ProductPageConfig = {
   },
   howItWorks: {
     label: "How It Works",
-    headline: "Digital freight matching — in five steps",
+    headline: "How does load matching software work? Five simple steps",
     steps: [
       { icon: Search, step: "01", title: "Post Your Load", description: "Enter load details — origin, destination, commodity, weight, pickup date — or import automatically from your TMS." },
       { icon: Brain, step: "02", title: "AI Finds the Best Match", description: "Our algorithm scores every available carrier based on lane history, capacity, price, and performance — in under 15 seconds." },
@@ -115,10 +115,10 @@ const config: ProductPageConfig = {
     ],
   },
   compare: {
-    label: "Compare",
+    label: "Load Matching Software vs. Load Boards",
     headline: (
       <>
-        AI freight matching vs.<br className="hidden sm:block" /> manual load boards
+        Load matching software vs.<br className="hidden sm:block" /> traditional load boards and phone calls
       </>
     ),
     features: [
@@ -138,16 +138,18 @@ const config: ProductPageConfig = {
   },
   faq: {
     label: "Frequently Asked Questions",
-    headline: "Everything you need to know about digital freight matching",
+    headline: "Load matching software FAQ: pricing, features, and how it works",
     items: [
-      { q: "What is digital freight matching?", a: "Digital freight matching uses AI algorithms to automatically pair available loads with qualified carriers based on factors like location, capacity, lane history, price, and performance. It replaces manual phone calls and load board searches with instant, data-driven matches." },
-      { q: "How fast does TrucksOnTheMap match a load?", a: "On average, our AI engine finds the optimal carrier match in under 15 seconds. It evaluates thousands of carrier options simultaneously, considering lane history, real-time availability, pricing, and performance scores." },
-      { q: "Can I use my own carrier network?", a: "Absolutely. You can import your existing carrier relationships, set preferred carrier lists, and define matching rules that prioritize your network before expanding to the broader marketplace." },
-      { q: "How does load matching reduce empty miles?", a: "By analyzing carrier positions, available capacity, and upcoming loads, the platform identifies backhaul and triangulation opportunities that would be impossible to find manually. This typically reduces empty miles by 30–40%." },
-      { q: "Does it support LTL and intermodal loads?", a: "Yes. The platform supports full truckload (FTL), less-than-truckload (LTL), intermodal, and specialized equipment types. Matching rules can be configured by mode, equipment, and commodity requirements." },
-      { q: "How does rate benchmarking work?", a: "The platform provides real-time lane-level rate benchmarking using market data, your historical rates, and current spot market conditions. This helps you avoid overpaying and negotiate smarter contracts." },
-      { q: "What TMS systems does it integrate with?", a: "TrucksOnTheMap connects to major TMS platforms including SAP TM, Oracle OTM, Blue Yonder, Descartes, and MercuryGate via REST API or EDI. A sandbox environment is available for custom integrations." },
-      { q: "How do carriers join the platform?", a: "Carriers can self-register through the carrier portal. Onboarding includes document verification, insurance compliance checks, and FMCSA authority validation. Most carriers are onboarded within 24 hours." },
+      { q: "What is load matching software and how does it work?", a: "Load matching software uses AI algorithms to automatically pair available freight loads with qualified carriers based on factors like location, capacity, lane history, price, and performance. It replaces manual phone calls and load board searches with instant, data-driven matches — reducing empty miles and cutting freight costs." },
+      { q: "How fast can load matching software find a carrier?", a: "TrucksOnTheMap's AI engine finds the optimal carrier match in under 15 seconds. It evaluates thousands of carrier options simultaneously, considering lane history, real-time availability, pricing, and performance scores — far faster than manual load boards." },
+      { q: "What is the difference between load matching software and a load board?", a: "Load boards are passive — you post a load and wait for responses. Load matching software is active — AI proactively identifies the best carrier for each load based on multi-factor scoring. The result is faster matches, better rates, and fewer empty miles." },
+      { q: "How does load matching software reduce empty miles?", a: "By analyzing carrier positions, available capacity, and upcoming loads, the platform identifies backhaul and triangulation opportunities that would be impossible to find manually. This typically reduces empty miles by 30–40%." },
+      { q: "Can load matching software integrate with my TMS?", a: "Yes. TrucksOnTheMap connects to major TMS platforms including SAP TM, Oracle OTM, Blue Yonder, Descartes, and MercuryGate via REST API or EDI. Load data flows automatically between systems." },
+      { q: "Does load matching software support LTL and intermodal freight?", a: "Yes. The platform supports full truckload (FTL), less-than-truckload (LTL), intermodal, and specialized equipment types. Matching rules can be configured by mode, equipment, and commodity requirements." },
+      { q: "How much does load matching software cost?", a: "Pricing depends on your volume, number of users, and integration requirements. Most customers see ROI within the first month through reduced empty miles and lower spot rates. Contact us for a custom quote based on your freight volume." },
+      { q: "Is load matching software suitable for small freight brokers?", a: "Absolutely. The platform scales from small brokerages handling 50 loads/day to enterprise shippers with thousands of daily shipments. Smaller operations often see the biggest percentage gains because they're replacing the most manual processes." },
+      { q: "How do carriers join a load matching platform?", a: "Carriers can self-register through the carrier portal. Onboarding includes document verification, insurance compliance checks, and authority validation. Most carriers are onboarded within 24 hours — no software installation required." },
+      { q: "What ROI can I expect from load matching software?", a: "Customers typically achieve 30–40% reduction in empty miles, 35% lower freight procurement costs, and 95%+ load fill rates. The average payback period is under 3 months." },
     ],
   },
   ctaFinal: {

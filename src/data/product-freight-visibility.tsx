@@ -39,7 +39,7 @@ const config: ProductPageConfig = {
   },
   problem: {
     label: "The Problem",
-    headline: "Why most supply chains still operate in the dark",
+    headline: "Why supply chains without a freight visibility platform lose money and customers",
     subtext: "Without real-time visibility, every delayed shipment becomes a crisis. Your team spends more time chasing status updates than solving problems.",
     items: [
       { icon: Eye, title: "Blind Spots Everywhere", description: "Once a truck leaves the warehouse, you lose visibility until it arrives — or doesn't. No live tracking means no proactive management." },
@@ -53,7 +53,7 @@ const config: ProductPageConfig = {
   },
   outcomes: {
     label: "What You Get",
-    headline: "See every shipment, every mile, in real-time",
+    headline: "How a freight visibility platform delivers 99% tracking coverage and proactive alerts",
     heroCard: {
       icon: Eye,
       target: 99,
@@ -70,7 +70,7 @@ const config: ProductPageConfig = {
   },
   capabilities: {
     label: "Key Capabilities",
-    headline: "Freight visibility features for complete supply chain control",
+    headline: "Freight visibility platform features: GPS tracking, predictive ETAs, and alert engine",
     groups: [
       { id: "tracking", icon: Satellite, title: "Multi-Source Tracking", subtitle: "Every data point, one view", features: ["GPS, telematics, ELD, and mobile app tracking sources", "Carrier-agnostic: works with any carrier, any fleet", "15-minute update intervals with configurable refresh rates", "Map-based visualization with route replay"] },
       { id: "alerts", icon: Bell, title: "Proactive Alert Engine", subtitle: "Know before it's a problem", features: ["Configurable alert rules: late departure, route deviation, geofence breach", "Multi-channel notifications: email, SMS, webhook, in-app", "Escalation workflows with role-based routing", "Customer-facing alerts for downstream visibility"] },
@@ -93,7 +93,7 @@ const config: ProductPageConfig = {
   },
   useCases: {
     label: "Use Cases",
-    headline: "Real-time visibility for every supply chain scenario",
+    headline: "Freight visibility platform for shippers, 3PLs, retail, cold chain, and cross-border",
     cases: [
       { id: "shipper", icon: Factory, label: "Enterprise Shippers", image: imgManufacturing, headline: "End-to-end visibility for manufacturing supply chains", description: "Track inbound raw materials and outbound finished goods across your entire carrier network. Proactively manage exceptions before they impact production.", benefits: ["Multi-carrier, multi-mode tracking", "Production-synced delivery visibility", "Supplier performance analytics", "Automated exception escalation"] },
       { id: "3pl", icon: Package, label: "3PL Providers", image: img3pl, headline: "Client-facing visibility for logistics service providers", description: "Give your clients real-time tracking with branded portals while maintaining operational control. Differentiate your service with superior visibility.", benefits: ["White-label tracking portals", "Client-specific dashboards", "SLA monitoring and reporting", "Multi-client shipment management"] },
@@ -105,7 +105,7 @@ const config: ProductPageConfig = {
   },
   howItWorks: {
     label: "How It Works",
-    headline: "Real-time freight visibility — in five steps",
+    headline: "How does a freight visibility platform work? Five steps to full tracking",
     steps: [
       { icon: Plug, step: "01", title: "Connect Your Carriers", description: "Integrate your carrier network via GPS, telematics, API, or our 200+ pre-built carrier connections. Most carriers connect in under 24 hours." },
       { icon: Satellite, step: "02", title: "Track Automatically", description: "Every shipment is tracked automatically from pickup to delivery. GPS pings every 15 minutes with configurable update frequency." },
@@ -115,10 +115,10 @@ const config: ProductPageConfig = {
     ],
   },
   compare: {
-    label: "Compare",
+    label: "Freight Visibility Platform vs. Manual Tracking",
     headline: (
       <>
-        Real-time visibility vs.<br className="hidden sm:block" /> manual tracking by phone & email
+        Freight visibility platform vs.<br className="hidden sm:block" /> manual tracking by phone and carrier portals
       </>
     ),
     features: [
@@ -138,16 +138,18 @@ const config: ProductPageConfig = {
   },
   faq: {
     label: "Frequently Asked Questions",
-    headline: "Everything you need to know about freight visibility",
+    headline: "Freight visibility platform FAQ: integrations, accuracy, and setup",
     items: [
-      { q: "What is real-time freight visibility?", a: "Real-time freight visibility provides live tracking of shipments across your entire supply chain — regardless of carrier, mode, or region. It replaces manual status check calls with automated GPS tracking, proactive alerts, and predictive ETAs." },
-      { q: "How many carriers can you track?", a: "TrucksOnTheMap has 200+ pre-built carrier integrations and supports GPS, telematics, ELD, and mobile app tracking. Any carrier with a GPS device or smartphone can be tracked on the platform." },
-      { q: "How accurate are the predictive ETAs?", a: "Our machine-learning ETA engine achieves 92% accuracy by analyzing real-time traffic, weather, driver behavior, hours-of-service regulations, and historical delivery patterns for each lane." },
-      { q: "Can we share tracking with our customers?", a: "Yes. You can set up branded customer-facing tracking portals where your clients see real-time shipment status, ETAs, and milestone updates. Automated email and SMS notifications keep them informed." },
-      { q: "Does it support temperature monitoring?", a: "Yes. The platform integrates with IoT temperature and humidity sensors. You'll receive alerts for temperature excursions, door-open events, and cold chain compliance documentation." },
-      { q: "How long does integration take?", a: "Most carrier integrations are live within 24 hours using our pre-built connections. TMS and ERP integrations typically take 2–4 weeks depending on your system configuration." },
-      { q: "What happens when a delay is detected?", a: "The system triggers an immediate alert via your configured channels (email, SMS, webhook). The operations dashboard shows the exception with root cause analysis, estimated impact, and recommended actions." },
-      { q: "Can we track multi-modal shipments?", a: "Yes. The platform supports road, rail, ocean, and air freight tracking. Multi-leg shipments are unified into a single tracking view with handoff visibility between modes." },
+      { q: "What is a real-time freight visibility platform?", a: "A real-time freight visibility platform provides live GPS tracking of shipments across your entire supply chain — regardless of carrier, mode, or region. It replaces manual 'where is my truck?' calls with automated tracking, proactive exception alerts, and predictive ETAs." },
+      { q: "How many carriers can a freight visibility platform track?", a: "TrucksOnTheMap has 200+ pre-built carrier integrations and supports GPS, telematics, ELD, and mobile app tracking. Any carrier with a GPS device or smartphone can be tracked — making it truly carrier-agnostic." },
+      { q: "How accurate are the ETAs in a freight visibility platform?", a: "Our machine-learning ETA engine achieves 92% accuracy by analyzing real-time traffic, weather, driver behavior, hours-of-service regulations, and historical delivery patterns for each lane — far more accurate than GPS-only distance calculations." },
+      { q: "Can a freight visibility platform share tracking with customers?", a: "Yes. You can set up branded customer-facing tracking portals where your clients see real-time shipment status, ETAs, and milestone updates. Automated email and SMS notifications keep them informed without manual effort." },
+      { q: "Does a freight visibility platform support temperature monitoring?", a: "Yes. The platform integrates with IoT temperature and humidity sensors for cold chain freight. You'll receive alerts for temperature excursions, door-open events, and get cold chain compliance documentation automatically." },
+      { q: "How long does it take to set up a freight visibility platform?", a: "Most carrier integrations are live within 24 hours using pre-built connections. TMS and ERP integrations typically take 2–4 weeks. You can start tracking shipments from day one while deeper integrations are configured." },
+      { q: "What happens when a freight visibility platform detects a delay?", a: "The system triggers an immediate alert via your configured channels (email, SMS, webhook). The operations dashboard shows the exception with root cause analysis, estimated impact, and recommended actions — so you can act before customers notice." },
+      { q: "Can a freight visibility platform track multi-modal and international shipments?", a: "Yes. The platform supports road, rail, ocean, and air freight tracking. Multi-leg and cross-border shipments are unified into a single tracking view with customs milestone tracking and handoff visibility between modes." },
+      { q: "What is the ROI of a freight visibility platform?", a: "Customers typically see 45% fewer 'where is my truck?' customer service calls, 30% reduction in detention costs through better arrival predictions, and measurable improvements in on-time delivery performance within the first 90 days." },
+      { q: "How does a freight visibility platform differ from TMS tracking?", a: "TMS tracking is typically limited to your own system's carriers and relies on EDI updates. A freight visibility platform aggregates GPS data from any carrier in real-time, adds predictive intelligence, and provides proactive alerts — giving you a complete, live view across all carriers." },
     ],
   },
   ctaFinal: {

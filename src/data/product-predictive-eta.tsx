@@ -39,7 +39,7 @@ const config: ProductPageConfig = {
   },
   problem: {
     label: "The Problem",
-    headline: "Why GPS-only ETAs are failing your operations",
+    headline: "Why GPS-only ETAs fail and predictive ETA software is the answer",
     subtext: "Basic GPS tracking tells you where a truck is — not when it will arrive. Simple distance-based ETAs ignore the real-world factors that cause delays.",
     items: [
       { icon: Clock, title: "Distance ≠ Arrival Time", description: "GPS-based ETAs calculate distance/speed — ignoring traffic patterns, rest stops, border crossings, and loading/unloading time at destination." },
@@ -53,7 +53,7 @@ const config: ProductPageConfig = {
   },
   outcomes: {
     label: "What You Get",
-    headline: "Arrival predictions that operations teams actually trust",
+    headline: "How predictive ETA software achieves 95% accuracy and detects delays 4 hours early",
     heroCard: {
       icon: Brain,
       target: 95,
@@ -70,7 +70,7 @@ const config: ProductPageConfig = {
   },
   capabilities: {
     label: "Key Capabilities",
-    headline: "AI-powered ETA prediction built for logistics",
+    headline: "Predictive ETA software features: machine learning, weather analysis, and proactive alerts",
     groups: [
       { id: "ml-engine", icon: Brain, title: "Machine Learning Engine", subtitle: "ETAs that learn and improve", features: ["Deep learning model trained on 50M+ historical deliveries", "Continuous model retraining with new data every 24 hours", "Lane-specific models that capture corridor-level patterns", "Accuracy tracking dashboard with model confidence scores"] },
       { id: "factors", icon: CloudRain, title: "Multi-Factor Analysis", subtitle: "Every variable considered", features: ["Real-time traffic data from multiple sources", "Weather forecast integration (48-hour lookahead)", "Hours-of-service regulation modeling", "Driver-specific behavior patterns and rest predictions"] },
@@ -93,7 +93,7 @@ const config: ProductPageConfig = {
   },
   useCases: {
     label: "Use Cases",
-    headline: "Predictive ETAs for every logistics operation",
+    headline: "Predictive ETA software for warehouses, 3PLs, retail, JIT, and cold chain",
     cases: [
       { id: "warehouse", icon: Factory, label: "Warehouse Operations", image: imgManufacturing, headline: "AI ETAs for dock labor planning and scheduling", description: "Know exactly when trucks will arrive so you can staff docks precisely. Eliminate the overtime costs of early staffing and the detention costs of late readiness.", benefits: ["Dock labor optimization", "Automated appointment rescheduling", "Arrival sequence prediction", "Shift planning integration"] },
       { id: "3pl", icon: Package, label: "3PL Providers", image: img3pl, headline: "Predictive ETAs as a competitive differentiator", description: "Offer your clients delivery predictions they can trust. AI-powered ETAs make your service premium — and reduce 'where is my truck?' calls by 60%.", benefits: ["Client-facing ETA dashboards", "Service level prediction", "Proactive delay notifications", "Carrier performance benchmarking"] },
@@ -105,7 +105,7 @@ const config: ProductPageConfig = {
   },
   howItWorks: {
     label: "How It Works",
-    headline: "Predictive ETA — powered by AI in five steps",
+    headline: "How does predictive ETA software work? AI-powered in five steps",
     steps: [
       { icon: MapPin, step: "01", title: "Collect Real-Time Data", description: "GPS, telematics, traffic feeds, weather APIs, and HOS data stream into the AI engine in real-time from every active shipment." },
       { icon: Brain, step: "02", title: "AI Analyzes & Predicts", description: "Machine learning models process 50M+ data points daily — combining real-time conditions with historical lane patterns to generate ETAs." },
@@ -115,10 +115,10 @@ const config: ProductPageConfig = {
     ],
   },
   compare: {
-    label: "Compare",
+    label: "Predictive ETA Software vs. GPS",
     headline: (
       <>
-        AI predictive ETAs vs.<br className="hidden sm:block" /> basic GPS tracking
+        Predictive ETA software vs.<br className="hidden sm:block" /> basic GPS distance calculations
       </>
     ),
     features: [
@@ -138,16 +138,18 @@ const config: ProductPageConfig = {
   },
   faq: {
     label: "Frequently Asked Questions",
-    headline: "Everything you need to know about predictive ETAs",
+    headline: "Predictive ETA software FAQ: accuracy, AI model, and integration",
     items: [
-      { q: "What makes predictive ETAs different from GPS ETAs?", a: "GPS ETAs simply calculate distance divided by speed. Predictive ETAs use machine learning to analyze traffic patterns, weather forecasts, driver behavior, hours-of-service regulations, and historical lane data — achieving 95% accuracy vs. 60–70% for GPS-only systems." },
-      { q: "How is the AI model trained?", a: "The model is trained on 50M+ historical deliveries across thousands of lanes. It learns corridor-specific patterns — like which lanes experience delays on Mondays or during certain weather conditions — and applies those learnings to current shipments." },
-      { q: "How far in advance can you predict delays?", a: "On average, the AI detects potential delays 4 hours before they impact delivery. This gives operations teams time to reroute trucks, rescheduled dock appointments, and notify customers proactively." },
-      { q: "Does it work with any carrier?", a: "Yes. The platform is carrier-agnostic. Any carrier with GPS, telematics, or ELD data can be tracked. We also support mobile app-based tracking for carriers without installed devices." },
-      { q: "Can predictive ETAs trigger dock rescheduling?", a: "Absolutely. When an ETA changes significantly, the system can automatically update dock appointments, notify warehouse teams, and adjust labor schedules — without manual intervention." },
-      { q: "How does weather data factor in?", a: "We integrate 48-hour weather forecasts along the shipment route. The AI models the impact of specific weather conditions (snow, rain, fog, extreme heat) on transit times for each corridor." },
-      { q: "What accuracy can we expect?", a: "Our AI achieves 95% accuracy within a 30-minute window for deliveries predicted 4+ hours out. Accuracy improves as the shipment gets closer to destination, reaching 98%+ within the final 2 hours." },
-      { q: "Does the model improve over time?", a: "Yes. The model retrains daily with new delivery data. Every completed shipment makes future predictions smarter — especially for your specific lanes and carrier patterns." },
+      { q: "What is predictive ETA software and how is it different from GPS tracking?", a: "Predictive ETA software uses machine learning to analyze traffic patterns, weather forecasts, driver behavior, hours-of-service regulations, and historical lane data — achieving 95% accuracy vs. 60–70% for GPS-only distance/speed calculations." },
+      { q: "How accurate is predictive ETA software?", a: "TrucksOnTheMap's AI achieves 95% accuracy within a 30-minute window for deliveries predicted 4+ hours out. Accuracy improves as the shipment gets closer to destination, reaching 98%+ within the final 2 hours." },
+      { q: "How does predictive ETA software detect delays before they happen?", a: "The AI continuously analyzes traffic feeds, weather forecasts, and driver HOS data along the route. When conditions change — a storm, congestion, or mandatory rest stop — it recalculates the ETA and alerts your team on average 4 hours before impact." },
+      { q: "Can predictive ETA software work with any carrier?", a: "Yes. The platform is carrier-agnostic. Any carrier with GPS, telematics, or ELD data can be tracked. Mobile app-based tracking is also available for carriers without installed devices." },
+      { q: "Does predictive ETA software integrate with dock scheduling?", a: "Absolutely. When an ETA changes significantly, the system can automatically update dock appointments, notify warehouse teams, and adjust labor schedules — without manual intervention. This is a key differentiator for warehouse operations." },
+      { q: "How does weather affect predictive ETA software calculations?", a: "The platform integrates 48-hour weather forecasts along the entire shipment route. The AI models the impact of specific weather conditions (snow, rain, fog, extreme heat) on transit times for each specific corridor." },
+      { q: "How is the predictive ETA AI model trained?", a: "The model is trained on 50M+ historical deliveries across thousands of lanes. It learns corridor-specific patterns — like which lanes experience delays on Mondays or during certain seasons — and retrains daily with new delivery data." },
+      { q: "What is the ROI of predictive ETA software?", a: "Customers typically see 60% fewer late deliveries, 30% dock labor savings from better arrival planning, and significant reduction in customer 'where is my truck?' calls. Most operations achieve full ROI within 4 months." },
+      { q: "Can predictive ETA software send delivery notifications to customers?", a: "Yes. Configurable notification triggers can send automated ETA updates to customers via email, SMS, or branded tracking portals — improving customer satisfaction and reducing inbound status inquiry calls." },
+      { q: "Does predictive ETA software improve over time?", a: "Yes. The machine learning model retrains daily with new delivery data from your network. Every completed shipment makes future predictions smarter — especially for your specific lanes, carriers, and seasonal patterns." },
     ],
   },
   ctaFinal: {
