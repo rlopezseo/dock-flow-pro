@@ -14,12 +14,12 @@ const config: ProductPageConfig = {
     slug: "yard-management",
   },
   hero: {
-    badge: "Yard Management System",
+    badge: "Yard Management Software",
     headline: (
       <>
-        Your yard is
+        Yard management software
         <br />
-        <span className="text-[#bbb]">the black hole</span>
+        <span className="text-[#bbb]">for the black hole</span>
         <br />
         of your supply chain
       </>

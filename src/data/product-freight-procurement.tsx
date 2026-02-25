@@ -14,14 +14,14 @@ const config: ProductPageConfig = {
     slug: "freight-procurement",
   },
   hero: {
-    badge: "Freight Procurement Platform",
+    badge: "Freight Procurement Software",
     headline: (
       <>
-        Procurement by
+        Freight procurement software
         <br />
-        <span className="text-[#bbb]">spreadsheet</span> is
+        <span className="text-[#bbb]">that replaces</span>
         <br />
-        procurement by chaos
+        spreadsheet chaos
       </>
     ),
     subtext: "Digitize your entire freight procurement cycle — from RFP creation to carrier award. Benchmark rates, compare bids, and source the right carriers in days, not weeks.",
