@@ -39,7 +39,7 @@ const config: ProductPageConfig = {
   },
   problem: {
     label: "The Problem",
-    headline: "Why 35% of all trucks on the road are driving empty",
+    headline: "Why 35% of trucks drive empty without backhaul optimization software",
     subtext: "The return trip is the most wasted resource in freight transport. Without backhaul optimization, trucks drive empty — burning fuel, increasing emissions, and destroying margins.",
     items: [
       { icon: Truck, title: "Trucks Running Empty", description: "Industry average: 25–35% of all truck miles are driven without cargo. That's billions of euros in wasted fuel, driver time, and vehicle wear." },
@@ -53,7 +53,7 @@ const config: ProductPageConfig = {
   },
   outcomes: {
     label: "What You Get",
-    headline: "Turn empty return trips into profitable hauls",
+    headline: "How backhaul optimization software cuts empty miles by 45% and boosts revenue",
     heroCard: {
       icon: RotateCcw,
       target: 45,
@@ -70,7 +70,7 @@ const config: ProductPageConfig = {
   },
   capabilities: {
     label: "Key Capabilities",
-    headline: "Backhaul optimization features built for maximum fill rates",
+    headline: "Backhaul optimization software features: AI matching, network analysis, and sustainability",
     groups: [
       { id: "matching", icon: Brain, title: "AI Backhaul Engine", subtitle: "Smart return load pairing", features: ["Multi-factor matching: location, timing, equipment, HOS compliance", "Triangulation support: match loads that aren't direct backhauls", "Continuous re-optimization as new loads become available", "Configurable matching rules: max detour distance, time windows"] },
       { id: "network", icon: RotateCcw, title: "Network Optimization", subtitle: "Your own loads first", features: ["Cross-reference inbound and outbound freight within your network", "Identify internal backhaul opportunities before going to market", "Multi-shipper collaboration for shared lane optimization", "Round-trip and triangular route planning"] },
@@ -93,7 +93,7 @@ const config: ProductPageConfig = {
   },
   useCases: {
     label: "Use Cases",
-    headline: "Backhaul optimization for every type of operation",
+    headline: "Backhaul optimization software for fleets, 3PLs, retail, and manufacturing",
     cases: [
       { id: "fleet", icon: Truck, label: "Private Fleets", image: imgManufacturing, headline: "Backhaul optimization for company-owned fleets", description: "Your trucks deliver outbound loads and drive home empty. Our AI finds return loads that fit your schedule, equipment, and driver availability — turning every return trip into revenue.", benefits: ["Return load matching for owned trucks", "Driver HOS compliance checking", "Equipment type filtering", "Revenue per trip optimization"] },
       { id: "3pl", icon: Package, label: "3PL & Brokers", image: img3pl, headline: "Backhaul matching to maximize carrier utilization", description: "Offer your carriers backhaul opportunities that keep their trucks full. Improve carrier retention, reduce rates, and earn margins on both legs.", benefits: ["Carrier backhaul portal", "Both-leg margin management", "Carrier satisfaction improvement", "Network-wide optimization"] },
@@ -105,7 +105,7 @@ const config: ProductPageConfig = {
   },
   howItWorks: {
     label: "How It Works",
-    headline: "Backhaul optimization — in five steps",
+    headline: "How does backhaul optimization software work? Five steps to full trucks",
     steps: [
       { icon: MapPin, step: "01", title: "Truck Completes Delivery", description: "When your truck delivers its load, the AI immediately scans for available return loads near the delivery point — within seconds." },
       { icon: Brain, step: "02", title: "AI Finds the Best Match", description: "The algorithm evaluates loads by proximity, timing, equipment compatibility, driver HOS, and profitability — scoring thousands of options in 12 seconds." },
@@ -115,10 +115,10 @@ const config: ProductPageConfig = {
     ],
   },
   compare: {
-    label: "Compare",
+    label: "Backhaul Software vs. Load Boards",
     headline: (
       <>
-        AI backhaul matching vs.<br className="hidden sm:block" /> manual load searching
+        Backhaul optimization software vs.<br className="hidden sm:block" /> manual load searching and phone calls
       </>
     ),
     features: [
@@ -138,16 +138,18 @@ const config: ProductPageConfig = {
   },
   faq: {
     label: "Frequently Asked Questions",
-    headline: "Everything you need to know about backhaul optimization",
+    headline: "Backhaul optimization software FAQ: how it works, ROI, and sustainability",
     items: [
-      { q: "What is backhaul optimization?", a: "Backhaul optimization uses AI to find freight loads for trucks that would otherwise drive empty on their return trip. By matching available loads with returning trucks, it eliminates deadhead miles, reduces costs, and generates revenue from return trips." },
-      { q: "How fast does the AI find a backhaul match?", a: "On average, the AI identifies and scores the best backhaul option in 12 seconds. It evaluates proximity, timing, equipment requirements, driver hours-of-service, and profitability simultaneously." },
-      { q: "What's the difference between backhaul and triangulation?", a: "A backhaul is a direct return load from your delivery point back to your origin. Triangulation involves picking up a load that's not directly on your return route but reduces overall empty miles when combined with other loads. Our AI handles both." },
-      { q: "Does it check driver hours-of-service?", a: "Yes. Every backhaul match is validated against the driver's remaining HOS. The system will never suggest a load that would cause an HOS violation." },
-      { q: "Can we prioritize our own network loads?", a: "Absolutely. The system cross-references your inbound and outbound freight first, identifying internal backhaul opportunities before looking at external loads. This maximizes your own fleet utilization." },
-      { q: "How does it help with sustainability reporting?", a: "Every backhaul match includes a CO₂ savings calculation based on miles saved. The platform generates ESG-ready reports showing empty mile reduction, carbon savings, and fleet efficiency improvements." },
-      { q: "What fill rates can we expect?", a: "Customers typically achieve return trip fill rates of 75–85%, up from 40–50% without optimization. Results depend on your network density, lane structure, and equipment types." },
-      { q: "Does it work for cross-border freight?", a: "Yes. The platform supports cross-border backhaul matching with customs documentation requirements, multi-currency rates, and transit time calculations that account for border crossing delays." },
+      { q: "What is backhaul optimization software?", a: "Backhaul optimization software uses AI to automatically find freight loads for trucks that would otherwise drive empty on their return trip. By matching available loads with returning trucks based on location, timing, and equipment, it eliminates deadhead miles and generates revenue from return trips." },
+      { q: "How fast does backhaul optimization software find a return load?", a: "TrucksOnTheMap's AI identifies and scores the best backhaul option in 12 seconds on average. It evaluates proximity, timing, equipment requirements, driver hours-of-service, and profitability simultaneously across thousands of available loads." },
+      { q: "What is the difference between backhaul matching and triangulation?", a: "Backhaul matching finds a direct return load from your delivery point back to your origin. Triangulation involves picking up a load that isn't directly on your return route but reduces overall empty miles when combined with other loads. Backhaul optimization software handles both strategies." },
+      { q: "Does backhaul optimization software check driver hours-of-service?", a: "Yes. Every backhaul match is validated against the driver's remaining HOS before being suggested. The system will never recommend a load that would cause an hours-of-service violation — ensuring full regulatory compliance." },
+      { q: "Can backhaul optimization software prioritize my own network loads?", a: "Absolutely. The system cross-references your inbound and outbound freight first, identifying internal backhaul opportunities within your own network before looking at external marketplace loads. This maximizes fleet utilization." },
+      { q: "How does backhaul optimization software help with ESG and sustainability?", a: "Every backhaul match includes a CO₂ savings calculation based on miles saved. The platform generates ESG-ready sustainability reports showing empty mile reduction, carbon savings equivalents, and fleet efficiency improvements for corporate disclosures." },
+      { q: "What return load fill rates can backhaul optimization software achieve?", a: "Customers typically achieve return trip fill rates of 75–85%, up from industry-average 40–50% without optimization. Results depend on your network density, lane structure, equipment types, and geographic coverage." },
+      { q: "Does backhaul optimization software work for cross-border freight?", a: "Yes. The platform supports cross-border backhaul matching with customs documentation requirements, multi-currency rate management, and transit time calculations that account for border crossing delays and regulations." },
+      { q: "What is the ROI of backhaul optimization software?", a: "Customers typically see 45% reduction in empty miles, 30% lower total transport costs, and 28% reduction in CO₂ emissions. The revenue generated from previously empty return trips often pays for the platform within the first 2 months." },
+      { q: "How does backhaul optimization software differ from a load board?", a: "Load boards are passive — you search and hope to find a match. Backhaul optimization software is proactive — AI automatically identifies the best return load for each truck based on location, timing, HOS, and profitability, and notifies the driver instantly." },
     ],
   },
   ctaFinal: {

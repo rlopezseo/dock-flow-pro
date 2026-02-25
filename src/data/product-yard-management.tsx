@@ -39,7 +39,7 @@ const config: ProductPageConfig = {
   },
   problem: {
     label: "The Problem",
-    headline: "Why most yards are the most inefficient part of the supply chain",
+    headline: "Why facilities without yard management software lose hours and thousands daily",
     subtext: "The yard is where trucks wait, trailers get lost, and dock schedules fall apart. Without a yard management system, it's organized chaos — at best.",
     items: [
       { icon: Eye, title: "Lost Trailers in the Yard", description: "With 50+ trailers parked across the yard, nobody knows which trailer is where, what's loaded, or which is ready for a dock door." },
@@ -53,7 +53,7 @@ const config: ProductPageConfig = {
   },
   outcomes: {
     label: "What You Get",
-    headline: "Know where every truck and trailer is — in real-time",
+    headline: "How yard management software cuts dwell time by 40% and eliminates lost trailers",
     heroCard: {
       icon: Warehouse,
       target: 35,
@@ -70,7 +70,7 @@ const config: ProductPageConfig = {
   },
   capabilities: {
     label: "Key Capabilities",
-    headline: "Yard management features for modern logistics operations",
+    headline: "Yard management software features: yard map, gate automation, and move optimization",
     groups: [
       { id: "visibility", icon: MapPin, title: "Real-Time Yard Map", subtitle: "Digital twin of your yard", features: ["Interactive yard map with drag-and-drop trailer positioning", "Trailer status tracking: loaded, empty, ready, detained", "Color-coded by priority, dwell time, or customer", "Multi-yard support with centralized dashboard"] },
       { id: "gate", icon: ScanLine, title: "Automated Gate Management", subtitle: "Fast, accurate gate processes", features: ["OCR license plate recognition for automatic identification", "RFID and driver mobile app check-in options", "Appointment validation against dock schedule", "Digital document capture: BOL, seal numbers, driver ID"] },
@@ -93,7 +93,7 @@ const config: ProductPageConfig = {
   },
   useCases: {
     label: "Use Cases",
-    headline: "Yard management solutions for every facility",
+    headline: "Yard management software for distribution centers, 3PLs, retail, and manufacturing",
     cases: [
       { id: "distribution", icon: Factory, label: "Distribution Centers", image: imgManufacturing, headline: "Yard management for high-volume distribution operations", description: "Handle hundreds of daily trailer moves with intelligent assignment. Coordinate inbound receiving and outbound shipping docks with yard positioning.", benefits: ["High-volume move management", "Inbound/outbound dock coordination", "Trailer pre-staging automation", "Peak volume capacity planning"] },
       { id: "3pl", icon: Package, label: "3PL Warehouses", image: img3pl, headline: "Multi-client yard management for shared facilities", description: "Manage yard space across multiple clients with separate visibility, priorities, and billing. Know whose trailer is where — always.", benefits: ["Client-specific yard zones", "Shared dock allocation rules", "Per-client dwell time tracking", "White-label yard visibility portal"] },
@@ -105,7 +105,7 @@ const config: ProductPageConfig = {
   },
   howItWorks: {
     label: "How It Works",
-    headline: "Yard management — digitized in five steps",
+    headline: "How does yard management software work? Five steps to a digital yard",
     steps: [
       { icon: ScanLine, step: "01", title: "Truck Arrives at Gate", description: "Driver checks in via OCR, RFID, or mobile app. The system validates the appointment, captures documents, and assigns a yard spot — in under 8 minutes." },
       { icon: MapPin, step: "02", title: "AI Assigns Yard Position", description: "Based on dock schedule, load priority, and departure time, the AI assigns the optimal parking spot to minimize future moves." },
@@ -115,10 +115,10 @@ const config: ProductPageConfig = {
     ],
   },
   compare: {
-    label: "Compare",
+    label: "Yard Management Software vs. Manual",
     headline: (
       <>
-        Digital yard management vs.<br className="hidden sm:block" /> clipboard and radio
+        Yard management software vs.<br className="hidden sm:block" /> clipboards, radios, and manual yard checks
       </>
     ),
     features: [
@@ -138,16 +138,18 @@ const config: ProductPageConfig = {
   },
   faq: {
     label: "Frequently Asked Questions",
-    headline: "Everything you need to know about yard management software",
+    headline: "Yard management software FAQ: features, ROI, and implementation",
     items: [
-      { q: "What is a yard management system (YMS)?", a: "A yard management system digitizes the operations between a facility's gate and its dock doors. It tracks every truck and trailer in the yard, automates gate processes, optimizes spotter moves, and coordinates dock assignments — replacing manual yard checks with real-time digital visibility." },
-      { q: "How does a YMS reduce yard moves?", a: "AI-powered spot assignment considers the dock schedule, load priority, and departure time when assigning parking spots. By placing trailers near their future dock doors, the system eliminates 35% of unnecessary repositioning moves." },
-      { q: "What gate automation options are available?", a: "The platform supports OCR (optical character recognition) for license plates, RFID tags, and driver mobile app check-in. These methods reduce gate processing time from 15–20 minutes to under 8 minutes." },
-      { q: "Can we manage multiple yards from one platform?", a: "Yes. The platform supports centralized multi-yard management with facility-specific rules, separate yard maps, and consolidated analytics across all locations." },
-      { q: "How does dock-to-yard coordination work?", a: "The YMS communicates with the dock scheduling system to pre-stage trailers near assigned dock doors before appointments. When a dock door becomes available, the trailer is already in position — eliminating wait time." },
-      { q: "Does it track reefer trailers?", a: "Yes. The system tracks reefer fuel levels, temperature status, and plug-in locations. Temperature-sensitive trailers are automatically prioritized for faster docking." },
-      { q: "How long does implementation take?", a: "Most YMS implementations go live within 6–8 weeks, including gate hardware installation (if OCR/RFID), system configuration, integration with WMS/dock scheduling, and operator training." },
-      { q: "What ROI can we expect?", a: "Typical ROI includes 35% fewer yard moves ($15–25 saved per move), 40% less truck dwell time (reducing detention costs), and 2 FTE savings from eliminating manual yard checks. Most facilities achieve full ROI within 6 months." },
+      { q: "What is yard management software (YMS)?", a: "Yard management software digitizes operations between a facility's gate and its dock doors. It tracks every truck and trailer in the yard in real-time, automates gate check-in processes, optimizes spotter moves, and coordinates dock assignments — replacing manual clipboard-based yard checks." },
+      { q: "How does yard management software reduce trailer moves?", a: "AI-powered spot assignment considers the dock schedule, load priority, and departure time when assigning parking spots. By placing trailers near their future dock doors from arrival, the system eliminates 35% of unnecessary repositioning moves." },
+      { q: "What gate automation does yard management software support?", a: "Modern YMS platforms support OCR (optical character recognition) for license plates, RFID tag scanning, and driver mobile app check-in. These methods reduce gate processing time from 15–20 minutes to under 8 minutes per truck." },
+      { q: "Can yard management software manage multiple yards?", a: "Yes. Enterprise YMS platforms support centralized multi-yard management with facility-specific rules, separate yard maps, and consolidated analytics across all locations — all from a single dashboard." },
+      { q: "How does yard management software coordinate with dock scheduling?", a: "The YMS communicates with the dock scheduling system to pre-stage trailers near assigned dock doors before appointments. When a dock door becomes available, the trailer is already in position — eliminating wait time and reducing dwell." },
+      { q: "Does yard management software track reefer trailers?", a: "Yes. Advanced YMS platforms track reefer fuel levels, temperature status, and plug-in locations. Temperature-sensitive trailers are automatically prioritized for faster docking to minimize cold chain exposure." },
+      { q: "How long does yard management software implementation take?", a: "Most YMS implementations go live within 6–8 weeks, including gate hardware installation (if OCR/RFID), system configuration, WMS and dock scheduling integration, and operator training." },
+      { q: "What ROI can I expect from yard management software?", a: "Typical ROI includes 35% fewer yard moves ($15–25 saved per move), 40% less truck dwell time (reducing detention costs), and 2 FTE savings from eliminating manual yard checks. Most facilities achieve full ROI within 6 months." },
+      { q: "What is the difference between a YMS and a WMS?", a: "A WMS (Warehouse Management System) manages operations inside the warehouse — inventory, picking, packing. A YMS manages operations outside — gate check-in, trailer positioning, dock coordination. The two systems work together for seamless facility operations." },
+      { q: "Is yard management software worth it for small facilities?", a: "Yes. Even facilities with 20–30 dock doors and 50+ daily trailer moves benefit significantly. The automation of gate processing, trailer tracking, and dock coordination saves time and eliminates the chaos of manual yard management." },
     ],
   },
   ctaFinal: {
