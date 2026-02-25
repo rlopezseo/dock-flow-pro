@@ -17,12 +17,12 @@ import img3pl from "@/assets/usecase-3pl.jpg";
 type MenuItem = { icon: typeof CalendarClock; title: string; desc: string; href: string };
 
 const platformItems: MenuItem[] = [
-  { icon: CalendarClock, title: "Dock Scheduling", desc: "Automated appointment booking & capacity management", href: "/dock-scheduling" },
+  { icon: CalendarClock, title: "Dock Scheduling", desc: "Automated appointment booking & capacity management", href: "/" },
   { icon: Eye, title: "Freight Visibility", desc: "Real-time tracking from gate to departure", href: "/freight-visibility" },
   { icon: Truck, title: "Load Matching", desc: "Reduce empty miles with intelligent matching", href: "/load-matching" },
-  { icon: Sparkles, title: "Empty Miles Reduction", desc: "AI-powered optimization for return loads", href: "/empty-miles" },
-  { icon: BarChart3, title: "Freight Analytics", desc: "Dashboards, KPIs & operational intelligence", href: "/freight-analytics" },
-  { icon: Plug, title: "API & Integrations", desc: "Connect SAP, Oracle, WMS, TMS & more", href: "/api-integrations" },
+  { icon: Sparkles, title: "Backhaul Optimization", desc: "AI-powered optimization for return loads", href: "/backhaul-optimization" },
+  { icon: BarChart3, title: "Predictive ETA", desc: "AI-powered freight arrival predictions", href: "/predictive-eta" },
+  { icon: Plug, title: "Yard Management", desc: "Digital truck yard optimization", href: "/yard-management" },
 ];
 
 const solutionsItems: MenuItem[] = [

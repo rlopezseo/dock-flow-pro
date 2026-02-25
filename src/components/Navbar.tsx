@@ -77,11 +77,13 @@ const Navbar = () => {
             className="lg:hidden bg-[hsl(207,30%,12%)] border-b border-white/10"
           >
             <div className="container py-8 flex flex-col gap-1">
-              <a href="/platform" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">platform</a>
-              <a href="/solutions" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">solutions</a>
-              <a href="/industries" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">industries</a>
-              <a href="/blog" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">blog</a>
-              <a href="/about" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">about</a>
+              <a href="/" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">platform</a>
+              <a href="/load-matching" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">load matching</a>
+              <a href="/freight-procurement" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">freight procurement</a>
+              <a href="/freight-visibility" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">freight visibility</a>
+              <a href="/predictive-eta" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">predictive ETA</a>
+              <a href="/yard-management" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">yard management</a>
+              <a href="/backhaul-optimization" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">backhaul optimization</a>
               <a href="#contact" className="text-muted-foreground font-body font-normal py-3">get in contact</a>
               <div className="flex gap-3 pt-4">
                 <a href="#contact" className="flex-1 text-center px-4 py-3 border border-white/20 rounded-full text-sm font-body font-normal text-foreground">
