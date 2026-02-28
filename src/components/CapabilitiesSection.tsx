@@ -1,6 +1,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { CalendarClock, Users, ScanLine, Plug, BarChart3, Check } from "lucide-react";
+import bgCapabilities from "@/assets/bg-capabilities.jpg";
 
 const groups = [
   {
@@ -74,7 +75,11 @@ const CapabilitiesSection = () => {
 
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
-      <div className="container">
+      <div className="absolute inset-0">
+        <img src={bgCapabilities} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+      </div>
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

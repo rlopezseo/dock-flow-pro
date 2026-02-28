@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, X, ArrowRight, FileSpreadsheet, Mail } from "lucide-react";
 import iconTotm from "@/assets/icon-totm.png";
+import bgCompare from "@/assets/bg-compare.jpg";
 
 const features = [
   "Automated dock scheduling",
@@ -21,7 +22,11 @@ const CompareSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-28 overflow-hidden bg-[hsl(220,12%,96%)]" ref={ref}>
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0">
+        <img src={bgCompare} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/90" />
+      </div>
       <div className="container max-w-5xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}

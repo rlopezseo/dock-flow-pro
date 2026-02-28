@@ -11,6 +11,10 @@ import heroImage from "@/assets/hero-dock.jpg";
 import bgHowItWorks from "@/assets/bg-howitworks.jpg";
 import bgCtaBanner from "@/assets/bg-cta-banner.jpg";
 import bgCtaFinal from "@/assets/bg-cta-final.jpg";
+import bgOutcomes from "@/assets/bg-outcomes.jpg";
+import bgCapabilities from "@/assets/bg-capabilities.jpg";
+import bgCompare from "@/assets/bg-compare.jpg";
+import bgTestimonials from "@/assets/bg-testimonials.jpg";
 import iconTotm from "@/assets/icon-totm.png";
 import avatarForray from "@/assets/avatar-forray.jpg";
 import avatarDomonkos from "@/assets/avatar-domonkos.jpg";
@@ -206,8 +210,12 @@ const OutcomesBlock = ({ config }: { config: ProductPageConfig }) => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const c = config.outcomes;
   return (
-    <section className="relative py-28" ref={ref}>
-      <div className="container">
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0">
+        <img src={bgOutcomes} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+      </div>
+      <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="max-w-2xl mb-16">
           <div className="accent-line w-12 mb-6" />
           <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">{c.label}</p>
@@ -305,7 +313,11 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
 
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
-      <div className="container">
+      <div className="absolute inset-0">
+        <img src={bgCapabilities} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+      </div>
+      <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-4">{config.capabilities.label}</p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">{config.capabilities.headline}</h2>
@@ -515,8 +527,12 @@ const ProofBlock = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
-    <section className="relative py-28" ref={ref}>
-      <div className="container">
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0">
+        <img src={bgTestimonials} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+      </div>
+      <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center mb-16">
           <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">What Our Clients Say</p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">Trusted by logistics leaders across Europe</h2>
@@ -549,7 +565,11 @@ const CompareBlock = ({ config }: { config: ProductPageConfig }) => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const c = config.compare;
   return (
-    <section className="relative py-28 overflow-hidden bg-[hsl(220,12%,96%)]" ref={ref}>
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0">
+        <img src={bgCompare} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/90" />
+      </div>
       <div className="container max-w-5xl relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center mb-16">
           <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">{c.label}</p>
