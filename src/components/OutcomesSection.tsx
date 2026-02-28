@@ -24,8 +24,8 @@ const OutcomesSection = () => {
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
-        <img src={bgOutcomes} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/93" />
+        <img src={bgOutcomes} alt="" className="w-full h-full object-cover opacity-[0.04]" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]" />
       </div>
       <div className="container relative z-10">
         <motion.div
