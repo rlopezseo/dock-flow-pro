@@ -37,7 +37,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-sm sm:text-base text-white/80 max-w-lg font-body font-normal leading-relaxed mb-10">
-            Reduce carrier dwell time by 60%. Fill every dock slot without a single phone call. Full visibility from gate check-in to departure.
+            TrucksOnTheMap reduces carrier dwell time by 60%. Fill every dock slot without a single phone call. Full visibility from gate check-in to departure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

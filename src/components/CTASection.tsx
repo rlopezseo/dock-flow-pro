@@ -33,7 +33,7 @@ const CTASection = () => {
             Let's talk dock scheduling
           </h2>
           <p className="text-white/50 font-body font-normal text-sm mb-10 leading-relaxed">
-            Book a 30-minute discovery call. We'll show you how to reduce carrier dwell time, maximize dock utilization, and go live in 7 weeks.
+            Book a 30-minute discovery call. We'll show you how TrucksOnTheMap reduces carrier dwell time, maximizes dock utilization, and goes live in 7 weeks.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

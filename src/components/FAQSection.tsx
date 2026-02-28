@@ -91,7 +91,7 @@ const FAQSection = () => {
             Frequently Asked Questions
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
-            Everything you need to know about dock scheduling
+            Everything you need to know about TrucksOnTheMap dock scheduling
           </h2>
           <div className="accent-line w-16 mx-auto" />
         </motion.div>
