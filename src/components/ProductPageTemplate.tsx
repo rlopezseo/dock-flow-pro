@@ -324,9 +324,17 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
         </motion.div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
           {config.capabilities.groups.map((g, i) => (
-            <motion.button key={g.id} initial={{ opacity: 0, y: 15 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.06 * i }} onClick={() => setActiveGroup(g.id)} className={`relative rounded-xl p-5 text-center transition-all duration-400 group ${activeGroup === g.id ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20" : "bg-card card-elevated text-foreground hover:shadow-lg hover:-translate-y-0.5"}`}>
-              <g.icon className={`w-7 h-7 mx-auto mb-3 ${activeGroup === g.id ? "text-white" : "text-primary"}`} />
-              <span className="block text-[11px] md:text-xs font-body font-normal leading-tight">{g.title.length > 25 ? g.title.split(" — ")[0] : g.title}</span>
+            <motion.button key={g.id} initial={{ opacity: 0, y: 15 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.06 * i }} onClick={() => setActiveGroup(g.id)} className={`relative rounded-xl p-5 text-center transition-all duration-400 group overflow-hidden ${activeGroup === g.id ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20 border border-primary/30" : "bg-card text-foreground hover:shadow-lg hover:-translate-y-0.5 border border-border/50"}`}>
+              {/* Subtle background texture */}
+              <div className={`absolute inset-0 transition-opacity duration-400 ${activeGroup === g.id ? "opacity-100" : "opacity-[0.03]"}`}>
+                <div className={`absolute inset-0 ${activeGroup === g.id ? "bg-gradient-to-br from-white/10 to-transparent" : "bg-gradient-to-br from-primary/30 to-transparent"}`} />
+              </div>
+              {/* Decorative circle */}
+              <div className={`absolute -right-6 -top-6 w-20 h-20 rounded-full transition-opacity duration-400 ${activeGroup === g.id ? "bg-white/10" : "bg-primary/[0.03]"}`} />
+              <div className="relative z-10">
+                <g.icon className={`w-7 h-7 mx-auto mb-3 ${activeGroup === g.id ? "text-white" : "text-primary"}`} />
+                <span className="block text-[11px] md:text-xs font-body font-normal leading-tight">{g.title.length > 25 ? g.title.split(" — ")[0] : g.title}</span>
+              </div>
             </motion.button>
           ))}
         </div>
