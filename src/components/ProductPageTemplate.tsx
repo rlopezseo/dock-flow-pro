@@ -13,9 +13,16 @@ import bgCtaBanner from "@/assets/bg-cta-banner.jpg";
 import bgCtaFinal from "@/assets/bg-cta-final.jpg";
 import bgOutcomes from "@/assets/bg-outcomes.jpg";
 import bgCapabilities from "@/assets/bg-capabilities.jpg";
+import capTracking from "@/assets/cap-tracking.jpg";
+import capDashboard from "@/assets/cap-dashboard.jpg";
+import capFleet from "@/assets/cap-fleet.jpg";
+import capIntegrations from "@/assets/cap-integrations.jpg";
+import capNetwork from "@/assets/cap-network.jpg";
 import bgCompare from "@/assets/bg-compare.jpg";
 import bgTestimonials from "@/assets/bg-testimonials.jpg";
 import iconTotm from "@/assets/icon-totm.png";
+
+const capImages = [capTracking, capDashboard, capFleet, capIntegrations, capNetwork];
 import avatarForray from "@/assets/avatar-forray.jpg";
 import avatarDomonkos from "@/assets/avatar-domonkos.jpg";
 import avatarRafaj from "@/assets/avatar-rafaj.jpg";
@@ -331,12 +338,12 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
           ))}
         </div>
         <AnimatePresence mode="wait">
-          <motion.div key={active.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.35 }} className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_hsl(220_20%_50%/0.08),0_16px_48px_hsl(220_20%_50%/0.05)]">
-            {/* Full-card background image */}
-            <img src={bgCapabilities} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(207,60%,28%)]/95 via-[hsl(207,45%,18%)]/85 to-[hsl(210,20%,97%)]/97" />
-            <div className="relative z-10 grid md:grid-cols-2">
-              <div className="p-10 md:p-12 flex flex-col justify-center relative">
+          <motion.div key={active.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.35 }} className="bg-card rounded-2xl overflow-hidden shadow-[0_4px_24px_hsl(220_20%_50%/0.08),0_16px_48px_hsl(220_20%_50%/0.05)]">
+            <div className="grid md:grid-cols-2">
+              <div className="relative p-10 md:p-12 flex flex-col justify-center overflow-hidden">
+                {/* Per-group background image */}
+                <img src={capImages[config.capabilities.groups.indexOf(active) % capImages.length]} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[hsl(207,60%,28%)]/85 to-[hsl(207,45%,18%)]/90" />
                 <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5" />
                 <div className="absolute -left-10 -bottom-16 w-48 h-48 rounded-full bg-white/3" />
                 <div className="relative z-10">
@@ -345,7 +352,7 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
                   <p className="text-sm text-white/60 font-body font-normal">{active.subtitle}</p>
                 </div>
               </div>
-              <div className="p-8 md:p-12 flex flex-col justify-center bg-card/90 backdrop-blur-sm">
+              <div className="p-8 md:p-12 flex flex-col justify-center">
                 <div className="space-y-5">
                   {active.features.map((feat, i) => (
                     <motion.div key={feat} initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.07 * i + 0.1 }} className="flex items-start gap-4">
