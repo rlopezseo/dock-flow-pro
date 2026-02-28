@@ -24,7 +24,7 @@ const config: ProductPageConfig = {
         of your supply chain
       </>
     ),
-    subtext: "Live visibility into every truck, trailer, and container in your yard. Automated gate processes, intelligent dock assignment, and yard move optimization that cuts dwell time by 40%.",
+    subtext: "TrucksOnTheMap gives you live visibility into every truck, trailer, and container in your yard. Automated gate processes, intelligent dock assignment, and yard move optimization that cuts dwell time by 40%.",
     ctaPrimary: "OPTIMIZE YOUR YARD",
     ctaSecondary: "Explore Features",
     image: heroImage,
@@ -53,14 +53,14 @@ const config: ProductPageConfig = {
   },
   outcomes: {
     label: "What You Get",
-    headline: "How yard management software cuts dwell time by 40% and eliminates lost trailers",
+    headline: "How TrucksOnTheMap cuts dwell time by 40% and eliminates lost trailers",
     heroCard: {
       icon: Warehouse,
       target: 35,
       suffix: "%",
       sublabel: "fewer yard moves",
       title: "Smart yard orchestration that eliminates wasted moves",
-      description: "The system assigns optimal parking spots based on dock schedule, load priority, and departure time, cutting spotter moves by 35% and freeing up yard capacity.",
+      description: "TrucksOnTheMap assigns optimal parking spots based on dock schedule, load priority, and departure time, cutting spotter moves by 35% and freeing up yard capacity.",
     },
     cards: [
       { icon: Clock, target: 40, suffix: "%", sublabel: "less dwell", title: "Cut truck dwell time dramatically", description: "Dock-to-yard coordination means trucks get docked as soon as doors are free, not 2 hours later." },
@@ -72,7 +72,7 @@ const config: ProductPageConfig = {
   },
   capabilities: {
     label: "Key Capabilities",
-    headline: "Yard management software features: yard map, gate automation, and move optimization",
+    headline: "Yard management features built into TrucksOnTheMap",
     groups: [
       { id: "visibility", icon: MapPin, title: "Live Yard Map", subtitle: "Digital twin of your yard", features: ["Interactive yard map with drag-and-drop trailer positioning", "Trailer status tracking: loaded, empty, ready, detained", "Color-coded by priority, dwell time, or customer", "Multi-yard support with centralized dashboard"] },
       { id: "gate", icon: ScanLine, title: "Automated Gate Management", subtitle: "Fast, accurate gate processes", features: ["OCR license plate recognition for automatic identification", "RFID and driver mobile app check-in options", "Appointment validation against dock schedule", "Digital document capture: BOL, seal numbers, driver ID"] },
@@ -95,32 +95,32 @@ const config: ProductPageConfig = {
   },
   useCases: {
     label: "Use Cases",
-    headline: "Yard management software for distribution centers, 3PLs, retail, and manufacturing",
+    headline: "Who uses TrucksOnTheMap for yard management?",
     cases: [
-      { id: "distribution", icon: Factory, label: "Distribution Centers", image: imgManufacturing, headline: "Yard management for high-volume distribution operations", description: "Handle hundreds of daily trailer moves with smart assignment. Coordinate inbound receiving and outbound shipping docks with yard positioning.", benefits: ["High-volume move management", "Inbound/outbound dock coordination", "Trailer pre-staging automation", "Peak volume capacity planning"] },
+      { id: "distribution", icon: Factory, label: "Distribution Centers", image: imgManufacturing, headline: "Yard management for high-volume distribution operations", description: "Handle hundreds of daily trailer moves with smart assignment. TrucksOnTheMap coordinates inbound receiving and outbound shipping docks with yard positioning.", benefits: ["High-volume move management", "Inbound/outbound dock coordination", "Trailer pre-staging automation", "Peak volume capacity planning"] },
       { id: "3pl", icon: Package, label: "3PL Warehouses", image: img3pl, headline: "Multi-client yard management for shared facilities", description: "Manage yard space across multiple clients with separate visibility, priorities, and billing. Know whose trailer is where, always.", benefits: ["Client-specific yard zones", "Shared dock allocation rules", "Per-client dwell time tracking", "White-label yard visibility portal"] },
-      { id: "retail", icon: ShoppingCart, label: "Retail & Grocery", image: imgRetail, headline: "Yard optimization for high-frequency retail receiving", description: "Retail DCs process hundreds of deliveries daily. Yard management keeps trailers moving from gate to dock to departure without bottlenecks.", benefits: ["Rapid gate processing", "Priority dock assignment by PO", "Vendor scorecarding by yard time", "Seasonal surge capacity management"] },
+      { id: "retail", icon: ShoppingCart, label: "Retail & Grocery", image: imgRetail, headline: "Yard optimization for high-frequency retail receiving", description: "Retail DCs process hundreds of deliveries daily. TrucksOnTheMap keeps trailers moving from gate to dock to departure without bottlenecks.", benefits: ["Rapid gate processing", "Priority dock assignment by PO", "Vendor scorecarding by yard time", "Seasonal surge capacity management"] },
       { id: "manufacturing", icon: ArrowDownUp, label: "Manufacturing Plants", image: imgInbound, headline: "Yard management for JIT manufacturing facilities", description: "In manufacturing, the yard feeds the production line. Raw material trailers need to be at the right dock at the right time to prevent line stoppages.", benefits: ["Production-synced trailer positioning", "Raw material priority staging", "Empty trailer return management", "Supplier arrival coordination"] },
-      { id: "coldchain", icon: Snowflake, label: "Cold Storage", image: imgColdchain, headline: "Yard management for temperature-controlled facilities", description: "Minimize reefer dwell time in the yard. Prioritize temperature-sensitive trailers for immediate docking and track reefer fuel levels.", benefits: ["Reefer priority docking", "Fuel level monitoring", "Temperature zone assignment", "Exposure time minimization"] },
+      { id: "coldchain", icon: Snowflake, label: "Cold Storage", image: imgColdchain, headline: "Yard management for temperature-controlled facilities", description: "Minimize reefer dwell time in the yard. TrucksOnTheMap prioritizes temperature-sensitive trailers for immediate docking and tracks reefer fuel levels.", benefits: ["Reefer priority docking", "Fuel level monitoring", "Temperature zone assignment", "Exposure time minimization"] },
     ],
-    cta: "Start Optimizing Your Yard",
+    cta: "Start with TrucksOnTheMap",
   },
   howItWorks: {
     label: "How It Works",
-    headline: "How does yard management software work? Five steps to a digital yard",
+    headline: "How TrucksOnTheMap manages your yard in five steps",
     steps: [
-      { icon: ScanLine, step: "01", title: "Truck Arrives at Gate", description: "Driver checks in via OCR, RFID, or mobile app. The system validates the appointment, captures documents, and assigns a yard spot in under 8 minutes." },
-      { icon: MapPin, step: "02", title: "System Assigns Yard Position", description: "Based on dock schedule, load priority, and departure time, the optimal parking spot is assigned to minimize future moves." },
+      { icon: ScanLine, step: "01", title: "Truck Arrives at Gate", description: "Driver checks in via OCR, RFID, or mobile app. TrucksOnTheMap validates the appointment, captures documents, and assigns a yard spot in under 8 minutes." },
+      { icon: MapPin, step: "02", title: "System Assigns Yard Position", description: "Based on dock schedule, load priority, and departure time, our software assigns the optimal parking spot to minimize future moves." },
       { icon: Truck, step: "03", title: "Spotter Executes Move", description: "The spotter gets the task on their mobile device with directions. Move completion is logged automatically." },
-      { icon: Layers, step: "04", title: "Dock-Ready Pre-Staging", description: "Before the dock appointment, the trailer is automatically queued for pre-staging near the assigned door. Zero waiting." },
+      { icon: Layers, step: "04", title: "Dock-Ready Pre-Staging", description: "Before the dock appointment, TrucksOnTheMap automatically queues the trailer for pre-staging near the assigned door. Zero waiting." },
       { icon: BarChart3, step: "05", title: "Analyze & Optimize", description: "Yard analytics reveal dwell time trends, spotter efficiency, gate bottlenecks, and utilization patterns for continuous improvement." },
     ],
   },
   compare: {
-    label: "Yard Management Software vs. Manual",
+    label: "TrucksOnTheMap vs. Manual Yard Management",
     headline: (
       <>
-        Yard management software vs.<br className="hidden sm:block" /> clipboards, radios, and manual yard checks
+        TrucksOnTheMap yard management vs.<br className="hidden sm:block" /> clipboards, radios, and manual yard checks
       </>
     ),
     features: [
@@ -136,28 +136,28 @@ const config: ProductPageConfig = {
       "Gate processing in 8 minutes",
     ],
     oldWay: { title: "Clipboards & Two-Way Radios", subtitle: "The old way" },
-    cta: "Switch to Smart Yard Management",
+    cta: "Switch to TrucksOnTheMap",
   },
   faq: {
     label: "Frequently Asked Questions",
-    headline: "Yard management software FAQ: features, ROI, and implementation",
+    headline: "TrucksOnTheMap yard management FAQ",
     items: [
-      { q: "What is yard management software (YMS)?", a: "Yard management software digitizes operations between a facility's gate and its dock doors. It tracks every truck and trailer in the yard in real time, automates gate check-in, optimizes spotter moves, and coordinates dock assignments. It replaces manual clipboard-based yard checks." },
-      { q: "How does it reduce trailer moves?", a: "Smart spot assignment considers the dock schedule, load priority, and departure time when parking trailers. By placing them near their future dock doors from arrival, unnecessary repositioning drops by 35%." },
-      { q: "What gate automation is supported?", a: "OCR (optical character recognition) for license plates, RFID scanning, and driver mobile app check-in. These methods cut gate processing from 15–20 minutes to under 8 per truck." },
-      { q: "Can it manage multiple yards?", a: "Yes. Enterprise YMS platforms support centralized multi-yard management with facility-specific rules, separate yard maps, and consolidated analytics across all locations from one dashboard." },
-      { q: "How does it coordinate with dock scheduling?", a: "The YMS communicates with the dock scheduling system to pre-stage trailers near assigned doors before appointments. When a door becomes available, the trailer is already in position." },
-      { q: "Does it track reefer trailers?", a: "Yes. Advanced YMS platforms track reefer fuel levels, temperature status, and plug-in locations. Temperature-sensitive trailers are prioritized for faster docking." },
+      { q: "What is yard management software (YMS)?", a: "Yard management software digitizes operations between a facility's gate and its dock doors. TrucksOnTheMap tracks every truck and trailer in your yard in real time, automates gate check-in, optimizes spotter moves, and coordinates dock assignments. It replaces manual clipboard-based yard checks." },
+      { q: "How does TrucksOnTheMap reduce trailer moves?", a: "Smart spot assignment considers the dock schedule, load priority, and departure time when parking trailers. By placing them near their future dock doors from arrival, unnecessary repositioning drops by 35%." },
+      { q: "What gate automation does TrucksOnTheMap support?", a: "OCR (optical character recognition) for license plates, RFID scanning, and driver mobile app check-in. These methods cut gate processing from 15–20 minutes to under 8 per truck." },
+      { q: "Can TrucksOnTheMap manage multiple yards?", a: "Yes. Our platform supports centralized multi-yard management with facility-specific rules, separate yard maps, and consolidated analytics across all locations from one dashboard." },
+      { q: "How does TrucksOnTheMap coordinate with dock scheduling?", a: "Our YMS communicates with the dock scheduling system to pre-stage trailers near assigned doors before appointments. When a door becomes available, the trailer is already in position." },
+      { q: "Does TrucksOnTheMap track reefer trailers?", a: "Yes. Our platform tracks reefer fuel levels, temperature status, and plug-in locations. Temperature-sensitive trailers are prioritized for faster docking." },
       { q: "How long does implementation take?", a: "Most implementations go live within 6–8 weeks, including gate hardware installation (if needed), configuration, WMS and dock scheduling integration, and operator training." },
-      { q: "What ROI can I expect?", a: "Typical results: 35% fewer yard moves (€15–25 saved per move), 40% less truck dwell time (lower detention costs), and 2 FTE savings from eliminating manual yard checks. Most facilities reach full ROI within 6 months." },
-      { q: "What is the difference between a YMS and a WMS?", a: "A WMS manages operations inside the warehouse (inventory, picking, packing). A YMS manages operations outside (gate check-in, trailer positioning, dock coordination). The two work together for smooth facility operations." },
-      { q: "Is it worth it for small facilities?", a: "Yes. Even facilities with 20–30 dock doors and 50+ daily trailer moves benefit significantly. Automating gate processing, trailer tracking, and dock coordination saves time and removes the chaos of manual yard management." },
+      { q: "What ROI can I expect from TrucksOnTheMap?", a: "Typical results: 35% fewer yard moves (€15–25 saved per move), 40% less truck dwell time (lower detention costs), and 2 FTE savings from eliminating manual yard checks. Most facilities reach full ROI within 6 months." },
+      { q: "What is the difference between a YMS and a WMS?", a: "A WMS manages operations inside the warehouse (inventory, picking, packing). TrucksOnTheMap manages operations outside (gate check-in, trailer positioning, dock coordination). The two work together for smooth facility operations." },
+      { q: "Is TrucksOnTheMap worth it for small facilities?", a: "Yes. Even facilities with 20–30 dock doors and 50+ daily trailer moves benefit significantly. Automating gate processing, trailer tracking, and dock coordination saves time and removes the chaos of manual yard management." },
     ],
   },
   ctaFinal: {
     label: "Ready to Optimize Your Yard?",
-    headline: "Let's talk yard management",
-    subtext: "Book a 30-minute demo. We'll show you how to digitize your yard, cut moves by 35%, and stop counting trailers by hand.",
+    headline: "Let's talk about TrucksOnTheMap",
+    subtext: "Book a 30-minute demo. We'll show you how our software digitizes your yard, cuts moves by 35%, and stops counting trailers by hand.",
   },
 };
 

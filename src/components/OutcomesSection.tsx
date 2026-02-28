@@ -34,7 +34,7 @@ const OutcomesSection = () => {
             What You Get
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
-            Reduce truck wait times and maximize dock utilization — automatically
+            How TrucksOnTheMap reduces truck wait times and maximizes dock utilization
           </h2>
         </motion.div>
 
@@ -64,7 +64,7 @@ const OutcomesSection = () => {
                 Cut carrier dwell time with automated time slot management
               </h3>
               <p className="text-sm text-white/60 font-body font-normal leading-relaxed max-w-md">
-                Staggered arrivals, enforced buffer times, and smart dock allocation bring average wait down from 2+ hours to under 50 minutes.
+                TrucksOnTheMap staggers arrivals, enforces buffer times, and assigns docks intelligently to bring average wait down from 2+ hours to under 50 minutes.
               </p>
             </div>
           </motion.div>

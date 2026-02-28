@@ -63,7 +63,7 @@ const ProblemSection = () => {
             Why warehouse dock scheduling still fails without automation
           </h2>
           <p className="text-muted-foreground font-body font-normal text-sm leading-relaxed max-w-lg">
-            Most warehouses still manage dock scheduling with phone calls, emails, and spreadsheets. The result is predictable — and expensive.
+            Most warehouses still manage dock scheduling with phone calls, emails, and spreadsheets. TrucksOnTheMap was built to fix that.
           </p>
         </motion.div>
 

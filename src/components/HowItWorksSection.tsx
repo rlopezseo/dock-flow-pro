@@ -59,7 +59,7 @@ const HowItWorksSection = () => {
             How It Works
           </p>
           <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
-            Loading dock appointment scheduling — in five steps
+            How TrucksOnTheMap handles dock scheduling — in five steps
           </h2>
         </motion.div>
 
