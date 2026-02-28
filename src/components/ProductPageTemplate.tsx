@@ -344,8 +344,6 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
                 {/* Per-group background image */}
                 <img src={capImages[config.capabilities.groups.indexOf(active) % capImages.length]} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-br from-[hsl(207,60%,28%)]/85 to-[hsl(207,45%,18%)]/90" />
-                <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5" />
-                <div className="absolute -left-10 -bottom-16 w-48 h-48 rounded-full bg-white/3" />
                 <div className="relative z-10">
                   <active.icon className="w-10 h-10 text-white/50 mb-6" />
                   <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-3 leading-snug">{active.title}</h3>
