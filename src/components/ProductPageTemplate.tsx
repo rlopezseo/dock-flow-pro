@@ -324,36 +324,28 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
         </motion.div>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
           {config.capabilities.groups.map((g, i) => (
-            <motion.button key={g.id} initial={{ opacity: 0, y: 15 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.06 * i }} onClick={() => setActiveGroup(g.id)} className={`relative rounded-xl p-5 text-center transition-all duration-400 group overflow-hidden ${activeGroup === g.id ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20 border border-primary/30" : "bg-card text-foreground hover:shadow-lg hover:-translate-y-0.5 border border-border/50"}`}>
-              {/* Subtle background texture */}
-              <div className={`absolute inset-0 transition-opacity duration-400 ${activeGroup === g.id ? "opacity-100" : "opacity-[0.03]"}`}>
-                <div className={`absolute inset-0 ${activeGroup === g.id ? "bg-gradient-to-br from-white/10 to-transparent" : "bg-gradient-to-br from-primary/30 to-transparent"}`} />
-              </div>
-              {/* Decorative circle */}
-              <div className={`absolute -right-6 -top-6 w-20 h-20 rounded-full transition-opacity duration-400 ${activeGroup === g.id ? "bg-white/10" : "bg-primary/[0.03]"}`} />
-              <div className="relative z-10">
-                <g.icon className={`w-7 h-7 mx-auto mb-3 ${activeGroup === g.id ? "text-white" : "text-primary"}`} />
-                <span className="block text-[11px] md:text-xs font-body font-normal leading-tight">{g.title.length > 25 ? g.title.split(" — ")[0] : g.title}</span>
-              </div>
+            <motion.button key={g.id} initial={{ opacity: 0, y: 15 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4, delay: 0.06 * i }} onClick={() => setActiveGroup(g.id)} className={`relative rounded-xl p-5 text-center transition-all duration-400 group ${activeGroup === g.id ? "bg-primary text-primary-foreground shadow-xl shadow-primary/20" : "bg-card card-elevated text-foreground hover:shadow-lg hover:-translate-y-0.5"}`}>
+              <g.icon className={`w-7 h-7 mx-auto mb-3 ${activeGroup === g.id ? "text-white" : "text-primary"}`} />
+              <span className="block text-[11px] md:text-xs font-body font-normal leading-tight">{g.title.length > 25 ? g.title.split(" — ")[0] : g.title}</span>
             </motion.button>
           ))}
         </div>
         <AnimatePresence mode="wait">
-          <motion.div key={active.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.35 }} className="bg-card rounded-2xl overflow-hidden shadow-[0_4px_24px_hsl(220_20%_50%/0.08),0_16px_48px_hsl(220_20%_50%/0.05)]">
-            <div className="grid md:grid-cols-2">
-              <div className="bg-gradient-to-br from-[hsl(207,60%,28%)] to-[hsl(207,45%,18%)] p-10 md:p-12 flex flex-col justify-center relative overflow-hidden">
-                <img src={bgCapabilities} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.07] mix-blend-luminosity" />
-                <div className="absolute inset-0 bg-gradient-to-br from-[hsl(207,60%,28%)]/90 to-[hsl(207,45%,18%)]/95" />
+          <motion.div key={active.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.35 }} className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_hsl(220_20%_50%/0.08),0_16px_48px_hsl(220_20%_50%/0.05)]">
+            {/* Full-card background image */}
+            <img src={bgCapabilities} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(207,60%,28%)]/95 via-[hsl(207,45%,18%)]/85 to-[hsl(210,20%,97%)]/97" />
+            <div className="relative z-10 grid md:grid-cols-2">
+              <div className="p-10 md:p-12 flex flex-col justify-center relative">
                 <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5" />
                 <div className="absolute -left-10 -bottom-16 w-48 h-48 rounded-full bg-white/3" />
-                <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-white/[0.04] to-transparent rounded-tl-full" />
                 <div className="relative z-10">
                   <active.icon className="w-10 h-10 text-white/50 mb-6" />
                   <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-3 leading-snug">{active.title}</h3>
                   <p className="text-sm text-white/60 font-body font-normal">{active.subtitle}</p>
                 </div>
               </div>
-              <div className="p-8 md:p-12 flex flex-col justify-center">
+              <div className="p-8 md:p-12 flex flex-col justify-center bg-card/90 backdrop-blur-sm">
                 <div className="space-y-5">
                   {active.features.map((feat, i) => (
                     <motion.div key={feat} initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3, delay: 0.07 * i + 0.1 }} className="flex items-start gap-4">
