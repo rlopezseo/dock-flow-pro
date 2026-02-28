@@ -66,6 +66,8 @@ const config: ProductPageConfig = {
       { icon: Bell, target: 45, suffix: "%", sublabel: "fewer calls", title: "Proactive exception alerts", description: "AI detects delays before they happen and triggers automated alerts to your team and customers." },
       { icon: Clock, target: 92, suffix: "%", sublabel: "ETA accuracy", title: "Machine-learning ETAs", description: "Predictive ETAs that account for traffic, weather, driver behavior, and historical patterns — not just GPS distance." },
       { icon: BarChart3, target: 100, suffix: "%", sublabel: "data capture", title: "Complete shipment data", description: "Every milestone, timestamp, and exception logged automatically. Full audit trail without manual data entry." },
+      { icon: Satellite, target: 200, suffix: "+", sublabel: "integrations", title: "Carrier-agnostic connectivity", description: "Plug into 200+ carriers out of the box — no setup required." },
+      { icon: Shield, target: 24, suffix: "/7", sublabel: "monitoring", title: "Non-stop shipment monitoring", description: "Continuous tracking and escalation workflows around the clock." },
     ],
   },
   capabilities: {

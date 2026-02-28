@@ -66,6 +66,8 @@ const config: ProductPageConfig = {
       { icon: Zap, target: 15, suffix: "s", sublabel: "match time", title: "Instant load-to-carrier matching", description: "What used to take hours now takes seconds. AI evaluates thousands of options simultaneously." },
       { icon: DollarSign, target: 35, suffix: "%", sublabel: "cost reduction", title: "Lower freight procurement costs", description: "Benchmark rates in real-time and match at the best price without overpaying on spot." },
       { icon: BarChart3, target: 95, suffix: "%", sublabel: "fill rate", title: "Maximize load fill rate", description: "Fewer rejected tenders and cancellations. The right carrier for every load, every time." },
+      { icon: Globe, target: 24, suffix: "/7", sublabel: "availability", title: "Digital freight marketplace", description: "Carriers browse, bid, and accept loads around the clock." },
+      { icon: Shield, target: 100, suffix: "%", sublabel: "compliance", title: "Automated carrier vetting", description: "Insurance, authority, and safety scores verified before every match." },
     ],
   },
   capabilities: {
