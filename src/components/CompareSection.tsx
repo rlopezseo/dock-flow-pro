@@ -24,8 +24,8 @@ const CompareSection = () => {
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
-        <img src={bgCompare} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/93" />
+        <img src={bgCompare} alt="" className="w-full h-full object-cover opacity-[0.04]" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]" />
       </div>
       <div className="container max-w-5xl relative z-10">
         <motion.div
