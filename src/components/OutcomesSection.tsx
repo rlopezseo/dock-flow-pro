@@ -1,6 +1,7 @@
 import { motion, useInView, animate } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Clock, BarChart3, UserCheck, Users, Truck, CalendarCheck, ArrowUpRight } from "lucide-react";
+import bgOutcomes from "@/assets/bg-outcomes.jpg";
 
 const Counter = ({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) => {
   const [display, setDisplay] = useState(0);
@@ -21,8 +22,12 @@ const OutcomesSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-28" ref={ref}>
-      <div className="container">
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0">
+        <img src={bgOutcomes} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+      </div>
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -171,6 +176,7 @@ const OutcomesSection = () => {
         </motion.div>
       </div>
     </section>
+
   );
 };
 

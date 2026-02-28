@@ -4,6 +4,7 @@ import { Quote, ArrowRight } from "lucide-react";
 import avatarForray from "@/assets/avatar-forray.jpg";
 import avatarDomonkos from "@/assets/avatar-domonkos.jpg";
 import avatarRafaj from "@/assets/avatar-rafaj.jpg";
+import bgTestimonials from "@/assets/bg-testimonials.jpg";
 
 const testimonials = [
   {
@@ -34,8 +35,12 @@ const ProofSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="relative py-28" ref={ref}>
-      <div className="container">
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0">
+        <img src={bgTestimonials} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+      </div>
+      <div className="container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
