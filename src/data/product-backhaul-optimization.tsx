@@ -1,6 +1,6 @@
 import { RotateCcw, Truck, TrendingDown, MapPin, DollarSign, Eye, Package, Factory, ShoppingCart, Snowflake, ArrowDownUp, Clock, Users, BarChart3, Plug, Search, BellRing, ScanLine, Brain, Leaf } from "lucide-react";
 import { ProductPageConfig } from "@/types/product-page";
-import heroImage from "@/assets/hero-dock.jpg";
+import heroImage from "@/assets/hero-backhaul-optimization.jpg";
 import img3pl from "@/assets/usecase-3pl.jpg";
 import imgManufacturing from "@/assets/usecase-manufacturing.jpg";
 import imgRetail from "@/assets/usecase-retail.jpg";

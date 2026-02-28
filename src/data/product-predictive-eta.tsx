@@ -1,6 +1,6 @@
 import { Brain, Clock, TrendingUp, Zap, CloudRain, Route, Package, Factory, ShoppingCart, Snowflake, ArrowDownUp, DollarSign, Users, Eye, BarChart3, Plug, BellRing, ScanLine, MapPin, Bell } from "lucide-react";
 import { ProductPageConfig } from "@/types/product-page";
-import heroImage from "@/assets/hero-dock.jpg";
+import heroImage from "@/assets/hero-predictive-eta.jpg";
 import img3pl from "@/assets/usecase-3pl.jpg";
 import imgManufacturing from "@/assets/usecase-manufacturing.jpg";
 import imgRetail from "@/assets/usecase-retail.jpg";

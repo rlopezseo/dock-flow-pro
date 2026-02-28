@@ -1,6 +1,6 @@
 import { DollarSign, FileText, TrendingDown, Users, ShieldCheck, Globe, Package, Factory, ShoppingCart, Snowflake, ArrowDownUp, Clock, Eye, BarChart3, Plug, Search, BellRing, ScanLine, Settings2, Handshake } from "lucide-react";
 import { ProductPageConfig } from "@/types/product-page";
-import heroImage from "@/assets/hero-dock.jpg";
+import heroImage from "@/assets/hero-freight-procurement.jpg";
 import img3pl from "@/assets/usecase-3pl.jpg";
 import imgManufacturing from "@/assets/usecase-manufacturing.jpg";
 import imgRetail from "@/assets/usecase-retail.jpg";

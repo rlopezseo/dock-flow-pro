@@ -1,6 +1,6 @@
 import { Warehouse, MapPin, Truck, ScanLine, Clock, Shield, Package, Factory, ShoppingCart, Snowflake, ArrowDownUp, DollarSign, Users, Eye, BarChart3, Plug, BellRing, Settings2, TrafficCone, Layers } from "lucide-react";
 import { ProductPageConfig } from "@/types/product-page";
-import heroImage from "@/assets/hero-dock.jpg";
+import heroImage from "@/assets/hero-yard-management.jpg";
 import img3pl from "@/assets/usecase-3pl.jpg";
 import imgManufacturing from "@/assets/usecase-manufacturing.jpg";
 import imgRetail from "@/assets/usecase-retail.jpg";
