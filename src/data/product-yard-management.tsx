@@ -66,6 +66,8 @@ const config: ProductPageConfig = {
       { icon: Clock, target: 40, suffix: "%", sublabel: "less dwell", title: "Cut truck dwell time dramatically", description: "Dock-to-yard coordination ensures trucks are docked as soon as doors are free — not 2 hours later." },
       { icon: ScanLine, target: 8, suffix: "min", sublabel: "gate time", title: "Automated gate processing", description: "Digital check-in with OCR, RFID, or driver app reduces gate time from 20 minutes to under 8." },
       { icon: BarChart3, target: 100, suffix: "%", sublabel: "visibility", title: "Complete yard inventory", description: "Real-time digital yard map showing every trailer position, status, and contents — no physical yard checks needed." },
+      { icon: Truck, target: 24, suffix: "/7", sublabel: "spotter dispatch", title: "Automated move orchestration", description: "AI-prioritized spotter tasks dispatched in real-time." },
+      { icon: Layers, target: 100, suffix: "%", sublabel: "dock sync", title: "Dock-to-yard coordination", description: "Pre-stage trailers near assigned docks before appointments." },
     ],
   },
   capabilities: {

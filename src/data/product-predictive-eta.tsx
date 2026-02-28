@@ -66,6 +66,8 @@ const config: ProductPageConfig = {
       { icon: Zap, target: 4, suffix: "hrs", sublabel: "earlier detection", title: "Detect delays hours before they happen", description: "AI identifies delay signals — weather fronts, traffic congestion, HOS violations — 4 hours before impact." },
       { icon: DollarSign, target: 30, suffix: "%", sublabel: "labor savings", title: "Optimize dock labor scheduling", description: "When you know the real ETA, you staff docks precisely. No overtime. No idle crews." },
       { icon: TrendingUp, target: 60, suffix: "%", sublabel: "fewer late deliveries", title: "Proactive rerouting and rescheduling", description: "Early delay detection gives you time to reroute trucks, reassign docks, and notify customers proactively." },
+      { icon: CloudRain, target: 48, suffix: "hr", sublabel: "weather lookahead", title: "Weather-aware predictions", description: "Integrate 48-hour weather forecasts into ETA calculations." },
+      { icon: Bell, target: 100, suffix: "%", sublabel: "automated", title: "Proactive customer alerts", description: "Auto-notify customers when delivery windows shift." },
     ],
   },
   capabilities: {

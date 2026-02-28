@@ -66,6 +66,8 @@ const config: ProductPageConfig = {
       { icon: Clock, target: 5, suffix: "x", sublabel: "faster", title: "Accelerate RFP cycle time", description: "From 6 weeks to 6 days. Digital RFPs with automated evaluation slash procurement timelines." },
       { icon: Users, target: 300, suffix: "+", sublabel: "carriers per RFP", title: "Evaluate more carriers, effortlessly", description: "Digital distribution lets you reach hundreds of carriers simultaneously — without extra work." },
       { icon: BarChart3, target: 100, suffix: "%", sublabel: "audit trail", title: "Full procurement transparency", description: "Every bid, evaluation, and award decision is logged and reportable. Complete compliance at your fingertips." },
+      { icon: Globe, target: 50, suffix: "+", sublabel: "countries", title: "Multi-region carrier sourcing", description: "Discover and qualify carriers across 50+ markets from one platform." },
+      { icon: ShieldCheck, target: 100, suffix: "%", sublabel: "digital", title: "Paperless contract management", description: "Rate cards auto-generated and synced to your TMS on award." },
     ],
   },
   capabilities: {

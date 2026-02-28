@@ -66,6 +66,8 @@ const config: ProductPageConfig = {
       { icon: DollarSign, target: 30, suffix: "%", sublabel: "cost savings", title: "Reduce total transport costs", description: "Backhaul revenue offsets outbound costs. Every filled return trip turns a pure cost center into a profit contributor." },
       { icon: Leaf, target: 28, suffix: "%", sublabel: "CO₂ reduction", title: "Lower your carbon footprint", description: "Fewer empty miles = fewer emissions. Hit sustainability targets while improving your bottom line." },
       { icon: BarChart3, target: 85, suffix: "%", sublabel: "fill rate", title: "Maximize fleet utilization", description: "Push return trip fill rates above 85% — turning your fleet from a cost center into a revenue asset." },
+      { icon: Brain, target: 100, suffix: "%", sublabel: "automated", title: "AI-powered matching engine", description: "Multi-factor matching: location, timing, equipment, HOS." },
+      { icon: Search, target: 24, suffix: "/7", sublabel: "marketplace", title: "Load marketplace access", description: "Browse available loads near delivery points in real-time." },
     ],
   },
   capabilities: {

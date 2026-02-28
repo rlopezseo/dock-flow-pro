@@ -230,19 +230,61 @@ const OutcomesBlock = ({ config }: { config: ProductPageConfig }) => {
               <p className="text-sm text-white/60 font-body font-normal leading-relaxed max-w-md">{c.heroCard.description}</p>
             </div>
           </motion.div>
-          {/* Secondary cards */}
-          {c.cards.map((card, i) => (
-            <motion.div key={card.title} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.08 * (i + 1) }} className={`${i === 0 ? "md:col-span-5" : "md:col-span-4"} bg-card rounded-2xl p-7 card-elevated transition-all duration-500 relative overflow-hidden`}>
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-              <card.icon className="w-6 h-6 text-primary/40 mb-4" />
-              <span className="block text-4xl font-display font-light number-accent leading-none mb-2">
-                <Counter target={card.target} suffix={card.suffix} inView={inView} />
-              </span>
-              <p className="text-[10px] font-body text-muted-foreground tracking-wider uppercase mb-3">{card.sublabel}</p>
-              <h3 className="text-[13px] font-display font-normal text-foreground mb-1.5">{card.title}</h3>
-              <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">{card.description}</p>
+
+          {/* First secondary card (5 cols) */}
+          {c.cards[0] && (() => {
+            const Card0Icon = c.cards[0].icon;
+            return (
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.08 }} className="md:col-span-5 bg-card rounded-2xl p-8 card-elevated transition-all duration-500 relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+                <Card0Icon className="w-6 h-6 text-primary/40 mb-5" />
+                <div className="flex items-end gap-2 mb-3">
+                  <span className="text-5xl font-display font-light number-accent leading-none">
+                    <Counter target={c.cards[0].target} suffix={c.cards[0].suffix} inView={inView} />
+                  </span>
+                </div>
+                <h3 className="text-[13px] font-display font-normal text-foreground mb-2">{c.cards[0].title}</h3>
+                <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">{c.cards[0].description}</p>
+              </motion.div>
+            );
+          })()}
+
+          {/* Middle cards (4 cols each) */}
+          {c.cards.slice(1, 3).map((card, i) => {
+            const CardIcon = card.icon;
+            return (
+              <motion.div key={card.title} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.16 + 0.08 * i }} className="md:col-span-4 bg-card rounded-2xl p-7 card-elevated transition-all duration-500 relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+                <CardIcon className="w-6 h-6 text-primary/40 mb-4" />
+                <span className="block text-4xl font-display font-light number-accent leading-none mb-2">
+                  <Counter target={card.target} suffix={card.suffix} inView={inView} />
+                </span>
+                <p className="text-[10px] font-body text-muted-foreground tracking-wider uppercase mb-3">{card.sublabel}</p>
+                <h3 className="text-[13px] font-display font-normal text-foreground mb-1.5">{card.title}</h3>
+                <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">{card.description}</p>
+              </motion.div>
+            );
+          })}
+
+          {/* Stacked pair (4 cols, 2 cards) */}
+          {c.cards.length >= 5 && (
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: 0.32 }} className="md:col-span-4 flex flex-col gap-4">
+              {c.cards.slice(3, 5).map((card) => {
+                const StackIcon = card.icon;
+                return (
+                  <div key={card.title} className="bg-card rounded-2xl p-6 card-elevated flex-1 relative overflow-hidden transition-all duration-500">
+                    <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+                    <StackIcon className="w-5 h-5 text-primary/40 mb-3" />
+                    <span className="block text-2xl font-display font-light number-accent leading-none mb-1">
+                      <Counter target={card.target} suffix={card.suffix} inView={inView} />
+                    </span>
+                    <h3 className="text-[12px] font-display font-normal text-foreground mb-1">{card.title}</h3>
+                    <p className="text-[11px] text-muted-foreground font-body font-normal leading-relaxed">{card.description}</p>
+                  </div>
+                );
+              })}
             </motion.div>
-          ))}
+          )}
         </div>
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.4 }} className="mt-10 text-center">
           <a href="#contact" className="inline-flex items-center gap-2 text-sm font-body font-normal text-primary hover:text-primary/80 transition-colors">
