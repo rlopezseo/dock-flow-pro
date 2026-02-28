@@ -2,6 +2,13 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { CalendarClock, Users, ScanLine, Plug, BarChart3, Check } from "lucide-react";
 import bgCapabilities from "@/assets/bg-capabilities.jpg";
+import capTracking from "@/assets/cap-tracking.jpg";
+import capDashboard from "@/assets/cap-dashboard.jpg";
+import capFleet from "@/assets/cap-fleet.jpg";
+import capIntegrations from "@/assets/cap-integrations.jpg";
+import capNetwork from "@/assets/cap-network.jpg";
+
+const capImages = [capTracking, capDashboard, capFleet, capIntegrations, capNetwork];
 
 const groups = [
   {
@@ -129,11 +136,9 @@ const CapabilitiesSection = () => {
           >
             <div className="grid md:grid-cols-2">
               {/* Left: visual info panel */}
-              <div className="bg-gradient-to-br from-[hsl(207,60%,28%)] to-[hsl(207,45%,18%)] p-10 md:p-12 flex flex-col justify-center relative overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5" />
-                <div className="absolute -left-10 -bottom-16 w-48 h-48 rounded-full bg-white/3" />
-
+              <div className="relative p-10 md:p-12 flex flex-col justify-center overflow-hidden">
+                <img src={capImages[groups.indexOf(active) % capImages.length]} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[hsl(207,60%,28%)]/85 to-[hsl(207,45%,18%)]/90" />
                 <div className="relative z-10">
                   <active.icon className="w-10 h-10 text-white/50 mb-6" />
                   <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-3 leading-snug">
