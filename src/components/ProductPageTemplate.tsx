@@ -213,7 +213,7 @@ const OutcomesBlock = ({ config }: { config: ProductPageConfig }) => {
     <section className="relative py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <img src={bgOutcomes} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/93" />
       </div>
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="max-w-2xl mb-16">
@@ -315,7 +315,7 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
     <section className="relative py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <img src={bgCapabilities} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/93" />
       </div>
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center max-w-2xl mx-auto mb-16">
@@ -530,7 +530,7 @@ const ProofBlock = () => {
     <section className="relative py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <img src={bgTestimonials} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/88" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/93" />
       </div>
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center mb-16">
@@ -568,7 +568,7 @@ const CompareBlock = ({ config }: { config: ProductPageConfig }) => {
     <section className="relative py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <img src={bgCompare} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/90" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/93" />
       </div>
       <div className="container max-w-5xl relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center mb-16">
