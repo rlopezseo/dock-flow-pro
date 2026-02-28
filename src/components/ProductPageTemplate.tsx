@@ -108,9 +108,9 @@ const HeroBlock = ({ config }: { config: ProductPageConfig }) => {
     <section className="relative min-h-screen flex items-end pb-24 pt-32 overflow-hidden">
       <div className="absolute inset-0">
         <img src={c.image || heroImage} alt={config.meta.title} className="w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,7%)]/95 via-[hsl(220,20%,7%)]/50 to-[hsl(220,20%,7%)]/70" />
-        <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-[hsl(220,20%,7%)]/90 via-[hsl(220,20%,7%)]/70 to-transparent" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,7%)]/92 via-[hsl(220,20%,7%)]/40 to-[hsl(220,20%,7%)]/60" />
+        <div className="absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-[hsl(220,20%,7%)]/85 via-[hsl(220,20%,7%)]/55 to-transparent" />
       </div>
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: "easeOut" }} className="max-w-3xl">
