@@ -1,6 +1,6 @@
 import { Eye, MapPin, Bell, Clock, Truck, Shield, Package, Factory, ShoppingCart, Snowflake, ArrowDownUp, DollarSign, Users, BarChart3, Plug, Search, BellRing, ScanLine, Satellite, Radio } from "lucide-react";
 import { ProductPageConfig } from "@/types/product-page";
-import heroImage from "@/assets/hero-dock.jpg";
+import heroImage from "@/assets/hero-freight-visibility.jpg";
 import img3pl from "@/assets/usecase-3pl.jpg";
 import imgManufacturing from "@/assets/usecase-manufacturing.jpg";
 import imgRetail from "@/assets/usecase-retail.jpg";
