@@ -61,10 +61,10 @@ const OutcomesSection = () => {
                 <span className="text-sm font-body font-normal text-white/50 mb-2">less dwell time</span>
               </div>
               <h3 className="text-lg md:text-xl font-display font-light text-white mb-3">
-                Reduce carrier dwell time with automated time slot management
+                Cut carrier dwell time with automated time slot management
               </h3>
               <p className="text-sm text-white/60 font-body font-normal leading-relaxed max-w-md">
-                Staggered arrivals, enforced buffer times, and smart dock allocation cut average wait from 2+ hours to under 50 minutes.
+                Staggered arrivals, enforced buffer times, and smart dock allocation bring average wait down from 2+ hours to under 50 minutes.
               </p>
             </div>
           </motion.div>
@@ -83,9 +83,9 @@ const OutcomesSection = () => {
                 <Counter target={85} suffix="%+" inView={inView} />
               </span>
             </div>
-            <h3 className="text-[13px] font-display font-normal text-foreground mb-2">Maximize dock door utilization</h3>
+            <h3 className="text-[13px] font-display font-normal text-foreground mb-2">Keep dock doors busy</h3>
             <p className="text-xs text-muted-foreground font-body font-normal leading-[1.7]">
-              Eliminate idle gaps and fill every loading bay. Push utilization above 85% by removing scheduling blind spots.
+              Fill idle gaps and use every loading bay. Push utilization above 85% by removing scheduling blind spots.
             </p>
           </motion.div>
 

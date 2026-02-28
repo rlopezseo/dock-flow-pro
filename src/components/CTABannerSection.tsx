@@ -33,7 +33,7 @@ const CTABannerSection = () => {
               <span className="text-white/60">On one map.</span>
             </h2>
             <p className="text-base md:text-lg text-white/50 font-body font-normal leading-relaxed mb-10 max-w-xl mx-auto">
-              Join 500+ companies using TrucksOnTheMap to eliminate dock chaos, reduce wait times, and gain full visibility — from gate to departure.
+              Join 500+ companies using TrucksOnTheMap to bring order to their docks, cut wait times, and get full visibility from gate to departure.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
