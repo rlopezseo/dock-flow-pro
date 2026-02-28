@@ -342,8 +342,11 @@ const CapabilitiesBlock = ({ config }: { config: ProductPageConfig }) => {
           <motion.div key={active.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.35 }} className="bg-card rounded-2xl overflow-hidden shadow-[0_4px_24px_hsl(220_20%_50%/0.08),0_16px_48px_hsl(220_20%_50%/0.05)]">
             <div className="grid md:grid-cols-2">
               <div className="bg-gradient-to-br from-[hsl(207,60%,28%)] to-[hsl(207,45%,18%)] p-10 md:p-12 flex flex-col justify-center relative overflow-hidden">
+                <img src={bgCapabilities} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.07] mix-blend-luminosity" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[hsl(207,60%,28%)]/90 to-[hsl(207,45%,18%)]/95" />
                 <div className="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5" />
                 <div className="absolute -left-10 -bottom-16 w-48 h-48 rounded-full bg-white/3" />
+                <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-white/[0.04] to-transparent rounded-tl-full" />
                 <div className="relative z-10">
                   <active.icon className="w-10 h-10 text-white/50 mb-6" />
                   <h3 className="text-2xl md:text-3xl font-display font-light text-white mb-3 leading-snug">{active.title}</h3>
