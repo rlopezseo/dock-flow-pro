@@ -1,113 +1,74 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-trucksonthemap.png";
 
-const platformLinksLeft = [
-  { label: "Dock Scheduling", to: "/platform/dock-scheduling-software" },
-  { label: "Freight Visibility", to: "/platform/freight-visibility-software" },
-  { label: "Load Matching", to: "/platform/load-matching-software" },
-  { label: "Freight Procurement", to: "/platform/freight-procurement-software" },
-];
-
-const platformLinksRight = [
-  { label: "Predictive ETA", to: "/platform/predictive-eta-software" },
-  { label: "Yard Management", to: "/platform/yard-management-software" },
-  { label: "Backhaul Optimization", to: "/platform/backhaul-optimization-software" },
-];
-
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
-      <div className="container pt-20 pb-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 gap-x-6">
-          {/* Brand + Offices */}
-          <div className="lg:col-span-4">
-            <Link to="/" className="inline-block mb-6">
-              <img src={logo} alt="TrucksOnTheMap" className="h-7 brightness-0 invert" />
-            </Link>
-            <p className="text-sm text-background/60 font-body leading-[1.8] max-w-sm mb-8">
-              The all-in-one logistics platform that helps shippers, carriers, and warehouses coordinate dock scheduling, gain real-time freight visibility, and optimise time slot management across Europe.
-            </p>
-            <div className="space-y-4">
-              <div>
-                <p className="text-xs font-display font-semibold tracking-[0.1em] uppercase text-background/90 mb-1">London Office</p>
-                <p className="text-[13px] text-background/50 font-body leading-relaxed">
-                  128 City Road, London EC1V 2NX<br />
-                  United Kingdom · Co. Reg. 9567296
-                </p>
-              </div>
-              <div>
-                <p className="text-xs font-display font-semibold tracking-[0.1em] uppercase text-background/90 mb-1">Hungary Office</p>
-                <p className="text-[13px] text-background/50 font-body leading-relaxed">
-                  Práter utca 9., 3. em 5.a<br />
-                  Győr 9024, Hungary · Tax ID: 26205621-2-08
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right side: Platform (2 cols) + Company + Legal */}
-          <div className="lg:col-span-8">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-10">
-              {/* Platform col 1 */}
-              <div>
-                <p className="text-[11px] font-display font-semibold tracking-[0.2em] uppercase text-background/40 mb-5">Platform</p>
-                <ul className="space-y-3">
-                  {platformLinksLeft.map((link) => (
-                    <li key={link.to}>
-                      <Link to={link.to} className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Platform col 2 */}
-              <div>
-                <p className="text-[11px] font-display font-semibold tracking-[0.2em] uppercase text-background/40 mb-5 opacity-0 pointer-events-none select-none" aria-hidden="true">—</p>
-                <ul className="space-y-3">
-                  {platformLinksRight.map((link) => (
-                    <li key={link.to}>
-                      <Link to={link.to} className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Company */}
-              <div>
-                <p className="text-[11px] font-display font-semibold tracking-[0.2em] uppercase text-background/40 mb-5">Company</p>
-                <ul className="space-y-3">
-                  <li><a href="#contact" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Contact</a></li>
-                  <li><a href="#register" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Register</a></li>
-                  <li><a href="#login" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Log In</a></li>
-                </ul>
-              </div>
-
-              {/* Legal */}
-              <div>
-                <p className="text-[11px] font-display font-semibold tracking-[0.2em] uppercase text-background/40 mb-5">Legal</p>
-                <ul className="space-y-3">
-                  <li><Link to="/terms" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Terms & Conditions</Link></li>
-                  <li><Link to="/privacy" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Privacy Policy</Link></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+    <footer className="bg-[hsl(220,20%,7%)] text-white/80">
+      <div className="container pt-20 pb-16">
+        {/* Logo + description */}
+        <div className="mb-14 max-w-2xl">
+          <Link to="/" className="inline-block mb-5">
+            <img src={logo} alt="TrucksOnTheMap" className="h-7 brightness-0 invert" />
+          </Link>
+          <p className="text-[13px] text-white/45 font-body leading-[1.85]">
+            The all-in-one logistics platform that helps shippers, carriers, and warehouses coordinate dock scheduling, gain real-time freight visibility, and optimise time slot management across Europe. From inbound coordination to last-mile tracking, we bring transparency to every mile.
+          </p>
         </div>
-      </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-background/10">
-        <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[11px] text-background/30 font-body tracking-wide">
-            © {new Date().getFullYear()} TrucksOnTheMap Ltd. All rights reserved.
-          </p>
-          <p className="text-[11px] text-background/30 font-body tracking-wide">
-            Made in Europe 🇬🇧 🇭🇺
-          </p>
+        {/* 4-column grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10">
+          {/* Registered in the UK */}
+          <div>
+            <p className="text-sm text-white/60 font-body italic mb-4">Registered in the UK:</p>
+            <div className="text-[13px] text-white/80 font-body leading-[1.9] space-y-0.5">
+              <p>128 City Road</p>
+              <p>London EC1V 2NX</p>
+              <p>United Kingdom</p>
+              <p>Company Number 9567296</p>
+            </div>
+          </div>
+
+          {/* Registered in Hungary */}
+          <div>
+            <p className="text-sm text-white/60 font-body italic mb-4">Registered in Hungary:</p>
+            <div className="text-[13px] text-white/80 font-body leading-[1.9] space-y-0.5">
+              <p>Práter utca 9., 3. em 5.a</p>
+              <p>Győr 9024</p>
+              <p>Hungary</p>
+              <p>Company Number 08-09-029600</p>
+              <p>Tax ID: 26205621-2-08</p>
+            </div>
+          </div>
+
+          {/* Platform */}
+          <div>
+            <p className="text-sm text-white/60 font-body italic mb-4">Platform:</p>
+            <ul className="text-[13px] text-white/80 font-body leading-[1.9] space-y-0.5">
+              <li><Link to="/platform/dock-scheduling-software" className="hover:text-white transition-colors">Dock Scheduling</Link></li>
+              <li><Link to="/platform/freight-visibility-software" className="hover:text-white transition-colors">Freight Visibility</Link></li>
+              <li><Link to="/platform/load-matching-software" className="hover:text-white transition-colors">Load Matching</Link></li>
+              <li><Link to="/platform/freight-procurement-software" className="hover:text-white transition-colors">Freight Procurement</Link></li>
+              <li><Link to="/platform/predictive-eta-software" className="hover:text-white transition-colors">Predictive ETA</Link></li>
+              <li><Link to="/platform/yard-management-software" className="hover:text-white transition-colors">Yard Management</Link></li>
+              <li><Link to="/platform/backhaul-optimization-software" className="hover:text-white transition-colors">Backhaul Optimization</Link></li>
+            </ul>
+          </div>
+
+          {/* Links */}
+          <div>
+            <p className="text-sm text-white/60 font-body italic mb-4">Links:</p>
+            <ul className="text-[13px] text-white/80 font-body leading-[1.9] space-y-0.5">
+              <li><Link to="/terms" className="hover:text-white transition-colors">Terms and Conditions</Link></li>
+              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#register" className="hover:text-white transition-colors">Register</a></li>
+              <li><a href="#login" className="hover:text-white transition-colors">Log In</a></li>
+            </ul>
+
+            <p className="text-[13px] text-white/40 font-body mt-6">
+              © {new Date().getFullYear()} TrucksOnTheMap
+            </p>
+          </div>
         </div>
       </div>
     </footer>
