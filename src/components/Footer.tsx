@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Left side — brand */}
           <div>
             <Link to="/" className="inline-block mb-8">
-              <img src={logo} alt="TrucksOnTheMap" className="h-9" />
+              <img src={logo} alt="TrucksOnTheMap" className="h-9 brightness-0" />
             </Link>
             <p className="text-[13px] text-[hsl(220,15%,45%)] font-body font-normal leading-[2] tracking-[0.02em] max-w-lg">
               The all-in-one logistics platform that helps shippers, carriers, and warehouses coordinate dock scheduling, gain real-time freight visibility, and optimise time slot management across Europe. From inbound coordination to last-mile tracking, we bring transparency to every mile.
