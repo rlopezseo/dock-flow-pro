@@ -32,7 +32,7 @@ const Footer = () => {
                   ["Backhaul Optimization", "/platform/backhaul-optimization-software"],
                 ].map(([label, to]) => (
                   <li key={to}>
-                    <Link to={to} className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">{label}</Link>
+                    <Link to={to} className="text-[12px] text-[hsl(220,15%,45%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">{label}</Link>
                   </li>
                 ))}
               </ul>
@@ -41,17 +41,17 @@ const Footer = () => {
             <nav>
               <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(207,30%,12%)] mb-6">Company</p>
               <ul className="space-y-[10px]">
-                <li><a href="#contact" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Contact</a></li>
-                <li><a href="#register" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Register</a></li>
-                <li><a href="#login" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Log In</a></li>
+                <li><a href="#contact" className="text-[12px] text-[hsl(220,15%,45%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Contact</a></li>
+                <li><a href="#register" className="text-[12px] text-[hsl(220,15%,45%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Register</a></li>
+                <li><a href="#login" className="text-[12px] text-[hsl(220,15%,45%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Log In</a></li>
               </ul>
             </nav>
 
             <nav>
               <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(207,30%,12%)] mb-6">Legal</p>
               <ul className="space-y-[10px]">
-                <li><Link to="/terms" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Terms & Conditions</Link></li>
-                <li><Link to="/privacy" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="text-[12px] text-[hsl(220,15%,45%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Terms & Conditions</Link></li>
+                <li><Link to="/privacy" className="text-[12px] text-[hsl(220,15%,45%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Privacy Policy</Link></li>
               </ul>
             </nav>
           </div>
@@ -63,7 +63,7 @@ const Footer = () => {
         {/* Lower footer — offices + copyright */}
         <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
           <div>
-            <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(220,10%,72%)] mb-3">United Kingdom</p>
+            <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(207,30%,12%)] mb-3">United Kingdom</p>
             <p className="text-[11.5px] text-[hsl(220,12%,55%)] font-body font-normal leading-[1.9] tracking-[0.02em]">
               128 City Road, London EC1V 2NX<br />
               Co. 9567296
@@ -71,7 +71,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(220,10%,72%)] mb-3">Hungary</p>
+            <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(207,30%,12%)] mb-3">Hungary</p>
             <p className="text-[11.5px] text-[hsl(220,12%,55%)] font-body font-normal leading-[1.9] tracking-[0.02em]">
               Práter utca 9., 3. em 5.a, Győr 9024<br />
               Co. 08-09-029600 · Tax ID: 26205621-2-08
