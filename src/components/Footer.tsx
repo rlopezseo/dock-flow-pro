@@ -1,76 +1,96 @@
-import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-trucksonthemap.png";
 
+const platformLinks = [
+  { label: "Dock Scheduling", to: "/platform/dock-scheduling-software" },
+  { label: "Freight Visibility", to: "/platform/freight-visibility-software" },
+  { label: "Load Matching", to: "/platform/load-matching-software" },
+  { label: "Freight Procurement", to: "/platform/freight-procurement-software" },
+  { label: "Predictive ETA", to: "/platform/predictive-eta-software" },
+  { label: "Yard Management", to: "/platform/yard-management-software" },
+  { label: "Backhaul Optimization", to: "/platform/backhaul-optimization-software" },
+];
+
 const Footer = () => {
   return (
-    <footer className="border-t border-border">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-10 mb-14">
-          {/* Brand */}
-          <div className="md:col-span-4 pr-0 md:pr-6">
-            <Link to="/">
-              <img src={logo} alt="TrucksOnTheMap" className="h-7 mb-5 brightness-0" />
+    <footer className="bg-foreground text-background">
+      {/* Main content */}
+      <div className="container pt-20 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+          {/* Brand column */}
+          <div className="md:col-span-5">
+            <Link to="/" className="inline-block mb-6">
+              <img src={logo} alt="TrucksOnTheMap" className="h-7 brightness-0 invert" />
             </Link>
-            <p className="text-[13px] text-muted-foreground font-body leading-relaxed max-w-sm">
-              The all-in-one logistics platform that helps shippers, carriers, and warehouses coordinate dock scheduling, gain real-time freight visibility, and optimise time slot management across Europe.
+            <p className="text-sm text-background/60 font-body leading-[1.8] max-w-md mb-8">
+              The all-in-one logistics platform that helps shippers, carriers, and warehouses coordinate dock scheduling, gain real-time freight visibility, and optimise time slot management across Europe. From inbound coordination to last-mile tracking, we bring transparency to every mile.
             </p>
+
+            {/* Offices */}
+            <div className="space-y-4">
+              <div>
+                <p className="text-xs font-display font-semibold tracking-[0.1em] uppercase text-background/90 mb-1">London Office</p>
+                <p className="text-[13px] text-background/50 font-body leading-relaxed">
+                  128 City Road, London EC1V 2NX<br />
+                  United Kingdom · Co. Reg. 9567296
+                </p>
+              </div>
+              <div>
+                <p className="text-xs font-display font-semibold tracking-[0.1em] uppercase text-background/90 mb-1">Hungary Office</p>
+                <p className="text-[13px] text-background/50 font-body leading-relaxed">
+                  Práter utca 9., 3. em 5.a<br />
+                  Győr 9024, Hungary · Tax ID: 26205621-2-08
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Platform */}
-          <div className="md:col-span-3">
-            <p className="text-xs font-display font-semibold text-foreground tracking-[0.15em] uppercase mb-5">Platform</p>
-            <ul className="space-y-3">
-              <li><Link to="/platform/dock-scheduling-software" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Dock Scheduling</Link></li>
-              <li><Link to="/platform/freight-visibility-software" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Freight Visibility</Link></li>
-              <li><Link to="/platform/load-matching-software" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Load Matching</Link></li>
-              <li><Link to="/platform/freight-procurement-software" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Freight Procurement</Link></li>
-              <li><Link to="/platform/predictive-eta-software" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Predictive ETA</Link></li>
-              <li><Link to="/platform/yard-management-software" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Yard Management</Link></li>
-              <li><Link to="/platform/backhaul-optimization-software" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Backhaul Optimization</Link></li>
+          {/* Platform column */}
+          <div className="md:col-span-3 md:pl-4">
+            <p className="text-[11px] font-display font-semibold tracking-[0.2em] uppercase text-background/40 mb-6">Platform</p>
+            <ul className="space-y-3.5">
+              {platformLinks.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Company column */}
           <div className="md:col-span-2">
-            <p className="text-xs font-display font-semibold text-foreground tracking-[0.15em] uppercase mb-5">Company</p>
-            <ul className="space-y-3">
-              <li><a href="#contact" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Contact</a></li>
-              <li><a href="#register" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Register</a></li>
-              <li><a href="#login" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Log In</a></li>
+            <p className="text-[11px] font-display font-semibold tracking-[0.2em] uppercase text-background/40 mb-6">Company</p>
+            <ul className="space-y-3.5">
+              <li><a href="#contact" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Contact</a></li>
+              <li><a href="#register" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Register</a></li>
+              <li><a href="#login" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Log In</a></li>
             </ul>
           </div>
 
-          {/* Legal */}
-          <div className="md:col-span-3">
-            <p className="text-xs font-display font-semibold text-foreground tracking-[0.15em] uppercase mb-5">Legal</p>
-            <ul className="space-y-3">
-              <li><Link to="/terms" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Terms & Conditions</Link></li>
-              <li><Link to="/privacy" className="text-[13px] text-muted-foreground hover:text-primary font-body transition-colors">Privacy Policy</Link></li>
+          {/* Legal column */}
+          <div className="md:col-span-2">
+            <p className="text-[11px] font-display font-semibold tracking-[0.2em] uppercase text-background/40 mb-6">Legal</p>
+            <ul className="space-y-3.5">
+              <li><Link to="/terms" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Terms & Conditions</Link></li>
+              <li><Link to="/privacy" className="text-[13px] text-background/70 hover:text-background font-body transition-colors duration-200">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Offices */}
-        <div className="flex flex-col sm:flex-row gap-8 py-8 border-t border-border">
-          <div className="flex items-center gap-2.5">
-            <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-            <p className="text-xs text-muted-foreground font-body">
-              <span className="text-foreground font-medium">London</span> · 128 City Road, EC1V 2NX · Co. 9567296
-            </p>
-          </div>
-          <div className="flex items-center gap-2.5">
-            <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
-            <p className="text-xs text-muted-foreground font-body">
-              <span className="text-foreground font-medium">Győr</span> · Práter utca 9., 3. em 5.a, 9024 · Tax ID: 26205621-2-08
-            </p>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="pt-6 border-t border-border">
-          <p className="text-xs text-muted-foreground font-body text-center">
-            © {new Date().getFullYear()} TrucksOnTheMap. All rights reserved.
+      {/* Bottom bar */}
+      <div className="border-t border-background/10">
+        <div className="container py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[11px] text-background/30 font-body tracking-wide">
+            © {new Date().getFullYear()} TrucksOnTheMap Ltd. All rights reserved.
+          </p>
+          <p className="text-[11px] text-background/30 font-body tracking-wide">
+            Made in Europe 🇬🇧 🇭🇺
           </p>
         </div>
       </div>
