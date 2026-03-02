@@ -20,7 +20,7 @@ const Footer = () => {
           {/* Right side — nav columns */}
           <div className="grid grid-cols-3 gap-8 lg:gap-12 lg:pt-1">
             <nav>
-              <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(220,10%,72%)] mb-6">Platform</p>
+              <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(207,30%,12%)] mb-6">Platform</p>
               <ul className="space-y-[10px]">
                 {[
                   ["Dock Scheduling", "/platform/dock-scheduling-software"],
@@ -39,19 +39,19 @@ const Footer = () => {
             </nav>
 
             <nav>
-              <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(220,10%,72%)] mb-6">Company</p>
+              <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(207,30%,12%)] mb-6">Company</p>
               <ul className="space-y-[10px]">
-                <li><a href="#contact" className="text-[12px] text-[hsl(220,12%,50%)] hover:text-[hsl(220,20%,25%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Contact</a></li>
-                <li><a href="#register" className="text-[12px] text-[hsl(220,12%,50%)] hover:text-[hsl(220,20%,25%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Register</a></li>
-                <li><a href="#login" className="text-[12px] text-[hsl(220,12%,50%)] hover:text-[hsl(220,20%,25%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Log In</a></li>
+                <li><a href="#contact" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Contact</a></li>
+                <li><a href="#register" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Register</a></li>
+                <li><a href="#login" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Log In</a></li>
               </ul>
             </nav>
 
             <nav>
-              <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(220,10%,72%)] mb-6">Legal</p>
+              <p className="text-[10px] font-display font-light tracking-[0.3em] uppercase text-[hsl(207,30%,12%)] mb-6">Legal</p>
               <ul className="space-y-[10px]">
-                <li><Link to="/terms" className="text-[12px] text-[hsl(220,12%,50%)] hover:text-[hsl(220,20%,25%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Terms & Conditions</Link></li>
-                <li><Link to="/privacy" className="text-[12px] text-[hsl(220,12%,50%)] hover:text-[hsl(220,20%,25%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Terms & Conditions</Link></li>
+                <li><Link to="/privacy" className="text-[12px] text-[hsl(207,30%,12%)] hover:text-[hsl(207,60%,30%)] font-body font-normal tracking-[0.02em] transition-colors duration-300">Privacy Policy</Link></li>
               </ul>
             </nav>
           </div>
