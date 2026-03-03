@@ -172,7 +172,7 @@ const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ COMPARISON — Visual Cards ═══════════ */
+/* ═══════════ COMPARISON — Dark cinematic Before & After ═══════════ */
 const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.comparison;
   const ref = useRef(null);
@@ -180,63 +180,68 @@ const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden" ref={ref} id="comparison">
-      {/* Subtle background */}
+      {/* Dark photo background */}
       <div className="absolute inset-0">
-        <img src={config.sectionImages.comparison} alt="" className="w-full h-full object-cover opacity-[0.04]" loading="lazy" />
+        <img src={config.sectionImages.comparison} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/93" />
       </div>
 
       <div className="container relative z-10">
         <FadeUp>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">Before & After</p>
-            <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-display font-extralight tracking-tight text-foreground leading-[1.15]">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <p className="text-primary/70 font-display text-xs tracking-[0.25em] uppercase mb-4">Before & After</p>
+            <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-display font-extralight tracking-tight text-white leading-[1.15]">
               {c.headline}
             </h2>
           </div>
         </FadeUp>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Without column */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3 mb-6 px-2">
-              <div className="w-8 h-8 rounded-full bg-[hsl(0,70%,95%)] flex items-center justify-center">
-                <X className="w-4 h-4 text-[hsl(0,60%,50%)]" />
-              </div>
-              <span className="text-xs font-body font-medium text-[hsl(0,30%,40%)] tracking-[0.1em] uppercase">Without TrucksOnTheMap</span>
+        {/* Two-column header */}
+        <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mb-4">
+          <div className="flex items-center gap-3 px-2">
+            <div className="w-8 h-8 rounded-full bg-[hsl(0,60%,50%)]/15 border border-[hsl(0,60%,50%)]/20 flex items-center justify-center">
+              <X className="w-4 h-4 text-[hsl(0,60%,55%)]" />
             </div>
-            {c.items.map((item, i) => (
-              <motion.div
-                key={`without-${i}`}
-                initial={{ opacity: 0, x: -20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.05 * i }}
-                className="bg-[hsl(0,30%,97%)] border border-[hsl(0,20%,92%)] rounded-xl p-5 hover:shadow-md transition-all duration-300"
-              >
-                <p className="text-[12.5px] font-body font-normal text-[hsl(0,10%,40%)] leading-[1.75]">{item.without}</p>
-              </motion.div>
-            ))}
+            <span className="text-[11px] font-body font-medium text-[hsl(0,40%,65%)] tracking-[0.15em] uppercase">The Old Way</span>
           </div>
+          <div className="flex items-center gap-3 px-2">
+            <div className="w-8 h-8 rounded-full bg-[hsl(150,50%,40%)]/15 border border-[hsl(150,50%,40%)]/20 flex items-center justify-center">
+              <Check className="w-4 h-4 text-[hsl(150,50%,50%)]" />
+            </div>
+            <span className="text-[11px] font-body font-medium text-[hsl(150,40%,55%)] tracking-[0.15em] uppercase">With TrucksOnTheMap</span>
+          </div>
+        </div>
 
-          {/* With column */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-3 mb-6 px-2">
-              <div className="w-8 h-8 rounded-full bg-[hsl(150,50%,94%)] flex items-center justify-center">
-                <Check className="w-4 h-4 text-[hsl(150,50%,35%)]" />
+        {/* Comparison rows */}
+        <div className="space-y-2">
+          {c.items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 12 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.06 * i }}
+              className="grid md:grid-cols-2 gap-2"
+            >
+              {/* Without */}
+              <div className="bg-white/[0.03] backdrop-blur-sm border border-[hsl(0,30%,50%)]/10 rounded-xl p-5 group hover:bg-[hsl(0,30%,50%)]/[0.06] transition-all duration-500">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[hsl(0,60%,50%)]/10 flex items-center justify-center mt-0.5">
+                    <X className="w-3 h-3 text-[hsl(0,50%,55%)]" />
+                  </div>
+                  <p className="text-[12.5px] font-body font-normal text-white/50 leading-[1.75]">{item.without}</p>
+                </div>
               </div>
-              <span className="text-xs font-body font-medium text-[hsl(150,30%,30%)] tracking-[0.1em] uppercase">With TrucksOnTheMap</span>
-            </div>
-            {c.items.map((item, i) => (
-              <motion.div
-                key={`with-${i}`}
-                initial={{ opacity: 0, x: 20 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.05 * i }}
-                className="bg-[hsl(150,20%,97%)] border border-[hsl(150,20%,90%)] rounded-xl p-5 hover:shadow-md hover:border-[hsl(150,30%,80%)] transition-all duration-300"
-              >
-                <p className="text-[12.5px] font-body font-normal text-[hsl(150,20%,25%)] leading-[1.75]">{item.withTotm}</p>
-              </motion.div>
-            ))}
-          </div>
+              {/* With */}
+              <div className="bg-white/[0.04] backdrop-blur-sm border border-[hsl(150,40%,45%)]/10 rounded-xl p-5 group hover:bg-[hsl(150,30%,45%)]/[0.08] hover:border-[hsl(150,40%,45%)]/20 transition-all duration-500">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[hsl(150,50%,40%)]/15 flex items-center justify-center mt-0.5">
+                    <Check className="w-3 h-3 text-[hsl(150,50%,50%)]" />
+                  </div>
+                  <p className="text-[12.5px] font-body font-normal text-white/75 leading-[1.75]">{item.withTotm}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
