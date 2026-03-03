@@ -11,6 +11,7 @@ import FreightVisibility from "./pages/FreightVisibility";
 import PredictiveETA from "./pages/PredictiveETA";
 import YardManagement from "./pages/YardManagement";
 import BackhaulOptimization from "./pages/BackhaulOptimization";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/predictive-eta" element={<PredictiveETA />} />
           <Route path="/yard-management" element={<YardManagement />} />
           <Route path="/backhaul-optimization" element={<BackhaulOptimization />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
