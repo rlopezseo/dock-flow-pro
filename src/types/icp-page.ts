@@ -13,6 +13,9 @@ export interface ICPPageConfig {
     ctaSecondary?: string;
     image: string;
   };
+  authorityBar: {
+    items: { value: string; label: string }[];
+  };
   narrative: {
     headline: string;
     paragraphs: string[];

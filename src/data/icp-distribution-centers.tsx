@@ -15,6 +15,14 @@ const config: ICPPageConfig = {
     ctaSecondary: "How It Works",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
   },
+  authorityBar: {
+    items: [
+      { value: "+80%", label: "Truck arrival accuracy" },
+      { value: "~Zero", label: "Queuing incidents" },
+      { value: "7 wks", label: "Guaranteed GO LIVE" },
+      { value: "4.7★", label: "User rating" },
+    ],
+  },
   narrative: {
     headline: "Your Dock Schedule Is Built on Promises. Reality Walks In 45 Minutes Late.",
     paragraphs: [
@@ -23,7 +31,7 @@ const config: ICPPageConfig = {
       "Inbound freight visibility is the gap at the core of this problem. Your dock schedule tells you what should happen. It tells you nothing about what is actually approaching. The shipper knows. The carrier knows. The driver knows. By the time you find out, the truck is already at your gate.",
       "Your distribution center is the last physical bottleneck in the entire supply chain. Every delay upstream arrives at your dock and expects you to absorb it. What you actually need is to see it coming before it arrives.",
     ],
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Your Dock Looks Like When You Know What's Coming Before It Arrives",
