@@ -1,5 +1,3 @@
-import { LucideIcon } from "lucide-react";
-
 export interface ICPPageConfig {
   meta: {
     title: string;
@@ -18,6 +16,7 @@ export interface ICPPageConfig {
   narrative: {
     headline: string;
     paragraphs: string[];
+    image: string;
   };
   comparison: {
     headline: string;
@@ -29,10 +28,12 @@ export interface ICPPageConfig {
     items: {
       title: string;
       description: string;
+      image?: string;
     }[];
   };
   stats: {
     headline: string;
+    backgroundImage: string;
     items: { value: string; description: string }[];
   };
   testimonial: {
@@ -40,6 +41,7 @@ export interface ICPPageConfig {
     author: string;
     role: string;
     company: string;
+    backgroundImage: string;
   };
   objections: {
     headline: string;
@@ -50,5 +52,11 @@ export interface ICPPageConfig {
     subtext: string;
     ctaPrimary: string;
     ctaSecondary?: string;
+    backgroundImage: string;
+  };
+  sectionImages: {
+    narrative: string;
+    comparison: string;
+    features: string;
   };
 }

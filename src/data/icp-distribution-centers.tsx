@@ -1,5 +1,4 @@
 import { ICPPageConfig } from "@/types/icp-page";
-import heroImage from "@/assets/hero-yard-management.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -14,7 +13,7 @@ const config: ICPPageConfig = {
     subtext: "TrucksSlot gives warehouse managers and distribution center operations teams real-time dock scheduling software where carriers book their own time slots — so your yard stays orderly, your staff stays productive, and your plant manager stops calling.",
     ctaPrimary: "See TrucksSlot With Your Dock Layout",
     ctaSecondary: "How It Works",
-    image: heroImage,
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
   },
   narrative: {
     headline: "Your Dock Schedule Is Built on Promises. Reality Walks In 45 Minutes Late.",
@@ -24,6 +23,7 @@ const config: ICPPageConfig = {
       "Inbound freight visibility is the gap at the core of this problem. Your dock schedule tells you what should happen. It tells you nothing about what is actually approaching. The shipper knows. The carrier knows. The driver knows. By the time you find out, the truck is already at your gate.",
       "Your distribution center is the last physical bottleneck in the entire supply chain. Every delay upstream arrives at your dock and expects you to absorb it. What you actually need is to see it coming before it arrives.",
     ],
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Your Dock Looks Like When You Know What's Coming Before It Arrives",
@@ -50,12 +50,13 @@ const config: ICPPageConfig = {
   },
   stats: {
     headline: "What DC Managers Are Seeing After GO LIVE",
+    backgroundImage: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=1920&q=85&auto=format",
     items: [
       { value: "+80%", description: "More accurate truck arrivals — dock utilization rate transforms when you know what's arriving." },
-      { value: "~Zero", description: "Truck queuing incidents — carriers arrive when their dock slot is ready." },
-      { value: "7 weeks", description: "Guaranteed GO LIVE — operational before your next quarterly operations review." },
-      { value: "4.7★", description: "User rating — warehouse floor staff adopt it because it removes daily uncertainty from their shift." },
-      { value: "Apollo Tyres", description: "Eliminated multi-truck simultaneous arrival chaos almost completely using TrucksSlot's carrier self-booking." },
+      { value: "0", description: "Truck queuing incidents — carriers arrive when their dock slot is ready." },
+      { value: "7", description: "Weeks guaranteed GO LIVE — operational before your next quarterly operations review." },
+      { value: "4.7", description: "Star user rating — warehouse floor staff adopt it because it removes daily uncertainty." },
+      { value: "100%", description: "Digital audit trail — every arrival, loading start, and departure timestamped." },
     ],
   },
   testimonial: {
@@ -63,6 +64,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
+    backgroundImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -79,6 +81,12 @@ const config: ICPPageConfig = {
     subtext: "We don't do generic product tours. Send us your gate layout before the call and we'll configure TrucksSlot around your actual dock structure. You see your own operation running without queues in 30 minutes.",
     ctaPrimary: "Book a Personalised Dock Demo",
     ctaSecondary: "GO LIVE in 7 weeks",
+    backgroundImage: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=1920&q=85&auto=format",
+  },
+  sectionImages: {
+    narrative: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&auto=format",
+    comparison: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=1200&q=85&auto=format",
+    features: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
   },
 };
 

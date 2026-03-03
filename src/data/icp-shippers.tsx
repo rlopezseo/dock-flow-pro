@@ -1,5 +1,4 @@
 import { ICPPageConfig } from "@/types/icp-page";
-import heroImage from "@/assets/hero-freight-visibility.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -14,7 +13,7 @@ const config: ICPPageConfig = {
     subtext: "TrucksOnTheMap gives transport planners and logistics managers in manufacturing a live map of carrier capacity — so you stop guessing and start booking.",
     ctaPrimary: "See Your Routes on the Map",
     ctaSecondary: "How It Works",
-    image: heroImage,
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
   },
   narrative: {
     headline: "Monday Morning Still Starts With 6 Phone Calls, Doesn't It?",
@@ -24,6 +23,7 @@ const config: ICPPageConfig = {
       "SAP tells you what should happen. It tells you nothing about what will happen on the road. When capacity runs short, you fall back to spot market at 30–50% above contracted rates. When a truck is late, you find out when the driver calls. When management asks \"where are our trucks?\" — the honest answer is: you don't know until you call.",
       "Most transport management problems aren't management problems. They're information asymmetry problems. Your carriers know exactly where their trucks will be next Monday. You don't. That gap is where your freight costs, your planning hours, and your professional authority quietly disappear every week.",
     ],
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Planning Looks Like When You Can Actually See",
@@ -50,12 +50,13 @@ const config: ICPPageConfig = {
   },
   stats: {
     headline: "The Numbers That Matter to a Transport Planner",
+    backgroundImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
     items: [
       { value: "−7%", description: "Reduction in total freight costs for manufacturers on the platform." },
-      { value: "€170K", description: "Saved in year one by Saint-Gobain's logistics team." },
+      { value: "170", description: "Thousand euros saved in year one by Saint-Gobain's logistics team." },
       { value: "99.9%", description: "Capacity security — freight jobs covered, every time." },
-      { value: "7 weeks", description: "Guaranteed GO LIVE — operational before your next quarterly review." },
-      { value: "ISO 27001", description: "Certified — your freight data stays within your trusted carrier network." },
+      { value: "7", description: "Weeks guaranteed GO LIVE — operational before your next quarterly review." },
+      { value: "27001", description: "ISO certification — your freight data stays within your trusted carrier network." },
     ],
   },
   testimonial: {
@@ -63,6 +64,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
+    backgroundImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=1920&q=85&auto=format",
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -79,6 +81,12 @@ const config: ICPPageConfig = {
     subtext: "Book a 30-minute demo. We'll show you a live map of carrier availability on your actual corridors — not a generic product tour.",
     ctaPrimary: "Book Your Live Map Demo",
     ctaSecondary: "GO LIVE in 7 weeks",
+    backgroundImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
+  },
+  sectionImages: {
+    narrative: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&auto=format",
+    comparison: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=1200&q=85&auto=format",
+    features: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
   },
 };
 
