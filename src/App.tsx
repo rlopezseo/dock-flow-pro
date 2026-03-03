@@ -12,6 +12,10 @@ import PredictiveETA from "./pages/PredictiveETA";
 import YardManagement from "./pages/YardManagement";
 import BackhaulOptimization from "./pages/BackhaulOptimization";
 import About from "./pages/About";
+import ICPShippers from "./pages/ICPShippers";
+import ICPBrokers from "./pages/ICPBrokers";
+import ICPCarriers from "./pages/ICPCarriers";
+import ICPDistributionCenters from "./pages/ICPDistributionCenters";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +34,10 @@ const App = () => (
           <Route path="/yard-management" element={<YardManagement />} />
           <Route path="/backhaul-optimization" element={<BackhaulOptimization />} />
           <Route path="/about" element={<About />} />
+          <Route path="/freight-management-software-for-shippers" element={<ICPShippers />} />
+          <Route path="/freight-visibility-software-for-brokers" element={<ICPBrokers />} />
+          <Route path="/fleet-visibility-software-for-carriers" element={<ICPCarriers />} />
+          <Route path="/dock-scheduling-software-for-distribution-centers" element={<ICPDistributionCenters />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
