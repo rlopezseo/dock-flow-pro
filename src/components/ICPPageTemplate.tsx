@@ -1,4 +1,4 @@
-import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useInView, animate } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { ArrowUpRight, Check, X, TrendingUp, Zap, Shield, BarChart3, Truck, Clock, Users, Target, Eye } from "lucide-react";
 import { ICPPageConfig } from "@/types/icp-page";
@@ -21,21 +21,23 @@ const FadeUp = ({ children, className = "", delay = 0 }: { children: React.React
 /* ─── Animated Counter ─── */
 const AnimatedValue = ({ value, inView }: { value: string; inView: boolean }) => {
   const numMatch = value.match(/([+-−]?)(\d+\.?\d*)(.*)/);
-  if (!numMatch) return <span>{value}</span>;
-
-  const [prefix, numStr, suffix] = [numMatch[1], numMatch[2], numMatch[3]];
-  const target = parseFloat(numStr);
   const [display, setDisplay] = useState(0);
+  const prefix = numMatch?.[1] ?? "";
+  const numStr = numMatch?.[2] ?? "0";
+  const suffix = numMatch?.[3] ?? "";
+  const target = parseFloat(numStr);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || !numMatch) return;
     const controls = animate(0, target, {
       duration: 1.8,
       ease: [0.25, 0.46, 0.45, 0.94],
       onUpdate: (v) => setDisplay(v),
     });
     return controls.stop;
-  }, [inView, target]);
+  }, [inView, target, numMatch]);
+
+  if (!numMatch) return <span>{value}</span>;
 
   const formatted = target % 1 === 0 ? Math.round(display).toString() : display.toFixed(1);
   return <span>{prefix}{formatted}{suffix}</span>;
@@ -240,68 +242,142 @@ const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ FEATURES — Visual Cards with Icons & Images ═══════════ */
+/* ═══════════ FEATURES — Showcase Accordion + Image ═══════════ */
 const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.features;
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const [activeFeature, setActiveFeature] = useState(0);
+  const activeItem = c.items[activeFeature];
+  const ActiveIcon = featureIcons[activeFeature % featureIcons.length];
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden" ref={ref} id="features">
-      {/* Background photo wash */}
+      {/* Subtle background texture */}
       <div className="absolute inset-0">
-        <img src={config.sectionImages.features} alt="" className="w-full h-full object-cover opacity-[0.05]" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/95" />
+        <img src={config.sectionImages.features} alt="" className="w-full h-full object-cover opacity-[0.03]" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,15%,97%)]/97" />
       </div>
 
       <div className="container relative z-10">
         <FadeUp>
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="max-w-2xl mb-16">
             <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">Key Capabilities</p>
             <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-display font-extralight tracking-tight text-foreground leading-[1.15] mb-4">
               {c.headline}
             </h2>
             {c.subtext && (
-              <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed">{c.subtext}</p>
+              <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed max-w-lg">{c.subtext}</p>
             )}
           </div>
         </FadeUp>
 
-        {/* Bento grid - first 2 large, rest smaller */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {c.items.map((item, i) => {
-            const Icon = featureIcons[i % featureIcons.length];
-            const isLarge = i < 2;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 24 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.08 * i }}
-                className={`group relative bg-card rounded-2xl overflow-hidden card-elevated transition-all duration-500 ${isLarge ? "md:col-span-1 lg:row-span-1" : ""}`}
-              >
-                {/* Feature image background on hover */}
-                {item.image && (
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.06] transition-opacity duration-700">
-                    <img src={item.image} alt="" className="w-full h-full object-cover" />
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+          {/* Left — Showcase image panel */}
+          <FadeUp className="lg:col-span-2 lg:sticky lg:top-28">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[hsl(220,20%,10%)]">
+              <motion.img
+                key={activeItem.image || activeFeature}
+                src={activeItem.image || config.sectionImages.features}
+                alt={activeItem.title}
+                className="w-full h-full object-cover"
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              />
+              {/* Overlay with active feature info */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,25%,5%)]/90 via-[hsl(220,25%,5%)]/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-7">
+                <motion.div
+                  key={activeFeature}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.12] backdrop-blur-md flex items-center justify-center mb-4">
+                    <ActiveIcon className="w-5 h-5 text-white" />
                   </div>
-                )}
-
-                <div className="relative z-10 p-7 lg:p-8">
-                  {/* Icon */}
-                  <div className="w-11 h-11 rounded-xl bg-primary/[0.08] flex items-center justify-center mb-5 group-hover:bg-primary/[0.14] transition-colors duration-500">
-                    <Icon className="w-5 h-5 text-primary" />
+                  <p className="text-[15px] font-display font-light text-white leading-snug mb-2">{activeItem.title}</p>
+                  <div className="flex items-center gap-2 mt-4">
+                    {c.items.map((_, i) => (
+                      <div
+                        key={i}
+                        className={`h-[2px] rounded-full transition-all duration-500 ${i === activeFeature ? "w-8 bg-white" : "w-3 bg-white/25"}`}
+                      />
+                    ))}
                   </div>
+                </motion.div>
+              </div>
+            </div>
+          </FadeUp>
 
-                  <h3 className="text-[15px] font-display font-light text-foreground mb-3 tracking-wide leading-snug">{item.title}</h3>
-                  <p className="text-[12.5px] text-muted-foreground font-body font-normal leading-[1.85]">{item.description}</p>
-                </div>
+          {/* Right — Feature accordion list */}
+          <div className="lg:col-span-3 space-y-3">
+            {c.items.map((item, i) => {
+              const Icon = featureIcons[i % featureIcons.length];
+              const isActive = i === activeFeature;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.06 * i }}
+                >
+                  <button
+                    onClick={() => setActiveFeature(i)}
+                    className={`w-full text-left rounded-2xl border transition-all duration-500 overflow-hidden ${
+                      isActive
+                        ? "bg-card border-primary/20 shadow-[0_4px_24px_hsl(207,60%,30%/0.08)]"
+                        : "bg-card/60 border-border hover:bg-card hover:border-border/80 hover:shadow-sm"
+                    }`}
+                  >
+                    <div className="flex items-start gap-4 p-5 lg:p-6">
+                      {/* Number + Icon */}
+                      <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 ${
+                        isActive ? "bg-primary text-primary-foreground" : "bg-primary/[0.06] text-primary"
+                      }`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
 
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </motion.div>
-            );
-          })}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-4">
+                          <h3 className={`text-[14px] font-display font-light tracking-wide transition-colors duration-300 ${
+                            isActive ? "text-foreground" : "text-foreground/70"
+                          }`}>
+                            {item.title}
+                          </h3>
+                          <span className={`text-[11px] font-body text-muted-foreground/50 tabular-nums flex-shrink-0`}>
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                        </div>
+
+                        {/* Expandable description */}
+                        <motion.div
+                          initial={false}
+                          animate={{ height: isActive ? "auto" : 0, opacity: isActive ? 1 : 0 }}
+                          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-[12.5px] text-muted-foreground font-body font-normal leading-[1.85] mt-3 pr-4">
+                            {item.description}
+                          </p>
+                          {/* Progress-like accent bar */}
+                          <div className="mt-4 h-[2px] rounded-full bg-border overflow-hidden">
+                            <motion.div
+                              className="h-full bg-gradient-to-r from-primary to-[hsl(190,60%,50%)] rounded-full"
+                              initial={{ width: "0%" }}
+                              animate={{ width: isActive ? "100%" : "0%" }}
+                              transition={{ duration: 3, ease: "linear" }}
+                            />
+                          </div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </button>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
