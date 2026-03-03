@@ -1,5 +1,4 @@
 import { ICPPageConfig } from "@/types/icp-page";
-import heroImage from "@/assets/hero-backhaul-optimization.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -14,7 +13,7 @@ const config: ICPPageConfig = {
     subtext: "TrucksOnTheMap gives trucking companies and asset-based carriers fleet visibility software that eliminates empty runs, matches trucks to freight automatically, and gets shippers to come looking for your capacity.",
     ctaPrimary: "Calculate My Empty-Run Cost",
     ctaSecondary: "See How It Works",
-    image: heroImage,
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
   },
   narrative: {
     headline: "You Know Exactly What an Empty Kilometre Costs. That's the Problem.",
@@ -24,6 +23,7 @@ const config: ICPPageConfig = {
       "The freight management problem for carriers isn't visibility in the traditional sense. Project44 and FourKites were built for shippers and 3PLs tracking ocean containers. They weren't built for an asset-based trucking company trying to eliminate backhaul waste on Central European road corridors.",
       "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre in their cash flow.",
     ],
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Your Fleet Looks Like When Trucks Match Freight — Not the Other Way Around",
@@ -49,12 +49,13 @@ const config: ICPPageConfig = {
   },
   stats: {
     headline: "Numbers That Fleet Owners Care About",
+    backgroundImage: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=85&auto=format",
     items: [
       { value: "−30%", description: "Empty runs — the single biggest cost reduction lever for any asset-based carrier." },
       { value: "+7%", description: "Higher profit per freight job through better freight matching and rate intelligence." },
       { value: "30.2%", description: "Empty-run reduction achieved by DHL — the world's largest carrier validates the result." },
-      { value: "Free TMS", description: "No cost to join, full transport management functionality from day one." },
-      { value: "2–6 weeks", description: "To measurable ROI — fastest of any user group on the platform." },
+      { value: "Free", description: "No cost to join, full transport management functionality from day one." },
+      { value: "2-6", description: "Weeks to measurable ROI — fastest of any user group on the platform." },
     ],
   },
   testimonial: {
@@ -62,6 +63,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
+    backgroundImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=1920&q=85&auto=format",
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -78,6 +80,12 @@ const config: ICPPageConfig = {
     subtext: "Free TMS included. No credit card required. GO LIVE in days, not weeks.",
     ctaPrimary: "Add My First Truck Free",
     ctaSecondary: "Calculate My Empty-Run Cost",
+    backgroundImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=85&auto=format",
+  },
+  sectionImages: {
+    narrative: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
+    comparison: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=85&auto=format",
+    features: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&q=85&auto=format",
   },
 };
 
