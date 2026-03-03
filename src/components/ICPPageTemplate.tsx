@@ -65,7 +65,8 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
           <ComparisonBlock config={config} />
           <LogoCarouselSection />
           <FeaturesBlock config={config} />
-          <StatsAndTestimonialBlock config={config} />
+          <StatsBlock config={config} />
+          <TestimonialBlock config={config} />
           <ObjectionsBlock config={config} />
           <CTAFinalBlock config={config} />
           <Footer />
@@ -384,95 +385,91 @@ const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ STATS + TESTIMONIAL — Unified cinematic section ═══════════ */
-const StatsAndTestimonialBlock = ({ config }: { config: ICPPageConfig }) => {
+/* ═══════════ STATS — Dark cinematic glassmorphism ═══════════ */
+const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.stats;
-  const t = config.testimonial;
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="relative overflow-hidden" ref={ref}>
-      {/* Shared full-bleed photo background */}
+    <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <img src={c.backgroundImage} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(207,35%,12%)]/88 backdrop-blur-[3px]" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/92" />
       </div>
 
-      {/* ── Stats ── */}
-      <div className="relative z-10 py-24 lg:py-32">
-        <div className="container">
-          <FadeUp>
-            <div className="max-w-2xl mb-14">
-              <div className="h-[3px] w-12 bg-gradient-to-r from-primary to-[hsl(190,60%,50%)] rounded-full mb-6" />
-              <p className="text-white/30 font-display text-xs tracking-[0.25em] uppercase mb-4">Proven Results</p>
-              <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-display font-extralight tracking-tight text-white leading-[1.15]">
-                {c.headline}
-              </h2>
-            </div>
-          </FadeUp>
-
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
-            {c.items.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.08 * i }}
-                className="relative bg-white/[0.04] backdrop-blur-xl border border-white/[0.07] rounded-2xl p-6 lg:p-7 text-center group hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-700"
-              >
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-b from-primary/[0.06] to-transparent" />
-                <div className="relative z-10">
-                  <p className="text-2xl sm:text-3xl lg:text-[2.4rem] font-display font-extralight text-white mb-2 leading-none tracking-tight">
-                    <AnimatedValue value={item.value} inView={inView} />
-                  </p>
-                  <div className="w-6 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mb-3 group-hover:w-10 group-hover:via-primary/40 transition-all duration-700" />
-                  <p className="text-[11px] text-white/45 font-body font-normal leading-[1.75]">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
+      <div className="container relative z-10">
+        <FadeUp>
+          <div className="max-w-2xl mb-14">
+            <div className="h-[3px] w-12 bg-gradient-to-r from-primary to-[hsl(190,60%,50%)] rounded-full mb-6" />
+            <p className="text-white/30 font-display text-xs tracking-[0.25em] uppercase mb-4">Proven Results</p>
+            <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-display font-extralight tracking-tight text-white leading-[1.15]">
+              {c.headline}
+            </h2>
           </div>
-        </div>
+        </FadeUp>
 
-        {/* ── Divider line ── */}
-        <div className="container mt-20 lg:mt-24 mb-0">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
+          {c.items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.08 * i }}
+              className="relative bg-white/[0.04] backdrop-blur-xl border border-white/[0.07] rounded-2xl p-6 lg:p-7 text-center group hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-700"
+            >
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-b from-primary/[0.06] to-transparent" />
+              <div className="relative z-10">
+                <p className="text-2xl sm:text-3xl lg:text-[2.4rem] font-display font-extralight text-white mb-2 leading-none tracking-tight">
+                  <AnimatedValue value={item.value} inView={inView} />
+                </p>
+                <div className="w-6 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mb-3 group-hover:w-10 group-hover:via-primary/40 transition-all duration-700" />
+                <p className="text-[11px] text-white/45 font-body font-normal leading-[1.75]">{item.description}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+    </section>
+  );
+};
 
-      {/* ── Testimonial ── */}
-      <div className="relative z-10 pb-28 lg:pb-36 pt-8">
-        <div className="container">
-          <FadeUp>
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] rounded-3xl p-10 lg:p-14 relative overflow-hidden">
-                {/* Decorative gradient corner */}
-                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary/[0.08] to-transparent rounded-tl-3xl" />
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-primary/[0.05] to-transparent rounded-br-3xl" />
+/* ═══════════ TESTIMONIAL — Dark glassmorphism card ═══════════ */
+const TestimonialBlock = ({ config }: { config: ICPPageConfig }) => {
+  const t = config.testimonial;
+  return (
+    <section className="relative py-28 lg:py-36 overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={t.backgroundImage} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/92" />
+      </div>
+      <div className="container relative z-10">
+        <FadeUp>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] rounded-3xl p-10 lg:p-14 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary/[0.08] to-transparent rounded-tl-3xl" />
+              <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-primary/[0.05] to-transparent rounded-br-3xl" />
 
-                <div className="relative z-10">
-                  {/* Quote icon */}
-                  <div className="w-12 h-12 rounded-xl bg-primary/[0.12] flex items-center justify-center mb-8">
-                    <span className="text-primary text-2xl font-serif leading-none select-none">"</span>
-                  </div>
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-xl bg-primary/[0.12] flex items-center justify-center mb-8">
+                  <span className="text-primary text-2xl font-serif leading-none select-none">"</span>
+                </div>
 
-                  <blockquote className="text-base sm:text-lg md:text-[1.35rem] font-display font-extralight leading-[1.6] text-white/90 mb-10">
-                    {t.quote}
-                  </blockquote>
+                <blockquote className="text-base sm:text-lg md:text-[1.35rem] font-display font-extralight leading-[1.6] text-white/90 mb-10">
+                  {t.quote}
+                </blockquote>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-[1px] h-10 bg-gradient-to-b from-primary/60 to-primary/10" />
-                    <div>
-                      <p className="text-[13px] font-display font-light text-white tracking-wide">{t.author}</p>
-                      <p className="text-[11px] text-white/40 font-body mt-0.5">{t.role}, {t.company}</p>
-                    </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-[1px] h-10 bg-gradient-to-b from-primary/60 to-primary/10" />
+                  <div>
+                    <p className="text-[13px] font-display font-light text-white tracking-wide">{t.author}</p>
+                    <p className="text-[11px] text-white/40 font-body mt-0.5">{t.role}, {t.company}</p>
                   </div>
                 </div>
               </div>
             </div>
-          </FadeUp>
-        </div>
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
