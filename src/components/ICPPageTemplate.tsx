@@ -1,4 +1,5 @@
 import { motion, useInView, animate } from "framer-motion";
+import bgCtaFinal from "@/assets/bg-cta-final.jpg";
 import { useRef, useEffect, useState } from "react";
 import { ArrowUpRight, Check, X, TrendingUp, Zap, Shield, BarChart3, Truck, Clock, Users, Target, Eye } from "lucide-react";
 import { ICPPageConfig } from "@/types/icp-page";
@@ -514,7 +515,7 @@ const CTAFinalBlock = ({ config }: { config: ICPPageConfig }) => {
 
   return (
     <section className="relative py-32 overflow-hidden" id="contact" ref={ref}>
-      <img src={c.backgroundImage} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <img src={bgCtaFinal} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/75" />
 
       <div className="container relative z-10 text-center">
