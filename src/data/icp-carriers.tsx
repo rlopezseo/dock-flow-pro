@@ -84,7 +84,7 @@ const config: ICPPageConfig = {
   },
   sectionImages: {
     narrative: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
-    comparison: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=85&auto=format",
+    comparison: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=1920&q=80&auto=format",
     features: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&q=85&auto=format",
   },
 };
