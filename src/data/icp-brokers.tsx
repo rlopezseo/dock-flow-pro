@@ -15,6 +15,14 @@ const config: ICPPageConfig = {
     ctaSecondary: "See How It Works",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=85&auto=format",
   },
+  authorityBar: {
+    items: [
+      { value: "+70%", label: "More jobs processed" },
+      { value: "+12%", label: "Profit per job" },
+      { value: "−30%", label: "Carrier empty runs" },
+      { value: "4.7★", label: "User rating" },
+    ],
+  },
   narrative: {
     headline: "Every Minute a Job Sits Unallocated Is Margin Walking Out the Door",
     paragraphs: [
@@ -23,7 +31,7 @@ const config: ICPPageConfig = {
       "Freight visibility in brokerage isn't just about knowing where a truck is. It's about having the data to confirm faster, allocate smarter, and give your shipper clients the real-time shipment tracking they expect from a 3PL — even when you're running a 20-person operation.",
       "Your team is talented. They know freight. They know your carriers. But 80% of their day is admin — copy-paste, WhatsApp follow-ups, status calls, manual load matching — that should be automated. The brokerages growing fastest in Central Europe aren't smarter than yours. They've just stopped doing those things manually.",
     ],
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1200&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What a Brokerage Looks Like When Speed Becomes Your Weapon",

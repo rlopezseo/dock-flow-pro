@@ -15,6 +15,14 @@ const config: ICPPageConfig = {
     ctaSecondary: "How It Works",
     image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
   },
+  authorityBar: {
+    items: [
+      { value: "−7%", label: "Freight cost reduction" },
+      { value: "€170K", label: "Saved year one (Saint-Gobain)" },
+      { value: "99.9%", label: "Capacity security" },
+      { value: "7 wks", label: "Guaranteed GO LIVE" },
+    ],
+  },
   narrative: {
     headline: "Monday Morning Still Starts With 6 Phone Calls, Doesn't It?",
     paragraphs: [
@@ -23,7 +31,7 @@ const config: ICPPageConfig = {
       "SAP tells you what should happen. It tells you nothing about what will happen on the road. When capacity runs short, you fall back to spot market at 30–50% above contracted rates. When a truck is late, you find out when the driver calls. When management asks \"where are our trucks?\" — the honest answer is: you don't know until you call.",
       "Most transport management problems aren't management problems. They're information asymmetry problems. Your carriers know exactly where their trucks will be next Monday. You don't. That gap is where your freight costs, your planning hours, and your professional authority quietly disappear every week.",
     ],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1504222490345-c075b6008014?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Planning Looks Like When You Can Actually See",

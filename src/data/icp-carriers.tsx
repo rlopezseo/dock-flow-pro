@@ -15,6 +15,14 @@ const config: ICPPageConfig = {
     ctaSecondary: "See How It Works",
     image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
   },
+  authorityBar: {
+    items: [
+      { value: "30.2%", label: "Empty-run reduction (DHL)" },
+      { value: "Free TMS", label: "No cost to join" },
+      { value: "2–6 wks", label: "To measurable ROI" },
+      { value: "4.7★", label: "Driver app rating" },
+    ],
+  },
   narrative: {
     headline: "You Know Exactly What an Empty Kilometre Costs. That's the Problem.",
     paragraphs: [
@@ -23,7 +31,7 @@ const config: ICPPageConfig = {
       "The freight management problem for carriers isn't visibility in the traditional sense. Project44 and FourKites were built for shippers and 3PLs tracking ocean containers. They weren't built for an asset-based trucking company trying to eliminate backhaul waste on Central European road corridors.",
       "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre in their cash flow.",
     ],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Your Fleet Looks Like When Trucks Match Freight — Not the Other Way Around",

@@ -60,6 +60,7 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
       <Navbar />
       <main>
         <HeroBlock config={config} />
+        <AuthorityBar config={config} />
         <div className="light-sections bg-[hsl(0,0%,98%)]">
           <NarrativeBlock config={config} />
           <ComparisonBlock config={config} />
@@ -136,7 +137,39 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ NARRATIVE — Split Photo ═══════════ */
+/* ═══════════ AUTHORITY BAR — Corporate stats strip ═══════════ */
+const AuthorityBar = ({ config }: { config: ICPPageConfig }) => {
+  const items = config.authorityBar.items;
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-30px" });
+
+  return (
+    <section className="relative bg-[hsl(220,20%,7%)] border-t border-white/[0.04] overflow-hidden" ref={ref}>
+      {/* Subtle gradient accent at top */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+
+      <div className="container py-8 lg:py-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
+          {items.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * i }}
+              className={`text-center py-4 lg:py-0 ${i < items.length - 1 ? "lg:border-r lg:border-white/[0.06]" : ""}`}
+            >
+              <p className="text-2xl sm:text-3xl lg:text-[2rem] font-display font-extralight text-white tracking-tight leading-none mb-1.5">
+                <AnimatedValue value={item.value} inView={inView} />
+              </p>
+              <p className="text-[10px] text-white/35 font-body font-normal tracking-[0.12em] uppercase">{item.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.narrative;
   return (
