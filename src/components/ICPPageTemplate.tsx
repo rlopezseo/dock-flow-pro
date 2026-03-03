@@ -506,34 +506,49 @@ const ObjectionsBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ CTA FINAL — Cinematic ═══════════ */
+/* ═══════════ CTA FINAL — Matches Software Page CTA ═══════════ */
 const CTAFinalBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.ctaFinal;
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
-    <section className="relative py-32 md:py-44 overflow-hidden" id="contact">
-      <div className="absolute inset-0">
-        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(220,20%,5%)]/75" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[hsl(0,0%,98%)] to-transparent" />
-      </div>
+    <section className="relative py-32 overflow-hidden" id="contact" ref={ref}>
+      <img src={c.backgroundImage} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/75" />
+
       <div className="container relative z-10 text-center">
-        <FadeUp>
-          <p className="text-white/35 font-display text-xs tracking-[0.25em] uppercase mb-6">Get Started</p>
-          <h2 className="text-3xl sm:text-4xl md:text-[3.2rem] font-display font-extralight text-white tracking-tight leading-[1.12] mb-5 max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="max-w-xl mx-auto"
+        >
+          <p className="text-white/40 font-body text-xs tracking-[0.25em] uppercase mb-4">
+            Ready to Optimize?
+          </p>
+          <h2 className="text-3xl md:text-5xl font-display font-light tracking-tight text-white mb-5 leading-tight">
             {c.headline}
           </h2>
-          <p className="text-sm text-white/55 font-body font-normal leading-relaxed max-w-lg mx-auto mb-12">{c.subtext}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" className="group inline-flex items-center justify-center gap-2.5 px-10 py-4 rounded-full text-sm font-body font-normal text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-500 shadow-[0_0_40px_hsl(207,60%,30%/0.4)]">
-              {c.ctaPrimary} <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          <p className="text-white/50 font-body font-normal text-sm mb-10 leading-relaxed">
+            {c.subtext}
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="mailto:ihaveaquestion@trucksonthemap.com"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-body font-normal text-sm rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+            >
+              Get in Contact <ArrowUpRight className="w-4 h-4" />
             </a>
-            {c.ctaSecondary && (
-              <a href="#" className="inline-flex items-center justify-center gap-2.5 px-10 py-4 rounded-full text-sm font-body font-normal text-white/90 bg-white/[0.08] backdrop-blur-lg border border-white/[0.12] hover:bg-white/[0.15] transition-all duration-500">
-                {c.ctaSecondary}
-              </a>
-            )}
+            <a
+              href="tel:+442038078493"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white/10 hover:bg-white/15 backdrop-blur-sm text-white font-body font-normal text-sm rounded-full border border-white/15 transition-all duration-300"
+            >
+              +44 (20) 3807 84 93
+            </a>
           </div>
-        </FadeUp>
+        </motion.div>
       </div>
     </section>
   );
