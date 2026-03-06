@@ -583,68 +583,43 @@ const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
 };
 
 /* ═══════════ STATS — Cinematic dark glassmorphism cards ═══════════ */
-const statColors = [
-  "text-[hsl(145,60%,50%)]",
-  "text-[hsl(195,70%,55%)]",
-  "text-[hsl(45,80%,55%)]",
-  "text-[hsl(35,80%,55%)]",
-  "text-[hsl(207,70%,60%)]",
-];
 
-const statCategoryLabels = [
-  "Profit per freight job",
-  "Empty-run reduction",
-  "Cost to join",
-  "Weeks to measurable ROI",
-  "Performance uplift",
-];
-
-const statBadges = [
-  { color: "bg-[hsl(45,70%,50%)]", text: "Platform average across active carriers" },
-  { color: "bg-[hsl(195,70%,55%)]", text: "DHL case study, 2023" },
-  { color: "bg-[hsl(145,60%,50%)]", text: "No credit card required" },
-  { color: "bg-[hsl(35,80%,55%)]", text: "Median across onboarded fleets" },
-  { color: "bg-primary", text: "Verified metric" },
-];
-
-const MiniBarChart = () => (
-  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-60">
-    <rect x="5" y="28" width="14" height="12" rx="2" fill="hsl(220,15%,22%)" />
-    <rect x="25" y="18" width="14" height="22" rx="2" fill="hsl(220,15%,25%)" />
-    <rect x="45" y="10" width="14" height="30" rx="2" fill="hsl(45,70%,50%)" opacity="0.7" />
-    <rect x="65" y="6" width="14" height="34" rx="2" fill="hsl(45,70%,50%)" opacity="0.85" />
+const MiniBarChart = ({ color = "hsl(45,70%,50%)" }: { color?: string }) => (
+  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-50">
+    <rect x="5" y="30" width="14" height="10" rx="2" fill="hsl(220,15%,22%)" />
+    <rect x="25" y="22" width="14" height="18" rx="2" fill="hsl(220,15%,25%)" />
+    <rect x="45" y="14" width="14" height="26" rx="2" fill={color} opacity="0.5" />
+    <rect x="65" y="6" width="14" height="34" rx="2" fill={color} opacity="0.75" />
   </svg>
 );
 
-const MiniLineDown = () => (
-  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-60">
-    <path d="M5 8 Q30 10 50 18 T95 30 L115 34" stroke="hsl(195,70%,55%)" strokeWidth="2" fill="none" />
-    <path d="M5 8 Q30 10 50 18 T95 30 L115 34 L115 40 L5 40Z" fill="hsl(195,70%,55%)" opacity="0.08" />
+const MiniLineDown = ({ color = "hsl(145,60%,50%)" }: { color?: string }) => (
+  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-50">
+    <path d="M5 8 Q30 12 50 20 T95 30 L115 34" stroke={color} strokeWidth="2" fill="none" />
+    <path d="M5 8 Q30 12 50 20 T95 30 L115 34 L115 40 L5 40Z" fill={color} opacity="0.08" />
   </svg>
 );
 
-const MiniDots = () => (
-  <div className="flex items-center gap-1.5 mt-auto pt-3">
+const MiniLineUp = ({ color = "hsl(195,70%,55%)" }: { color?: string }) => (
+  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-50">
+    <path d="M5 34 Q20 30 40 24 T80 14 L115 6" stroke={color} strokeWidth="2" fill="none" />
+    <path d="M5 34 Q20 30 40 24 T80 14 L115 6 L115 40 L5 40Z" fill={color} opacity="0.08" />
+  </svg>
+);
+
+const MiniDots = ({ color = "hsl(45,80%,55%)" }: { color?: string }) => (
+  <div className="flex items-center gap-1.5 mt-auto pt-2">
     {[...Array(5)].map((_, i) => (
-      <div key={i} className="w-3 h-3 rounded-full bg-[hsl(145,60%,50%)]" style={{ opacity: 0.2 + i * 0.2 }} />
+      <div key={i} className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: color, opacity: 0.15 + i * 0.2 }} />
     ))}
-    <span className="text-[10px] font-body text-white/35 ml-2">Full TMS from day one</span>
   </div>
 );
 
-const MiniLineUp = ({ color = "hsl(35,80%,55%)" }: { color?: string }) => (
-  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-60">
-    <path d="M5 34 Q20 32 40 26 T80 14 L115 6" stroke={color} strokeWidth="2" fill="none" />
-    <path d="M5 34 Q20 32 40 26 T80 14 L115 6 L115 40 L5 40Z" fill={color} opacity="0.08" />
-  </svg>
-);
-
-const miniCharts = [
-  <MiniBarChart key="bar" />,
-  <MiniLineDown key="line1" />,
-  <MiniDots key="dots" />,
-  <MiniLineUp key="line2" />,
-  <MiniLineUp key="line3" color="hsl(207,70%,60%)" />,
+const cardMeta = [
+  { color: "hsl(145,60%,50%)", label: "Cost reduction", badge: "Platform average", chart: "lineDown" },
+  { color: "hsl(195,70%,55%)", label: "Revenue uplift", badge: "Freight matching data", chart: "lineUp" },
+  { color: "hsl(45,80%,55%)", label: "Validated result", badge: "DHL case study", chart: "bar" },
+  { color: "hsl(35,80%,55%)", label: "Onboarding speed", badge: "Median across fleets", chart: "dots" },
 ];
 
 const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
@@ -652,138 +627,132 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
-  /* Hero stat — first item featured on the left */
   const heroStat = c.items[0];
   const gridStats = c.items.slice(1, 5);
 
   return (
     <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
-      {/* Dark cinematic background */}
-      <div className="absolute inset-0 bg-[hsl(220,20%,7%)]" />
+      {/* Background — deep corporate navy */}
+      <div className="absolute inset-0 bg-[hsl(215,30%,10%)]" />
       <div className="absolute inset-0">
-        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.08]" loading="lazy" />
+        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.06]" loading="lazy" />
       </div>
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(215,35%,8%)] via-transparent to-[hsl(220,25%,12%)]" />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-          {/* ── LEFT COLUMN: Hero content ── */}
+          {/* ── LEFT COLUMN: Narrative + hero stat ── */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
             className="lg:sticky lg:top-32"
           >
-            <p className="text-[hsl(207,70%,65%)] font-body text-xs tracking-[0.25em] uppercase mb-5">Proven Results</p>
+            <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-5">Proven Results</p>
             <h2 className="text-3xl md:text-[2.75rem] font-display font-extralight tracking-tight text-white leading-[1.12] mb-6">
               {c.headline}
             </h2>
-            <p className="text-[13px] text-white/50 font-body font-normal leading-[1.9] max-w-lg mb-12">
+            <p className="text-[13px] text-white/45 font-body font-normal leading-[1.9] max-w-lg mb-12">
               Every metric below is drawn from live platform data and third-party validation. No projections. No marketing estimates. Real results from real carriers.
             </p>
 
             {/* Hero stat card */}
             <div className="relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] p-8">
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.12] to-transparent" />
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[hsl(145,60%,50%)]/20 to-transparent" />
 
               <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/40 mb-2">The single biggest lever</p>
 
-              <p className={`text-5xl md:text-6xl font-display font-extralight leading-none tracking-tight mb-3 ${statColors[0]}`}>
+              <p className="text-5xl md:text-6xl font-display font-extralight leading-none tracking-tight mb-3 text-[hsl(145,60%,50%)]">
                 <AnimatedValue value={heroStat.value} inView={inView} />
               </p>
 
-              <p className="text-[13px] text-white/55 font-body font-normal leading-[1.85] mb-8 max-w-md">
+              <p className="text-[13px] text-white/50 font-body font-normal leading-[1.85] mb-8 max-w-md">
                 {heroStat.description}
               </p>
 
               {/* Badge */}
               <div className="flex items-center gap-3 mb-6">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
-                  <span className={`w-1.5 h-1.5 rounded-full ${statBadges[0]?.color || 'bg-primary'}`} />
-                  <span className="text-[10px] font-body text-white/40">{statBadges[0]?.text || 'Verified'}</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[hsl(145,60%,50%)]" />
+                  <span className="text-[10px] font-body text-white/40">Platform average across active carriers</span>
                 </span>
               </div>
 
-              {/* Mini chart area */}
+              {/* Mini chart */}
               <div className="relative">
                 <p className="text-[10px] font-body text-white/30 tracking-[0.1em] uppercase mb-3">
-                  Industry avg. empty-run rate<span className="text-[hsl(145,60%,50%)] ml-2">↓ 31% over 12 mo.</span>
+                  Empty-run rate trend<span className="text-[hsl(145,60%,50%)] ml-2">↓ 31% over 12 mo.</span>
                 </p>
-                <svg viewBox="0 0 400 80" className="w-full h-16 opacity-70">
-                  {/* Area fill */}
+                <svg viewBox="0 0 400 80" className="w-full h-16 opacity-60">
                   <defs>
                     <linearGradient id="statsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="hsl(145,60%,50%)" stopOpacity="0.25" />
+                      <stop offset="0%" stopColor="hsl(145,60%,50%)" stopOpacity="0.2" />
                       <stop offset="100%" stopColor="hsl(145,60%,50%)" stopOpacity="0" />
                     </linearGradient>
                   </defs>
                   <path d="M0 60 Q40 55 80 52 T160 44 T240 34 T320 22 T400 14 L400 80 L0 80Z" fill="url(#statsGrad)" />
                   <path d="M0 60 Q40 55 80 52 T160 44 T240 34 T320 22 T400 14" stroke="hsl(145,60%,50%)" strokeWidth="2" fill="none" />
-                  {/* Dots on line */}
-                  {[
-                    [0, 60], [40, 55], [80, 52], [120, 48], [160, 44], [200, 40],
-                    [240, 34], [280, 28], [320, 22], [360, 18], [400, 14]
-                  ].map(([cx, cy], di) => (
-                    <circle key={di} cx={cx} cy={cy} r="2.5" fill="hsl(145,60%,50%)" opacity="0.8" />
+                  {[[0,60],[40,55],[80,52],[120,48],[160,44],[200,40],[240,34],[280,28],[320,22],[360,18],[400,14]].map(([cx,cy],di) => (
+                    <circle key={di} cx={cx} cy={cy} r="2.5" fill="hsl(145,60%,50%)" opacity="0.7" />
                   ))}
                 </svg>
-                {/* Month labels */}
                 <div className="flex justify-between mt-1.5">
-                  {["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(m => (
-                    <span key={m} className="text-[9px] font-body text-white/25">{m}</span>
+                  {["Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map(m => (
+                    <span key={m} className="text-[9px] font-body text-white/20">{m}</span>
                   ))}
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* ── RIGHT COLUMN: 2×2 cards grid ── */}
+          {/* ── RIGHT COLUMN: 2×2 data cards ── */}
           <div className="grid grid-cols-2 gap-4 lg:gap-5">
-            {gridStats.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.15 + 0.1 * i }}
-                className="group relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-white/[0.14] hover:bg-white/[0.07] transition-all duration-500 flex flex-col"
-              >
-                {/* Top accent line */}
-                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.1] to-transparent" />
+            {gridStats.map((item, i) => {
+              const meta = cardMeta[i] || cardMeta[0];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.15 + 0.1 * i }}
+                  className="group relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-white/[0.14] hover:bg-white/[0.07] transition-all duration-500 flex flex-col"
+                >
+                  <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: `linear-gradient(to right, transparent, ${meta.color}20, transparent)` }} />
 
-                <div className="p-6 sm:p-7 pb-2 flex flex-col flex-1">
-                  {/* Category label */}
-                  <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/35 mb-5">
-                    {statCategoryLabels[i + 1] || `Metric ${i + 2}`}
-                  </p>
+                  <div className="p-6 sm:p-7 pb-2 flex flex-col flex-1">
+                    <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/35 mb-5">
+                      {meta.label}
+                    </p>
 
-                  {/* Large colored value */}
-                  <p className={`text-3xl sm:text-4xl font-display font-extralight leading-none tracking-tight mb-3 ${statColors[i + 1] || 'text-white'}`}>
-                    <AnimatedValue value={item.value} inView={inView} />
-                  </p>
+                    <p className="text-3xl sm:text-4xl font-display font-extralight leading-none tracking-tight mb-3" style={{ color: meta.color }}>
+                      <AnimatedValue value={item.value} inView={inView} />
+                    </p>
 
-                  {/* Accent line */}
-                  <div className={`w-8 h-[2px] rounded-full mb-3 ${statBadges[i + 1]?.color || 'bg-primary'} opacity-60`} />
+                    <div className="w-8 h-[2px] rounded-full mb-3 opacity-50" style={{ backgroundColor: meta.color }} />
 
-                  {/* Description */}
-                  <p className="text-[11px] sm:text-[12px] text-white/50 font-body font-normal leading-[1.8] mb-5">
-                    {item.description}
-                  </p>
+                    <p className="text-[11px] sm:text-[12px] text-white/45 font-body font-normal leading-[1.8] mb-5">
+                      {item.description}
+                    </p>
 
-                  {/* Mini visualization */}
-                  <div className="mt-auto">
-                    {miniCharts[i + 1] || miniCharts[0]}
+                    <div className="mt-auto">
+                      {meta.chart === "lineDown" && <MiniLineDown color={meta.color} />}
+                      {meta.chart === "lineUp" && <MiniLineUp color={meta.color} />}
+                      {meta.chart === "bar" && <MiniBarChart color={meta.color} />}
+                      {meta.chart === "dots" && <MiniDots color={meta.color} />}
+                    </div>
                   </div>
-                </div>
 
-                {/* Bottom badge */}
-                <div className="px-6 sm:px-7 pb-5 pt-2">
-                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
-                    <span className={`w-1.5 h-1.5 rounded-full ${statBadges[i + 1]?.color || 'bg-primary'}`} />
-                    <span className="text-[10px] font-body text-white/40">{statBadges[i + 1]?.text || 'Verified'}</span>
-                  </span>
-                </div>
-              </motion.div>
-            ))}
+                  <div className="px-6 sm:px-7 pb-5 pt-2">
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: meta.color }} />
+                      <span className="text-[10px] font-body text-white/40">{meta.badge}</span>
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
         </div>
