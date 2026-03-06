@@ -31,15 +31,15 @@ const config: ICPPageConfig = {
       "The freight management problem for carriers isn't visibility in the traditional sense. Project44 and FourKites were built for shippers and 3PLs tracking ocean containers. They weren't built for an asset-based trucking company trying to eliminate backhaul waste on Central European road corridors.",
       "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre in their cash flow.",
     ],
-    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1200&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Your Fleet Looks Like When Trucks Match Freight — Not the Other Way Around",
     subtext: "Three changes that transform a trucking company from cost-center to profit machine.",
     items: [
-      { label: "Empty Runs", without: "25–35% of kilometres driven empty. Fuel burned, drivers paid, zero revenue. Your biggest invisible cost.", withTotm: "Empty run ratio drops 30%. TrucksMatch AI finds return loads before your truck reaches the drop-off. Every kilometre earns.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { label: "Fleet Visibility", without: "Your fleet availability lives in your dispatcher's head and a WhatsApp group. Shippers can't find you. You can't find freight.", withTotm: "Live availability map shows your free trucks to trusted shippers and brokers. They book directly — no calls, no middlemen.", image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80&auto=format" },
-      { label: "Freight Matching", without: "Finding a backhaul means load boards, 10 phone calls, and racing anonymous competitors on price. The lowest bid wins.", withTotm: "AI matches freight to your trucks by position, route preference, and cargo type — at contracted rates, not spot-market scraps.", image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format" },
+      { label: "Empty Runs", without: "25–35% of kilometres driven empty. Fuel burned, drivers paid, zero revenue. Your biggest invisible cost.", withTotm: "Empty run ratio drops 30%. TrucksMatch AI finds return loads before your truck reaches the drop-off. Every kilometre earns.", image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80&auto=format" },
+      { label: "Fleet Visibility", without: "Your fleet availability lives in your dispatcher's head and a WhatsApp group. Shippers can't find you. You can't find freight.", withTotm: "Live availability map shows your free trucks to trusted shippers and brokers. They book directly — no calls, no middlemen.", image: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=80&auto=format" },
+      { label: "Freight Matching", without: "Finding a backhaul means load boards, 10 phone calls, and racing anonymous competitors on price. The lowest bid wins.", withTotm: "AI matches freight to your trucks by position, route preference, and cargo type — at contracted rates, not spot-market scraps.", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=800&q=80&auto=format" },
     ],
   },
   features: {
@@ -55,7 +55,7 @@ const config: ICPPageConfig = {
   },
   stats: {
     headline: "Numbers That Fleet Owners Care About",
-    backgroundImage: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
     items: [
       { value: "−30%", description: "Empty runs — the single biggest cost reduction lever for any asset-based carrier." },
       { value: "+7%", description: "Higher profit per freight job through better freight matching and rate intelligence." },
@@ -69,7 +69,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -86,7 +86,7 @@ const config: ICPPageConfig = {
     subtext: "Free TMS included. No credit card required. GO LIVE in days, not weeks.",
     ctaPrimary: "Add My First Truck Free",
     ctaSecondary: "Calculate My Empty-Run Cost",
-    backgroundImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
   },
   sectionImages: {
     narrative: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
