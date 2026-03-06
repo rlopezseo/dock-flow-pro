@@ -616,10 +616,10 @@ const MiniDots = ({ color = "hsl(45,80%,55%)" }: { color?: string }) => (
 );
 
 const cardMeta = [
-  { color: "hsl(195,70%,55%)", label: "Revenue uplift", badge: "Freight matching data", chart: "lineUp" },
-  { color: "hsl(45,80%,55%)", label: "Validated result", badge: "DHL case study", chart: "bar" },
-  { color: "hsl(145,60%,50%)", label: "No cost to join", badge: "No credit card required", chart: "dots" },
-  { color: "hsl(35,80%,55%)", label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
+  { color: "hsl(207,60%,35%)", label: "Revenue uplift", badge: "Freight matching data", chart: "lineUp" },
+  { color: "hsl(207,50%,40%)", label: "Validated result", badge: "DHL case study", chart: "bar" },
+  { color: "hsl(200,55%,38%)", label: "No cost to join", badge: "No credit card required", chart: "dots" },
+  { color: "hsl(210,45%,42%)", label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
 ];
 
 const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
@@ -658,7 +658,7 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
             </p>
 
             {/* Hero stat card — glassmorphism on light */}
-            <div className="relative rounded-2xl overflow-hidden bg-white/60 backdrop-blur-xl border border-border/30 shadow-lg p-8">
+            <div className="relative rounded-2xl overflow-hidden bg-white/40 backdrop-blur-2xl border border-white/50 shadow-sm p-8">
               <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
               <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-muted-foreground mb-2">The single biggest lever</p>
@@ -716,7 +716,7 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.15 + 0.1 * i }}
-                  className="group relative rounded-2xl overflow-hidden bg-white/60 backdrop-blur-xl border border-border/30 shadow-md hover:shadow-lg hover:bg-white/75 transition-all duration-500 flex flex-col"
+                  className="group relative rounded-2xl overflow-hidden bg-white/40 backdrop-blur-2xl border border-white/50 shadow-sm hover:shadow-lg hover:bg-white/55 transition-all duration-500 flex flex-col"
                 >
                   <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: `linear-gradient(to right, transparent, ${meta.color}30, transparent)` }} />
 
