@@ -10,7 +10,7 @@ const config: ICPPageConfig = {
     badge: "For Distribution Centers & Warehouses",
     headline: "Trucks Queuing on the\nMain Road Again?",
     highlightedPart: "That Ends Today.",
-    subtext: "TrucksSlot gives warehouse managers and distribution center operations teams real-time dock scheduling software where carriers book their own time slots — so your yard stays orderly, your staff stays productive, and your plant manager stops calling.",
+    subtext: "TrucksSlot gives warehouse managers and distribution center operations teams real-time dock scheduling software where carriers book their own time slots so your yard stays orderly, your staff stays productive, and your plant manager stops calling.",
     ctaPrimary: "See TrucksSlot With Your Dock Layout",
     ctaSecondary: "How It Works",
     image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
@@ -26,7 +26,7 @@ const config: ICPPageConfig = {
   narrative: {
     headline: "Your Dock Schedule Is Built on Promises. Reality Walks In 45 Minutes Late.",
     paragraphs: [
-      "You built the schedule. You allocated the forklift teams. You positioned dock staff across the morning shift. And then three trucks arrived simultaneously — two of them weren't on the schedule for this morning — and one is still queuing on the public road outside the gate.",
+      "You built the schedule. You allocated the forklift teams. You positioned dock staff across the morning shift. And then three trucks arrived simultaneously, two of them weren't on the schedule for this morning, and one is still queuing on the public road outside the gate.",
       "The police have been called before. The plant manager has walked out to the yard before. The health and safety incident report is still on your desk.",
       "Inbound freight visibility is the gap at the core of this problem. Your dock schedule tells you what should happen. It tells you nothing about what is actually approaching. The shipper knows. The carrier knows. The driver knows. By the time you find out, the truck is already at your gate.",
       "Your distribution center is the last physical bottleneck in the entire supply chain. Every delay upstream arrives at your dock and expects you to absorb it. What you actually need is to see it coming before it arrives.",
@@ -45,12 +45,12 @@ const config: ICPPageConfig = {
   features: {
     headline: "One Screen. Every Truck. Every Dock. Live.",
     items: [
-      { title: "Interactive Dock Scheduling Board", description: "Drag-and-drop visual plan of every dock slot — inbound and outbound, all shifts, all gates simultaneously. Works on tablet, phone, or desktop. The shift supervisor has the same real-time view as the logistics director.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "Carrier Self-Booking — TrucksSlot", description: "Carriers log into their own time slot booking portal and select available dock windows. They see open slots. They book what fits their route. Your coordinator reviews, confirms exceptions, and focuses on operations — not on taking booking calls.", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&auto=format" },
-      { title: "Live ETA Monitoring", description: "From the moment a truck is assigned to a booking, TrucksSlot tracks its position and estimated arrival time in real time. Delays are visible hours before they arrive at your yard. Your team has time to respond — not just react.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { title: "Interactive Dock Scheduling Board", description: "Drag-and-drop visual plan of every dock slot: inbound and outbound, all shifts, all gates simultaneously. Works on tablet, phone, or desktop. The shift supervisor has the same real-time view as the logistics director.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
+      { title: "Carrier Self-Booking - TrucksSlot", description: "Carriers log into their own time slot booking portal and select available dock windows. They see open slots. They book what fits their route. Your coordinator reviews, confirms exceptions, and focuses on operations, not on taking booking calls.", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&auto=format" },
+      { title: "Live ETA Monitoring", description: "From the moment a truck is assigned to a booking, TrucksSlot tracks its position and estimated arrival time in real time. Delays are visible hours before they arrive at your yard. Your team has time to respond, not just react.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
       { title: "Automated Rescheduling Alerts", description: "When a truck's ETA changes beyond threshold, the system flags affected dock slots automatically. You get an alert with the option to reschedule, notify the next driver, or redistribute dock staff.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format" },
       { title: "SAP / Oracle / WMS Integration", description: "TrucksSlot works standalone or as the real-time execution layer on top of your existing WMS or ERP. One integration connects your inbound purchase orders to live truck arrivals.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
-      { title: "Full Digital Dock Audit Trail", description: "Every truck arrival, loading start, loading completion, and departure — timestamped, logged automatically, exportable in one click. Carrier performance reviews take minutes. Compliance audits have a defensible record.", image: "https://images.unsplash.com/photo-1504222490345-c075b6008014?w=800&q=80&auto=format" },
+      { title: "Full Digital Dock Audit Trail", description: "Every truck arrival, loading start, loading completion, and departure, timestamped, logged automatically, exportable in one click. Carrier performance reviews take minutes. Compliance audits have a defensible record.", image: "https://images.unsplash.com/photo-1504222490345-c075b6008014?w=800&q=80&auto=format" },
     ],
   },
   stats: {
