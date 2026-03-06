@@ -637,7 +637,7 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
       <div className="absolute inset-0">
         <img src={config.hero.image} alt="" className="w-full h-full object-cover opacity-[0.3]" loading="lazy" />
       </div>
-      <div className="absolute inset-0 bg-[hsl(210,15%,92%)]/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-[hsl(210,15%,92%)]/75 backdrop-blur-[2px]" />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
