@@ -82,8 +82,8 @@ const config: ICPPageConfig = {
     ],
   },
   ctaFinal: {
-    headline: "TrucksOnTheMap Helps Carriers Turn Empty Kilometres Into Revenue.",
-    subtext: "Free TMS included. No credit card. Your fleet connected to contracted freight in days, not weeks.",
+    headline: "TrucksOnTheMap Gives Carriers the Tools to Compete and Win.",
+    subtext: "Fleet visibility, freight matching, rate intelligence, and a free TMS. No credit card. Live in days, not weeks.",
     ctaPrimary: "Add My First Truck Free",
     ctaSecondary: "Calculate My Empty-Run Cost",
     backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
