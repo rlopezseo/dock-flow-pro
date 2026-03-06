@@ -2,8 +2,12 @@ import { motion, useInView, animate } from "framer-motion";
 import bgCtaFinal from "@/assets/bg-cta-final.jpg";
 import bgHowItWorks from "@/assets/bg-howitworks.jpg";
 import narrativeImg from "@/assets/narrative-challenge.jpg";
+import bgTestimonials from "@/assets/bg-testimonials.jpg";
+import avatarForray from "@/assets/avatar-forray.jpg";
+import avatarDomonkos from "@/assets/avatar-domonkos.jpg";
+import avatarRafaj from "@/assets/avatar-rafaj.jpg";
 import { useRef, useEffect, useState } from "react";
-import { ArrowUpRight, Check, X, TrendingUp, Zap, Shield, BarChart3, Truck, Clock, Users, Target, Eye } from "lucide-react";
+import { ArrowUpRight, Check, X, TrendingUp, Zap, Shield, BarChart3, Truck, Clock, Users, Target, Eye, Quote } from "lucide-react";
 import { ICPPageConfig } from "@/types/icp-page";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -646,42 +650,101 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ TESTIMONIAL — Dark glassmorphism card ═══════════ */
+/* ═══════════ TESTIMONIAL — Light premium grid (matches ProofSection) ═══════════ */
+const testimonials = [
+  {
+    quote: "TrucksOnTheMap made our freight management best-in-class. Speed, transparency and premium control.",
+    author: "Mr. T. Forray",
+    role: "Head of Supply Chain",
+    company: "Apollo Tyres HU",
+    avatar: avatarForray,
+  },
+  {
+    quote: "The latest technology & beautiful design in every tool we create. So, road freight becomes fun again.",
+    author: "Mr. T. Domonkos, MBA",
+    role: "CEO",
+    company: "TrucksOnTheMap",
+    avatar: avatarDomonkos,
+  },
+  {
+    quote: "With the online procurement we managed to cut costs and minimize the risk of disruption in our supply chain.",
+    author: "Mr. B. Rafaj",
+    role: "Production and Logistics Manager",
+    company: "Saint-Gobain Construction Products SK",
+    avatar: avatarRafaj,
+  },
+];
+
 const TestimonialBlock = ({ config }: { config: ICPPageConfig }) => {
-  const t = config.testimonial;
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden">
+    <section className="relative py-28 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
-        <img src={t.backgroundImage} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/92" />
+        <img src={bgTestimonials} alt="" className="w-full h-full object-cover opacity-[0.04]" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]" />
       </div>
       <div className="container relative z-10">
-        <FadeUp>
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white/[0.03] backdrop-blur-xl border border-white/[0.06] rounded-3xl p-10 lg:p-14 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary/[0.08] to-transparent rounded-tl-3xl" />
-              <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-primary/[0.05] to-transparent rounded-br-3xl" />
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
+        >
+          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">
+            What Our Clients Say
+          </p>
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
+            Trusted by logistics leaders across Europe
+          </h2>
+          <div className="accent-line w-16 mx-auto" />
+        </motion.div>
 
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-primary/[0.12] flex items-center justify-center mb-8">
-                  <span className="text-primary text-2xl font-serif leading-none select-none">"</span>
-                </div>
-
-                <blockquote className="text-base sm:text-lg md:text-[1.35rem] font-display font-extralight leading-[1.6] text-white/90 mb-10">
-                  {t.quote}
-                </blockquote>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-[1px] h-10 bg-gradient-to-b from-primary/60 to-primary/10" />
-                  <div>
-                    <p className="text-[13px] font-display font-light text-white tracking-wide">{t.author}</p>
-                    <p className="text-[11px] text-white/40 font-body mt-0.5">{t.role}, {t.company}</p>
-                  </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.author}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * i }}
+              className="bg-card rounded-2xl p-10 border border-border/40 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-7">
+                <Quote className="w-5 h-5 text-primary" />
+              </div>
+              <p className="text-base md:text-lg font-display font-light text-foreground leading-relaxed mb-10 flex-1">
+                "{t.quote}"
+              </p>
+              <div className="flex items-center gap-4 pt-7 border-t border-border/40">
+                <img
+                  src={t.avatar}
+                  alt={t.author}
+                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/10"
+                />
+                <div>
+                  <p className="text-sm font-display font-normal text-foreground">{t.author}</p>
+                  <p className="text-xs text-primary font-body font-normal">{t.role}</p>
+                  <p className="text-xs text-muted-foreground font-body font-normal">{t.company}</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </FadeUp>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <a
+            href="#reviews"
+            className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary/30 text-primary hover:bg-primary/5 font-body font-normal text-sm rounded-full transition-all duration-300"
+          >
+            See More Reviews <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
