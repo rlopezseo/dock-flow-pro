@@ -94,7 +94,7 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
       <main>
         <HeroBlock config={config} />
         <LogoBannerStrip />
-        <AuthorityBar config={config} />
+        
         <div className="light-sections bg-[hsl(0,0%,98%)]">
           <NarrativeBlock config={config} />
           <ComparisonBlock config={config} />
