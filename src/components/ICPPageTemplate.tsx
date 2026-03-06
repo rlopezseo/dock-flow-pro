@@ -136,7 +136,7 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
       {/* Full-bleed photo */}
       <div className="absolute inset-0">
         <img src={c.image} alt={config.meta.title} className="w-full h-full object-cover scale-105" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,7%)]/60 to-[hsl(220,20%,7%)]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,7%)]/75 to-[hsl(220,20%,7%)]/55" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[hsl(220,20%,5%)]/80 to-transparent" />
         {/* Clean bottom edge */}
       </div>
