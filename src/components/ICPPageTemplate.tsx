@@ -112,7 +112,6 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
           <NarrativeBlock config={config} />
           <ComparisonBlock config={config} />
           <CTABannerBlock config={config} />
-          <LogoCarouselSection />
           <FeaturesBlock config={config} />
           <StatsBlock config={config} />
           <TestimonialBlock config={config} />
@@ -395,7 +394,7 @@ const CTABannerBlock = ({ config }: { config: ICPPageConfig }) => {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="relative py-24 overflow-hidden" ref={ref}>
+    <section className="relative py-32 overflow-hidden" ref={ref}>
       <img src={bgCtaFinal} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/75" />
 
@@ -409,10 +408,10 @@ const CTABannerBlock = ({ config }: { config: ICPPageConfig }) => {
           <p className="text-white/40 font-body text-xs tracking-[0.25em] uppercase mb-4">
             Ready to Optimize?
           </p>
-          <h2 className="text-2xl md:text-4xl font-display font-light tracking-tight text-white mb-4 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-display font-light tracking-tight text-white mb-5 leading-tight">
             {c.headline}
           </h2>
-          <p className="text-white/50 font-body font-normal text-sm mb-8 leading-relaxed">
+          <p className="text-white/50 font-body font-normal text-sm mb-10 leading-relaxed">
             {c.subtext}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
