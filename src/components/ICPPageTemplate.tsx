@@ -150,7 +150,7 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-extralight leading-[1.08] tracking-tight mb-5 text-white">
               {c.headline}
               {c.highlightedPart && (
-                <><br /><span className="bg-gradient-to-r from-[hsl(207,70%,65%)] to-[hsl(190,60%,55%)] bg-clip-text text-transparent">{c.highlightedPart}</span></>
+                <><br /><span className="text-white/40">{c.highlightedPart}</span></>
               )}
             </h1>
             <p className="text-[13px] sm:text-sm text-white/65 max-w-xl font-body font-normal leading-[1.9] mb-10">{c.subtext}</p>
