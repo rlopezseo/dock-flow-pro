@@ -13,7 +13,7 @@ const config: ICPPageConfig = {
     subtext: "TrucksSlot gives warehouse managers and distribution center operations teams real-time dock scheduling software where carriers book their own time slots — so your yard stays orderly, your staff stays productive, and your plant manager stops calling.",
     ctaPrimary: "See TrucksSlot With Your Dock Layout",
     ctaSecondary: "How It Works",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
   },
   authorityBar: {
     items: [
@@ -31,31 +31,31 @@ const config: ICPPageConfig = {
       "Inbound freight visibility is the gap at the core of this problem. Your dock schedule tells you what should happen. It tells you nothing about what is actually approaching. The shipper knows. The carrier knows. The driver knows. By the time you find out, the truck is already at your gate.",
       "Your distribution center is the last physical bottleneck in the entire supply chain. Every delay upstream arrives at your dock and expects you to absorb it. What you actually need is to see it coming before it arrives.",
     ],
-    image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Your Dock Looks Like When You Know What's Coming Before It Arrives",
     subtext: "Three shifts that turn a reactive loading dock into a precision operation.",
     items: [
       { label: "Dock Queuing", without: "Trucks queue on public roads. Police get called. Plant management walks out to the yard. The same chaos every peak day.", withTotm: "Every truck has a pre-booked slot, arrives at its assigned gate on time, and moves in without queuing. Zero yard congestion.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format" },
-      { label: "ETA Accuracy", without: "One late truck cascades into three disrupted dock slots, an overtime shift, and a forklift team standing idle.", withTotm: "Live ETA updates trigger automatic dock rescheduling before the delay reaches your yard. Your team responds, not reacts.", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&auto=format" },
-      { label: "Slot Booking", without: "Every carrier time slot goes through the coordinator manually. 40 calls per day just to book dock windows.", withTotm: "Carriers book their own slots through a self-service portal. The coordinator manages exceptions, not every booking.", image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80&auto=format" },
+      { label: "ETA Accuracy", without: "One late truck cascades into three disrupted dock slots, an overtime shift, and a forklift team standing idle.", withTotm: "Live ETA updates trigger automatic dock rescheduling before the delay reaches your yard. Your team responds, not reacts.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { label: "Slot Booking", without: "Every carrier time slot goes through the coordinator manually. 40 calls per day just to book dock windows.", withTotm: "Carriers book their own slots through a self-service portal. The coordinator manages exceptions, not every booking.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
     ],
   },
   features: {
     headline: "One Screen. Every Truck. Every Dock. Live.",
     items: [
-      { title: "Interactive Dock Scheduling Board", description: "Drag-and-drop visual plan of every dock slot — inbound and outbound, all shifts, all gates simultaneously. Works on tablet, phone, or desktop. The shift supervisor has the same real-time view as the logistics director.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format" },
+      { title: "Interactive Dock Scheduling Board", description: "Drag-and-drop visual plan of every dock slot — inbound and outbound, all shifts, all gates simultaneously. Works on tablet, phone, or desktop. The shift supervisor has the same real-time view as the logistics director.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
       { title: "Carrier Self-Booking — TrucksSlot", description: "Carriers log into their own time slot booking portal and select available dock windows. They see open slots. They book what fits their route. Your coordinator reviews, confirms exceptions, and focuses on operations — not on taking booking calls.", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&auto=format" },
-      { title: "Live ETA Monitoring", description: "From the moment a truck is assigned to a booking, TrucksSlot tracks its position and estimated arrival time in real time. Delays are visible hours before they arrive at your yard. Your team has time to respond — not just react.", image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80&auto=format" },
+      { title: "Live ETA Monitoring", description: "From the moment a truck is assigned to a booking, TrucksSlot tracks its position and estimated arrival time in real time. Delays are visible hours before they arrive at your yard. Your team has time to respond — not just react.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
       { title: "Automated Rescheduling Alerts", description: "When a truck's ETA changes beyond threshold, the system flags affected dock slots automatically. You get an alert with the option to reschedule, notify the next driver, or redistribute dock staff.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format" },
-      { title: "SAP / Oracle / WMS Integration", description: "TrucksSlot works standalone or as the real-time execution layer on top of your existing WMS or ERP. One integration connects your inbound purchase orders to live truck arrivals.", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=800&q=80&auto=format" },
-      { title: "Full Digital Dock Audit Trail", description: "Every truck arrival, loading start, loading completion, and departure — timestamped, logged automatically, exportable in one click. Carrier performance reviews take minutes. Compliance audits have a defensible record.", image: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=800&q=80&auto=format" },
+      { title: "SAP / Oracle / WMS Integration", description: "TrucksSlot works standalone or as the real-time execution layer on top of your existing WMS or ERP. One integration connects your inbound purchase orders to live truck arrivals.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
+      { title: "Full Digital Dock Audit Trail", description: "Every truck arrival, loading start, loading completion, and departure — timestamped, logged automatically, exportable in one click. Carrier performance reviews take minutes. Compliance audits have a defensible record.", image: "https://images.unsplash.com/photo-1504222490345-c075b6008014?w=800&q=80&auto=format" },
     ],
   },
   stats: {
     headline: "What DC Managers Are Seeing After GO LIVE",
-    backgroundImage: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
     items: [
       { value: "+80%", description: "More accurate truck arrivals — dock utilization rate transforms when you know what's arriving." },
       { value: "0", description: "Truck queuing incidents — carriers arrive when their dock slot is ready." },
@@ -90,12 +90,12 @@ const config: ICPPageConfig = {
     subtext: "We don't do generic product tours. Send us your gate layout before the call and we'll configure TrucksSlot around your actual dock structure. You see your own operation running without queues in 30 minutes.",
     ctaPrimary: "Book a Personalised Dock Demo",
     ctaSecondary: "GO LIVE in 7 weeks",
-    backgroundImage: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
   },
   sectionImages: {
-    narrative: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&auto=format",
-    comparison: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=1920&q=80&auto=format",
-    features: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
+    narrative: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
+    comparison: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=80&auto=format",
+    features: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85&auto=format",
   },
 };
 
