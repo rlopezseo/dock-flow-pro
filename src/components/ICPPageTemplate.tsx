@@ -632,12 +632,12 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
 
   return (
     <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
-      {/* Background — light banking aesthetic */}
-      <div className="absolute inset-0 bg-[hsl(210,15%,95%)]" />
+      {/* Background — visible image with frosted overlay for glassmorphism effect */}
+      <div className="absolute inset-0 bg-[hsl(210,20%,88%)]" />
       <div className="absolute inset-0">
-        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.06] grayscale" loading="lazy" />
+        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.25]" loading="lazy" />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,15%,95%)]/90 via-[hsl(210,12%,93%)]/85 to-[hsl(215,15%,92%)]/90" />
+      <div className="absolute inset-0 bg-[hsl(210,15%,92%)]/60 backdrop-blur-sm" />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
