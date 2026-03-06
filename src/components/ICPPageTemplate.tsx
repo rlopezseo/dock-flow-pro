@@ -22,34 +22,36 @@ const clientLogos = [
   { src: isoverLogo, alt: "Isover Saint-Gobain" },
 ];
 
-const LogoBannerStrip = () => (
-  <section className="relative py-14 overflow-hidden">
-    {/* Top accent line matching home */}
-    <div className="absolute top-0 left-0 right-0 accent-line" />
-
-    <div className="container">
-      <div className="flex flex-col items-center gap-7">
-        <p className="text-[10px] font-body font-normal tracking-[0.25em] uppercase text-muted-foreground/50">
+const LogoBannerStrip = () => {
+  const logos = [...clientLogos, ...clientLogos];
+  return (
+    <section className="relative py-12 overflow-hidden">
+      <div className="container mb-6">
+        <p className="text-[10px] font-body font-normal tracking-[0.25em] uppercase text-muted-foreground/50 text-center">
           Trusted by Industry Leaders
         </p>
-        <div className="flex items-center gap-10 md:gap-14 flex-wrap justify-center">
-          {clientLogos.map((logo) => (
+      </div>
+      <div className="relative w-full overflow-hidden">
+        <motion.div
+          className="flex items-center gap-16 md:gap-24 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        >
+          {logos.map((logo, i) => (
             <img
-              key={logo.alt}
+              key={`${logo.alt}-${i}`}
               src={logo.src}
               alt={logo.alt}
-              className="h-6 md:h-8 w-auto object-contain grayscale opacity-25 hover:opacity-50 transition-opacity duration-500"
+              className="h-8 md:h-11 w-auto object-contain grayscale opacity-25 hover:opacity-50 transition-opacity duration-500 flex-shrink-0"
               loading="lazy"
             />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </div>
-
-    {/* Bottom divider matching home */}
-    <div className="absolute bottom-0 left-0 right-0 section-divider" />
-  </section>
-);
+      <div className="absolute bottom-0 left-0 right-0 section-divider" />
+    </section>
+  );
+};
 
 /* ─── Fade wrapper ─── */
 const FadeUp = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
@@ -130,8 +132,7 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
         <img src={c.image} alt={config.meta.title} className="w-full h-full object-cover scale-105" loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,7%)]/60 to-[hsl(220,20%,7%)]/40" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[hsl(220,20%,5%)]/80 to-transparent" />
-        {/* Animated gradient line */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+        {/* Clean bottom edge */}
       </div>
 
       <div className="container relative z-10">
