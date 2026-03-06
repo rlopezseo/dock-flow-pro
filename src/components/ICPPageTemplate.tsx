@@ -23,25 +23,23 @@ const clientLogos = [
 ];
 
 const LogoBannerStrip = () => (
-  <section className="bg-white py-12 md:py-14">
+  <section className="relative bg-[hsl(220,20%,5%)] py-10 md:py-12 border-t border-white/[0.04]">
     <div className="container">
-      <div className="flex items-center gap-8 md:gap-6">
-        <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-muted-foreground/60 whitespace-nowrap flex-shrink-0">
-          Trusted by
+      <div className="flex flex-col items-center gap-6">
+        <p className="text-[10px] font-body font-normal tracking-[0.25em] uppercase text-white/25">
+          Trusted by Industry Leaders
         </p>
-        <div className="h-px flex-1 bg-border/60" />
-        <div className="flex items-center gap-10 md:gap-16 flex-shrink-0">
+        <div className="flex items-center gap-10 md:gap-14 flex-wrap justify-center">
           {clientLogos.map((logo) => (
             <img
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
-              className="h-7 md:h-9 w-auto object-contain grayscale opacity-30 hover:opacity-60 transition-opacity duration-500"
+              className="h-6 md:h-8 w-auto object-contain brightness-0 invert opacity-20 hover:opacity-40 transition-opacity duration-500"
               loading="lazy"
             />
           ))}
         </div>
-        <div className="h-px flex-1 bg-border/60" />
       </div>
     </div>
   </section>
@@ -100,9 +98,9 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
       <main>
         <HeroBlock config={config} />
         <LogoBannerStrip />
+        <NarrativeBlock config={config} />
         
         <div className="light-sections bg-[hsl(0,0%,98%)]">
-          <NarrativeBlock config={config} />
           <ComparisonBlock config={config} />
           <LogoCarouselSection />
           <FeaturesBlock config={config} />
@@ -213,32 +211,51 @@ const AuthorityBar = ({ config }: { config: ICPPageConfig }) => {
 const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.narrative;
   return (
-    <section className="relative overflow-hidden">
-      {/* Full-bleed cinematic image background */}
+    <section className="relative overflow-hidden bg-[hsl(220,20%,5%)]">
+      {/* Subtle texture layer */}
       <div className="absolute inset-0">
-        <img src={c.image} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(220,20%,5%)]/[0.88]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,5%)]/40 via-transparent to-[hsl(220,20%,5%)]/60" />
+        <img src={c.image} alt="" className="w-full h-full object-cover opacity-[0.08]" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,5%)] via-transparent to-[hsl(220,20%,5%)]" />
       </div>
 
-      <div className="container relative z-10 py-28 lg:py-36">
-        <div className="max-w-4xl mx-auto">
+      {/* Bottom transition gradient to white */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[hsl(0,0%,98%)]" />
+
+      <div className="container relative z-10 pt-20 lg:pt-28 pb-44 lg:pb-52">
+        <div className="max-w-5xl mx-auto">
+          {/* Editorial headline */}
           <FadeUp>
-            <p className="text-primary font-display text-xs tracking-[0.3em] uppercase mb-6">The Challenge</p>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px w-12 bg-primary/50" />
+              <p className="text-primary font-display text-xs tracking-[0.3em] uppercase">The Challenge</p>
+            </div>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.2rem] font-display font-extralight tracking-tight text-white leading-[1.12] mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.4rem] font-display font-extralight tracking-tight text-white leading-[1.08] mb-16 max-w-4xl">
               {c.headline}
             </h2>
           </FadeUp>
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-6">
-            {c.paragraphs.map((p, i) => (
-              <FadeUp key={i} delay={0.15 + i * 0.08}>
-                <p className="text-[13px] text-white/50 font-body font-normal leading-[2]">
-                  {p}
-                </p>
-              </FadeUp>
-            ))}
+
+          {/* Two-column editorial text with left accent */}
+          <div className="grid md:grid-cols-2 gap-x-20 gap-y-8">
+            <div className="space-y-6">
+              {c.paragraphs.slice(0, 2).map((p, i) => (
+                <FadeUp key={i} delay={0.15 + i * 0.08}>
+                  <p className={`text-[13px] font-body font-normal leading-[2.1] ${i === 0 ? 'text-white/60 text-[14px]' : 'text-white/40'}`}>
+                    {p}
+                  </p>
+                </FadeUp>
+              ))}
+            </div>
+            <div className="space-y-6">
+              {c.paragraphs.slice(2).map((p, i) => (
+                <FadeUp key={i} delay={0.25 + i * 0.08}>
+                  <p className="text-[13px] text-white/40 font-body font-normal leading-[2.1]">
+                    {p}
+                  </p>
+                </FadeUp>
+              ))}
+            </div>
           </div>
         </div>
       </div>
