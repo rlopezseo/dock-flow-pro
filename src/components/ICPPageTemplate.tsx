@@ -578,7 +578,7 @@ const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ STATS — Dark cinematic glassmorphism ═══════════ */
+/* ═══════════ STATS — Dark cinematic with high-contrast cards ═══════════ */
 const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.stats;
   const ref = useRef(null);
@@ -588,36 +588,55 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
     <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
       <div className="absolute inset-0">
         <img src={c.backgroundImage} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/92" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/[0.94]" />
       </div>
 
       <div className="container relative z-10">
         <FadeUp>
-          <div className="max-w-2xl mb-14">
-            <div className="h-[3px] w-12 bg-gradient-to-r from-primary to-[hsl(190,60%,50%)] rounded-full mb-6" />
-            <p className="text-white/30 font-display text-xs tracking-[0.25em] uppercase mb-4">Proven Results</p>
-            <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-display font-extralight tracking-tight text-white leading-[1.15]">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <p className="text-primary/70 font-body text-xs tracking-[0.25em] uppercase mb-4">Proven Results</p>
+            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] font-display font-extralight tracking-tight text-white leading-[1.12]">
               {c.headline}
             </h2>
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4">
-          {c.items.map((item, i) => (
+        {/* Hero stat — first item large */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="max-w-2xl mx-auto mb-10"
+        >
+          <div className="relative bg-white/[0.06] backdrop-blur-xl border border-white/[0.1] rounded-2xl p-10 text-center group hover:bg-white/[0.1] transition-all duration-700 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.08] via-transparent to-[hsl(190,60%,50%)]/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="relative z-10">
+              <p className="text-5xl sm:text-6xl md:text-7xl font-display font-extralight text-white mb-3 leading-none tracking-tight">
+                <AnimatedValue value={c.items[0].value} inView={inView} />
+              </p>
+              <div className="w-16 h-[2px] bg-gradient-to-r from-primary to-[hsl(190,60%,50%)] mx-auto mb-4 rounded-full" />
+              <p className="text-sm text-white/50 font-body font-normal leading-relaxed max-w-md mx-auto">{c.items[0].description}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Remaining stats — 2x2 grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          {c.items.slice(1).map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.08 * i }}
-              className="relative bg-white/[0.04] backdrop-blur-xl border border-white/[0.07] rounded-2xl p-6 lg:p-7 text-center group hover:bg-white/[0.08] hover:border-white/[0.12] transition-all duration-700"
+              transition={{ duration: 0.6, delay: 0.2 + 0.08 * i }}
+              className="relative bg-white/[0.05] backdrop-blur-xl border border-white/[0.08] rounded-2xl p-6 text-center group hover:bg-white/[0.09] hover:border-white/[0.14] transition-all duration-700"
             >
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-b from-primary/[0.06] to-transparent" />
               <div className="relative z-10">
-                <p className="text-2xl sm:text-3xl lg:text-[2.4rem] font-display font-extralight text-white mb-2 leading-none tracking-tight">
+                <p className="text-3xl sm:text-4xl font-display font-extralight text-white mb-2 leading-none tracking-tight">
                   <AnimatedValue value={item.value} inView={inView} />
                 </p>
-                <div className="w-6 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mb-3 group-hover:w-10 group-hover:via-primary/40 transition-all duration-700" />
-                <p className="text-[11px] text-white/45 font-body font-normal leading-[1.75]">{item.description}</p>
+                <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent mx-auto mb-3 group-hover:via-primary/40 transition-all duration-700" />
+                <p className="text-[11px] text-white/40 font-body font-normal leading-[1.75]">{item.description}</p>
               </div>
             </motion.div>
           ))}
