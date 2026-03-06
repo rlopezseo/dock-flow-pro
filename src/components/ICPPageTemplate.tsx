@@ -23,10 +23,13 @@ const clientLogos = [
 ];
 
 const LogoBannerStrip = () => (
-  <section className="relative bg-[hsl(220,20%,5%)] py-10 md:py-12 border-t border-white/[0.04]">
+  <section className="relative py-14 overflow-hidden">
+    {/* Top accent line matching home */}
+    <div className="absolute top-0 left-0 right-0 accent-line" />
+
     <div className="container">
-      <div className="flex flex-col items-center gap-6">
-        <p className="text-[10px] font-body font-normal tracking-[0.25em] uppercase text-white/25">
+      <div className="flex flex-col items-center gap-7">
+        <p className="text-[10px] font-body font-normal tracking-[0.25em] uppercase text-muted-foreground/50">
           Trusted by Industry Leaders
         </p>
         <div className="flex items-center gap-10 md:gap-14 flex-wrap justify-center">
@@ -35,13 +38,16 @@ const LogoBannerStrip = () => (
               key={logo.alt}
               src={logo.src}
               alt={logo.alt}
-              className="h-6 md:h-8 w-auto object-contain brightness-0 invert opacity-20 hover:opacity-40 transition-opacity duration-500"
+              className="h-6 md:h-8 w-auto object-contain grayscale opacity-25 hover:opacity-50 transition-opacity duration-500"
               loading="lazy"
             />
           ))}
         </div>
       </div>
     </div>
+
+    {/* Bottom divider matching home */}
+    <div className="absolute bottom-0 left-0 right-0 section-divider" />
   </section>
 );
 
@@ -97,10 +103,9 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
       <Navbar />
       <main>
         <HeroBlock config={config} />
-        <LogoBannerStrip />
-        <NarrativeBlock config={config} />
-        
         <div className="light-sections bg-[hsl(0,0%,98%)]">
+          <LogoBannerStrip />
+          <NarrativeBlock config={config} />
           <ComparisonBlock config={config} />
           <LogoCarouselSection />
           <FeaturesBlock config={config} />
@@ -210,53 +215,45 @@ const AuthorityBar = ({ config }: { config: ICPPageConfig }) => {
 
 const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.narrative;
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
-    <section className="relative overflow-hidden bg-[hsl(220,20%,5%)]">
-      {/* Subtle texture layer */}
+    <section className="relative py-28 overflow-hidden" ref={ref}>
+      {/* Subtle background image — same pattern as home ProblemSection */}
       <div className="absolute inset-0">
-        <img src={c.image} alt="" className="w-full h-full object-cover opacity-[0.08]" loading="lazy" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,5%)] via-transparent to-[hsl(220,20%,5%)]" />
+        <img src={c.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/85" />
       </div>
 
-      {/* Bottom transition gradient to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[hsl(0,0%,98%)]" />
+      <div className="container relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="max-w-2xl mb-16"
+        >
+          <div className="accent-line w-12 mb-6" />
+          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">The Challenge</p>
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
+            {c.headline}
+          </h2>
+        </motion.div>
 
-      <div className="container relative z-10 pt-20 lg:pt-28 pb-44 lg:pb-52">
-        <div className="max-w-5xl mx-auto">
-          {/* Editorial headline */}
-          <FadeUp>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px w-12 bg-primary/50" />
-              <p className="text-primary font-display text-xs tracking-[0.3em] uppercase">The Challenge</p>
-            </div>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.4rem] font-display font-extralight tracking-tight text-white leading-[1.08] mb-16 max-w-4xl">
-              {c.headline}
-            </h2>
-          </FadeUp>
-
-          {/* Two-column editorial text with left accent */}
-          <div className="grid md:grid-cols-2 gap-x-20 gap-y-8">
-            <div className="space-y-6">
-              {c.paragraphs.slice(0, 2).map((p, i) => (
-                <FadeUp key={i} delay={0.15 + i * 0.08}>
-                  <p className={`text-[13px] font-body font-normal leading-[2.1] ${i === 0 ? 'text-white/60 text-[14px]' : 'text-white/40'}`}>
-                    {p}
-                  </p>
-                </FadeUp>
-              ))}
-            </div>
-            <div className="space-y-6">
-              {c.paragraphs.slice(2).map((p, i) => (
-                <FadeUp key={i} delay={0.25 + i * 0.08}>
-                  <p className="text-[13px] text-white/40 font-body font-normal leading-[2.1]">
-                    {p}
-                  </p>
-                </FadeUp>
-              ))}
-            </div>
-          </div>
+        {/* Editorial two-column text in clean cards */}
+        <div className="grid md:grid-cols-2 gap-4">
+          {c.paragraphs.map((p, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.08 * i }}
+              className="bg-card rounded-xl p-7 card-elevated transition-all duration-500 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <p className="text-[13px] text-muted-foreground font-body font-normal leading-[1.85]">{p}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
