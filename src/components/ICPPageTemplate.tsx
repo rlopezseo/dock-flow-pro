@@ -644,8 +644,8 @@ const MiniDots = ({ color = "hsl(45,80%,55%)" }: { color?: string }) => (
 const cardMeta = [
   { color: "hsl(207,60%,35%)", label: "Revenue uplift", badge: "Freight matching data", chart: "lineUp" },
   { color: "hsl(207,50%,40%)", label: "Validated result", badge: "DHL case study", chart: "bar" },
-  { color: "hsl(200,55%,38%)", label: "No cost to join", badge: "No credit card required", chart: "dots" },
-  { color: "hsl(210,45%,42%)", label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
+  { color: "hsl(200,55%,38%)", label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
+  { color: "hsl(210,45%,42%)", label: "ISO 27001 Certified", badge: "Security & compliance", chart: "dots" },
 ];
 
 const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
