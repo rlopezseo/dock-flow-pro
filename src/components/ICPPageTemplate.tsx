@@ -1,5 +1,6 @@
 import { motion, useInView, animate } from "framer-motion";
 import bgCtaFinal from "@/assets/bg-cta-final.jpg";
+import bgHowItWorks from "@/assets/bg-howitworks.jpg";
 import { useRef, useEffect, useState } from "react";
 import { ArrowUpRight, Check, X, TrendingUp, Zap, Shield, BarChart3, Truck, Clock, Users, Target, Eye } from "lucide-react";
 import { ICPPageConfig } from "@/types/icp-page";
@@ -221,37 +222,50 @@ const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
 
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
-      {/* Subtle background image — same pattern as home ProblemSection */}
+      {/* Same background as HowItWorks on product pages */}
       <div className="absolute inset-0">
-        <img src={c.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <img src={bgHowItWorks} alt="" className="w-full h-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/85" />
       </div>
 
       <div className="container relative z-10">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="max-w-2xl mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto mb-20"
         >
-          <div className="accent-line w-12 mb-6" />
-          <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">The Challenge</p>
-          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight mb-5">
+          <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-4">The Challenge</p>
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
             {c.headline}
           </h2>
         </motion.div>
 
-        {/* Editorial two-column text in clean cards */}
-        <div className="grid md:grid-cols-2 gap-4">
-          {c.paragraphs.map((p, i) => (
+        {/* Lead paragraph — pull quote style */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="max-w-3xl mx-auto mb-12"
+        >
+          <div className="relative pl-8 border-l-2 border-primary/30">
+            <p className="text-[15px] md:text-base text-foreground/80 font-body font-normal leading-[1.9] italic">
+              {c.paragraphs[0]}
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Remaining paragraphs in glass cards */}
+        <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {c.paragraphs.slice(1).map((p, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.08 * i }}
-              className="bg-card rounded-xl p-7 card-elevated transition-all duration-500 group relative overflow-hidden"
+              transition={{ duration: 0.5, delay: 0.15 + 0.08 * i }}
+              className="bg-white/70 backdrop-blur-sm rounded-xl p-7 border border-white/60 shadow-[0_2px_12px_hsl(220_20%_50%/0.05),0_8px_24px_hsl(220_20%_50%/0.04)] hover:shadow-[0_4px_20px_hsl(207_60%_30%/0.08),0_12px_36px_hsl(220_20%_50%/0.05)] hover:-translate-y-0.5 transition-all duration-500"
             >
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <p className="text-[13px] text-muted-foreground font-body font-normal leading-[1.85]">{p}</p>
             </motion.div>
           ))}
