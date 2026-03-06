@@ -82,8 +82,8 @@ const config: ICPPageConfig = {
     ],
   },
   ctaFinal: {
-    headline: "Add Your First Truck in 10 Minutes. Start Filling Empty Runs This Week.",
-    subtext: "Free TMS included. No credit card required. GO LIVE in days, not weeks.",
+    headline: "TrucksOnTheMap Helps Carriers Turn Empty Kilometres Into Revenue.",
+    subtext: "Free TMS included. No credit card. Your fleet connected to contracted freight in days, not weeks.",
     ctaPrimary: "Add My First Truck Free",
     ctaSecondary: "Calculate My Empty-Run Cost",
     backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",

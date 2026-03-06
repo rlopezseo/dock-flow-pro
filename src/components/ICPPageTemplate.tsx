@@ -946,7 +946,7 @@ const CTAFinalBlock = ({ config }: { config: ICPPageConfig }) => {
           className="max-w-xl mx-auto"
         >
           <p className="text-white/40 font-body text-xs tracking-[0.25em] uppercase mb-4">
-            Ready to Optimize?
+            Your Fleet, Your Revenue
           </p>
           <h2 className="text-3xl md:text-5xl font-display font-light tracking-tight text-white mb-5 leading-tight">
             {c.headline}
