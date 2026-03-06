@@ -13,7 +13,7 @@ const config: ICPPageConfig = {
     subtext: "TrucksOnTheMap gives transport planners and logistics managers in manufacturing a live map of carrier capacity — so you stop guessing and start booking.",
     ctaPrimary: "See Your Routes on the Map",
     ctaSecondary: "How It Works",
-    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
   },
   authorityBar: {
     items: [
