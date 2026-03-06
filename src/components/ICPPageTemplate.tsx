@@ -582,7 +582,71 @@ const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ STATS — Light premium with bold numbers ═══════════ */
+/* ═══════════ STATS — Cinematic dark glassmorphism cards ═══════════ */
+const statColors = [
+  "text-[hsl(145,60%,50%)]",
+  "text-[hsl(195,70%,55%)]",
+  "text-[hsl(45,80%,55%)]",
+  "text-[hsl(35,80%,55%)]",
+  "text-[hsl(207,70%,60%)]",
+];
+
+const statCategoryLabels = [
+  "Profit per freight job",
+  "Empty-run reduction",
+  "Cost to join",
+  "Weeks to measurable ROI",
+  "Performance uplift",
+];
+
+const statBadges = [
+  { color: "bg-[hsl(45,70%,50%)]", text: "Platform average across active carriers" },
+  { color: "bg-[hsl(195,70%,55%)]", text: "DHL case study, 2023" },
+  { color: "bg-[hsl(145,60%,50%)]", text: "No credit card required" },
+  { color: "bg-[hsl(35,80%,55%)]", text: "Median across onboarded fleets" },
+  { color: "bg-primary", text: "Verified metric" },
+];
+
+const MiniBarChart = () => (
+  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-60">
+    <rect x="5" y="28" width="14" height="12" rx="2" fill="hsl(220,15%,22%)" />
+    <rect x="25" y="18" width="14" height="22" rx="2" fill="hsl(220,15%,25%)" />
+    <rect x="45" y="10" width="14" height="30" rx="2" fill="hsl(45,70%,50%)" opacity="0.7" />
+    <rect x="65" y="6" width="14" height="34" rx="2" fill="hsl(45,70%,50%)" opacity="0.85" />
+  </svg>
+);
+
+const MiniLineDown = () => (
+  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-60">
+    <path d="M5 8 Q30 10 50 18 T95 30 L115 34" stroke="hsl(195,70%,55%)" strokeWidth="2" fill="none" />
+    <path d="M5 8 Q30 10 50 18 T95 30 L115 34 L115 40 L5 40Z" fill="hsl(195,70%,55%)" opacity="0.08" />
+  </svg>
+);
+
+const MiniDots = () => (
+  <div className="flex items-center gap-1.5 mt-auto pt-3">
+    {[...Array(5)].map((_, i) => (
+      <div key={i} className="w-3 h-3 rounded-full bg-[hsl(145,60%,50%)]" style={{ opacity: 0.2 + i * 0.2 }} />
+    ))}
+    <span className="text-[10px] font-body text-white/35 ml-2">Full TMS from day one</span>
+  </div>
+);
+
+const MiniLineUp = ({ color = "hsl(35,80%,55%)" }: { color?: string }) => (
+  <svg viewBox="0 0 120 40" className="w-full h-10 mt-auto opacity-60">
+    <path d="M5 34 Q20 32 40 26 T80 14 L115 6" stroke={color} strokeWidth="2" fill="none" />
+    <path d="M5 34 Q20 32 40 26 T80 14 L115 6 L115 40 L5 40Z" fill={color} opacity="0.08" />
+  </svg>
+);
+
+const miniCharts = [
+  <MiniBarChart key="bar" />,
+  <MiniLineDown key="line1" />,
+  <MiniDots key="dots" />,
+  <MiniLineUp key="line2" />,
+  <MiniLineUp key="line3" color="hsl(207,70%,60%)" />,
+];
+
 const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.stats;
   const ref = useRef(null);
@@ -590,10 +654,10 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
 
   return (
     <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
-      {/* Light background matching page */}
+      {/* Dark cinematic background */}
+      <div className="absolute inset-0 bg-[hsl(220,20%,7%)]" />
       <div className="absolute inset-0">
-        <img src={bgHowItWorks} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]/85" />
+        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.08]" loading="lazy" />
       </div>
 
       <div className="container relative z-10">
@@ -601,43 +665,59 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-20"
+          className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-4">Proven Results</p>
-          <h2 className="text-3xl md:text-[2.75rem] font-display font-light tracking-tight text-foreground leading-tight">
+          <p className="text-[hsl(207,70%,65%)] font-body text-xs tracking-[0.25em] uppercase mb-4">Proven Results</p>
+          <h2 className="text-3xl md:text-[2.75rem] font-display font-extralight tracking-tight text-white leading-tight">
             {c.headline}
           </h2>
         </motion.div>
 
-        {/* Hero stat — first item featured large */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="max-w-lg mx-auto mb-12 text-center"
-        >
-          <p className="text-6xl sm:text-7xl md:text-8xl font-display font-extralight text-primary leading-none tracking-tight mb-4">
-            <AnimatedValue value={c.items[0].value} inView={inView} />
-          </p>
-          <div className="accent-line w-16 mx-auto mb-4" />
-          <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed max-w-sm mx-auto">{c.items[0].description}</p>
-        </motion.div>
-
-        {/* Remaining stats — clean cards grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {c.items.slice(1).map((item, i) => (
+        {/* Glassmorphism cards grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          {c.items.slice(0, 4).map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 + 0.08 * i }}
-              className="bg-card rounded-2xl p-8 border border-border/40 shadow-sm hover:shadow-lg transition-all duration-300 text-center"
+              transition={{ duration: 0.6, delay: 0.1 + 0.08 * i }}
+              className="group relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-white/[0.14] hover:bg-white/[0.07] transition-all duration-500 flex flex-col"
             >
-              <p className="text-3xl sm:text-4xl font-display font-extralight text-primary leading-none tracking-tight mb-3">
-                <AnimatedValue value={item.value} inView={inView} />
-              </p>
-              <div className="w-8 h-[1px] bg-primary/20 mx-auto mb-3" />
-              <p className="text-[11px] text-muted-foreground font-body font-normal leading-[1.75]">{item.description}</p>
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.1] to-transparent" />
+
+              <div className="p-7 pb-2 flex flex-col flex-1">
+                {/* Category label */}
+                <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/35 mb-5">
+                  {statCategoryLabels[i] || `Metric ${i + 1}`}
+                </p>
+
+                {/* Large colored value */}
+                <p className={`text-4xl sm:text-5xl font-display font-extralight leading-none tracking-tight mb-4 ${statColors[i] || 'text-white'}`}>
+                  <AnimatedValue value={item.value} inView={inView} />
+                </p>
+
+                {/* Accent line */}
+                <div className={`w-10 h-[2px] rounded-full mb-4 ${statBadges[i]?.color || 'bg-primary'} opacity-60`} />
+
+                {/* Description */}
+                <p className="text-[12px] text-white/50 font-body font-normal leading-[1.8] mb-6">
+                  {item.description}
+                </p>
+
+                {/* Mini visualization */}
+                <div className="mt-auto">
+                  {miniCharts[i] || miniCharts[0]}
+                </div>
+              </div>
+
+              {/* Bottom badge */}
+              <div className="px-7 pb-5 pt-2">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
+                  <span className={`w-1.5 h-1.5 rounded-full ${statBadges[i]?.color || 'bg-primary'}`} />
+                  <span className="text-[10px] font-body text-white/40">{statBadges[i]?.text || 'Verified'}</span>
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>
