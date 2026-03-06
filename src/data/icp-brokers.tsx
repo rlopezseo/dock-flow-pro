@@ -35,14 +35,11 @@ const config: ICPPageConfig = {
   },
   comparison: {
     headline: "What a Brokerage Looks Like When Speed Becomes Your Weapon",
+    subtext: "Three upgrades that turn a phone-and-email brokerage into a platform company.",
     items: [
-      { without: "Planners process 30 jobs per day through phone and email.", withTotm: "The same planner handles 50+ jobs per day — auto-matching, auto-confirmation, automated freight allocation." },
-      { without: "You have no shipment visibility once the truck leaves your yard.", withTotm: "Real-time freight tracking on every job — answer customer calls in 10 seconds, not 10 minutes." },
-      { without: "You negotiate carrier rates from memory and habit.", withTotm: "A 90-day PriceIndex shows average, low, and spot market rates per lane — you negotiate from data, not gut feel." },
-      { without: "Subcontractors are invisible once they leave with the load.", withTotm: "Tracking API extends full shipment visibility to your entire subcontractor network." },
-      { without: "You lose freight jobs to faster competitors.", withTotm: "You process 70% more jobs — your speed of allocation becomes your market position." },
-      { without: "Shippers call for status updates and your team loses 2 hours a day answering.", withTotm: "Automated customer notifications handle booked → loaded → in transit → delivered. Your team touches exceptions, not every update." },
-      { without: "Growing means hiring more coordinators.", withTotm: "Freight volume scales without headcount scaling — the platform handles the admin layer." },
+      { label: "Job Throughput", without: "Planners process 30 jobs per day through phone, email, and WhatsApp. 80% of their time is admin, not selling.", withTotm: "The same planner handles 50+ jobs per day — auto-matching, auto-confirmation, automated freight allocation. Speed is your moat.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format" },
+      { label: "Shipment Visibility", without: "You have no visibility once the truck leaves. Shippers call for updates and your team loses 2 hours a day answering.", withTotm: "Real-time tracking on every job with automated status notifications. Your team touches exceptions, not every update.", image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80&auto=format" },
+      { label: "Rate Intelligence", without: "You negotiate carrier rates from memory and habit. You don't know if you're overpaying until the margin report arrives.", withTotm: "90-day PriceIndex shows average, low, and spot market rates per lane. You negotiate from data, not gut feel.", image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80&auto=format" },
     ],
   },
   features: {

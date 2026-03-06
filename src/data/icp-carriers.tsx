@@ -35,13 +35,11 @@ const config: ICPPageConfig = {
   },
   comparison: {
     headline: "What Your Fleet Looks Like When Trucks Match Freight — Not the Other Way Around",
+    subtext: "Three changes that transform a trucking company from cost-center to profit machine.",
     items: [
-      { without: "25–35% of your kilometres are driven empty.", withTotm: "Empty run ratio drops 30% — trucks matched to return loads before they reach the drop-off point." },
-      { without: "Your fleet availability data lives in your dispatcher's head.", withTotm: "Capacity availability is shared automatically — shippers see your free trucks days in advance and book directly." },
-      { without: "Finding a backhaul means load boards and 10 phone calls.", withTotm: "TrucksMatch AI identifies the best-fit freight jobs based on your truck's position, route preference, and cargo type — and offers them automatically." },
-      { without: "Subcontractors are invisible once they leave your yard.", withTotm: "Full tracking visibility extends across your own fleet and your entire subcontractor network." },
-      { without: "Your dispatcher handles 20 incoming availability calls per day.", withTotm: "Shippers and brokers book directly from your live availability map — the dispatcher's phone goes quiet." },
-      { without: "Drivers wait at loading docks for hours — unpaid dead time.", withTotm: "TrucksSlot integration means the truck arrives when the dock is ready. Zero waiting. Better driver retention." },
+      { label: "Empty Runs", without: "25–35% of kilometres driven empty. Fuel burned, drivers paid, zero revenue. Your biggest invisible cost.", withTotm: "Empty run ratio drops 30%. TrucksMatch AI finds return loads before your truck reaches the drop-off. Every kilometre earns.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { label: "Fleet Visibility", without: "Your fleet availability lives in your dispatcher's head and a WhatsApp group. Shippers can't find you. You can't find freight.", withTotm: "Live availability map shows your free trucks to trusted shippers and brokers. They book directly — no calls, no middlemen.", image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80&auto=format" },
+      { label: "Freight Matching", without: "Finding a backhaul means load boards, 10 phone calls, and racing anonymous competitors on price. The lowest bid wins.", withTotm: "AI matches freight to your trucks by position, route preference, and cargo type — at contracted rates, not spot-market scraps.", image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format" },
     ],
   },
   features: {

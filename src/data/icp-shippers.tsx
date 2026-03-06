@@ -35,14 +35,11 @@ const config: ICPPageConfig = {
   },
   comparison: {
     headline: "What Planning Looks Like When You Can Actually See",
+    subtext: "From guessing to knowing — three shifts that change how freight gets planned.",
     items: [
-      { without: "You guess there are trucks available next Monday.", withTotm: "You see exactly which trusted trucks are free — and book the best one in 3 minutes." },
-      { without: "You call 6 carriers every morning to check availability.", withTotm: "A 5-day availability forecast map shows free carrier capacity across your routes. No calls needed." },
-      { without: "You allocate freight jobs manually, one by one, from an inbox.", withTotm: "One-click MassUpload or a direct SAP interface sends jobs automatically." },
-      { without: "When capacity runs short you pay 30–50% more on the spot market.", withTotm: "99.9% capacity security — secured in advance at contracted rates." },
-      { without: "You have no idea where the truck is until the driver calls.", withTotm: "Real-time freight tracking shows live position and ETA at every drop-off point." },
-      { without: "You report freight performance to management with estimates.", withTotm: "Full transport analytics — PriceIndex history, on-time delivery rate, carrier performance dashboard." },
-      { without: "SAP shows the load plan. Reality is a mystery.", withTotm: "SAP sends the job. TrucksOnTheMap executes and confirms back." },
+      { label: "Carrier Availability", without: "You call 6 carriers every morning to check who has trucks. Half don't answer. You plan freight on incomplete information.", withTotm: "A 5-day availability forecast map shows every trusted carrier's free trucks across your routes. Book the best one in 3 minutes.", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&auto=format" },
+      { label: "Capacity Security", without: "When capacity runs short, you pay 30–50% more on the spot market. Your budget is a fiction by Thursday.", withTotm: "99.9% capacity security — contracted carriers pre-commit to your jobs before you need to ask. Freight cost per tonne drops.", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=800&q=80&auto=format" },
+      { label: "Live Tracking", without: "You have no idea where the truck is until the driver calls. Management asks 'where are our trucks?' — you don't know.", withTotm: "Real-time freight tracking shows live position and ETA at every drop-off point. Answer delivery questions in 10 seconds.", image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80&auto=format" },
     ],
   },
   features: {
