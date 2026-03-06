@@ -46,9 +46,9 @@ const config: ICPPageConfig = {
     headline: "Practical Tools for Fleet Operators Who Don't Have Time for Complex Software",
     items: [
       { title: "Availability Forecast — Share Once, Earn Always", description: "Input where your trucks will be and when. The platform shares your capacity with your trusted shipper and broker network automatically. Set your availability and let contracted freight come to you.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format" },
-      { title: "TrucksMatch — AI-Powered Freight Matching", description: "When a truck completes a delivery, TrucksMatch instantly identifies the best-fit backhaul freight job based on current location, route preference, cargo type, and your pricing floor. The return load problem becomes a notification.", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=800&q=80&auto=format" },
+      { title: "TrucksMatch — AI-Powered Freight Matching", description: "When a truck completes a delivery, TrucksMatch instantly identifies the best-fit backhaul freight job based on current location, route preference, cargo type, and your pricing floor. The return load problem becomes a notification.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format" },
       { title: "Free TMS for Carriers", description: "Full transport management functionality — job overview, driver communication, document management, proof of delivery — included at no extra cost. If your current dispatch software doesn't match you with freight automatically, TrucksOnTheMap replaces it. Free.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "Driver App — Built for One-Handed Truck Cab Use", description: "Job updates, turn-by-turn navigation, proof of delivery capture, and status confirmation — in one screen, designed for drivers who are driving. DHL rolled this out to hundreds of drivers. Training time: under one hour.", image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format" },
+      { title: "Driver App — Built for One-Handed Truck Cab Use", description: "Job updates, turn-by-turn navigation, proof of delivery capture, and status confirmation — in one screen, designed for drivers who are driving. DHL rolled this out to hundreds of drivers. Training time: under one hour.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&auto=format" },
       { title: "PriceIndex — 90-Day Market Rate Intelligence", description: "See average, low, and spot freight rates for every corridor you operate — updated continuously. Know the market rate before every negotiation. Stop taking below-market rates.", image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80&auto=format" },
       { title: "Invite-Only Network", description: "You control exactly which shippers and brokers see your fleet data. Your capacity is visible to your trusted partners, nobody else. This is not a load board where you race anonymous competitors on price.", image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format" },
     ],
@@ -69,7 +69,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=85&auto=format",
   },
   objections: {
     headline: "You're Probably Thinking...",
