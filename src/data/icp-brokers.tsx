@@ -8,8 +8,8 @@ const config: ICPPageConfig = {
   },
   hero: {
     badge: "For Freight Brokers & Speditions",
-    headline: "Your Competitors Are Processing 70% More Jobs With the Same Team.",
-    highlightedPart: "Are You?",
+    headline: "Your Competitors Process\n70% More Jobs. Same Team.",
+    highlightedPart: "Do You?",
     subtext: "TrucksOnTheMap gives freight brokers, speditions, and freight forwarders the speed, shipment visibility, and margin intelligence to stop losing jobs to faster operators — and start scaling without hiring.",
     ctaPrimary: "Calculate My ROI",
     ctaSecondary: "See How It Works",

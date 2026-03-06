@@ -151,7 +151,9 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
               {c.badge}
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-extralight leading-[1.08] tracking-tight mb-5 text-white">
-              {c.headline}
+              {c.headline.split('\n').map((line, i, arr) => (
+                <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
+              ))}
               {c.highlightedPart && (
                 <><br /><span className="text-white/40">{c.highlightedPart}</span></>
               )}
