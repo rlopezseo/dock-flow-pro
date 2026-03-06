@@ -434,10 +434,10 @@ const CTABannerBlock = ({ config }: { config: ICPPageConfig }) => {
             Ready to Optimize?
           </p>
           <h2 className="text-3xl md:text-5xl font-display font-light tracking-tight text-white mb-5 leading-tight">
-            {c.headline}
+            Add Your First Truck in 10 Minutes. Start Filling Empty Runs This Week.
           </h2>
           <p className="text-white/50 font-body font-normal text-sm mb-10 leading-relaxed">
-            {c.subtext}
+            Free TMS included. No credit card required. GO LIVE in days, not weeks.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
