@@ -111,6 +111,7 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
           <LogoBannerStrip />
           <NarrativeBlock config={config} />
           <ComparisonBlock config={config} />
+          <CTABannerBlock config={config} />
           <LogoCarouselSection />
           <FeaturesBlock config={config} />
           <StatsBlock config={config} />
@@ -382,6 +383,55 @@ const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
             </motion.div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+};
+
+/* ═══════════ CTA BANNER — Mid-page conversion point ═══════════ */
+const CTABannerBlock = ({ config }: { config: ICPPageConfig }) => {
+  const c = config.ctaFinal;
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  return (
+    <section className="relative py-24 overflow-hidden" ref={ref}>
+      <img src={bgCtaFinal} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/75" />
+
+      <div className="container relative z-10 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="max-w-xl mx-auto"
+        >
+          <p className="text-white/40 font-body text-xs tracking-[0.25em] uppercase mb-4">
+            Ready to Optimize?
+          </p>
+          <h2 className="text-2xl md:text-4xl font-display font-light tracking-tight text-white mb-4 leading-tight">
+            {c.headline}
+          </h2>
+          <p className="text-white/50 font-body font-normal text-sm mb-8 leading-relaxed">
+            {c.subtext}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="mailto:ihaveaquestion@trucksonthemap.com"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-body font-normal text-sm rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+            >
+              {c.ctaPrimary} <ArrowUpRight className="w-4 h-4" />
+            </a>
+            {c.ctaSecondary && (
+              <a
+                href="#features"
+                className="inline-flex items-center gap-2 px-8 py-3.5 text-white/80 font-body font-normal text-sm rounded-full border border-white/15 hover:bg-white/[0.06] transition-all duration-300"
+              >
+                {c.ctaSecondary}
+              </a>
+            )}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
