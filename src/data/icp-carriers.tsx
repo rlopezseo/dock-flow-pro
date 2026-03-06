@@ -81,6 +81,10 @@ const config: ICPPageConfig = {
       { question: "\"We already have a TMS.\"", answer: "If your current TMS shows you a live revenue-per-truck dashboard, matches incoming freight jobs to your available trucks automatically, and lets shippers book your capacity without a phone call — keep it. If it doesn't, TrucksOnTheMap does all three. Free." },
     ],
   },
+  ctaBanner: {
+    headline: "Add Your First Truck in 10 Minutes. Start Filling Empty Runs This Week.",
+    subtext: "Free TMS included. No credit card required. GO LIVE in days, not weeks.",
+  },
   ctaFinal: {
     headline: "TrucksOnTheMap Gives Carriers the Tools to Compete and Win.",
     subtext: "Fleet visibility, freight matching, rate intelligence, and a free TMS. No credit card. Live in days, not weeks.",

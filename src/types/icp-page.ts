@@ -51,6 +51,10 @@ export interface ICPPageConfig {
     headline: string;
     items: { question: string; answer: string }[];
   };
+  ctaBanner?: {
+    headline: string;
+    subtext: string;
+  };
   ctaFinal: {
     headline: string;
     subtext: string;

@@ -80,6 +80,10 @@ const config: ICPPageConfig = {
       { question: "\"Too expensive for an operation our size.\"", answer: "The ROI is +12% profit per job. For a brokerage processing 500 jobs per month at €150 average margin, that's €9,000 in additional monthly profit. The maths close themselves in the first quarter." },
     ],
   },
+  ctaBanner: {
+    headline: "Process 70% More Jobs With the Same Team. Start Your Free Pilot Today.",
+    subtext: "Auto-matching, real-time visibility, and 90-day rate intelligence. No credit card required.",
+  },
   ctaFinal: {
     headline: "Your Next Shipper Contract Is Going to Someone Faster Than You. Unless.",
     subtext: "Start with one lane, one corridor, your five best carriers. See the difference in the first week. No long onboarding. Your first truck on the platform in under 10 minutes.",

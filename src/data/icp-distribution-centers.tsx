@@ -81,6 +81,10 @@ const config: ICPPageConfig = {
       { question: "\"We tried a TMS before and it didn't stick.\"", answer: "TrucksSlot is not a TMS. It is a single-purpose dock scheduling and inbound freight visibility tool. One screen. One job. There's nothing to learn except where to look. Staff are operational on day one." },
     ],
   },
+  ctaBanner: {
+    headline: "Show Us Your Dock Layout. We'll Build It in TrucksSlot Before the Call.",
+    subtext: "Carrier self-booking, live ETA monitoring, and zero queuing. GO LIVE in 7 weeks.",
+  },
   ctaFinal: {
     headline: "Show Us Your Dock Layout. We'll Build It in TrucksSlot Before the Demo.",
     subtext: "We don't do generic product tours. Send us your gate layout before the call and we'll configure TrucksSlot around your actual dock structure. You see your own operation running without queues in 30 minutes.",
