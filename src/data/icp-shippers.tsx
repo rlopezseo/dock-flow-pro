@@ -81,6 +81,10 @@ const config: ICPPageConfig = {
       { question: "\"What about data security and GDPR compliance?\"", answer: "ISO 27001 certified. 99.9% uptime SLA. Your freight data, your carrier network, your routes — visible only to the partners you invite. No third-party data sharing." },
     ],
   },
+  ctaBanner: {
+    headline: "See Your Carrier Capacity on a Live Map. Book in 3 Minutes, Not 30 Calls.",
+    subtext: "SAP integration included. 99.9% capacity security. GO LIVE guaranteed in 7 weeks.",
+  },
   ctaFinal: {
     headline: "See Your Routes on a Live Map. Not in a Spreadsheet.",
     subtext: "Book a 30-minute demo. We'll show you a live map of carrier availability on your actual corridors — not a generic product tour.",
