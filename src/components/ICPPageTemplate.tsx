@@ -28,7 +28,7 @@ const LogoBannerStrip = () => {
   return (
     <section className="relative py-12 overflow-hidden">
       <div className="container mb-6">
-        <p className="text-[10px] font-body font-normal tracking-[0.25em] uppercase text-muted-foreground/50 text-center">
+        <p className="text-xs md:text-sm font-body font-normal tracking-[0.2em] uppercase text-muted-foreground/50 text-center">
           Trusted by Industry Leaders
         </p>
       </div>
