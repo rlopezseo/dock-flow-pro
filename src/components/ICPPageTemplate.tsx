@@ -205,72 +205,90 @@ const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
   );
 };
 
-/* ═══════════ COMPARISON — Dark cinematic Before & After ═══════════ */
+/* ═══════════ COMPARISON — Premium Visual Before & After ═══════════ */
 const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.comparison;
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden" ref={ref} id="comparison">
+    <section className="relative py-28 lg:py-40 overflow-hidden" ref={ref} id="comparison">
       {/* Dark photo background */}
       <div className="absolute inset-0">
         <img src={config.sectionImages.comparison} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/93" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,5%)]/[0.94]" />
       </div>
 
       <div className="container relative z-10">
+        {/* Header */}
         <FadeUp>
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-primary/70 font-display text-xs tracking-[0.25em] uppercase mb-4">Before & After</p>
-            <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-display font-extralight tracking-tight text-white leading-[1.15]">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <p className="text-primary font-display text-xs tracking-[0.3em] uppercase mb-5">Before & After</p>
+            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] font-display font-extralight tracking-tight text-white leading-[1.12] mb-5">
               {c.headline}
             </h2>
+            {c.subtext && (
+              <p className="text-sm md:text-[15px] text-white/40 font-body font-normal leading-relaxed">{c.subtext}</p>
+            )}
           </div>
         </FadeUp>
 
-        {/* Two-column header */}
-        <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mb-4">
-          <div className="flex items-center gap-3 px-2">
-            <div className="w-8 h-8 rounded-full bg-[hsl(0,60%,50%)]/15 border border-[hsl(0,60%,50%)]/20 flex items-center justify-center">
-              <X className="w-4 h-4 text-[hsl(0,60%,55%)]" />
-            </div>
-            <span className="text-[11px] font-body font-medium text-[hsl(0,40%,65%)] tracking-[0.15em] uppercase">The Old Way</span>
-          </div>
-          <div className="flex items-center gap-3 px-2">
-            <div className="w-8 h-8 rounded-full bg-[hsl(150,50%,40%)]/15 border border-[hsl(150,50%,40%)]/20 flex items-center justify-center">
-              <Check className="w-4 h-4 text-[hsl(150,50%,50%)]" />
-            </div>
-            <span className="text-[11px] font-body font-medium text-[hsl(150,40%,55%)] tracking-[0.15em] uppercase">With TrucksOnTheMap</span>
-          </div>
-        </div>
-
-        {/* Comparison rows */}
-        <div className="space-y-2">
+        {/* Comparison cards — stacked full-width */}
+        <div className="space-y-8 lg:space-y-12">
           {c.items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.06 * i }}
-              className="grid md:grid-cols-2 gap-2"
+              transition={{ duration: 0.7, delay: 0.15 * i, ease: [0.22, 1, 0.36, 1] }}
+              className="group"
             >
-              {/* Without */}
-              <div className="bg-white/[0.03] backdrop-blur-sm border border-[hsl(0,30%,50%)]/10 rounded-xl p-5 group hover:bg-[hsl(0,30%,50%)]/[0.06] transition-all duration-500">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[hsl(0,60%,50%)]/10 flex items-center justify-center mt-0.5">
-                    <X className="w-3 h-3 text-[hsl(0,50%,55%)]" />
+              <div className="grid lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm hover:border-white/[0.12] transition-all duration-700">
+                {/* Image side */}
+                <div className="relative h-64 lg:h-auto lg:min-h-[340px] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[hsl(220,20%,5%)]/80 hidden lg:block" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)]/80 via-transparent to-transparent lg:hidden" />
+                  {/* Floating label */}
+                  <div className="absolute top-5 left-5">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-display font-medium text-white tracking-[0.15em] uppercase">
+                      {item.label}
+                    </span>
                   </div>
-                  <p className="text-[12.5px] font-body font-normal text-white/50 leading-[1.75]">{item.without}</p>
                 </div>
-              </div>
-              {/* With */}
-              <div className="bg-white/[0.04] backdrop-blur-sm border border-[hsl(150,40%,45%)]/10 rounded-xl p-5 group hover:bg-[hsl(150,30%,45%)]/[0.08] hover:border-[hsl(150,40%,45%)]/20 transition-all duration-500">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[hsl(150,50%,40%)]/15 flex items-center justify-center mt-0.5">
-                    <Check className="w-3 h-3 text-[hsl(150,50%,50%)]" />
+
+                {/* Content side — Before / After split */}
+                <div className="p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
+                  {/* Before */}
+                  <div className="mb-8 pb-8 border-b border-white/[0.06]">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 rounded-lg bg-[hsl(0,60%,45%)]/15 border border-[hsl(0,60%,45%)]/20 flex items-center justify-center flex-shrink-0">
+                        <X className="w-4 h-4 text-[hsl(0,55%,60%)]" />
+                      </div>
+                      <span className="text-[10px] font-display font-semibold text-[hsl(0,40%,60%)] tracking-[0.2em] uppercase">The Old Way</span>
+                    </div>
+                    <p className="text-[13px] md:text-sm font-body text-white/45 leading-[1.85] pl-11">
+                      {item.without}
+                    </p>
                   </div>
-                  <p className="text-[12.5px] font-body font-normal text-white/75 leading-[1.75]">{item.withTotm}</p>
+
+                  {/* After */}
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 rounded-lg bg-[hsl(150,50%,40%)]/15 border border-[hsl(150,50%,40%)]/20 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-4 h-4 text-[hsl(150,50%,55%)]" />
+                      </div>
+                      <span className="text-[10px] font-display font-semibold text-[hsl(150,40%,55%)] tracking-[0.2em] uppercase">With TrucksOnTheMap</span>
+                    </div>
+                    <p className="text-[13.5px] md:text-[15px] font-body font-normal text-white/80 leading-[1.85] pl-11">
+                      {item.withTotm}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>

@@ -23,7 +23,8 @@ export interface ICPPageConfig {
   };
   comparison: {
     headline: string;
-    items: { without: string; withTotm: string }[];
+    subtext?: string;
+    items: { without: string; withTotm: string; image: string; label: string }[];
   };
   features: {
     headline: string;
