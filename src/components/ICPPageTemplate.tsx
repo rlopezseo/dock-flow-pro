@@ -48,7 +48,7 @@ const LogoBannerStrip = () => {
               key={`${logo.alt}-${i}`}
               src={logo.src}
               alt={logo.alt}
-              className="h-8 md:h-11 w-auto object-contain grayscale opacity-25 hover:opacity-50 transition-opacity duration-500 flex-shrink-0"
+              className="h-8 md:h-11 w-auto object-contain grayscale opacity-60 hover:opacity-80 transition-opacity duration-500 flex-shrink-0"
               loading="lazy"
             />
           ))}
