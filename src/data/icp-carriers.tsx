@@ -31,26 +31,26 @@ const config: ICPPageConfig = {
       "The freight management problem for carriers isn't visibility in the traditional sense. Project44 and FourKites were built for shippers and 3PLs tracking ocean containers. They weren't built for an asset-based trucking company trying to eliminate backhaul waste on Central European road corridors.",
       "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre in their cash flow.",
     ],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
+    image: "https://images.unsplash.com/photo-1616432043562-3671ea2e5242?w=1200&q=85&auto=format",
   },
   comparison: {
     headline: "What Your Fleet Looks Like When Trucks Match Freight — Not the Other Way Around",
     subtext: "Three changes that transform a trucking company from cost-center to profit machine.",
     items: [
-      { label: "Empty Runs", without: "25–35% of kilometres driven empty. Fuel burned, drivers paid, zero revenue. Your biggest invisible cost.", withTotm: "Empty run ratio drops 30%. TrucksMatch AI finds return loads before your truck reaches the drop-off. Every kilometre earns.", image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80&auto=format" },
-      { label: "Fleet Visibility", without: "Your fleet availability lives in your dispatcher's head and a WhatsApp group. Shippers can't find you. You can't find freight.", withTotm: "Live availability map shows your free trucks to trusted shippers and brokers. They book directly — no calls, no middlemen.", image: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&q=80&auto=format" },
-      { label: "Freight Matching", without: "Finding a backhaul means load boards, 10 phone calls, and racing anonymous competitors on price. The lowest bid wins.", withTotm: "AI matches freight to your trucks by position, route preference, and cargo type — at contracted rates, not spot-market scraps.", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=800&q=80&auto=format" },
+      { label: "Empty Runs", without: "25–35% of kilometres driven empty. Fuel burned, drivers paid, zero revenue. Your biggest invisible cost.", withTotm: "Empty run ratio drops 30%. TrucksMatch AI finds return loads before your truck reaches the drop-off. Every kilometre earns.", image: "https://images.unsplash.com/photo-1591768793355-74d04bb6e2f3?w=800&q=80&auto=format" },
+      { label: "Fleet Visibility", without: "Your fleet availability lives in your dispatcher's head and a WhatsApp group. Shippers can't find you. You can't find freight.", withTotm: "Live availability map shows your free trucks to trusted shippers and brokers. They book directly — no calls, no middlemen.", image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&q=80&auto=format" },
+      { label: "Freight Matching", without: "Finding a backhaul means load boards, 10 phone calls, and racing anonymous competitors on price. The lowest bid wins.", withTotm: "AI matches freight to your trucks by position, route preference, and cargo type — at contracted rates, not spot-market scraps.", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80&auto=format" },
     ],
   },
   features: {
     headline: "Practical Tools for Fleet Operators Who Don't Have Time for Complex Software",
     items: [
-      { title: "Availability Forecast — Share Once, Earn Always", description: "Input where your trucks will be and when. The platform shares your capacity with your trusted shipper and broker network automatically. Set your availability and let contracted freight come to you.", image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80&auto=format" },
-      { title: "TrucksMatch — AI-Powered Freight Matching", description: "When a truck completes a delivery, TrucksMatch instantly identifies the best-fit backhaul freight job based on current location, route preference, cargo type, and your pricing floor. The return load problem becomes a notification.", image: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80&auto=format" },
-      { title: "Free TMS for Carriers", description: "Full transport management functionality — job overview, driver communication, document management, proof of delivery — included at no extra cost. If your current dispatch software doesn't match you with freight automatically, TrucksOnTheMap replaces it. Free.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format" },
-      { title: "Driver App — Built for One-Handed Truck Cab Use", description: "Job updates, turn-by-turn navigation, proof of delivery capture, and status confirmation — in one screen, designed for drivers who are driving. DHL rolled this out to hundreds of drivers. Training time: under one hour.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { title: "Availability Forecast — Share Once, Earn Always", description: "Input where your trucks will be and when. The platform shares your capacity with your trusted shipper and broker network automatically. Set your availability and let contracted freight come to you.", image: "https://images.unsplash.com/photo-1580674285054-bed31e145f69?w=800&q=80&auto=format" },
+      { title: "TrucksMatch — AI-Powered Freight Matching", description: "When a truck completes a delivery, TrucksMatch instantly identifies the best-fit backhaul freight job based on current location, route preference, cargo type, and your pricing floor. The return load problem becomes a notification.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
+      { title: "Free TMS for Carriers", description: "Full transport management functionality — job overview, driver communication, document management, proof of delivery — included at no extra cost. If your current dispatch software doesn't match you with freight automatically, TrucksOnTheMap replaces it. Free.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
+      { title: "Driver App — Built for One-Handed Truck Cab Use", description: "Job updates, turn-by-turn navigation, proof of delivery capture, and status confirmation — in one screen, designed for drivers who are driving. DHL rolled this out to hundreds of drivers. Training time: under one hour.", image: "https://images.unsplash.com/photo-1562524499-03e41eb1cb87?w=800&q=80&auto=format" },
       { title: "PriceIndex — 90-Day Market Rate Intelligence", description: "See average, low, and spot freight rates for every corridor you operate — updated continuously. Know the market rate before every negotiation. Stop taking below-market rates.", image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80&auto=format" },
-      { title: "Invite-Only Network", description: "You control exactly which shippers and brokers see your fleet data. Your capacity is visible to your trusted partners, nobody else. This is not a load board where you race anonymous competitors on price.", image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&auto=format" },
+      { title: "Invite-Only Network", description: "You control exactly which shippers and brokers see your fleet data. Your capacity is visible to your trusted partners, nobody else. This is not a load board where you race anonymous competitors on price.", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80&auto=format" },
     ],
   },
   stats: {
@@ -69,7 +69,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=1920&q=85&auto=format",
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -86,12 +86,12 @@ const config: ICPPageConfig = {
     subtext: "Free TMS included. No credit card required. GO LIVE in days, not weeks.",
     ctaPrimary: "Add My First Truck Free",
     ctaSecondary: "Calculate My Empty-Run Cost",
-    backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
+    backgroundImage: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=85&auto=format",
   },
   sectionImages: {
     narrative: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
     comparison: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=1920&q=80&auto=format",
-    features: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&q=85&auto=format",
+    features: "https://images.unsplash.com/photo-1580674285054-bed31e145f69?w=1200&q=85&auto=format",
   },
 };
 
