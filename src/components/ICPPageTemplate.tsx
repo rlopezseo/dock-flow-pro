@@ -8,6 +8,39 @@ import Footer from "./Footer";
 import LogoCarouselSection from "./LogoCarouselSection";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
+import weberLogo from "@/assets/logos/weber.png";
+import vredesteinLogo from "@/assets/logos/vredestein.png";
+import rigipsLogo from "@/assets/logos/rigips.png";
+import kuehneNagelLogo from "@/assets/logos/kuehne-nagel.png";
+import isoverLogo from "@/assets/logos/isover.png";
+
+const clientLogos = [
+  { src: weberLogo, alt: "Weber Saint-Gobain" },
+  { src: vredesteinLogo, alt: "Vredestein Tires" },
+  { src: rigipsLogo, alt: "Rigips Saint-Gobain" },
+  { src: kuehneNagelLogo, alt: "Kuehne + Nagel" },
+  { src: isoverLogo, alt: "Isover Saint-Gobain" },
+];
+
+const LogoBannerStrip = () => (
+  <section className="bg-white py-10 border-b border-border/40">
+    <p className="text-center text-[11px] font-body font-normal tracking-[0.25em] uppercase text-muted-foreground mb-8">
+      Trusted by Industry Leaders
+    </p>
+    <div className="container flex flex-wrap items-center justify-center gap-x-14 gap-y-6 md:gap-x-20">
+      {clientLogos.map((logo) => (
+        <img
+          key={logo.alt}
+          src={logo.src}
+          alt={logo.alt}
+          className="h-8 md:h-10 w-auto object-contain grayscale opacity-40 hover:opacity-70 transition-opacity duration-300"
+          loading="lazy"
+        />
+      ))}
+    </div>
+  </section>
+);
+
 /* ─── Fade wrapper ─── */
 const FadeUp = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => {
   const ref = useRef(null);
@@ -60,6 +93,7 @@ const ICPPageTemplate = ({ config }: { config: ICPPageConfig }) => {
       <Navbar />
       <main>
         <HeroBlock config={config} />
+        <LogoBannerStrip />
         <AuthorityBar config={config} />
         <div className="light-sections bg-[hsl(0,0%,98%)]">
           <NarrativeBlock config={config} />
