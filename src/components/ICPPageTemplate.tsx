@@ -23,20 +23,26 @@ const clientLogos = [
 ];
 
 const LogoBannerStrip = () => (
-  <section className="bg-white py-10 border-b border-border/40">
-    <p className="text-center text-[11px] font-body font-normal tracking-[0.25em] uppercase text-muted-foreground mb-8">
-      Trusted by Industry Leaders
-    </p>
-    <div className="container flex flex-wrap items-center justify-center gap-x-14 gap-y-6 md:gap-x-20">
-      {clientLogos.map((logo) => (
-        <img
-          key={logo.alt}
-          src={logo.src}
-          alt={logo.alt}
-          className="h-8 md:h-10 w-auto object-contain grayscale opacity-40 hover:opacity-70 transition-opacity duration-300"
-          loading="lazy"
-        />
-      ))}
+  <section className="bg-white py-12 md:py-14">
+    <div className="container">
+      <div className="flex items-center gap-8 md:gap-6">
+        <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-muted-foreground/60 whitespace-nowrap flex-shrink-0">
+          Trusted by
+        </p>
+        <div className="h-px flex-1 bg-border/60" />
+        <div className="flex items-center gap-10 md:gap-16 flex-shrink-0">
+          {clientLogos.map((logo) => (
+            <img
+              key={logo.alt}
+              src={logo.src}
+              alt={logo.alt}
+              className="h-7 md:h-9 w-auto object-contain grayscale opacity-30 hover:opacity-60 transition-opacity duration-500"
+              loading="lazy"
+            />
+          ))}
+        </div>
+        <div className="h-px flex-1 bg-border/60" />
+      </div>
     </div>
   </section>
 );
@@ -207,32 +213,33 @@ const AuthorityBar = ({ config }: { config: ICPPageConfig }) => {
 const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.narrative;
   return (
-    <section className="relative py-0 overflow-hidden">
-      <div className="grid lg:grid-cols-2 min-h-[600px]">
-        {/* Photo side */}
-        <div className="relative h-[400px] lg:h-auto overflow-hidden">
-          <img src={c.image} alt="" className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[hsl(0,0%,98%)]/20 hidden lg:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,98%)] to-transparent lg:hidden" />
-        </div>
+    <section className="relative overflow-hidden">
+      {/* Full-bleed cinematic image background */}
+      <div className="absolute inset-0">
+        <img src={c.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,5%)]/[0.88]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,5%)]/40 via-transparent to-[hsl(220,20%,5%)]/60" />
+      </div>
 
-        {/* Text side */}
-        <div className="flex items-center py-16 lg:py-24 px-8 lg:px-16">
+      <div className="container relative z-10 py-28 lg:py-36">
+        <div className="max-w-4xl mx-auto">
           <FadeUp>
-            <div className="max-w-lg">
-              <div className="accent-line w-16 mb-8" />
-              <h2 className="text-2xl sm:text-3xl md:text-[2.2rem] font-display font-extralight tracking-tight text-foreground leading-[1.2] mb-8">
-                {c.headline}
-              </h2>
-              <div className="space-y-5">
-                {c.paragraphs.map((p, i) => (
-                  <p key={i} className="text-[13px] text-muted-foreground font-body font-normal leading-[1.95]">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </div>
+            <p className="text-primary font-display text-xs tracking-[0.3em] uppercase mb-6">The Challenge</p>
           </FadeUp>
+          <FadeUp delay={0.1}>
+            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.2rem] font-display font-extralight tracking-tight text-white leading-[1.12] mb-12">
+              {c.headline}
+            </h2>
+          </FadeUp>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-6">
+            {c.paragraphs.map((p, i) => (
+              <FadeUp key={i} delay={0.15 + i * 0.08}>
+                <p className="text-[13px] text-white/50 font-body font-normal leading-[2]">
+                  {p}
+                </p>
+              </FadeUp>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -246,80 +253,79 @@ const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section className="relative py-28 lg:py-40 overflow-hidden" ref={ref} id="comparison">
-      {/* Dark photo background */}
-      <div className="absolute inset-0">
-        <img src={config.sectionImages.comparison} alt="" className="w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(220,20%,5%)]/[0.94]" />
-      </div>
-
+    <section className="relative py-28 lg:py-36 overflow-hidden bg-white" ref={ref} id="comparison">
       <div className="container relative z-10">
         {/* Header */}
         <FadeUp>
           <div className="text-center max-w-3xl mx-auto mb-20">
             <p className="text-primary font-display text-xs tracking-[0.3em] uppercase mb-5">Before & After</p>
-            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] font-display font-extralight tracking-tight text-white leading-[1.12] mb-5">
+            <h2 className="text-3xl sm:text-4xl md:text-[2.8rem] font-display font-extralight tracking-tight text-foreground leading-[1.12] mb-5">
               {c.headline}
             </h2>
             {c.subtext && (
-              <p className="text-sm md:text-[15px] text-white/40 font-body font-normal leading-relaxed">{c.subtext}</p>
+              <p className="text-sm md:text-[15px] text-muted-foreground font-body font-normal leading-relaxed">{c.subtext}</p>
             )}
           </div>
         </FadeUp>
 
-        {/* Comparison cards — stacked full-width */}
-        <div className="space-y-8 lg:space-y-12">
+        {/* Comparison cards — alternating image/content */}
+        <div className="space-y-16 lg:space-y-24">
           {c.items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.15 * i, ease: [0.22, 1, 0.36, 1] }}
-              className="group"
+              transition={{ duration: 0.8, delay: 0.15 * i, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="grid lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden bg-white/[0.02] border border-white/[0.06] backdrop-blur-sm hover:border-white/[0.12] transition-all duration-700">
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-0 items-stretch">
                 {/* Image side */}
-                <div className="relative h-64 lg:h-auto lg:min-h-[340px] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.label}
-                    className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[hsl(220,20%,5%)]/80 hidden lg:block" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)]/80 via-transparent to-transparent lg:hidden" />
+                <div className={`relative overflow-hidden rounded-2xl lg:rounded-none ${i % 2 === 0 ? 'lg:col-span-6 lg:rounded-l-2xl' : 'lg:col-span-6 lg:col-start-7 lg:rounded-r-2xl'}`}>
+                  <div className="aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[420px]">
+                    <img
+                      src={item.image}
+                      alt={item.label}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,7%)]/50 to-transparent" />
+                  </div>
                   {/* Floating label */}
-                  <div className="absolute top-5 left-5">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-display font-medium text-white tracking-[0.15em] uppercase">
-                      {item.label}
+                  <div className="absolute bottom-6 left-6">
+                    <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 text-xs font-display font-medium text-white tracking-[0.15em] uppercase shadow-lg">
+                      {String(i + 1).padStart(2, '0')} — {item.label}
                     </span>
                   </div>
                 </div>
 
-                {/* Content side — Before / After split */}
-                <div className="p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
+                {/* Content side */}
+                <div className={`flex flex-col justify-center ${i % 2 === 0 ? 'lg:col-span-6 lg:pl-12 xl:pl-16' : 'lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:pr-12 xl:pr-16'}`}>
                   {/* Before */}
-                  <div className="mb-8 pb-8 border-b border-white/[0.06]">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 rounded-lg bg-[hsl(0,60%,45%)]/15 border border-[hsl(0,60%,45%)]/20 flex items-center justify-center flex-shrink-0">
-                        <X className="w-4 h-4 text-[hsl(0,55%,60%)]" />
+                  <div className="relative mb-8 p-6 rounded-xl bg-[hsl(0,30%,97%)] border border-[hsl(0,20%,90%)]">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-7 h-7 rounded-lg bg-[hsl(0,60%,45%)]/10 flex items-center justify-center flex-shrink-0">
+                        <X className="w-3.5 h-3.5 text-[hsl(0,55%,55%)]" />
                       </div>
-                      <span className="text-[10px] font-display font-semibold text-[hsl(0,40%,60%)] tracking-[0.2em] uppercase">The Old Way</span>
+                      <span className="text-[10px] font-display font-semibold text-[hsl(0,30%,55%)] tracking-[0.2em] uppercase">Without TrucksOnTheMap</span>
                     </div>
-                    <p className="text-[13px] md:text-sm font-body text-white/45 leading-[1.85] pl-11">
+                    <p className="text-[13px] font-body text-muted-foreground leading-[1.85] pl-10">
                       {item.without}
                     </p>
                   </div>
 
+                  {/* Connector */}
+                  <div className="flex items-center justify-center mb-8">
+                    <div className="w-px h-6 bg-border" />
+                  </div>
+
                   {/* After */}
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-8 h-8 rounded-lg bg-[hsl(150,50%,40%)]/15 border border-[hsl(150,50%,40%)]/20 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 text-[hsl(150,50%,55%)]" />
+                  <div className="relative p-6 rounded-xl bg-[hsl(150,25%,97%)] border border-[hsl(150,20%,88%)] shadow-sm shadow-[hsl(150,30%,80%)]/20">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-7 h-7 rounded-lg bg-[hsl(150,50%,40%)]/10 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3.5 h-3.5 text-[hsl(150,50%,40%)]" />
                       </div>
-                      <span className="text-[10px] font-display font-semibold text-[hsl(150,40%,55%)] tracking-[0.2em] uppercase">With TrucksOnTheMap</span>
+                      <span className="text-[10px] font-display font-semibold text-[hsl(150,35%,40%)] tracking-[0.2em] uppercase">With TrucksOnTheMap</span>
                     </div>
-                    <p className="text-[13.5px] md:text-[15px] font-body font-normal text-white/80 leading-[1.85] pl-11">
+                    <p className="text-[13.5px] font-body font-normal text-foreground/85 leading-[1.85] pl-10">
                       {item.withTotm}
                     </p>
                   </div>
