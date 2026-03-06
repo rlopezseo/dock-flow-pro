@@ -616,10 +616,10 @@ const MiniDots = ({ color = "hsl(45,80%,55%)" }: { color?: string }) => (
 );
 
 const cardMeta = [
-  { color: "hsl(145,60%,50%)", label: "Cost reduction", badge: "Platform average", chart: "lineDown" },
   { color: "hsl(195,70%,55%)", label: "Revenue uplift", badge: "Freight matching data", chart: "lineUp" },
   { color: "hsl(45,80%,55%)", label: "Validated result", badge: "DHL case study", chart: "bar" },
-  { color: "hsl(35,80%,55%)", label: "Onboarding speed", badge: "Median across fleets", chart: "dots" },
+  { color: "hsl(145,60%,50%)", label: "No cost to join", badge: "No credit card required", chart: "dots" },
+  { color: "hsl(35,80%,55%)", label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
 ];
 
 const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
@@ -632,13 +632,12 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
 
   return (
     <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
-      {/* Background — deep corporate navy */}
-      <div className="absolute inset-0 bg-[hsl(215,30%,10%)]" />
+      {/* Background — light banking aesthetic */}
+      <div className="absolute inset-0 bg-[hsl(210,15%,95%)]" />
       <div className="absolute inset-0">
-        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.06]" loading="lazy" />
+        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.06] grayscale" loading="lazy" />
       </div>
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(215,35%,8%)] via-transparent to-[hsl(220,25%,12%)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(210,15%,95%)]/90 via-[hsl(210,12%,93%)]/85 to-[hsl(215,15%,92%)]/90" />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -651,56 +650,56 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
             className="lg:sticky lg:top-32"
           >
             <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-5">Proven Results</p>
-            <h2 className="text-3xl md:text-[2.75rem] font-display font-extralight tracking-tight text-white leading-[1.12] mb-6">
+            <h2 className="text-3xl md:text-[2.75rem] font-display font-extralight tracking-tight text-foreground leading-[1.12] mb-6">
               {c.headline}
             </h2>
-            <p className="text-[13px] text-white/45 font-body font-normal leading-[1.9] max-w-lg mb-12">
+            <p className="text-[13px] text-muted-foreground font-body font-normal leading-[1.9] max-w-lg mb-12">
               Every metric below is drawn from live platform data and third-party validation. No projections. No marketing estimates. Real results from real carriers.
             </p>
 
-            {/* Hero stat card */}
-            <div className="relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] p-8">
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[hsl(145,60%,50%)]/20 to-transparent" />
+            {/* Hero stat card — glassmorphism on light */}
+            <div className="relative rounded-2xl overflow-hidden bg-white/60 backdrop-blur-xl border border-border/30 shadow-lg p-8">
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
-              <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/40 mb-2">The single biggest lever</p>
+              <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-muted-foreground mb-2">The single biggest lever</p>
 
-              <p className="text-5xl md:text-6xl font-display font-extralight leading-none tracking-tight mb-3 text-[hsl(145,60%,50%)]">
-                <AnimatedValue value={heroStat.value} inView={inView} />
+              <p className="text-5xl md:text-6xl font-display font-extralight leading-none tracking-tight mb-3 text-primary">
+                {heroStat.value}
               </p>
 
-              <p className="text-[13px] text-white/50 font-body font-normal leading-[1.85] mb-8 max-w-md">
+              <p className="text-[13px] text-muted-foreground font-body font-normal leading-[1.85] mb-8 max-w-md">
                 {heroStat.description}
               </p>
 
               {/* Badge */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[hsl(145,60%,50%)]" />
-                  <span className="text-[10px] font-body text-white/40">Platform average across active carriers</span>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/[0.06] border border-primary/10">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  <span className="text-[10px] font-body text-muted-foreground">Platform average across active carriers</span>
                 </span>
               </div>
 
               {/* Mini chart */}
               <div className="relative">
-                <p className="text-[10px] font-body text-white/30 tracking-[0.1em] uppercase mb-3">
-                  Empty-run rate trend<span className="text-[hsl(145,60%,50%)] ml-2">↓ 31% over 12 mo.</span>
+                <p className="text-[10px] font-body text-muted-foreground/70 tracking-[0.1em] uppercase mb-3">
+                  Empty-run rate trend<span className="text-primary ml-2">↓ 31% over 12 mo.</span>
                 </p>
-                <svg viewBox="0 0 400 80" className="w-full h-16 opacity-60">
+                <svg viewBox="0 0 400 80" className="w-full h-16 opacity-70">
                   <defs>
                     <linearGradient id="statsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="hsl(145,60%,50%)" stopOpacity="0.2" />
-                      <stop offset="100%" stopColor="hsl(145,60%,50%)" stopOpacity="0" />
+                      <stop offset="0%" stopColor="hsl(207,60%,30%)" stopOpacity="0.15" />
+                      <stop offset="100%" stopColor="hsl(207,60%,30%)" stopOpacity="0" />
                     </linearGradient>
                   </defs>
                   <path d="M0 60 Q40 55 80 52 T160 44 T240 34 T320 22 T400 14 L400 80 L0 80Z" fill="url(#statsGrad)" />
-                  <path d="M0 60 Q40 55 80 52 T160 44 T240 34 T320 22 T400 14" stroke="hsl(145,60%,50%)" strokeWidth="2" fill="none" />
+                  <path d="M0 60 Q40 55 80 52 T160 44 T240 34 T320 22 T400 14" stroke="hsl(207,60%,30%)" strokeWidth="2" fill="none" />
                   {[[0,60],[40,55],[80,52],[120,48],[160,44],[200,40],[240,34],[280,28],[320,22],[360,18],[400,14]].map(([cx,cy],di) => (
-                    <circle key={di} cx={cx} cy={cy} r="2.5" fill="hsl(145,60%,50%)" opacity="0.7" />
+                    <circle key={di} cx={cx} cy={cy} r="2.5" fill="hsl(207,60%,30%)" opacity="0.7" />
                   ))}
                 </svg>
                 <div className="flex justify-between mt-1.5">
                   {["Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map(m => (
-                    <span key={m} className="text-[9px] font-body text-white/20">{m}</span>
+                    <span key={m} className="text-[9px] font-body text-muted-foreground/50">{m}</span>
                   ))}
                 </div>
               </div>
@@ -717,12 +716,12 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.15 + 0.1 * i }}
-                  className="group relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-white/[0.14] hover:bg-white/[0.07] transition-all duration-500 flex flex-col"
+                  className="group relative rounded-2xl overflow-hidden bg-white/60 backdrop-blur-xl border border-border/30 shadow-md hover:shadow-lg hover:bg-white/75 transition-all duration-500 flex flex-col"
                 >
-                  <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: `linear-gradient(to right, transparent, ${meta.color}20, transparent)` }} />
+                  <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: `linear-gradient(to right, transparent, ${meta.color}30, transparent)` }} />
 
                   <div className="p-6 sm:p-7 pb-2 flex flex-col flex-1">
-                    <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/35 mb-5">
+                    <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-muted-foreground/70 mb-5">
                       {meta.label}
                     </p>
 
@@ -730,9 +729,9 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
                       <AnimatedValue value={item.value} inView={inView} />
                     </p>
 
-                    <div className="w-8 h-[2px] rounded-full mb-3 opacity-50" style={{ backgroundColor: meta.color }} />
+                    <div className="w-8 h-[2px] rounded-full mb-3 opacity-60" style={{ backgroundColor: meta.color }} />
 
-                    <p className="text-[11px] sm:text-[12px] text-white/45 font-body font-normal leading-[1.8] mb-5">
+                    <p className="text-[11px] sm:text-[12px] text-muted-foreground font-body font-normal leading-[1.8] mb-5">
                       {item.description}
                     </p>
 
@@ -745,9 +744,9 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
                   </div>
 
                   <div className="px-6 sm:px-7 pb-5 pt-2">
-                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-foreground/[0.03] border border-border/30">
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: meta.color }} />
-                      <span className="text-[10px] font-body text-white/40">{meta.badge}</span>
+                      <span className="text-[10px] font-body text-muted-foreground/70">{meta.badge}</span>
                     </span>
                   </div>
                 </motion.div>
