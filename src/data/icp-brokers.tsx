@@ -58,10 +58,10 @@ const config: ICPPageConfig = {
     backgroundImage: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=85&auto=format",
     items: [
       { value: "+70%", description: "More freight jobs processed with the same team size." },
-      { value: "+12%", description: "Higher profit per job through better freight allocation and rate intelligence." },
-      { value: "−30%", description: "Fewer empty runs in carrier networks — which reduces your carrier costs directly." },
-      { value: "4.7", description: "Star user rating — your team will adopt it, not fight it." },
-      { value: "2", description: "Enterprise carriers (DHL & DSV) already on the network." },
+      { value: "+12%", description: "Higher profit per job through better rate intelligence and faster allocation." },
+      { value: "−30%", description: "Fewer empty runs in your carrier network, which directly reduces your freight costs." },
+      { value: "4.7★", description: "User rating from logistics planners and dispatchers across Central Europe." },
+      { value: "10 min", description: "To get your first truck on the platform. No complex onboarding." },
     ],
   },
   testimonial: {
