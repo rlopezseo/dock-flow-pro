@@ -635,7 +635,7 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
       {/* Background — visible image with frosted overlay for glassmorphism effect */}
       <div className="absolute inset-0 bg-[hsl(210,20%,88%)]" />
       <div className="absolute inset-0">
-        <img src={c.backgroundImage} alt="" className="w-full h-full object-cover opacity-[0.25]" loading="lazy" />
+        <img src={config.hero.image} alt="" className="w-full h-full object-cover opacity-[0.3]" loading="lazy" />
       </div>
       <div className="absolute inset-0 bg-[hsl(210,15%,92%)]/60 backdrop-blur-sm" />
 
