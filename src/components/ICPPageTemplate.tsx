@@ -72,24 +72,27 @@ const FadeUp = ({ children, className = "", delay = 0 }: { children: React.React
 
 /* ─── Animated Counter ─── */
 const AnimatedValue = ({ value, inView }: { value: string; inView: boolean }) => {
-  const numMatch = value.match(/([+-−]?)(\d+\.?\d*)(.*)/);
+  const match = value.match(/([+-−]?)(\d+\.?\d*)(.*)/);
   const [display, setDisplay] = useState(0);
-  const prefix = numMatch?.[1] ?? "";
-  const numStr = numMatch?.[2] ?? "0";
-  const suffix = numMatch?.[3] ?? "";
-  const target = parseFloat(numStr);
+
+  const prefix = match?.[1] ?? "";
+  const numStr = match?.[2] ?? "0";
+  const suffix = match?.[3] ?? "";
+  const target = Number.parseFloat(numStr);
 
   useEffect(() => {
-    if (!inView || !numMatch) return;
+    if (!inView || !match || Number.isNaN(target)) return;
+
     const controls = animate(0, target, {
       duration: 1.8,
       ease: [0.25, 0.46, 0.45, 0.94],
       onUpdate: (v) => setDisplay(v),
     });
-    return controls.stop;
-  }, [inView, target, numMatch]);
 
-  if (!numMatch) return <span>{value}</span>;
+    return () => controls.stop();
+  }, [inView, target, value]);
+
+  if (!match || Number.isNaN(target)) return <span>{value}</span>;
 
   const formatted = target % 1 === 0 ? Math.round(display).toString() : display.toFixed(1);
   return <span>{prefix}{formatted}{suffix}</span>;
