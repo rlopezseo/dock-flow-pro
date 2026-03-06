@@ -262,6 +262,27 @@ const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
                 </motion.p>
               ))}
             </div>
+
+            {/* CTA buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 mt-10"
+            >
+              <a
+                href="#contact"
+                className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-body font-normal text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-500 shadow-[0_0_30px_hsl(207,60%,30%/0.15)]"
+              >
+                Book Free Demo <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+              <a
+                href="/register"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-body font-normal text-foreground/80 bg-transparent border border-border hover:bg-muted/50 transition-all duration-500"
+              >
+                Register
+              </a>
+            </motion.div>
           </div>
 
           {/* Right — Premium floating image */}
