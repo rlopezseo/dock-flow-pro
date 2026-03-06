@@ -9,7 +9,7 @@ const config: ICPPageConfig = {
   },
   hero: {
     badge: "For Shippers & Transport Planners",
-    headline: "You Plan Freight on Phone Calls and Gut Feel.",
+    headline: "You Still Plan Freight\non Phone Calls.",
     highlightedPart: "There's a Better Way.",
     subtext: "TrucksOnTheMap gives transport planners and logistics managers in manufacturing a live map of carrier capacity — so you stop guessing and start booking.",
     ctaPrimary: "See Your Routes on the Map",

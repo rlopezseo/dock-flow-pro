@@ -8,7 +8,7 @@ const config: ICPPageConfig = {
   },
   hero: {
     badge: "For Distribution Centers & Warehouses",
-    headline: "Trucks Queuing on the Main Road Again?",
+    headline: "Trucks Queuing on the\nMain Road Again?",
     highlightedPart: "That Ends Today.",
     subtext: "TrucksSlot gives warehouse managers and distribution center operations teams real-time dock scheduling software where carriers book their own time slots — so your yard stays orderly, your staff stays productive, and your plant manager stops calling.",
     ctaPrimary: "See TrucksSlot With Your Dock Layout",

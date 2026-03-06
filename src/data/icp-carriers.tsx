@@ -8,7 +8,7 @@ const config: ICPPageConfig = {
   },
   hero: {
     badge: "For Carriers & Fleet Operators",
-    headline: "30% of Your Kilometres Are Earning Nothing.",
+    headline: "30% of Your Kilometres\nAre Earning Nothing.",
     highlightedPart: "Fix That.",
     subtext: "TrucksOnTheMap gives trucking companies and asset-based carriers fleet visibility software that eliminates empty runs, matches trucks to freight automatically, and gets shippers to come looking for your capacity.",
     ctaPrimary: "Calculate My Empty-Run Cost",
