@@ -20,7 +20,7 @@ const config: ICPPageConfig = {
       { value: "−7%", label: "Freight cost reduction" },
       { value: "€170K", label: "Saved year one (Saint-Gobain)" },
       { value: "99.9%", label: "Capacity security" },
-      { value: "7 wks", label: "Guaranteed GO LIVE" },
+      { value: "7 Weeks", label: "Guaranteed GO LIVE" },
     ],
   },
   narrative: {
@@ -60,7 +60,7 @@ const config: ICPPageConfig = {
       { value: "−7%", description: "Reduction in total freight costs for manufacturers on the platform." },
       { value: "€170K", description: "Saved in year one by Saint-Gobain's logistics team across their carrier network." },
       { value: "99.9%", description: "Capacity security. Freight jobs covered by contracted carriers, every time." },
-      { value: "7 wks", description: "Guaranteed GO LIVE. Operational before your next quarterly review." },
+      { value: "7 Weeks", description: "Guaranteed GO LIVE. Operational before your next quarterly review." },
       { value: "ISO 27001", description: "Certified. Your freight data stays within your trusted carrier network." },
     ],
   },
