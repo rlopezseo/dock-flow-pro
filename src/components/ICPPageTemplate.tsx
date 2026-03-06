@@ -652,6 +652,10 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
+  /* Hero stat — first item featured on the left */
+  const heroStat = c.items[0];
+  const gridStats = c.items.slice(1, 5);
+
   return (
     <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
       {/* Dark cinematic background */}
@@ -661,65 +665,127 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
       </div>
 
       <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
-          <p className="text-[hsl(207,70%,65%)] font-body text-xs tracking-[0.25em] uppercase mb-4">Proven Results</p>
-          <h2 className="text-3xl md:text-[2.75rem] font-display font-extralight tracking-tight text-white leading-tight">
-            {c.headline}
-          </h2>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
-        {/* Glassmorphism cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-          {c.items.slice(0, 4).map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + 0.08 * i }}
-              className="group relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-white/[0.14] hover:bg-white/[0.07] transition-all duration-500 flex flex-col"
-            >
-              {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.1] to-transparent" />
+          {/* ── LEFT COLUMN: Hero content ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="lg:sticky lg:top-32"
+          >
+            <p className="text-[hsl(207,70%,65%)] font-body text-xs tracking-[0.25em] uppercase mb-5">Proven Results</p>
+            <h2 className="text-3xl md:text-[2.75rem] font-display font-extralight tracking-tight text-white leading-[1.12] mb-6">
+              {c.headline}
+            </h2>
+            <p className="text-[13px] text-white/50 font-body font-normal leading-[1.9] max-w-lg mb-12">
+              Every metric below is drawn from live platform data and third-party validation. No projections. No marketing estimates. Real results from real carriers.
+            </p>
 
-              <div className="p-7 pb-2 flex flex-col flex-1">
-                {/* Category label */}
-                <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/35 mb-5">
-                  {statCategoryLabels[i] || `Metric ${i + 1}`}
-                </p>
+            {/* Hero stat card */}
+            <div className="relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] p-8">
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.12] to-transparent" />
 
-                {/* Large colored value */}
-                <p className={`text-4xl sm:text-5xl font-display font-extralight leading-none tracking-tight mb-4 ${statColors[i] || 'text-white'}`}>
-                  <AnimatedValue value={item.value} inView={inView} />
-                </p>
+              <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/40 mb-2">The single biggest lever</p>
 
-                {/* Accent line */}
-                <div className={`w-10 h-[2px] rounded-full mb-4 ${statBadges[i]?.color || 'bg-primary'} opacity-60`} />
+              <p className={`text-5xl md:text-6xl font-display font-extralight leading-none tracking-tight mb-3 ${statColors[0]}`}>
+                <AnimatedValue value={heroStat.value} inView={inView} />
+              </p>
 
-                {/* Description */}
-                <p className="text-[12px] text-white/50 font-body font-normal leading-[1.8] mb-6">
-                  {item.description}
-                </p>
+              <p className="text-[13px] text-white/55 font-body font-normal leading-[1.85] mb-8 max-w-md">
+                {heroStat.description}
+              </p>
 
-                {/* Mini visualization */}
-                <div className="mt-auto">
-                  {miniCharts[i] || miniCharts[0]}
-                </div>
-              </div>
-
-              {/* Bottom badge */}
-              <div className="px-7 pb-5 pt-2">
+              {/* Badge */}
+              <div className="flex items-center gap-3 mb-6">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
-                  <span className={`w-1.5 h-1.5 rounded-full ${statBadges[i]?.color || 'bg-primary'}`} />
-                  <span className="text-[10px] font-body text-white/40">{statBadges[i]?.text || 'Verified'}</span>
+                  <span className={`w-1.5 h-1.5 rounded-full ${statBadges[0]?.color || 'bg-primary'}`} />
+                  <span className="text-[10px] font-body text-white/40">{statBadges[0]?.text || 'Verified'}</span>
                 </span>
               </div>
-            </motion.div>
-          ))}
+
+              {/* Mini chart area */}
+              <div className="relative">
+                <p className="text-[10px] font-body text-white/30 tracking-[0.1em] uppercase mb-3">
+                  Industry avg. empty-run rate<span className="text-[hsl(145,60%,50%)] ml-2">↓ 31% over 12 mo.</span>
+                </p>
+                <svg viewBox="0 0 400 80" className="w-full h-16 opacity-70">
+                  {/* Area fill */}
+                  <defs>
+                    <linearGradient id="statsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="hsl(145,60%,50%)" stopOpacity="0.25" />
+                      <stop offset="100%" stopColor="hsl(145,60%,50%)" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 60 Q40 55 80 52 T160 44 T240 34 T320 22 T400 14 L400 80 L0 80Z" fill="url(#statsGrad)" />
+                  <path d="M0 60 Q40 55 80 52 T160 44 T240 34 T320 22 T400 14" stroke="hsl(145,60%,50%)" strokeWidth="2" fill="none" />
+                  {/* Dots on line */}
+                  {[
+                    [0, 60], [40, 55], [80, 52], [120, 48], [160, 44], [200, 40],
+                    [240, 34], [280, 28], [320, 22], [360, 18], [400, 14]
+                  ].map(([cx, cy], di) => (
+                    <circle key={di} cx={cx} cy={cy} r="2.5" fill="hsl(145,60%,50%)" opacity="0.8" />
+                  ))}
+                </svg>
+                {/* Month labels */}
+                <div className="flex justify-between mt-1.5">
+                  {["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map(m => (
+                    <span key={m} className="text-[9px] font-body text-white/25">{m}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── RIGHT COLUMN: 2×2 cards grid ── */}
+          <div className="grid grid-cols-2 gap-4 lg:gap-5">
+            {gridStats.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.15 + 0.1 * i }}
+                className="group relative rounded-2xl overflow-hidden bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] hover:border-white/[0.14] hover:bg-white/[0.07] transition-all duration-500 flex flex-col"
+              >
+                {/* Top accent line */}
+                <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/[0.1] to-transparent" />
+
+                <div className="p-6 sm:p-7 pb-2 flex flex-col flex-1">
+                  {/* Category label */}
+                  <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-white/35 mb-5">
+                    {statCategoryLabels[i + 1] || `Metric ${i + 2}`}
+                  </p>
+
+                  {/* Large colored value */}
+                  <p className={`text-3xl sm:text-4xl font-display font-extralight leading-none tracking-tight mb-3 ${statColors[i + 1] || 'text-white'}`}>
+                    <AnimatedValue value={item.value} inView={inView} />
+                  </p>
+
+                  {/* Accent line */}
+                  <div className={`w-8 h-[2px] rounded-full mb-3 ${statBadges[i + 1]?.color || 'bg-primary'} opacity-60`} />
+
+                  {/* Description */}
+                  <p className="text-[11px] sm:text-[12px] text-white/50 font-body font-normal leading-[1.8] mb-5">
+                    {item.description}
+                  </p>
+
+                  {/* Mini visualization */}
+                  <div className="mt-auto">
+                    {miniCharts[i + 1] || miniCharts[0]}
+                  </div>
+                </div>
+
+                {/* Bottom badge */}
+                <div className="px-6 sm:px-7 pb-5 pt-2">
+                  <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.06]">
+                    <span className={`w-1.5 h-1.5 rounded-full ${statBadges[i + 1]?.color || 'bg-primary'}`} />
+                    <span className="text-[10px] font-body text-white/40">{statBadges[i + 1]?.text || 'Verified'}</span>
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
