@@ -57,11 +57,11 @@ const config: ICPPageConfig = {
     headline: "What DC Managers Are Seeing After GO LIVE",
     backgroundImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
     items: [
-      { value: "+80%", description: "More accurate truck arrivals — dock utilization rate transforms when you know what's arriving." },
-      { value: "0", description: "Truck queuing incidents — carriers arrive when their dock slot is ready." },
-      { value: "7", description: "Weeks guaranteed GO LIVE — operational before your next quarterly operations review." },
-      { value: "4.7", description: "Star user rating — warehouse floor staff adopt it because it removes daily uncertainty." },
-      { value: "100%", description: "Digital audit trail — every arrival, loading start, and departure timestamped." },
+      { value: "+80%", description: "Truck arrival accuracy. Dock utilization transforms when you know what's arriving." },
+      { value: "~Zero", description: "Queuing incidents. Carriers arrive when their dock slot is ready, not before." },
+      { value: "7 wks", description: "Guaranteed GO LIVE. Operational before your next quarterly operations review." },
+      { value: "4.7★", description: "User rating from warehouse floor staff who use TrucksSlot daily." },
+      { value: "100%", description: "Digital audit trail. Every arrival, loading start, and departure timestamped." },
     ],
   },
   testimonial: {
