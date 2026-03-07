@@ -39,6 +39,7 @@ export interface ICPPageConfig {
     headline: string;
     backgroundImage: string;
     items: { value: string; description: string }[];
+    cardMeta?: { label: string; badge: string }[];
   };
   testimonial: {
     quote: string;

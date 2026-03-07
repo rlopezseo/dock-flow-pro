@@ -641,7 +641,7 @@ const MiniDots = ({ color = "hsl(45,80%,55%)" }: { color?: string }) => (
   </div>
 );
 
-const cardMeta = [
+const defaultCardMeta = [
   { color: "hsl(207,60%,35%)", label: "Revenue uplift", badge: "Freight matching data", chart: "lineUp" },
   { color: "hsl(207,50%,40%)", label: "Validated result", badge: "DHL case study", chart: "bar" },
   { color: "hsl(200,55%,38%)", label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
@@ -652,6 +652,9 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.stats;
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const cardMeta = (config.stats.cardMeta || []).length
+    ? (config.stats.cardMeta || []).map((cm, i) => ({ ...defaultCardMeta[i] || defaultCardMeta[0], ...cm }))
+    : defaultCardMeta;
 
   const heroStat = c.items[0];
   const gridStats = c.items.slice(1, 5);
