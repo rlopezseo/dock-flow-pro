@@ -370,7 +370,7 @@ const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
                   {/* Floating label */}
                   <div className="absolute bottom-6 left-6">
                     <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 text-xs font-display font-medium text-white tracking-[0.15em] uppercase shadow-lg">
-                      {String(i + 1).padStart(2, '0')} — {item.label}
+                      {String(i + 1).padStart(2, '0')}. {item.label}
                     </span>
                   </div>
                 </div>
@@ -906,7 +906,7 @@ const ObjectionsBlock = ({ config }: { config: ICPPageConfig }) => {
                   {c.headline}
                 </h2>
                 <p className="text-[13px] text-muted-foreground font-body leading-[1.8]">
-                  Real concerns from real decision-makers. We've heard them all — and every one of them has been resolved in production.
+                  Real concerns from real decision-makers. We've heard them all, and every one of them has been resolved in production.
                 </p>
               </div>
             </FadeUp>
