@@ -61,7 +61,7 @@ const config: ICPPageConfig = {
       { value: "+12%", description: "Higher profit per job through better rate intelligence and faster allocation." },
       { value: "−30%", description: "Fewer empty runs in your carrier network, which directly reduces your freight costs." },
       { value: "4.7★", description: "User rating from logistics planners and dispatchers across Central Europe." },
-      { value: "10 min", description: "To get your first truck on the platform. No complex onboarding." },
+      { value: "ISO 27001", description: "Certified. Enterprise-grade security and compliance for your freight operations." },
     ],
   },
   testimonial: {
