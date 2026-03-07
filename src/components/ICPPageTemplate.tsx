@@ -647,16 +647,14 @@ const defaultCardMeta = [
   { color: "hsl(200,55%,38%)", label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
   { color: "hsl(210,45%,42%)", label: "ISO 27001 Certified", badge: "Security & compliance", chart: "dots" },
 ];
-const cardMeta = (config.stats.cardMeta || []).map((cm, i) => ({
-  ...defaultCardMeta[i] || defaultCardMeta[0],
-  ...cm,
-}));
-const finalCardMeta = cardMeta.length ? cardMeta : defaultCardMeta;
 
 const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
   const c = config.stats;
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const cardMeta = (config.stats.cardMeta || []).length
+    ? (config.stats.cardMeta || []).map((cm, i) => ({ ...defaultCardMeta[i] || defaultCardMeta[0], ...cm }))
+    : defaultCardMeta;
 
   const heroStat = c.items[0];
   const gridStats = c.items.slice(1, 5);
