@@ -1,10 +1,11 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Search, Clock, ArrowRight } from "lucide-react";
+import { Search, Clock, ArrowRight, ArrowUpRight } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroImg from "@/assets/blog/blog-listing-hero.jpg";
-import authorAvatar from "@/assets/blog/author-avatar.jpg";
+import bgCtaFinal from "@/assets/bg-cta-final.jpg";
 import blogHero from "@/assets/blog/blog-hero-service.jpg";
 import relatedImg1 from "@/assets/blog/blog-related-1.jpg";
 import relatedImg2 from "@/assets/blog/blog-related-2.jpg";
@@ -30,7 +31,6 @@ const articles = [
     date: "March 5, 2026",
     readTime: "15 min read",
     image: blogHero,
-    featured: true,
   },
   {
     slug: "reducing-empty-miles-european-freight",
@@ -40,7 +40,6 @@ const articles = [
     date: "Feb 28, 2026",
     readTime: "10 min read",
     image: relatedImg1,
-    featured: false,
   },
   {
     slug: "eta-prediction-accuracy-logistics",
@@ -50,7 +49,6 @@ const articles = [
     date: "Feb 20, 2026",
     readTime: "8 min read",
     image: relatedImg2,
-    featured: false,
   },
   {
     slug: "tms-integration-visibility-platforms",
@@ -60,7 +58,6 @@ const articles = [
     date: "Feb 15, 2026",
     readTime: "12 min read",
     image: contentImg1,
-    featured: false,
   },
   {
     slug: "geofencing-freight-milestones",
@@ -70,7 +67,6 @@ const articles = [
     date: "Feb 10, 2026",
     readTime: "7 min read",
     image: imgDock,
-    featured: false,
   },
   {
     slug: "csrd-carbon-reporting-freight",
@@ -80,7 +76,6 @@ const articles = [
     date: "Feb 5, 2026",
     readTime: "9 min read",
     image: imgHighway,
-    featured: false,
   },
   {
     slug: "post-brexit-uk-eu-freight-challenges",
@@ -90,7 +85,6 @@ const articles = [
     date: "Jan 28, 2026",
     readTime: "11 min read",
     image: relatedImg1,
-    featured: false,
   },
   {
     slug: "automotive-jit-freight-visibility",
@@ -100,7 +94,6 @@ const articles = [
     date: "Jan 20, 2026",
     readTime: "8 min read",
     image: relatedImg2,
-    featured: false,
   },
   {
     slug: "carrier-fragmentation-europe",
@@ -110,13 +103,14 @@ const articles = [
     date: "Jan 15, 2026",
     readTime: "10 min read",
     image: contentImg1,
-    featured: false,
   },
 ];
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+  const ctaRef = useRef(null);
+  const ctaInView = useInView(ctaRef, { once: true, margin: "-80px" });
 
   const filteredArticles = useMemo(() => {
     return articles.filter((article) => {
@@ -129,15 +123,12 @@ const Blog = () => {
     });
   }, [searchQuery, activeCategory]);
 
-  const featuredArticle = articles.find((a) => a.featured);
-  const gridArticles = filteredArticles.filter((a) => !a.featured || activeCategory !== "All" || searchQuery !== "");
-
   return (
     <div className="min-h-screen bg-[hsl(0,0%,100%)]">
       <Navbar />
 
-      {/* Hero */}
-      <div className="w-full h-[42vh] min-h-[300px] max-h-[420px] relative">
+      {/* Hero with Search */}
+      <div className="w-full h-[48vh] min-h-[360px] max-h-[480px] relative">
         <img src={heroImg} alt="TrucksOnTheMap Blog" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,5%)]/70 to-[hsl(220,20%,5%)]/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
@@ -147,98 +138,53 @@ const Blog = () => {
           <h1 className="font-display font-extralight text-[hsl(0,0%,100%)] text-[36px] md:text-[48px] leading-[1.1] tracking-[-0.01em] mb-4 max-w-[700px]">
             Freight Visibility Intelligence
           </h1>
-          <p className="text-[14px] font-body font-normal text-[hsl(210,15%,70%)] max-w-[520px] leading-[1.8]">
+          <p className="text-[14px] font-body font-normal text-[hsl(210,15%,70%)] max-w-[520px] leading-[1.8] mb-8">
             Expert analysis on real-time tracking, ETA prediction, and operational efficiency in European road freight.
           </p>
-        </div>
-      </div>
 
-      {/* Search + Filters */}
-      <div className="container max-w-[1200px] mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-5 py-8 border-b border-[hsl(220,12%,91%)]">
-          {/* Search */}
-          <div className="relative w-full md:w-[320px] shrink-0">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(220,10%,55%)]" />
+          {/* Search bar */}
+          <div className="relative w-full max-w-[480px]">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(0,0%,100%)]/40" />
             <input
               type="text"
               placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-full border border-[hsl(220,12%,88%)] bg-[hsl(0,0%,100%)] text-[13px] font-body font-normal text-[hsl(220,20%,15%)] placeholder:text-[hsl(220,10%,60%)] focus:outline-none focus:border-[hsl(207,60%,30%)] focus:ring-1 focus:ring-[hsl(207,60%,30%)] transition-colors"
+              className="w-full pl-11 pr-5 py-3 rounded-full bg-[hsl(0,0%,100%)]/10 backdrop-blur-md border border-[hsl(0,0%,100%)]/15 text-[13px] font-body font-normal text-[hsl(0,0%,100%)] placeholder:text-[hsl(0,0%,100%)]/40 focus:outline-none focus:border-[hsl(0,0%,100%)]/30 focus:bg-[hsl(0,0%,100%)]/15 transition-all"
             />
-          </div>
-
-          {/* Category pills */}
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-[12px] font-body font-normal transition-all ${
-                  activeCategory === cat
-                    ? "bg-[hsl(207,60%,30%)] text-[hsl(0,0%,100%)]"
-                    : "bg-[hsl(220,15%,96%)] text-[hsl(220,10%,40%)] hover:bg-[hsl(220,12%,91%)]"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
           </div>
         </div>
       </div>
 
-      {/* Featured Article — only when no filter/search active */}
-      {activeCategory === "All" && searchQuery === "" && featuredArticle && (
-        <div className="container max-w-[1200px] mx-auto px-6 lg:px-8 pt-12">
-          <Link
-            to={`/blog/${featuredArticle.slug}`}
-            className="group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
-          >
-            <div className="relative overflow-hidden rounded-sm">
-              <img
-                src={featuredArticle.image}
-                alt={featuredArticle.title}
-                className="w-full h-[280px] lg:h-[360px] object-cover group-hover:scale-[1.03] transition-transform duration-700"
-              />
-              <span className="absolute top-4 left-4 px-3 py-1 bg-[hsl(207,60%,30%)] text-[hsl(0,0%,100%)] text-[11px] font-body font-medium rounded-sm uppercase tracking-[0.05em]">
-                Featured
-              </span>
-            </div>
-            <div>
-              <span className="inline-block px-3 py-1 bg-[hsl(220,15%,96%)] text-[hsl(207,60%,30%)] text-[11px] font-body font-medium rounded-sm mb-4 uppercase tracking-[0.05em]">
-                {featuredArticle.category}
-              </span>
-              <h2 className="font-display font-extralight text-[hsl(220,20%,12%)] text-[26px] md:text-[32px] leading-[1.2] tracking-[-0.01em] mb-4 group-hover:text-[hsl(207,60%,30%)] transition-colors">
-                {featuredArticle.title}
-              </h2>
-              <p className="text-[14px] font-body font-normal text-[hsl(220,10%,45%)] leading-[1.9] mb-6 line-clamp-3">
-                {featuredArticle.excerpt}
-              </p>
-              <div className="flex items-center gap-5">
-                <div className="flex items-center gap-2.5">
-                  <img src={authorAvatar} alt="Tamas Domonkos" className="w-8 h-8 rounded-full object-cover" />
-                  <span className="text-[12px] font-body font-medium text-[hsl(220,20%,15%)]">Tamas Domonkos</span>
-                </div>
-                <span className="text-[12px] font-body font-normal text-[hsl(220,10%,55%)]">{featuredArticle.date}</span>
-                <span className="flex items-center gap-1 text-[12px] font-body font-normal text-[hsl(220,10%,55%)]">
-                  <Clock className="w-3.5 h-3.5" /> {featuredArticle.readTime}
-                </span>
-              </div>
-            </div>
-          </Link>
+      {/* Category Filters */}
+      <div className="container max-w-[1200px] mx-auto px-6 lg:px-8">
+        <div className="flex flex-wrap items-center gap-2 py-6 border-b border-[hsl(220,12%,91%)]">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-4 py-2 rounded-full text-[12px] font-body font-normal transition-all ${
+                activeCategory === cat
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-[hsl(220,15%,96%)] text-[hsl(220,10%,40%)] hover:bg-[hsl(220,12%,91%)]"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
-      )}
+      </div>
 
       {/* Article Grid */}
       <div className="container max-w-[1200px] mx-auto px-6 lg:px-8 py-12 pb-20">
-        {gridArticles.length === 0 ? (
+        {filteredArticles.length === 0 ? (
           <div className="text-center py-20">
             <p className="text-[18px] font-display font-extralight text-[hsl(220,10%,45%)]">No articles found</p>
             <p className="text-[13px] font-body font-normal text-[hsl(220,10%,60%)] mt-2">Try adjusting your search or category filter.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {gridArticles.map((article) => (
+            {filteredArticles.map((article) => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}
@@ -250,7 +196,7 @@ const Blog = () => {
                     alt={article.title}
                     className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute bottom-4 left-4 px-3 py-1 bg-[hsl(220,20%,12%)] text-[hsl(0,0%,100%)] text-[11px] font-body font-normal rounded-sm">
+                  <span className="absolute bottom-4 left-4 px-3 py-1 bg-primary text-primary-foreground text-[11px] font-body font-normal rounded-sm">
                     {article.category}
                   </span>
                 </div>
@@ -261,13 +207,13 @@ const Blog = () => {
                     <Clock className="w-3 h-3" /> {article.readTime}
                   </span>
                 </div>
-                <h3 className="text-[16px] font-display font-light text-[hsl(220,20%,12%)] leading-[1.4] mb-2 group-hover:text-[hsl(207,60%,30%)] transition-colors line-clamp-2">
+                <h3 className="text-[16px] font-display font-light text-[hsl(220,20%,12%)] leading-[1.4] mb-2 group-hover:text-primary transition-colors line-clamp-2">
                   {article.title}
                 </h3>
                 <p className="text-[13px] font-body font-normal text-[hsl(220,10%,50%)] leading-[1.7] line-clamp-2">
                   {article.excerpt}
                 </p>
-                <div className="flex items-center gap-1.5 mt-4 text-[12px] font-body font-medium text-[hsl(207,60%,30%)] group-hover:gap-2.5 transition-all">
+                <div className="flex items-center gap-1.5 mt-4 text-[12px] font-body font-medium text-primary group-hover:gap-2.5 transition-all">
                   Read article <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               </Link>
@@ -276,23 +222,43 @@ const Blog = () => {
         )}
       </div>
 
-      {/* Newsletter CTA */}
-      <section className="border-t border-[hsl(220,12%,91%)] bg-[hsl(220,15%,97%)]">
-        <div className="container max-w-[700px] mx-auto px-6 py-16 text-center">
-          <h2 className="font-display font-extralight text-[hsl(220,20%,12%)] text-[28px] mb-3">Stay informed</h2>
-          <p className="text-[13px] font-body font-normal text-[hsl(220,10%,50%)] leading-[1.8] mb-8">
-            Get the latest insights on freight visibility, ETA prediction, and European logistics operations delivered to your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-[460px] mx-auto">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 px-5 py-3 rounded-full border border-[hsl(220,12%,88%)] bg-[hsl(0,0%,100%)] text-[13px] font-body font-normal text-[hsl(220,20%,15%)] placeholder:text-[hsl(220,10%,60%)] focus:outline-none focus:border-[hsl(207,60%,30%)] focus:ring-1 focus:ring-[hsl(207,60%,30%)] transition-colors"
-            />
-            <button className="px-7 py-3 bg-[hsl(207,60%,30%)] text-[hsl(0,0%,100%)] text-[13px] font-body font-normal rounded-full hover:bg-[hsl(207,60%,35%)] transition-colors whitespace-nowrap">
-              Subscribe
-            </button>
-          </div>
+      {/* Final CTA */}
+      <section className="relative py-32 overflow-hidden" ref={ctaRef}>
+        <img src={bgCtaFinal} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-[hsl(220,20%,7%)]/75" />
+
+        <div className="container relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="max-w-xl mx-auto"
+          >
+            <p className="text-[hsl(0,0%,100%)]/40 font-body text-xs tracking-[0.25em] uppercase mb-4">
+              Stay Ahead
+            </p>
+            <h2 className="text-3xl md:text-5xl font-display font-light tracking-tight text-[hsl(0,0%,100%)] mb-5 leading-tight">
+              Ready to Transform Your Freight Operations?
+            </h2>
+            <p className="text-[hsl(0,0%,100%)]/50 font-body font-normal text-sm mb-10 leading-relaxed">
+              See how TrucksOnTheMap delivers real-time visibility, dynamic ETA prediction, and load matching for European road freight.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="mailto:ihaveaquestion@trucksonthemap.com"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-[hsl(0,0%,100%)] font-body font-normal text-sm rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+              >
+                Get in Contact <ArrowUpRight className="w-4 h-4" />
+              </a>
+              <a
+                href="tel:+442038078493"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-[hsl(0,0%,100%)]/10 hover:bg-[hsl(0,0%,100%)]/15 backdrop-blur-sm text-[hsl(0,0%,100%)] font-body font-normal text-sm rounded-full border border-[hsl(0,0%,100%)]/15 transition-all duration-300"
+              >
+                +44 (20) 3807 84 93
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
