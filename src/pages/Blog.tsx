@@ -54,7 +54,7 @@ const articles = [
     slug: "tms-integration-visibility-platforms",
     title: "Integrating Freight Visibility with Your TMS: A Practical Guide",
     excerpt: "Most shippers already operate a TMS or ERP. Learn how modern visibility platforms connect via REST API, EDI, and webhooks without replacing your existing systems.",
-    category: "Technology",
+    category: "Freight Booking",
     date: "Feb 15, 2026",
     readTime: "12 min read",
     image: contentImg1,
