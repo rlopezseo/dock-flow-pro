@@ -199,6 +199,15 @@ const BlogPost = () => {
                 Dynamic ETA prediction uses a combination of current position, real-time traffic and incident data, historical performance data on the specific corridor and carrier, driver hours remaining under tachograph rules, and planned stop sequences. On high-frequency European corridors such as the Germany-Poland corridor on the A2, platforms with sufficient historical data can predict arrival times within a 15-minute window for 80 to 85 percent of loads.
               </p>
 
+              <h3>What Factors Reduce ETA Accuracy in European Road Freight?</h3>
+
+              <ul>
+                <li><strong>Border crossing variability:</strong> Crossings at non-Schengen borders such as the UK-EU border at Dover, the Swiss border, and the Turkish border have queue times that can range from 30 minutes to several hours depending on day of week, declared goods category, and document compliance. No algorithm fully predicts this.</li>
+                <li><strong>Driver hours compliance:</strong> Under EU Regulation 561/2006, drivers must take a 45-minute break after 4.5 hours of continuous driving. A load that was on schedule can fall behind by 45 minutes with no warning if the driver is approaching a mandatory rest.</li>
+                <li><strong>Urban delivery windows:</strong> City centre deliveries in Paris, London, Amsterdam, and Brussels are subject to Low Emission Zone restrictions, loading bay time windows, and traffic prohibition periods. A platform without local rule data will produce an inaccurate ETA for the final segment.</li>
+                <li><strong>Unplanned loading delays:</strong> If a truck waits 90 minutes for loading at origin beyond the scheduled departure time, the ETA for all subsequent stops shifts accordingly. Platforms that do not receive departure confirmation from origin will not detect this shift until position data shows the truck still at the loading facility.</li>
+              </ul>
+
               <img src={imgHighway} alt="European freight trucks on highway corridor" className="w-full rounded-sm my-8" />
               <p className="text-[11px] text-[hsl(220,10%,55%)] -mt-4 mb-8 font-body font-normal italic">
                 High-frequency European corridors where dynamic ETA prediction achieves the highest accuracy.
