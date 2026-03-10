@@ -269,14 +269,10 @@ const BlogPost = () => {
                 "For a carrier operating 50 trucks with an average empty run of 180 kilometres, reducing the empty mile rate from 30 to 20 percent eliminates 900 empty kilometres per day. At EUR 1.20 per kilometre, that represents EUR 1,080 per day in recoverable margin."
               </blockquote>
 
-              <h2 id="milestones">What Are Freight Milestones and Why Do They Matter?</h2>
+              <h2 id="milestones">What Are Freight Milestones and Why Do They Matter for Visibility?</h2>
 
               <p>
                 A freight milestone is a defined event in the lifecycle of a shipment that has commercial, contractual, or operational significance. Standard milestones in European road freight include collection confirmation, departure from origin, arrival at border crossing, clearance, arrival at destination, and proof of delivery.
-              </p>
-
-              <p>
-                Automated milestone confirmation has a secondary benefit beyond operational efficiency: it creates a timestamped data record that can be used in carrier performance reviews, customer SLA reporting, and dispute resolution. When a consignee claims a delivery was late and the carrier disputes it, a platform with geofence-based milestone data provides an objective timestamp that neither party can revise.
               </p>
 
               <p>
@@ -298,7 +294,7 @@ const BlogPost = () => {
                     <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Departure from origin</td><td className="py-3 pr-4">Dispatcher calls driver</td><td className="py-3">Automated on position movement from facility</td></tr>
                     <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Border crossing</td><td className="py-3 pr-4">Manual customs agent update</td><td className="py-3">Automated on geofence + customs API integration</td></tr>
                     <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Arrival at destination</td><td className="py-3 pr-4">Driver calls dispatcher</td><td className="py-3">Automated geofence trigger at consignee</td></tr>
-                    <tr><td className="py-3 pr-4">POD capture</td><td className="py-3 pr-4">Paper CMR, faxed or emailed</td><td className="py-3">Digital capture through driver app</td></tr>
+                    <tr><td className="py-3 pr-4">POD capture</td><td className="py-3 pr-4">Paper CMR, faxed or emailed</td><td className="py-3">Digital capture through driver app, instant upload</td></tr>
                   </tbody>
                 </table>
               </div>
