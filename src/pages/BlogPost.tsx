@@ -123,16 +123,24 @@ const BlogPost = () => {
               </p>
             </div>
 
-            {/* Tags + Share */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-8 mt-10 border-t border-[hsl(220,12%,91%)]">
-              <div className="flex flex-wrap gap-2">
-                {["Logistics", "Customer Service", "Delivery"].map(tag => (
-                  <span key={tag} className="px-3 py-1 text-[11px] font-body font-normal text-[hsl(220,10%,45%)] bg-[hsl(220,12%,95%)] rounded-sm hover:bg-[hsl(220,12%,90%)] transition-colors cursor-pointer">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <span className="text-[11px] font-body font-normal text-[hsl(220,10%,55%)]">Share ▸</span>
+            {/* Share buttons */}
+            <div className="flex items-center gap-4 pt-8 mt-10 border-t border-[hsl(220,12%,91%)]">
+              <span className="text-[12px] font-body font-normal text-[hsl(220,10%,55%)] mr-2">Share this article</span>
+              <a href="https://linkedin.com/shareArticle" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://twitter.com/intent/tweet" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="https://facebook.com/sharer/sharer.php" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <button onClick={() => { navigator.clipboard.writeText(window.location.href); }} className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
+                <Link2 className="w-4 h-4" />
+              </button>
+              <a href="mailto:?subject=Check this article" className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
+                <Mail className="w-4 h-4" />
+              </a>
             </div>
 
             {/* Author bio box */}
