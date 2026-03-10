@@ -344,7 +344,7 @@ const BlogPost = () => {
               <h3>Intermodal Road-Rail Connections</h3>
 
               <p>
-                <strong>Intermodal Road-Rail Connections:</strong> Shippers using intermodal services where road freight connects to rail or barge legs need to track the handover between transport modes. A truck arriving late at a rail terminal may miss the connection, requiring rerouting. Visibility platforms that monitor road legs in real time allow terminal operators to hold connections for loads confirmed as en route and within a recoverable time window.
+                Shippers using intermodal services where road freight connects to rail or barge legs need to track the handover between transport modes. A truck arriving late at a rail terminal may miss the connection, requiring rerouting. Visibility platforms that monitor road legs in real time allow terminal operators to hold connections for loads confirmed as en route and within a recoverable time window.
               </p>
 
               <h2 id="integration">How Does a Freight Visibility Platform Integrate with Existing TMS and ERP Systems?</h2>
