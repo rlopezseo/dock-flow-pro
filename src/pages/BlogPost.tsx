@@ -226,31 +226,47 @@ const BlogPost = () => {
       <section className="border-t border-[hsl(220,12%,91%)] bg-[hsl(0,0%,100%)]">
         <div className="container max-w-[1200px] mx-auto px-6 lg:px-8 py-16">
           <h2 className="text-[28px] font-display font-extralight text-[hsl(220,20%,12%)] mb-10">You may also like</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Related post 1 */}
             <Link to="/blog" className="group">
               <div className="relative overflow-hidden rounded-sm mb-4">
-                <img src={relatedImg1} alt="Fleet management innovations" className="w-full h-[240px] object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={relatedImg1} alt="Fleet management innovations" className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500" />
                 <span className="absolute bottom-4 left-4 px-3 py-1 bg-[hsl(220,20%,12%)] text-[hsl(0,0%,100%)] text-[11px] font-body font-normal rounded-sm">
                   Fleet Management
                 </span>
               </div>
               <p className="text-[11px] font-body font-normal text-[hsl(220,10%,55%)] mb-2">March 1, 2026</p>
-              <p className="text-[17px] font-display font-light text-[hsl(220,20%,12%)] group-hover:text-[hsl(207,60%,30%)] transition-colors">
+              <p className="text-[16px] font-display font-light text-[hsl(220,20%,12%)] group-hover:text-[hsl(207,60%,30%)] transition-colors leading-[1.4]">
                 Innovative ideas for small businesses
               </p>
             </Link>
 
-            {/* Related post 2 — with quote style */}
+            {/* Related post 2 */}
             <Link to="/blog" className="group">
-              <div className="relative overflow-hidden rounded-sm mb-4 bg-[hsl(207,60%,30%)] p-8 h-[240px] flex flex-col justify-center">
-                <span className="text-[60px] leading-none text-[hsl(0,0%,100%,0.2)] font-display font-extralight absolute top-4 right-6">"</span>
-                <p className="text-[10px] font-body font-normal text-[hsl(0,0%,100%,0.6)] uppercase tracking-[0.15em] mb-3">What Experts Forecast</p>
-                <p className="text-[18px] font-display font-extralight text-[hsl(0,0%,100%)] leading-[1.4]">
-                  Sed ut Perspiciatis unde Omnis Iste piciatis unde
-                </p>
-                <p className="text-[12px] font-body font-normal text-[hsl(0,0%,100%,0.6)] mt-3">by Ingrid Vulk</p>
+              <div className="relative overflow-hidden rounded-sm mb-4">
+                <img src={relatedImg2} alt="Data-driven logistics" className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span className="absolute bottom-4 left-4 px-3 py-1 bg-[hsl(220,20%,12%)] text-[hsl(0,0%,100%)] text-[11px] font-body font-normal rounded-sm">
+                  Supply Chain
+                </span>
               </div>
+              <p className="text-[11px] font-body font-normal text-[hsl(220,10%,55%)] mb-2">Feb 20, 2026</p>
+              <p className="text-[16px] font-display font-light text-[hsl(220,20%,12%)] group-hover:text-[hsl(207,60%,30%)] transition-colors leading-[1.4]">
+                How data-driven decisions reshape logistics
+              </p>
+            </Link>
+
+            {/* Related post 3 */}
+            <Link to="/blog" className="group">
+              <div className="relative overflow-hidden rounded-sm mb-4">
+                <img src={contentImg1} alt="Collaboration in logistics" className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span className="absolute bottom-4 left-4 px-3 py-1 bg-[hsl(220,20%,12%)] text-[hsl(0,0%,100%)] text-[11px] font-body font-normal rounded-sm">
+                  Freight Visibility
+                </span>
+              </div>
+              <p className="text-[11px] font-body font-normal text-[hsl(220,10%,55%)] mb-2">Feb 10, 2026</p>
+              <p className="text-[16px] font-display font-light text-[hsl(220,20%,12%)] group-hover:text-[hsl(207,60%,30%)] transition-colors leading-[1.4]">
+                Why real-time visibility is no longer optional
+              </p>
             </Link>
           </div>
         </div>
