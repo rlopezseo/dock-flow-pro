@@ -72,7 +72,7 @@ const articles = [
     slug: "csrd-carbon-reporting-freight",
     title: "How Freight Visibility Supports CSRD Carbon Reporting and ESG Compliance",
     excerpt: "The EU CSRD requires Scope 3 emissions reporting including transport. Freight visibility platforms provide actual distance data for accurate, auditable emissions figures.",
-    category: "Industry Insights",
+    category: "Sustainable Freight",
     date: "Feb 5, 2026",
     readTime: "9 min read",
     image: imgHighway,
