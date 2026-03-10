@@ -331,6 +331,50 @@ const BlogPost = () => {
                 <strong>E-Commerce and Retail Replenishment:</strong> Retail distribution centres receiving multiple daily replenishment deliveries use freight visibility platforms to coordinate dock scheduling. Rather than requiring trucks to queue at a facility, the platform assigns arrival windows based on real-time ETA data, reducing truck waiting times at the dock and improving yard throughput.
               </p>
 
+              <p>
+                <strong>UK-EU Cross-Border Post-Brexit:</strong> Since the end of the Brexit transition period, UK-EU freight movements require customs declarations in both directions. Delays at Dover, Folkestone, and Calais are unpredictable and have a material impact on delivery schedules. Freight visibility platforms monitoring UK-EU shipments provide both the shipper and consignee with early warning of border delays, allowing them to adjust receiving schedules or activate contingency stock.
+              </p>
+
+              <p>
+                <strong>Intermodal Road-Rail Connections:</strong> Shippers using intermodal services where road freight connects to rail or barge legs need to track the handover between transport modes. A truck arriving late at a rail terminal may miss the connection, requiring rerouting. Visibility platforms that monitor road legs in real time allow terminal operators to hold connections for loads confirmed as en route and within a recoverable time window.
+              </p>
+
+              <h2 id="integration">How Does a Freight Visibility Platform Integrate with Existing TMS and ERP Systems?</h2>
+
+              <p>
+                The question of integration is the primary technical barrier cited by logistics operations teams evaluating freight visibility platforms. Most shippers and forwarders already operate a TMS or ERP that holds shipment planning data. They do not want to re-enter that data into a visibility platform, and they want visibility events to flow back into their existing system of record.
+              </p>
+
+              <p>
+                Mature freight visibility platforms support integration through four mechanisms: REST API for bidirectional data exchange with modern TMS platforms, EDI message formats including EDIFACT and X12 for legacy carrier systems, webhook delivery for event-driven notifications to external systems, and flat-file exchange via SFTP for organisations that cannot support API integration.
+              </p>
+
+              <p>
+                The direction of data flow is typically bidirectional. The TMS sends shipment orders, carrier assignments, and planned route data to the visibility platform. The visibility platform sends position updates, milestone confirmations, and ETA revisions back to the TMS, where they are visible to operations teams working in their primary system.
+              </p>
+
+              <p>
+                Integration timelines vary significantly by TMS vendor and internal IT resource availability. Connecting a modern cloud TMS via REST API typically requires 2 to 4 weeks of configuration work with no custom development. Integrating with a legacy on-premise TMS via EDI can take 8 to 16 weeks depending on the age of the system and the availability of documentation. Platforms that offer pre-built connectors for common TMS vendors including SAP Transportation Management, Oracle TMS, and specialist European platforms reduce integration timelines substantially.
+              </p>
+
+              <blockquote>
+                "The critical question when evaluating a visibility platform is not whether integration is possible, but whether a pre-built connector exists for the specific TMS version in use."
+              </blockquote>
+
+              <h2 id="geofencing">What Is the Role of Geofencing in Freight Visibility?</h2>
+
+              <p>
+                Geofencing is the definition of a virtual boundary around a physical location, such that when a vehicle with an active tracking device enters or exits that boundary, the platform generates an event. In freight visibility, geofences serve two primary functions: automated milestone confirmation and dwell time measurement.
+              </p>
+
+              <p>
+                When a geofence is placed around a shipper facility and a carrier drops trailer, the platform confirms loading start or departure without any manual input from the driver or dispatcher. The same logic applies at border crossings, intermediate hubs, and consignee facilities. A well-designed geofence infrastructure reduces the manual event confirmation workload on both the carrier and the shipper operations team to near zero for standard shipments.
+              </p>
+
+              <p>
+                Dwell time measurement is the secondary value of geofencing. The platform records the timestamp when a truck enters a facility geofence and the timestamp when it exits. The difference is dwell time. For a shipper reviewing carrier performance, average dwell time at loading facilities is a leading indicator of loading process efficiency. For a carrier reviewing shipper facilities, dwell time data supports demurrage claims when trucks are detained beyond the agreed free time window.
+              </p>
+
               <h2 id="carbon-reporting">Freight Visibility and Carbon Reporting</h2>
 
               <p>
@@ -341,22 +385,48 @@ const BlogPost = () => {
                 Carbon calculation based on planned route distances systematically underestimates actual emissions because it does not account for detours, waiting time with engine running at facilities, and inefficient routing by carriers. Actual kilometre data from GPS tracking produces a more accurate emissions figure and, importantly, a figure that can be audited and verified by a third party.
               </p>
 
+              <p>
+                For forwarders and 3PLs that need to provide emissions reports to their shipper customers, freight visibility data enables automated emissions reporting at the shipment level. Each movement generates an actual distance figure, the platform applies an emission factor for the vehicle category, and the result is a per-shipment CO2 equivalent figure that can be aggregated for annual reporting.
+              </p>
+
               <h2 id="evaluation">What Should You Look for When Evaluating a Platform?</h2>
 
               <p>
-                <strong>Data Coverage:</strong> Coverage means the percentage of active loads that the platform can track with reliable position data. A platform with 60 percent coverage leaves 40 percent of loads invisible, which is insufficient for operations teams that need complete situational awareness.
+                The criteria for evaluating freight visibility platforms divide into four categories: data coverage, integration capability, alert quality, and commercial model.
               </p>
 
               <p>
-                <strong>Integration Capability:</strong> The platform must connect to your TMS without requiring a full-year integration project. Evaluate whether pre-built connectors exist for your specific TMS vendor and version.
+                <strong>Data Coverage:</strong> Coverage means the percentage of active loads that the platform can track with reliable position data. A platform with 60 percent coverage leaves 40 percent of loads invisible, which is insufficient for operations teams that need complete situational awareness. Coverage is a function of carrier network connectivity: how many of the carriers you use are already connected to the platform, and what does the onboarding process look like for carriers that are not.
               </p>
 
               <p>
-                <strong>Alert Quality:</strong> A platform that generates 200 notifications per day for a mid-sized shipper, of which 140 are false positives, will be ignored within two weeks. Evaluate whether the platform distinguishes between a mandatory driver rest stop and an unplanned breakdown.
+                <strong>Integration Capability:</strong> The platform must connect to your TMS without requiring a full-year integration project. Evaluate whether pre-built connectors exist for your specific TMS vendor and version, what the self-serve configuration options are, and what the vendor's typical integration timeline looks like for a similar-sized operation.
+              </p>
+
+              <p>
+                <strong>Alert Quality:</strong> Alert quality is the ratio of actionable alerts to total alerts generated. A platform that generates 200 notifications per day for a mid-sized shipper, of which 140 are false positives, will be ignored within two weeks. Evaluate alert logic carefully: does the platform distinguish between a mandatory driver rest stop and an unplanned breakdown? Does it account for tachograph rules when calculating expected arrival?
+              </p>
+
+              <p>
+                <strong>Commercial Model:</strong> Freight visibility platforms price on shipment volume, connected carrier count, user seats, or some combination of the three. For European operations with highly variable shipment volumes, a per-shipment model provides cost predictability. For operations with a stable carrier base but growing shipment volumes, a carrier connection fee model may be more economical. Clarify what happens to pricing if your volume grows 3x in year two.
+              </p>
+
+              <h2 id="trucksonthemap">How Does TrucksOnTheMap Deliver Freight Visibility?</h2>
+
+              <p>
+                TrucksOnTheMap is a freight visibility and load matching platform built specifically for European road freight. The platform connects shippers, forwarders, and carriers on a unified data layer that provides real-time position data, automated milestone confirmation, dynamic ETA calculation, and load matching for empty trucks.
+              </p>
+
+              <p>
+                The platform operates across the primary intra-European freight corridors including the Germany-Poland corridor, UK-Continental Europe routes, Benelux distribution networks, and the Central and Eastern European automotive supply chain. Carriers connect through a combination of telematics integration, the TrucksOnTheMap driver application, and direct TMS connectivity for larger fleet operators.
+              </p>
+
+              <p>
+                For shippers and forwarders evaluating freight visibility alongside empty miles reduction, TrucksOnTheMap provides both capabilities on a single platform. Visibility data on where trucks are and when they will complete deliveries feeds directly into the load matching logic, enabling carriers to receive return load offers before they finish unloading.
               </p>
 
               <blockquote>
-                "Operations teams that currently spend significant time chasing carriers for status updates, managing inbound calls from consignees, and resolving carrier performance disputes without objective data are the primary users who benefit most from freight visibility."
+                "Operations teams that currently spend significant time chasing carriers for status updates, managing inbound calls from consignees asking where loads are, and resolving carrier performance disputes without objective data are the primary users of the platform. The implementation timeline for standard TMS integrations is 2 to 4 weeks. Carriers without existing telematics connectivity are onboarded through the driver application with same-day activation."
               </blockquote>
             </div>
 
