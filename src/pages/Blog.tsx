@@ -196,48 +196,85 @@ const Blog = () => {
 
       {/* Article Grid */}
       <div className="container max-w-[1200px] mx-auto px-6 lg:px-8 py-12 pb-20">
-        {filteredArticles.length === 0 ? (
+        {paginatedArticles.length === 0 ? (
           <div className="text-center py-20">
             <p className="text-[18px] font-display font-extralight text-[hsl(220,10%,45%)]">No articles found</p>
             <p className="text-[13px] font-body font-normal text-[hsl(220,10%,60%)] mt-2">Try adjusting your search or category filter.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.map((article) => (
-              <Link
-                key={article.slug}
-                to={`/blog/${article.slug}`}
-                className="group"
-              >
-                <div className="relative overflow-hidden rounded-sm mb-4">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute bottom-4 left-4 px-3 py-1 bg-primary text-primary-foreground text-[11px] font-body font-normal rounded-sm">
-                    {article.category}
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 mb-2.5">
-                  <span className="text-[11px] font-body font-normal text-[hsl(220,10%,55%)]">{article.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-[hsl(220,12%,80%)]" />
-                  <span className="flex items-center gap-1 text-[11px] font-body font-normal text-[hsl(220,10%,55%)]">
-                    <Clock className="w-3 h-3" /> {article.readTime}
-                  </span>
-                </div>
-                <h3 className="text-[16px] font-display font-light text-[hsl(220,20%,12%)] leading-[1.4] mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                  {article.title}
-                </h3>
-                <p className="text-[13px] font-body font-normal text-[hsl(220,10%,50%)] leading-[1.7] line-clamp-2">
-                  {article.excerpt}
-                </p>
-                <div className="flex items-center gap-1.5 mt-4 text-[12px] font-body font-medium text-primary group-hover:gap-2.5 transition-all">
-                  Read article <ArrowRight className="w-3.5 h-3.5" />
-                </div>
-              </Link>
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {paginatedArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  to={`/blog/${article.slug}`}
+                  className="group"
+                >
+                  <div className="relative overflow-hidden rounded-sm mb-4">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute bottom-4 left-4 px-3 py-1 bg-primary text-primary-foreground text-[11px] font-body font-normal rounded-sm">
+                      {article.category}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <span className="text-[11px] font-body font-normal text-[hsl(220,10%,55%)]">{article.date}</span>
+                    <span className="w-1 h-1 rounded-full bg-[hsl(220,12%,80%)]" />
+                    <span className="flex items-center gap-1 text-[11px] font-body font-normal text-[hsl(220,10%,55%)]">
+                      <Clock className="w-3 h-3" /> {article.readTime}
+                    </span>
+                  </div>
+                  <h3 className="text-[16px] font-display font-light text-[hsl(220,20%,12%)] leading-[1.4] mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                    {article.title}
+                  </h3>
+                  <p className="text-[13px] font-body font-normal text-[hsl(220,10%,50%)] leading-[1.7] line-clamp-2">
+                    {article.excerpt}
+                  </p>
+                  <div className="flex items-center gap-1.5 mt-4 text-[12px] font-body font-medium text-primary group-hover:gap-2.5 transition-all">
+                    Read article <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-16">
+                <button
+                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                  className="w-10 h-10 rounded-full flex items-center justify-center border border-[hsl(220,12%,88%)] text-[hsl(220,10%,45%)] hover:bg-[hsl(220,15%,96%)] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center text-[13px] font-body font-normal transition-all ${
+                      currentPage === page
+                        ? "bg-primary text-primary-foreground"
+                        : "text-[hsl(220,10%,45%)] hover:bg-[hsl(220,15%,96%)]"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
+
+                <button
+                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                  className="w-10 h-10 rounded-full flex items-center justify-center border border-[hsl(220,12%,88%)] text-[hsl(220,10%,45%)] hover:bg-[hsl(220,15%,96%)] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+          </>
         )}
       </div>
 
