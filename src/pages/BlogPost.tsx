@@ -170,52 +170,34 @@ const BlogPost = () => {
 
           {/* ============ RIGHT COLUMN — Sidebar ============ */}
           <aside className="lg:pt-0">
-            {/* Search */}
-            <div className="relative mb-10">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-full border border-[hsl(220,12%,88%)] bg-[hsl(0,0%,100%)] text-[13px] font-body font-normal text-[hsl(220,20%,15%)] px-4 py-3 pr-10 rounded-sm focus:outline-none focus:border-[hsl(207,60%,30%)] transition-colors"
-              />
-              <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(220,10%,60%)]" />
-            </div>
-
-            {/* Table of Contents */}
-            <div className="mb-10">
-              <h3 className="text-[13px] font-display font-light tracking-[0.15em] uppercase text-[hsl(220,20%,15%)] mb-5">Table of Contents</h3>
-              <nav className="space-y-3">
+            {/* Table of Contents — styled card */}
+            <div className="mb-10 bg-[hsl(220,15%,97%)] border border-[hsl(220,12%,91%)] rounded-lg p-6">
+              <div className="flex items-center gap-2.5 mb-5">
+                <div className="w-8 h-8 rounded-lg bg-[hsl(207,60%,30%)] flex items-center justify-center">
+                  <List className="w-4 h-4 text-white" />
+                </div>
+                <h3 className="text-[13px] font-display font-light tracking-[0.1em] uppercase text-[hsl(220,20%,15%)]">In this article</h3>
+              </div>
+              <nav className="space-y-1">
                 {[
-                  { label: "Introduction", id: "#intro" },
-                  { label: "Conference for new design", id: "#conference" },
-                  { label: "Final thoughts and something more", id: "#final-thoughts" },
+                  { label: "Introduction", id: "#intro", num: "01" },
+                  { label: "Conference for new design", id: "#conference", num: "02" },
+                  { label: "Final thoughts and something more", id: "#final-thoughts", num: "03" },
                 ].map(item => (
                   <a
                     key={item.id}
                     href={item.id}
-                    className="block text-[13px] font-body font-normal text-[hsl(220,10%,45%)] hover:text-[hsl(207,60%,30%)] transition-colors pl-3 border-l-2 border-[hsl(220,12%,88%)] hover:border-[hsl(207,60%,30%)]"
+                    className="flex items-center gap-3 py-2.5 px-3 rounded-md text-[13px] font-body font-normal text-[hsl(220,10%,40%)] hover:bg-[hsl(207,60%,30%,0.08)] hover:text-[hsl(207,60%,30%)] transition-all group"
                   >
+                    <span className="text-[11px] font-body font-medium text-[hsl(207,60%,30%)] opacity-50 group-hover:opacity-100 transition-opacity">{item.num}</span>
                     {item.label}
                   </a>
                 ))}
               </nav>
             </div>
 
-            {/* Categories */}
-            <div className="mb-10">
-              <h3 className="text-[13px] font-display font-light tracking-[0.15em] uppercase text-[hsl(220,20%,15%)] mb-5">Categories</h3>
-              <ul className="space-y-3">
-                {["Supply Chain", "Fleet Management", "Dock Scheduling", "Freight Visibility", "Industry News"].map(cat => (
-                  <li key={cat}>
-                    <Link to="/blog" className="text-[13px] font-body font-normal text-[hsl(220,10%,45%)] hover:text-[hsl(207,60%,30%)] transition-colors">
-                      {cat}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             {/* ===== CTA Sidebar — TrucksOnTheMap ===== */}
-            <div className="bg-[hsl(207,30%,12%)] rounded-sm p-8 text-center">
+            <div className="bg-[hsl(207,30%,12%)] rounded-lg p-8 text-center">
               <img src={logo} alt="TrucksOnTheMap" className="h-7 mx-auto mb-5" />
               <p className="text-[20px] font-display font-extralight text-[hsl(0,0%,100%)] leading-[1.3] mb-3">
                 Take control of your freight operations
