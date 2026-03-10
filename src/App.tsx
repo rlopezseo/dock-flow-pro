@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./pages/NotFound";
+import BlogPost from "./pages/BlogPost";
 import ICPShippers from "./pages/ICPShippers";
 import ICPBrokers from "./pages/ICPBrokers";
 import ICPCarriers from "./pages/ICPCarriers";
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/freight-visibility-software-for-brokers" element={<ICPBrokers />} />
           <Route path="/fleet-visibility-software-for-carriers" element={<ICPCarriers />} />
           <Route path="/dock-scheduling-software-for-distribution-centers" element={<ICPDistributionCenters />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
