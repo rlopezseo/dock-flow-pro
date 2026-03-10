@@ -332,8 +332,10 @@ const BlogPost = () => {
               <h3>E-Commerce Returns and Consumer Goods Replenishment</h3>
 
               <p>
-                <strong>E-Commerce and Retail Replenishment:</strong> Retail distribution centres receiving multiple daily replenishment deliveries use freight visibility platforms to coordinate dock scheduling. Rather than requiring trucks to queue at a facility, the platform assigns arrival windows based on real-time ETA data, reducing truck waiting times at the dock and improving yard throughput.
+                Retail distribution centres receiving multiple daily replenishment deliveries from different suppliers use freight visibility platforms to coordinate dock scheduling. Rather than requiring trucks to queue at a facility, the platform assigns arrival windows based on real-time ETA data, reducing truck waiting times at the dock and improving yard throughput.
               </p>
+
+              <h3>UK-EU Cross-Border Post-Brexit</h3>
 
               <p>
                 <strong>UK-EU Cross-Border Post-Brexit:</strong> Since the end of the Brexit transition period, UK-EU freight movements require customs declarations in both directions. Delays at Dover, Folkestone, and Calais are unpredictable and have a material impact on delivery schedules. Freight visibility platforms monitoring UK-EU shipments provide both the shipper and consignee with early warning of border delays, allowing them to adjust receiving schedules or activate contingency stock.
