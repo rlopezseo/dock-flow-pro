@@ -390,7 +390,7 @@ const BlogPost = () => {
                 Dwell time measurement is the secondary value of geofencing. The platform records the timestamp when a truck enters a facility geofence and the timestamp when it exits. The difference is dwell time. For a shipper reviewing carrier performance, average dwell time at loading facilities is a leading indicator of loading process efficiency. For a carrier reviewing shipper facilities, dwell time data supports demurrage claims when trucks are detained beyond the agreed free time window.
               </p>
 
-              <h2 id="carbon-reporting">Freight Visibility and Carbon Reporting</h2>
+              <h2 id="carbon-reporting">How Does Freight Visibility Support Carbon Reporting and ESG Compliance?</h2>
 
               <p>
                 The EU Corporate Sustainability Reporting Directive (CSRD), which became applicable to large European companies from fiscal year 2024, requires Scope 3 emissions reporting including transport emissions from goods movements. Freight visibility platforms are a data source for this reporting because they hold the actual distance data for every shipment.
