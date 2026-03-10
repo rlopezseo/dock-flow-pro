@@ -36,11 +36,11 @@ const BlogPost = () => {
           <article>
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-[12px] font-body font-normal text-[hsl(220,10%,55%)] mb-6">
+              <Link to="/" className="hover:text-[hsl(207,60%,30%)] transition-colors">Home</Link>
+              <ChevronRight className="w-3 h-3" />
               <Link to="/blog" className="hover:text-[hsl(207,60%,30%)] transition-colors">Blog</Link>
               <ChevronRight className="w-3 h-3" />
-              <Link to="/blog" className="hover:text-[hsl(207,60%,30%)] transition-colors">Freight Visibility</Link>
-              <ChevronRight className="w-3 h-3" />
-              <span className="text-[hsl(220,15%,35%)]">Guide</span>
+              <span className="text-[hsl(220,15%,35%)] truncate max-w-[280px]">What Is Freight Visibility?</span>
             </nav>
 
             {/* Title */}
