@@ -275,6 +275,48 @@ const BlogPost = () => {
                 Automated milestone confirmation has a secondary benefit beyond operational efficiency: it creates a timestamped data record that can be used in carrier performance reviews, customer SLA reporting, and dispute resolution. When a consignee claims a delivery was late and the carrier disputes it, a platform with geofence-based milestone data provides an objective timestamp that neither party can revise.
               </p>
 
+              <p>
+                Milestone-based visibility is different from continuous GPS tracking. A shipper who receives automated confirmation of each milestone can manage customer communication and internal planning without monitoring a live map. A consignee who receives an automated notification when the truck departs origin can prepare the receiving dock without calling the carrier.
+              </p>
+
+              {/* Milestone table */}
+              <div className="my-8 overflow-x-auto">
+                <table className="w-full text-[13px] font-body font-normal border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-[hsl(207,60%,30%)]">
+                      <th className="text-left py-3 pr-4 text-[hsl(220,20%,15%)] font-medium">Milestone</th>
+                      <th className="text-left py-3 pr-4 text-[hsl(220,20%,15%)] font-medium">Traditional Process</th>
+                      <th className="text-left py-3 text-[hsl(220,20%,15%)] font-medium">With Visibility Platform</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-[hsl(220,10%,40%)]">
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Loading confirmation</td><td className="py-3 pr-4">Driver calls dispatcher</td><td className="py-3">Automated geofence trigger at shipper facility</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Departure from origin</td><td className="py-3 pr-4">Dispatcher calls driver</td><td className="py-3">Automated on position movement from facility</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Border crossing</td><td className="py-3 pr-4">Manual customs agent update</td><td className="py-3">Automated on geofence + customs API integration</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Arrival at destination</td><td className="py-3 pr-4">Driver calls dispatcher</td><td className="py-3">Automated geofence trigger at consignee</td></tr>
+                    <tr><td className="py-3 pr-4">POD capture</td><td className="py-3 pr-4">Paper CMR, faxed or emailed</td><td className="py-3">Digital capture through driver app</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p>
+                Automated milestone confirmation has a secondary benefit beyond operational efficiency: it creates a timestamped data record that can be used in carrier performance reviews, customer SLA reporting, and dispute resolution. When a consignee claims a delivery was late and the carrier disputes it, a platform with geofence-based milestone data provides an objective timestamp that neither party can revise.
+              </p>
+
+              <h2 id="supply-chain-vs">What Is the Difference Between Freight Visibility and Supply Chain Visibility?</h2>
+
+              <p>
+                Supply chain visibility is a broader category that encompasses freight visibility as one component. Supply chain visibility includes upstream supplier readiness data, production status, warehouse inventory levels, freight in transit, customs status, and last-mile delivery confirmation. Freight visibility is specifically the in-transit segment.
+              </p>
+
+              <p>
+                The distinction matters for technology selection. A shipper evaluating a freight visibility platform is solving a specific problem: they do not know what is happening to their loads while they are in transit with a carrier. A shipper evaluating a supply chain visibility platform is solving a broader problem: they lack confidence in any part of the end-to-end fulfilment process from supplier to customer.
+              </p>
+
+              <p>
+                Most European mid-market shippers and forwarders need freight visibility specifically. They have warehouse management systems and procurement platforms. What they lack is the ability to see what is happening between the loading dock and the delivery address. A purpose-built freight visibility platform addresses this problem more directly and at lower cost than an enterprise supply chain visibility suite.
+              </p>
+
               <h2 id="use-cases">Common Freight Visibility Use Cases in European Road Freight</h2>
 
               <p>
