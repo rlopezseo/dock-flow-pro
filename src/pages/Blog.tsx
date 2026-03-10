@@ -147,7 +147,7 @@ const Blog = () => {
       <Navbar />
 
       {/* Hero with Search */}
-      <div className="w-full h-[48vh] min-h-[360px] max-h-[480px] relative">
+      <div className="w-full h-[52vh] min-h-[400px] max-h-[520px] relative">
         <img src={heroImg} alt="TrucksOnTheMap Blog" className="w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,5%)]/70 to-[hsl(220,20%,5%)]/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
