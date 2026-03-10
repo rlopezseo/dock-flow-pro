@@ -173,9 +173,7 @@ const BlogPost = () => {
             {/* Table of Contents — styled card */}
             <div className="mb-10 bg-[hsl(220,15%,97%)] border border-[hsl(220,12%,91%)] rounded-lg p-6">
               <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-8 h-8 rounded-lg bg-[hsl(207,60%,30%)] flex items-center justify-center">
-                  <List className="w-4 h-4 text-white" />
-                </div>
+                <div className="w-1 h-5 rounded-full bg-[hsl(207,60%,30%)]" />
                 <h3 className="text-[13px] font-display font-light tracking-[0.1em] uppercase text-[hsl(220,20%,15%)]">In this article</h3>
               </div>
               <nav className="space-y-1">
@@ -199,7 +197,7 @@ const BlogPost = () => {
             {/* ===== CTA Sidebar — TrucksOnTheMap (sticky) ===== */}
             <div className="lg:sticky lg:top-28">
               <div className="bg-[hsl(207,30%,12%)] rounded-lg p-8 text-center">
-                <img src={logo} alt="TrucksOnTheMap" className="h-7 mx-auto mb-5" />
+                <img src={logo} alt="TrucksOnTheMap" className="h-5 mx-auto mb-5" />
                 <p className="text-[20px] font-display font-extralight text-[hsl(0,0%,100%)] leading-[1.3] mb-3">
                   Take control of your freight operations
                 </p>
