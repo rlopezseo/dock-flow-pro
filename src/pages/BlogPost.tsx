@@ -484,15 +484,20 @@ const BlogPost = () => {
               </div>
               <nav className="space-y-1">
                 {[
-                  { label: "Freight Visibility vs Track-and-Trace", id: "#track-trace", num: "01" },
+                  { label: "Visibility vs Track-and-Trace", id: "#track-trace", num: "01" },
                   { label: "How Real-Time Visibility Works", id: "#how-it-works", num: "02" },
-                  { label: "ETA Prediction and Accuracy", id: "#eta-prediction", num: "03" },
-                  { label: "Financial Impact", id: "#financial-impact", num: "04" },
-                  { label: "Reducing Empty Miles", id: "#empty-miles", num: "05" },
-                  { label: "Freight Milestones", id: "#milestones", num: "06" },
-                  { label: "Use Cases in European Freight", id: "#use-cases", num: "07" },
-                  { label: "Carbon Reporting and ESG", id: "#carbon-reporting", num: "08" },
-                  { label: "Evaluating a Platform", id: "#evaluation", num: "09" },
+                  { label: "Data a Platform Processes", id: "#data-processed", num: "03" },
+                  { label: "ETA Prediction and Accuracy", id: "#eta-prediction", num: "04" },
+                  { label: "Financial Impact", id: "#financial-impact", num: "05" },
+                  { label: "Reducing Empty Miles", id: "#empty-miles", num: "06" },
+                  { label: "Freight Milestones", id: "#milestones", num: "07" },
+                  { label: "Freight vs Supply Chain Visibility", id: "#supply-chain-vs", num: "08" },
+                  { label: "Use Cases in European Freight", id: "#use-cases", num: "09" },
+                  { label: "TMS and ERP Integration", id: "#integration", num: "10" },
+                  { label: "Geofencing", id: "#geofencing", num: "11" },
+                  { label: "Carbon Reporting and ESG", id: "#carbon-reporting", num: "12" },
+                  { label: "Evaluating a Platform", id: "#evaluation", num: "13" },
+                  { label: "TrucksOnTheMap", id: "#trucksonthemap", num: "14" },
                 ].map(item => (
                   <a
                     key={item.id}
