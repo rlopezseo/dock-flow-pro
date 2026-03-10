@@ -99,7 +99,7 @@ const articles = [
     slug: "carrier-fragmentation-europe",
     title: "Carrier Fragmentation in European Freight: Why Visibility Is Harder Than It Looks",
     excerpt: "A shipper moving 500 loads per month across Central and Western Europe may work with 40 to 80 different carriers, each operating a different TMS or no TMS at all.",
-    category: "Supply Chain",
+    category: "Empty Miles",
     date: "Jan 15, 2026",
     readTime: "10 min read",
     image: contentImg1,
