@@ -147,11 +147,11 @@ const BlogPost = () => {
             {/* Author bio box */}
             <div className="mt-10 p-8 bg-[hsl(220,15%,96%)] rounded-sm">
               <div className="flex items-start gap-5">
-                <img src={authorAvatar} alt="Ingrid Vulk" className="w-20 h-20 rounded-full object-cover shrink-0" />
+                <img src={authorAvatar} alt="Tamas Domonkos" className="w-20 h-20 rounded-full object-cover shrink-0" />
                 <div>
-                  <p className="text-[15px] font-display font-light text-[hsl(220,20%,15%)] mb-1">Ingrid Vulk</p>
+                  <p className="text-[15px] font-display font-light text-[hsl(220,20%,15%)] mb-1">Tamas Domonkos</p>
                   <p className="text-[12px] font-body font-normal text-[hsl(220,10%,55%)] leading-[1.8]">
-                    Logistics editor and supply chain analyst with over 10 years of experience in European freight and transport operations. Passionate about technology-driven efficiency in modern logistics.
+                    Logistics expert with over 10 years of experience in European freight and transport operations. Passionate about technology-driven efficiency in modern logistics.
                   </p>
                 </div>
               </div>
