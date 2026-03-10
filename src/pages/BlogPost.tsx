@@ -16,13 +16,13 @@ const BlogPost = () => {
       <Navbar />
 
       {/* Hero image — full width, behind transparent navbar */}
-      <div className="w-full h-[70vh] min-h-[450px] max-h-[650px] relative">
+      <div className="w-full h-[50vh] min-h-[340px] max-h-[480px] relative">
         <img
           src={heroImg}
           alt="Providing better service for customers"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,7%)]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,5%)]/60 to-[hsl(220,20%,5%)]/40" />
       </div>
 
       {/* Main content area */}
