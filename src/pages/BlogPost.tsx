@@ -254,8 +254,16 @@ const BlogPost = () => {
               </p>
 
               <p>
-                With real-time visibility, the platform can begin matching for the return load when the ETA for delivery is confirmed, not after delivery has occurred. For a carrier operating 50 trucks with an average empty run of 180 kilometres, reducing the empty mile rate from 30 to 20 percent eliminates 900 empty kilometres per day. At EUR 1.20 per kilometre fully loaded cost basis, that represents EUR 1,080 per day in recoverable margin.
+                The connection between visibility and empty miles reduction operates through load matching. When a freight visibility platform has real-time data on where all vehicles in a carrier network are located, when each vehicle will complete its current load, and what capacity will be available where and when, it can match return loads with available capacity before the truck finishes unloading.
               </p>
+
+              <p>
+                Without visibility, a carrier dispatcher calls around to find a return load after the driver has confirmed delivery. By that point, the window for matching with a load departing from the consignee area may have already closed, and the truck drives empty back to its home base or to the next planned pickup.
+              </p>
+
+              <blockquote>
+                "For a carrier operating 50 trucks with an average empty run of 180 kilometres, reducing the empty mile rate from 30 to 20 percent eliminates 900 empty kilometres per day. At EUR 1.20 per kilometre, that represents EUR 1,080 per day in recoverable margin."
+              </blockquote>
 
               <h2 id="milestones">What Are Freight Milestones and Why Do They Matter?</h2>
 
