@@ -151,7 +151,7 @@ const Blog = () => {
         <img src={heroImg} alt="TrucksOnTheMap Blog" className="w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,5%)]/70 to-[hsl(220,20%,5%)]/40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <p className="text-[12px] font-body font-normal tracking-[0.2em] uppercase text-[hsl(207,60%,60%)] mb-4">
+          <p className="text-[12px] font-body font-normal tracking-[0.2em] uppercase text-primary-foreground/60 mb-4">
             Blog & Insights
           </p>
           <h1 className="font-display font-extralight text-[hsl(0,0%,100%)] text-[36px] md:text-[48px] leading-[1.1] tracking-[-0.01em] mb-4 max-w-[700px]">
