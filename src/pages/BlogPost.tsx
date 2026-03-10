@@ -426,7 +426,7 @@ const BlogPost = () => {
                 <strong>Commercial Model:</strong> Freight visibility platforms price on shipment volume, connected carrier count, user seats, or some combination of the three. For European operations with highly variable shipment volumes, a per-shipment model provides cost predictability. For operations with a stable carrier base but growing shipment volumes, a carrier connection fee model may be more economical. Clarify what happens to pricing if your volume grows 3x in year two.
               </p>
 
-              <h2 id="trucksonthemap">How Does TrucksOnTheMap Deliver Freight Visibility?</h2>
+              <h2 id="trucksonthemap">How Does TrucksOnTheMap Deliver Freight Visibility for European Road Freight Operations?</h2>
 
               <p>
                 TrucksOnTheMap is a freight visibility and load matching platform built specifically for European road freight. The platform connects shippers, forwarders, and carriers on a unified data layer that provides real-time position data, automated milestone confirmation, dynamic ETA calculation, and load matching for empty trucks.
