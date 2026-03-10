@@ -354,6 +354,10 @@ const BlogPost = () => {
               </p>
 
               <p>
+                The question of integration is the primary technical barrier cited by logistics operations teams evaluating freight visibility platforms. Most shippers and forwarders already operate a TMS or ERP that holds shipment planning data. They do not want to re-enter that data into a visibility platform, and they want visibility events to flow back into their existing system of record.
+              </p>
+
+              <p>
                 Mature freight visibility platforms support integration through four mechanisms: REST API for bidirectional data exchange with modern TMS platforms, EDI message formats including EDIFACT and X12 for legacy carrier systems, webhook delivery for event-driven notifications to external systems, and flat-file exchange via SFTP for organisations that cannot support API integration.
               </p>
 
