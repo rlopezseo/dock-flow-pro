@@ -197,7 +197,7 @@ const BlogPost = () => {
             {/* ===== CTA Sidebar — TrucksOnTheMap (sticky) ===== */}
             <div className="lg:sticky lg:top-28">
               <div className="bg-[hsl(207,30%,12%)] rounded-lg p-8 text-center">
-                <img src={logo} alt="TrucksOnTheMap" className="h-7 mx-auto mb-5" />
+                <img src={logo} alt="TrucksOnTheMap" className="h-5 mx-auto mb-5" />
                 <p className="text-[20px] font-display font-extralight text-[hsl(0,0%,100%)] leading-[1.3] mb-3">
                   Take control of your freight operations
                 </p>
