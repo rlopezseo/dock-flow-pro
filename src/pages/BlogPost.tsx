@@ -635,6 +635,31 @@ const BlogPost = () => {
           font-weight: 500;
           color: hsl(220, 15%, 20%);
         }
+        .prose-custom ul {
+          list-style: none;
+          padding: 0;
+          margin: 1.5em 0;
+        }
+        .prose-custom ul li {
+          font-family: 'Roboto', system-ui, sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 1.9;
+          color: hsl(220, 10%, 35%);
+          padding-left: 1.2em;
+          position: relative;
+          margin-bottom: 0.6em;
+        }
+        .prose-custom ul li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0.7em;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: hsl(207, 60%, 30%);
+        }
       `}</style>
     </div>
   );
