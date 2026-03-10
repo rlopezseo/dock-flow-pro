@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Clock, Calendar, ChevronRight, ArrowLeft, ArrowRight, Search, Linkedin, Twitter, Facebook, Link2, Mail } from "lucide-react";
+import { Clock, Calendar, ChevronRight, ArrowLeft, ArrowRight, Linkedin, Twitter, Facebook, Link2, Mail, List } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import logo from "@/assets/logo-trucksonthemap.png";
