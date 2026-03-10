@@ -404,7 +404,7 @@ const BlogPost = () => {
                 For forwarders and 3PLs that need to provide emissions reports to their shipper customers, freight visibility data enables automated emissions reporting at the shipment level. Each movement generates an actual distance figure, the platform applies an emission factor for the vehicle category, and the result is a per-shipment CO2 equivalent figure that can be aggregated for annual reporting.
               </p>
 
-              <h2 id="evaluation">What Should You Look for When Evaluating a Platform?</h2>
+              <h2 id="evaluation">What Should You Look for When Evaluating a Freight Visibility Platform?</h2>
 
               <p>
                 The criteria for evaluating freight visibility platforms divide into four categories: data coverage, integration capability, alert quality, and commercial model.
