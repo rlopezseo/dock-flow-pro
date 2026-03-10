@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import BlogPost from "./pages/BlogPost";
+import Blog from "./pages/Blog";
 import ICPShippers from "./pages/ICPShippers";
 import ICPBrokers from "./pages/ICPBrokers";
 import ICPCarriers from "./pages/ICPCarriers";
