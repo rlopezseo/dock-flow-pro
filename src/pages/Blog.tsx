@@ -45,7 +45,7 @@ const articles = [
     slug: "eta-prediction-accuracy-logistics",
     title: "ETA Prediction in Logistics: What Determines Accuracy and Why It Matters",
     excerpt: "Dynamic ETA prediction uses current position, traffic data, historical corridor performance, and tachograph rules to predict arrivals within a 15-minute window.",
-    category: "Technology",
+    category: "Freight Booking",
     date: "Feb 20, 2026",
     readTime: "8 min read",
     image: relatedImg2,
