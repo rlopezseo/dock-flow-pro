@@ -365,8 +365,14 @@ const BlogPost = () => {
                 The direction of data flow is typically bidirectional. The TMS sends shipment orders, carrier assignments, and planned route data to the visibility platform. The visibility platform sends position updates, milestone confirmations, and ETA revisions back to the TMS, where they are visible to operations teams working in their primary system.
               </p>
 
+              <h3>How Long Does Integration Take?</h3>
+
               <p>
-                Integration timelines vary significantly by TMS vendor and internal IT resource availability. Connecting a modern cloud TMS via REST API typically requires 2 to 4 weeks of configuration work with no custom development. Integrating with a legacy on-premise TMS via EDI can take 8 to 16 weeks depending on the age of the system and the availability of documentation. Platforms that offer pre-built connectors for common TMS vendors including SAP Transportation Management, Oracle TMS, and specialist European platforms reduce integration timelines substantially.
+                Integration timelines vary significantly by TMS vendor and internal IT resource availability. Connecting a modern cloud TMS via REST API typically requires 2 to 4 weeks of configuration work with no custom development. Integrating with a legacy on-premise TMS via EDI can take 8 to 16 weeks depending on the age of the system and the availability of documentation.
+              </p>
+
+              <p>
+                Platforms that offer pre-built connectors for common TMS vendors including SAP Transportation Management, Oracle TMS, and specialist European platforms reduce integration timelines substantially. The critical question when evaluating a visibility platform is not whether integration is possible, but whether a pre-built connector exists for the specific TMS version in use.
               </p>
 
               <blockquote>
