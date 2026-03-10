@@ -90,7 +90,7 @@ const articles = [
     slug: "automotive-jit-freight-visibility",
     title: "Just-in-Time Automotive Supply Chains: Why 30-Minute Delivery Windows Need Real-Time Visibility",
     excerpt: "A supplier delivering engine components to a German OEM assembly line needs to arrive within a 30-minute window. If the truck is delayed, the assembly line stops.",
-    category: "Supply Chain",
+    category: "European Freight",
     date: "Jan 20, 2026",
     readTime: "8 min read",
     image: relatedImg2,
