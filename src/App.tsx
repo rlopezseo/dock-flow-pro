@@ -24,6 +24,7 @@ const App = () => (
           <Route path="/freight-visibility-software-for-brokers" element={<ICPBrokers />} />
           <Route path="/fleet-visibility-software-for-carriers" element={<ICPCarriers />} />
           <Route path="/dock-scheduling-software-for-distribution-centers" element={<ICPDistributionCenters />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
