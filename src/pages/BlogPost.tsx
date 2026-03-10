@@ -4,11 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import logo from "@/assets/logo-trucksonthemap.png";
 import heroImg from "@/assets/blog/blog-hero-service.jpg";
-import contentImg1 from "@/assets/blog/blog-content-1.jpg";
-import contentImg2 from "@/assets/blog/blog-content-2.jpg";
+import imgControl from "@/assets/blog/blog-visibility-control.jpg";
+import imgDriver from "@/assets/blog/blog-driver-app.jpg";
+import imgDock from "@/assets/blog/blog-dock-loading.jpg";
+import imgHighway from "@/assets/blog/blog-highway-trucks.jpg";
 import authorAvatar from "@/assets/blog/author-avatar.jpg";
 import relatedImg1 from "@/assets/blog/blog-related-1.jpg";
 import relatedImg2 from "@/assets/blog/blog-related-2.jpg";
+import contentImg1 from "@/assets/blog/blog-content-1.jpg";
 
 const BlogPost = () => {
   return (
@@ -19,7 +22,7 @@ const BlogPost = () => {
       <div className="w-full h-[50vh] min-h-[340px] max-h-[480px] relative">
         <img
           src={heroImg}
-          alt="Providing better service for customers"
+          alt="What Is Freight Visibility? A Complete Guide"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,5%)]/60 to-[hsl(220,20%,5%)]/40" />
@@ -35,14 +38,14 @@ const BlogPost = () => {
             <nav className="flex items-center gap-2 text-[12px] font-body font-normal text-[hsl(220,10%,55%)] mb-6">
               <Link to="/blog" className="hover:text-[hsl(207,60%,30%)] transition-colors">Blog</Link>
               <ChevronRight className="w-3 h-3" />
-              <Link to="/blog" className="hover:text-[hsl(207,60%,30%)] transition-colors">Supply Chain</Link>
+              <Link to="/blog" className="hover:text-[hsl(207,60%,30%)] transition-colors">Freight Visibility</Link>
               <ChevronRight className="w-3 h-3" />
-              <span className="text-[hsl(220,15%,35%)]">Transport</span>
+              <span className="text-[hsl(220,15%,35%)]">Guide</span>
             </nav>
 
             {/* Title */}
-            <h1 className="font-display font-extralight text-[hsl(220,20%,12%)] text-[36px] md:text-[44px] leading-[1.15] tracking-[-0.01em] mb-8">
-              Providing better service for customers
+            <h1 className="font-display font-extralight text-[hsl(220,20%,12%)] text-[32px] md:text-[40px] leading-[1.15] tracking-[-0.01em] mb-8">
+              What Is Freight Visibility? A Complete Guide to Real-Time Tracking in European Road Freight
             </h1>
 
             {/* Author / Date / Reading Time bar */}
@@ -60,68 +63,221 @@ const BlogPost = () => {
               </div>
               <div className="flex items-center gap-1.5 text-[12px] font-body font-normal text-[hsl(220,10%,55%)]">
                 <Clock className="w-3.5 h-3.5" />
-                8 min read
+                15 min read
               </div>
             </div>
 
             {/* Article body */}
-            <div className="prose-custom">
+            <div className="prose-custom" id="intro">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt justo eget massa hendrerit vulputate. Ut finibus porttitor tellus, id fermentum nulla vehicula in. Maecenas condimentum nisl sit amet ligula auctor, in fringilla eros dignissim. Aenean bibendum lacinia libero, vitae pretium lorem venenatis id. Cras porttitor pretium tellus, vitae ullamcorper ante egestas at. Fusce commodo sapien a ipsum faucibus, a sollicitudin arcu aliquam.
+                Freight visibility is the continuous, real-time awareness of where a shipment is, what condition it is in, what is likely to happen to it next, and why any deviation from the planned route or schedule has occurred. In European road freight, it means knowing the position and status of every truck, trailer, and consignment at any point between origin and destination, without making a single phone call to a driver or carrier.
+              </p>
+
+              <p>
+                The definition sounds straightforward. The operational reality is not. Most European shippers, forwarders, and carriers work across multiple countries, dozens of carriers with different telematics systems, and a regulatory environment that changes at every border crossing. Achieving genuine freight visibility in that environment requires more than a tracking link. It requires a platform that unifies data from multiple sources, interprets that data against planned routes and time windows, and surfaces actionable intelligence rather than raw coordinates.
+              </p>
+
+              <p>
+                This guide covers what freight visibility means in practice, how it works at a technical level, what distinguishes real-time visibility from basic track-and-trace, why it matters financially, and how European freight operations can implement it without replacing their existing TMS or ERP infrastructure.
+              </p>
+
+              <h2 id="track-trace">What Is the Difference Between Freight Visibility and Track-and-Trace?</h2>
+
+              <p>
+                Track-and-trace is a subset of freight visibility. It answers one question: where is the shipment right now? Freight visibility answers four questions: where is it, what is its current status, what will happen next, and what should we do about any deviations?
+              </p>
+
+              <p>
+                The practical difference is the direction of information flow. Track-and-trace is reactive. A shipper or consignee queries a system or calls a carrier to find out where a load is. Freight visibility is proactive. The platform monitors all active shipments continuously, compares real positions against planned milestones, and alerts the relevant parties when a deviation is detected, before the consignee calls to ask why the truck has not arrived.
+              </p>
+
+              {/* Comparison table */}
+              <div className="my-8 overflow-x-auto">
+                <table className="w-full text-[13px] font-body font-normal border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-[hsl(207,60%,30%)]">
+                      <th className="text-left py-3 pr-4 text-[hsl(220,20%,15%)] font-medium">Capability</th>
+                      <th className="text-left py-3 pr-4 text-[hsl(220,20%,15%)] font-medium">Track-and-Trace</th>
+                      <th className="text-left py-3 text-[hsl(220,20%,15%)] font-medium">Freight Visibility Platform</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-[hsl(220,10%,40%)]">
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Position updates</td><td className="py-3 pr-4">On-demand query</td><td className="py-3">Continuous, automated</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">ETA calculation</td><td className="py-3 pr-4">Static schedule</td><td className="py-3">Dynamic, recalculated in real time</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Exception detection</td><td className="py-3 pr-4">Manual check</td><td className="py-3">Automated alerts on deviation</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Carrier data sources</td><td className="py-3 pr-4">Single carrier portal</td><td className="py-3">Multi-carrier aggregation</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Milestone confirmation</td><td className="py-3 pr-4">Manual confirmation</td><td className="py-3">Automated against geofences</td></tr>
+                    <tr><td className="py-3 pr-4">Predictive capability</td><td className="py-3 pr-4">None</td><td className="py-3">Delay prediction using historical and live data</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <img src={imgControl} alt="Freight visibility control room monitoring shipments in real time" className="w-full rounded-sm my-8" />
+              <p className="text-[11px] text-[hsl(220,10%,55%)] -mt-4 mb-8 font-body font-normal italic">
+                Real-time freight monitoring centre tracking active shipments across European corridors.
+              </p>
+
+              <h2 id="how-it-works">How Does Real-Time Freight Visibility Work?</h2>
+
+              <p>
+                Real-time freight visibility platforms aggregate position and status data from three primary source layers: vehicle telematics units installed in trucks, mobile applications used by drivers, and carrier TMS integrations that push milestone data directly into the platform.
+              </p>
+
+              <h3>Vehicle Telematics and GPS Data</h3>
+
+              <p>
+                Modern trucks operating in the EU under tachograph regulations carry telematics hardware that transmits GPS position at intervals between 30 seconds and 5 minutes depending on the unit and configuration. Freight visibility platforms connect to these systems through direct integrations with telematics providers such as Webfleet, Samsara, Trimble, or through standardised APIs.
               </p>
 
               <blockquote>
-                "Organized work, positive results, and proper team coordination are what turn a simple delivery into a customer success story. Every transaction is a chance to build trust."
+                "A position update every 5 minutes means a truck travelling at 80 km/h can move 6.7 kilometres between updates. For time-critical deliveries into distribution centres with tight time slots, that resolution is often insufficient."
               </blockquote>
 
               <p>
-                Vivamus eget faucibus mi. In vitae lacinia odio. Fusce rhoncus erat at accumsan molestie. Proin facilisis dictum eros, vel consequat ligula accumsan eu. Sed tincidunt consequat lacus, vel consectetur ante pellentesque vel. Integer hendrerit eros eu urna aliquet, at aliquam turpis viverra. Phasellus pretium velit quis erat porttitor, sit amet tincidunt ipsum congue.
+                Better platforms supplement telematics data with driver app pings and geofence triggers that generate an event the moment a truck enters or exits a defined zone.
               </p>
+
+              <h3>Driver Mobile Applications</h3>
 
               <p>
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
-              </p>
-
-              <img src={contentImg1} alt="Logistics conference room discussion" className="w-full rounded-sm my-8" />
-
-              <p className="text-[11px] text-[hsl(220,10%,55%)] -mt-4 mb-8 font-body font-normal italic">
-                Supply chain professionals collaborating on new optimization strategies.
-              </p>
-
-              <h2>Conference for new design</h2>
-
-              <p>
-                Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Pellentesque in ipsum id orci porta dapibus. Vivamus suscipit tortor eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
-              </p>
-
-              <p>
-                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.
+                For carriers that do not have telematics hardware installed, or for loads where the carrier is a small owner-operator without a fleet management system, driver applications provide an alternative data stream. The driver installs a lightweight app that transmits GPS position in the background, confirms loading and unloading events, and receives documents such as CMR forms and proof of delivery electronically.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-8">
                 <div>
-                  <img src={contentImg2} alt="Warehouse digital monitoring" className="w-full rounded-sm" />
-                  <p className="text-[11px] text-[hsl(220,10%,55%)] mt-2 font-body font-normal italic">Warehouse digital monitoring in action.</p>
+                  <img src={imgDriver} alt="Truck driver using mobile tracking application" className="w-full rounded-sm" />
+                  <p className="text-[11px] text-[hsl(220,10%,55%)] mt-2 font-body font-normal italic">Driver mobile applications enable real-time tracking without telematics hardware.</p>
                 </div>
                 <div>
-                  <img src={contentImg1} alt="Team strategy session" className="w-full rounded-sm" />
-                  <p className="text-[11px] text-[hsl(220,10%,55%)] mt-2 font-body font-normal italic">Collaborative strategy sessions drive results.</p>
+                  <img src={imgDock} alt="Distribution centre loading dock operations" className="w-full rounded-sm" />
+                  <p className="text-[11px] text-[hsl(220,10%,55%)] mt-2 font-body font-normal italic">Geofence triggers at loading docks automate milestone confirmation.</p>
                 </div>
               </div>
 
               <p>
-                Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                Driver adoption is the critical constraint on this approach. The most effective implementations use a link-based activation flow where the driver receives an SMS with a direct link to the active load, requires no account creation, and transmits position only during the active job.
               </p>
 
-              <h2>Final thoughts and something more</h2>
-
-              <p>
-                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec rutrum congue leo eget malesuada. Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta.
-              </p>
+              <h3>Carrier TMS and EDI Integration</h3>
 
               <p>
-                Sed porttitor lectus nibh. Donec sollicitudin molestie malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat.
+                Larger carriers and logistics service providers operate their own transport management systems. These systems contain authoritative data on shipment status, driver assignments, departure times, and ETA calculations. Freight visibility platforms that integrate directly with carrier TMS infrastructure via EDI, REST API, or flat-file exchange receive richer data than GPS alone.
               </p>
+
+              <blockquote>
+                "A shipper moving 500 loads per month across Central and Western Europe may work with 40 to 80 different carriers, each operating a different TMS or no TMS at all. A visibility platform must support heterogeneous integrations at scale."
+              </blockquote>
+
+              <h2 id="eta-prediction">What Is ETA Prediction and How Accurate Is It?</h2>
+
+              <p>
+                Estimated time of arrival prediction is the most commercially valuable output of a freight visibility platform. A shipper who knows 3 hours in advance that a truck will be 2 hours late can rearrange dock scheduling, notify the consignee, and avoid a failed delivery. The same information delivered at the time the truck was supposed to arrive is useful only for post-event reporting.
+              </p>
+
+              <p>
+                Dynamic ETA prediction uses a combination of current position, real-time traffic and incident data, historical performance data on the specific corridor and carrier, driver hours remaining under tachograph rules, and planned stop sequences. On high-frequency European corridors such as the Germany-Poland corridor on the A2, platforms with sufficient historical data can predict arrival times within a 15-minute window for 80 to 85 percent of loads.
+              </p>
+
+              <img src={imgHighway} alt="European freight trucks on highway corridor" className="w-full rounded-sm my-8" />
+              <p className="text-[11px] text-[hsl(220,10%,55%)] -mt-4 mb-8 font-body font-normal italic">
+                High-frequency European corridors where dynamic ETA prediction achieves the highest accuracy.
+              </p>
+
+              <h2 id="financial-impact">What Is the Financial Impact of Poor Freight Visibility?</h2>
+
+              <p>
+                The financial case for freight visibility investment is documented across multiple aspects of logistics operations. The direct costs of poor visibility are quantifiable in three categories: failed deliveries, excess inventory held as a buffer against unreliable ETAs, and carrier relationship degradation.
+              </p>
+
+              {/* Financial impact table */}
+              <div className="my-8 overflow-x-auto">
+                <table className="w-full text-[13px] font-body font-normal border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-[hsl(207,60%,30%)]">
+                      <th className="text-left py-3 pr-4 text-[hsl(220,20%,15%)] font-medium">Cost Category</th>
+                      <th className="text-left py-3 pr-4 text-[hsl(220,20%,15%)] font-medium">Without Visibility</th>
+                      <th className="text-left py-3 text-[hsl(220,20%,15%)] font-medium">With Visibility Platform</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-[hsl(220,10%,40%)]">
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Failed first-time deliveries</td><td className="py-3 pr-4">8 to 12% of shipments</td><td className="py-3">Below 3% with proactive rescheduling</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Safety stock carrying cost</td><td className="py-3 pr-4">15 to 25 days cover</td><td className="py-3">7 to 14 days with reliable ETAs</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Inbound call volume</td><td className="py-3 pr-4">High, carrier chasing</td><td className="py-3">Reduced by 60 to 70%</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Detention and demurrage</td><td className="py-3 pr-4">Common, uncontrolled</td><td className="py-3">Reduced through early dock notification</td></tr>
+                    <tr><td className="py-3 pr-4">Carrier performance disputes</td><td className="py-3 pr-4">Frequent, unresolved</td><td className="py-3">Data-supported resolution within 24 hours</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <blockquote>
+                "For a European automotive component manufacturer receiving 40 shipments per day with an average load value of EUR 150,000, reducing safety stock from 20 to 12 days releases EUR 48 million in working capital."
+              </blockquote>
+
+              <p>
+                The ROI on freight visibility investment is driven more by inventory reduction than by operational efficiency gains in the transportation team.
+              </p>
+
+              <h2 id="empty-miles">How Does Freight Visibility Reduce Empty Miles?</h2>
+
+              <p>
+                Empty miles are kilometres driven by a truck without a paying load. In European road freight, between 25 and 35 percent of all truck kilometres are driven empty. This figure represents a direct cost to carriers, a sustainability problem for the industry, and an inefficiency that freight visibility platforms are positioned to address.
+              </p>
+
+              <p>
+                With real-time visibility, the platform can begin matching for the return load when the ETA for delivery is confirmed, not after delivery has occurred. For a carrier operating 50 trucks with an average empty run of 180 kilometres, reducing the empty mile rate from 30 to 20 percent eliminates 900 empty kilometres per day. At EUR 1.20 per kilometre fully loaded cost basis, that represents EUR 1,080 per day in recoverable margin.
+              </p>
+
+              <h2 id="milestones">What Are Freight Milestones and Why Do They Matter?</h2>
+
+              <p>
+                A freight milestone is a defined event in the lifecycle of a shipment that has commercial, contractual, or operational significance. Standard milestones in European road freight include collection confirmation, departure from origin, arrival at border crossing, clearance, arrival at destination, and proof of delivery.
+              </p>
+
+              <p>
+                Automated milestone confirmation has a secondary benefit beyond operational efficiency: it creates a timestamped data record that can be used in carrier performance reviews, customer SLA reporting, and dispute resolution. When a consignee claims a delivery was late and the carrier disputes it, a platform with geofence-based milestone data provides an objective timestamp that neither party can revise.
+              </p>
+
+              <h2 id="use-cases">Common Freight Visibility Use Cases in European Road Freight</h2>
+
+              <p>
+                <strong>Time-Critical Automotive Parts:</strong> Just-in-time manufacturing operations in the automotive sector operate with replenishment cycles measured in hours. Freight visibility platforms connected to both the supplier and the OEM provide the OEM with a real-time ETA that triggers buffer management decisions before a line stoppage occurs.
+              </p>
+
+              <p>
+                <strong>Temperature-Controlled Pharmaceutical Freight:</strong> Pharmaceutical shippers moving active ingredients or finished products across Europe must maintain continuous temperature records. Freight visibility platforms connect to temperature monitoring devices in the trailer and flag deviations from the agreed temperature range in real time.
+              </p>
+
+              <p>
+                <strong>E-Commerce and Retail Replenishment:</strong> Retail distribution centres receiving multiple daily replenishment deliveries use freight visibility platforms to coordinate dock scheduling. Rather than requiring trucks to queue at a facility, the platform assigns arrival windows based on real-time ETA data, reducing truck waiting times at the dock and improving yard throughput.
+              </p>
+
+              <h2 id="carbon-reporting">Freight Visibility and Carbon Reporting</h2>
+
+              <p>
+                The EU Corporate Sustainability Reporting Directive (CSRD), which became applicable to large European companies from fiscal year 2024, requires Scope 3 emissions reporting including transport emissions from goods movements. Freight visibility platforms are a data source for this reporting because they hold the actual distance data for every shipment.
+              </p>
+
+              <p>
+                Carbon calculation based on planned route distances systematically underestimates actual emissions because it does not account for detours, waiting time with engine running at facilities, and inefficient routing by carriers. Actual kilometre data from GPS tracking produces a more accurate emissions figure and, importantly, a figure that can be audited and verified by a third party.
+              </p>
+
+              <h2 id="evaluation">What Should You Look for When Evaluating a Platform?</h2>
+
+              <p>
+                <strong>Data Coverage:</strong> Coverage means the percentage of active loads that the platform can track with reliable position data. A platform with 60 percent coverage leaves 40 percent of loads invisible, which is insufficient for operations teams that need complete situational awareness.
+              </p>
+
+              <p>
+                <strong>Integration Capability:</strong> The platform must connect to your TMS without requiring a full-year integration project. Evaluate whether pre-built connectors exist for your specific TMS vendor and version.
+              </p>
+
+              <p>
+                <strong>Alert Quality:</strong> A platform that generates 200 notifications per day for a mid-sized shipper, of which 140 are false positives, will be ignored within two weeks. Evaluate whether the platform distinguishes between a mandatory driver rest stop and an unplanned breakdown.
+              </p>
+
+              <blockquote>
+                "Operations teams that currently spend significant time chasing carriers for status updates, managing inbound calls from consignees, and resolving carrier performance disputes without objective data are the primary users who benefit most from freight visibility."
+              </blockquote>
             </div>
 
             {/* Share buttons */}
@@ -139,7 +295,7 @@ const BlogPost = () => {
               <button onClick={() => { navigator.clipboard.writeText(window.location.href); }} className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
                 <Link2 className="w-4 h-4" />
               </button>
-              <a href="mailto:?subject=Check this article" className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
+              <a href="mailto:?subject=What Is Freight Visibility?" className="w-9 h-9 rounded-full border border-[hsl(220,12%,88%)] flex items-center justify-center text-[hsl(220,10%,45%)] hover:bg-[hsl(207,60%,30%)] hover:text-white hover:border-[hsl(207,60%,30%)] transition-colors">
                 <Mail className="w-4 h-4" />
               </a>
             </div>
@@ -178,9 +334,15 @@ const BlogPost = () => {
               </div>
               <nav className="space-y-1">
                 {[
-                  { label: "Introduction", id: "#intro", num: "01" },
-                  { label: "Conference for new design", id: "#conference", num: "02" },
-                  { label: "Final thoughts and something more", id: "#final-thoughts", num: "03" },
+                  { label: "Freight Visibility vs Track-and-Trace", id: "#track-trace", num: "01" },
+                  { label: "How Real-Time Visibility Works", id: "#how-it-works", num: "02" },
+                  { label: "ETA Prediction and Accuracy", id: "#eta-prediction", num: "03" },
+                  { label: "Financial Impact", id: "#financial-impact", num: "04" },
+                  { label: "Reducing Empty Miles", id: "#empty-miles", num: "05" },
+                  { label: "Freight Milestones", id: "#milestones", num: "06" },
+                  { label: "Use Cases in European Freight", id: "#use-cases", num: "07" },
+                  { label: "Carbon Reporting and ESG", id: "#carbon-reporting", num: "08" },
+                  { label: "Evaluating a Platform", id: "#evaluation", num: "09" },
                 ].map(item => (
                   <a
                     key={item.id}
@@ -227,7 +389,6 @@ const BlogPost = () => {
         <div className="container max-w-[1200px] mx-auto px-6 lg:px-8 py-16">
           <h2 className="text-[28px] font-display font-extralight text-[hsl(220,20%,12%)] mb-10">You may also like</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Related post 1 */}
             <Link to="/blog" className="group">
               <div className="relative overflow-hidden rounded-sm mb-4">
                 <img src={relatedImg1} alt="Fleet management innovations" className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -241,7 +402,6 @@ const BlogPost = () => {
               </p>
             </Link>
 
-            {/* Related post 2 */}
             <Link to="/blog" className="group">
               <div className="relative overflow-hidden rounded-sm mb-4">
                 <img src={relatedImg2} alt="Data-driven logistics" className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -255,7 +415,6 @@ const BlogPost = () => {
               </p>
             </Link>
 
-            {/* Related post 3 */}
             <Link to="/blog" className="group">
               <div className="relative overflow-hidden rounded-sm mb-4">
                 <img src={contentImg1} alt="Collaboration in logistics" className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -294,6 +453,15 @@ const BlogPost = () => {
           margin-bottom: 1em;
           line-height: 1.25;
         }
+        .prose-custom h3 {
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 300;
+          font-size: 19px;
+          color: hsl(220, 18%, 18%);
+          margin-top: 2em;
+          margin-bottom: 0.8em;
+          line-height: 1.35;
+        }
         .prose-custom blockquote {
           border-left: 3px solid hsl(207, 60%, 30%);
           padding: 1em 0 1em 1.5em;
@@ -307,6 +475,10 @@ const BlogPost = () => {
         }
         .prose-custom img {
           display: block;
+        }
+        .prose-custom strong {
+          font-weight: 500;
+          color: hsl(220, 15%, 20%);
         }
       `}</style>
     </div>
