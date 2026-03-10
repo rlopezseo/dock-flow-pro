@@ -185,14 +185,18 @@ const BlogPost = () => {
                 Processing this data into a usable visibility signal requires the platform to solve several classification problems simultaneously. A truck that has stopped moving may be at a planned waypoint, at a rest area complying with tachograph regulations, in a traffic queue, or broken down. Each scenario implies a different action, and a platform that cannot distinguish between them will generate excessive false-positive alerts, causing operations teams to ignore notifications over time.
               </p>
 
-              <h2 id="eta-prediction">What Is ETA Prediction and How Accurate Is It?</h2>
+              <h2 id="eta-prediction">What Is ETA Prediction in Freight Visibility and How Accurate Is It?</h2>
 
               <p>
                 Estimated time of arrival prediction is the most commercially valuable output of a freight visibility platform. A shipper who knows 3 hours in advance that a truck will be 2 hours late can rearrange dock scheduling, notify the consignee, and avoid a failed delivery. The same information delivered at the time the truck was supposed to arrive is useful only for post-event reporting.
               </p>
 
               <p>
-                Dynamic ETA prediction uses a combination of current position, real-time traffic and incident data, historical performance data on the specific corridor and carrier, driver hours remaining under tachograph rules, and planned stop sequences. On high-frequency European corridors such as the Germany-Poland corridor on the A2, platforms with sufficient historical data can predict arrival times within a 15-minute window for 80 to 85 percent of loads.
+                ETA accuracy depends on the inputs available and the methodology used to calculate it. Static ETA calculation takes the current GPS position and divides the remaining distance by an assumed average speed. This approach is simple but fails at motorway incidents, border crossings with variable queuing times, urban last-mile segments, and time slot constrained deliveries where early arrival is as problematic as late arrival.
+              </p>
+
+              <p>
+                Dynamic ETA prediction uses a combination of current position, real-time traffic and incident data, historical performance data on the specific corridor and carrier, driver hours remaining under tachograph rules, and planned stop sequences. On high-frequency European corridors such as the Germany-Poland corridor on the A2, or the Netherlands-Germany-Austria axis on the A3 and A8, platforms with sufficient historical data can predict arrival times within a 15-minute window for 80 to 85 percent of loads.
               </p>
 
               <h3>What Factors Reduce ETA Accuracy in European Road Freight?</h3>
