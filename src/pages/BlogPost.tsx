@@ -326,8 +326,10 @@ const BlogPost = () => {
               <h3>Temperature-Controlled Pharmaceutical Freight</h3>
 
               <p>
-                <strong>Temperature-Controlled Pharmaceutical Freight:</strong> Pharmaceutical shippers moving active ingredients or finished products across Europe must maintain continuous temperature records. Freight visibility platforms connect to temperature monitoring devices in the trailer and flag deviations from the agreed temperature range in real time.
+                Pharmaceutical shippers moving active ingredients or finished products across Europe must maintain continuous temperature records and demonstrate chain of custody. Freight visibility platforms in this context connect to temperature monitoring devices in the trailer and flag deviations from the agreed temperature range in real time, allowing the shipper to make accept or reject decisions on load integrity before the consignee receives the goods.
               </p>
+
+              <h3>E-Commerce Returns and Consumer Goods Replenishment</h3>
 
               <p>
                 <strong>E-Commerce and Retail Replenishment:</strong> Retail distribution centres receiving multiple daily replenishment deliveries use freight visibility platforms to coordinate dock scheduling. Rather than requiring trucks to queue at a facility, the platform assigns arrival windows based on real-time ETA data, reducing truck waiting times at the dock and improving yard throughput.
