@@ -317,7 +317,9 @@ const BlogPost = () => {
                 Most European mid-market shippers and forwarders need freight visibility specifically. They have warehouse management systems and procurement platforms. What they lack is the ability to see what is happening between the loading dock and the delivery address. A purpose-built freight visibility platform addresses this problem more directly and at lower cost than an enterprise supply chain visibility suite.
               </p>
 
-              <h2 id="use-cases">Common Freight Visibility Use Cases in European Road Freight</h2>
+              <h2 id="use-cases">What Are the Most Common Freight Visibility Use Cases in European Road Freight?</h2>
+
+              <h3>Time-Critical Automotive Parts</h3>
 
               <p>
                 Just-in-time manufacturing operations in the automotive sector operate with replenishment cycles measured in hours. A supplier delivering engine components to a German OEM assembly line needs to arrive within a 30-minute delivery window. If the truck is delayed, the assembly line stops. Freight visibility platforms connected to both the supplier and the OEM provide the OEM with a real-time ETA that triggers buffer management decisions before a line stoppage occurs.
