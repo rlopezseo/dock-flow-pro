@@ -81,7 +81,7 @@ const articles = [
     slug: "post-brexit-uk-eu-freight-challenges",
     title: "UK-EU Cross-Border Freight Post-Brexit: Visibility Challenges and Solutions",
     excerpt: "Delays at Dover, Folkestone, and Calais are unpredictable and have a material impact on delivery schedules. How visibility platforms provide early warning of border delays.",
-    category: "Industry Insights",
+    category: "European Freight",
     date: "Jan 28, 2026",
     readTime: "11 min read",
     image: relatedImg1,
