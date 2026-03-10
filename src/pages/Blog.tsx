@@ -163,7 +163,7 @@ const Blog = () => {
 
           {/* Search bar */}
           <div className="relative w-full max-w-[480px]">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(0,0%,100%)]/60" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(0,0%,100%)]/80" />
             <input
               type="text"
               placeholder="Search articles..."
