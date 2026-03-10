@@ -107,15 +107,11 @@ const BlogPost = () => {
                     <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Exception detection</td><td className="py-3 pr-4">Manual check</td><td className="py-3">Automated alerts on deviation</td></tr>
                     <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Carrier data sources</td><td className="py-3 pr-4">Single carrier portal</td><td className="py-3">Multi-carrier aggregation</td></tr>
                     <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Milestone confirmation</td><td className="py-3 pr-4">Manual confirmation</td><td className="py-3">Automated against geofences</td></tr>
-                    <tr><td className="py-3 pr-4">Predictive capability</td><td className="py-3 pr-4">None</td><td className="py-3">Delay prediction using historical and live data</td></tr>
+                    <tr className="border-b border-[hsl(220,12%,91%)]"><td className="py-3 pr-4">Predictive capability</td><td className="py-3 pr-4">None</td><td className="py-3">Delay prediction using historical and live data</td></tr>
+                    <tr><td className="py-3 pr-4">Action trigger</td><td className="py-3 pr-4">User initiates</td><td className="py-3">Platform triggers alert to relevant party</td></tr>
                   </tbody>
                 </table>
               </div>
-
-              <img src={imgControl} alt="Freight visibility control room monitoring shipments in real time" className="w-full rounded-sm my-8" />
-              <p className="text-[11px] text-[hsl(220,10%,55%)] -mt-4 mb-8 font-body font-normal italic">
-                Real-time freight monitoring centre tracking active shipments across European corridors.
-              </p>
 
               <h2 id="how-it-works">How Does Real-Time Freight Visibility Work?</h2>
 
