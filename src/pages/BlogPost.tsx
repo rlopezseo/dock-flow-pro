@@ -196,27 +196,29 @@ const BlogPost = () => {
               </nav>
             </div>
 
-            {/* ===== CTA Sidebar — TrucksOnTheMap ===== */}
-            <div className="bg-[hsl(207,30%,12%)] rounded-lg p-8 text-center">
-              <img src={logo} alt="TrucksOnTheMap" className="h-7 mx-auto mb-5" />
-              <p className="text-[20px] font-display font-extralight text-[hsl(0,0%,100%)] leading-[1.3] mb-3">
-                Take control of your freight operations
-              </p>
-              <p className="text-[12px] font-body font-normal text-[hsl(210,15%,65%)] leading-[1.7] mb-6">
-                Real-time visibility, dock scheduling, and predictive ETAs in one single platform built for European logistics.
-              </p>
-              <a
-                href="#contact"
-                className="inline-block w-full px-6 py-3 bg-[hsl(207,60%,30%)] text-[hsl(0,0%,100%)] text-[13px] font-body font-normal rounded-full hover:bg-[hsl(207,60%,35%)] transition-colors mb-3"
-              >
-                Request a Demo
-              </a>
-              <a
-                href="#contact"
-                className="inline-block w-full px-6 py-3 border border-[hsl(0,0%,100%,0.2)] text-[hsl(0,0%,100%)] text-[13px] font-body font-normal rounded-full hover:bg-[hsl(0,0%,100%,0.05)] transition-colors"
-              >
-                Learn More
-              </a>
+            {/* ===== CTA Sidebar — TrucksOnTheMap (sticky) ===== */}
+            <div className="lg:sticky lg:top-28">
+              <div className="bg-[hsl(207,30%,12%)] rounded-lg p-8 text-center">
+                <img src={logo} alt="TrucksOnTheMap" className="h-7 mx-auto mb-5" />
+                <p className="text-[20px] font-display font-extralight text-[hsl(0,0%,100%)] leading-[1.3] mb-3">
+                  Take control of your freight operations
+                </p>
+                <p className="text-[12px] font-body font-normal text-[hsl(210,15%,65%)] leading-[1.7] mb-6">
+                  Real-time visibility, dock scheduling, and predictive ETAs in one single platform built for European logistics.
+                </p>
+                <a
+                  href="#contact"
+                  className="inline-block w-full px-6 py-3 bg-[hsl(207,60%,30%)] text-[hsl(0,0%,100%)] text-[13px] font-body font-normal rounded-full hover:bg-[hsl(207,60%,35%)] transition-colors mb-3"
+                >
+                  Request a Demo
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-block w-full px-6 py-3 border border-[hsl(0,0%,100%,0.2)] text-[hsl(0,0%,100%)] text-[13px] font-body font-normal rounded-full hover:bg-[hsl(0,0%,100%,0.05)] transition-colors"
+                >
+                  Learn More
+                </a>
+              </div>
             </div>
           </aside>
         </div>
