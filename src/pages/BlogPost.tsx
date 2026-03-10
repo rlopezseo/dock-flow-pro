@@ -244,7 +244,11 @@ const BlogPost = () => {
               </blockquote>
 
               <p>
-                The ROI on freight visibility investment is driven more by inventory reduction than by operational efficiency gains in the transportation team.
+                Inventory carrying cost is the largest single financial driver behind freight visibility investment at scale. A manufacturing operation holding 20 days of safety stock because it cannot rely on supplier shipment ETAs is carrying a working capital cost proportional to the value of those additional days of inventory.
+              </p>
+
+              <p>
+                The calculation is specific to each operation, but the directional finding is consistent across industries: the ROI on freight visibility investment is driven more by inventory reduction than by operational efficiency gains in the transportation team.
               </p>
 
               <h2 id="empty-miles">How Does Freight Visibility Reduce Empty Miles?</h2>
