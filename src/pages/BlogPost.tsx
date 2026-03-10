@@ -161,12 +161,33 @@ const BlogPost = () => {
               <h3>Carrier TMS and EDI Integration</h3>
 
               <p>
-                Larger carriers and logistics service providers operate their own transport management systems. These systems contain authoritative data on shipment status, driver assignments, departure times, and ETA calculations. Freight visibility platforms that integrate directly with carrier TMS infrastructure via EDI, REST API, or flat-file exchange receive richer data than GPS alone.
+                Larger carriers and logistics service providers operate their own transport management systems. These systems contain authoritative data on shipment status, driver assignments, departure times, and ETA calculations. Freight visibility platforms that integrate directly with carrier TMS infrastructure via EDI, REST API, or flat-file exchange receive richer data than GPS alone, including planned versus actual departure times, weight confirmations, and customs status for cross-border loads.
               </p>
 
-              <blockquote>
-                "A shipper moving 500 loads per month across Central and Western Europe may work with 40 to 80 different carriers, each operating a different TMS or no TMS at all. A visibility platform must support heterogeneous integrations at scale."
-              </blockquote>
+              <p>
+                The challenge in European road freight is carrier fragmentation. A shipper moving 500 loads per month across Central and Western Europe may work with 40 to 80 different carriers, each operating a different TMS or no TMS at all. A visibility platform must support heterogeneous integrations at scale, not just a clean API connection to one major carrier.
+              </p>
+
+              <h2 id="data-processed">What Data Does a Freight Visibility Platform Process?</h2>
+
+              <p>
+                Position data is the most visible input into a freight visibility platform, but it represents only one of several data streams required to produce accurate, actionable status information:
+              </p>
+
+              <ul>
+                <li>GPS coordinates and timestamps from vehicle telematics or driver applications</li>
+                <li>Planned route data including waypoints, border crossings, and expected milestone times</li>
+                <li>Geofence events triggered when a vehicle enters or exits a defined location such as a shipper facility, carrier hub, or consignee address</li>
+                <li>Driver activity data from digital tachographs, including driving time, rest periods, and availability windows</li>
+                <li>Weather and traffic data used to refine ETA predictions on active corridors</li>
+                <li>Customs and border crossing status for loads moving between EU member states and third countries including the UK, Switzerland, and Turkey</li>
+                <li>Document events including CMR issue, proof of delivery capture, and discrepancy notifications</li>
+                <li>Carrier capacity and load status confirmations transmitted through TMS integrations</li>
+              </ul>
+
+              <p>
+                Processing this data into a usable visibility signal requires the platform to solve several classification problems simultaneously. A truck that has stopped moving may be at a planned waypoint, at a rest area complying with tachograph regulations, in a traffic queue, or broken down. Each scenario implies a different action, and a platform that cannot distinguish between them will generate excessive false-positive alerts, causing operations teams to ignore notifications over time.
+              </p>
 
               <h2 id="eta-prediction">What Is ETA Prediction and How Accurate Is It?</h2>
 
