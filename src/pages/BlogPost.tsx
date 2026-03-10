@@ -320,8 +320,10 @@ const BlogPost = () => {
               <h2 id="use-cases">Common Freight Visibility Use Cases in European Road Freight</h2>
 
               <p>
-                <strong>Time-Critical Automotive Parts:</strong> Just-in-time manufacturing operations in the automotive sector operate with replenishment cycles measured in hours. Freight visibility platforms connected to both the supplier and the OEM provide the OEM with a real-time ETA that triggers buffer management decisions before a line stoppage occurs.
+                Just-in-time manufacturing operations in the automotive sector operate with replenishment cycles measured in hours. A supplier delivering engine components to a German OEM assembly line needs to arrive within a 30-minute delivery window. If the truck is delayed, the assembly line stops. Freight visibility platforms connected to both the supplier and the OEM provide the OEM with a real-time ETA that triggers buffer management decisions before a line stoppage occurs.
               </p>
+
+              <h3>Temperature-Controlled Pharmaceutical Freight</h3>
 
               <p>
                 <strong>Temperature-Controlled Pharmaceutical Freight:</strong> Pharmaceutical shippers moving active ingredients or finished products across Europe must maintain continuous temperature records. Freight visibility platforms connect to temperature monitoring devices in the trailer and flag deviations from the agreed temperature range in real time.
