@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import logo from "@/assets/logo-trucksonthemap.png";
 import heroImg from "@/assets/blog/blog-hero-service.jpg";
-import imgControl from "@/assets/blog/blog-visibility-control.jpg";
+
 import imgDriver from "@/assets/blog/blog-driver-app.jpg";
 import imgDock from "@/assets/blog/blog-dock-loading.jpg";
 import imgHighway from "@/assets/blog/blog-highway-trucks.jpg";
