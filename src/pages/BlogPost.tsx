@@ -179,6 +179,26 @@ const BlogPost = () => {
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[hsl(220,10%,60%)]" />
             </div>
 
+            {/* Table of Contents */}
+            <div className="mb-10">
+              <h3 className="text-[13px] font-display font-light tracking-[0.15em] uppercase text-[hsl(220,20%,15%)] mb-5">Table of Contents</h3>
+              <nav className="space-y-3">
+                {[
+                  { label: "Introduction", id: "#intro" },
+                  { label: "Conference for new design", id: "#conference" },
+                  { label: "Final thoughts and something more", id: "#final-thoughts" },
+                ].map(item => (
+                  <a
+                    key={item.id}
+                    href={item.id}
+                    className="block text-[13px] font-body font-normal text-[hsl(220,10%,45%)] hover:text-[hsl(207,60%,30%)] transition-colors pl-3 border-l-2 border-[hsl(220,12%,88%)] hover:border-[hsl(207,60%,30%)]"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
             {/* Categories */}
             <div className="mb-10">
               <h3 className="text-[13px] font-display font-light tracking-[0.15em] uppercase text-[hsl(220,20%,15%)] mb-5">Categories</h3>
@@ -191,26 +211,6 @@ const BlogPost = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Latest Posts */}
-            <div className="mb-10">
-              <h3 className="text-[13px] font-display font-light tracking-[0.15em] uppercase text-[hsl(220,20%,15%)] mb-5">Latest Posts</h3>
-              <div className="space-y-5">
-                {[
-                  { img: relatedImg1, title: "Embracing new fleet technologies", date: "Feb 28, 2026" },
-                  { img: relatedImg2, title: "Logistics tools that transform the world", date: "Feb 15, 2026" },
-                  { img: contentImg1, title: "Don't miss a plan milestone", date: "Jan 30, 2026" },
-                ].map((post, i) => (
-                  <Link to="/blog" key={i} className="flex gap-4 group">
-                    <img src={post.img} alt={post.title} className="w-[70px] h-[70px] object-cover rounded-sm shrink-0" />
-                    <div>
-                      <p className="text-[12.5px] font-body font-normal text-[hsl(220,20%,15%)] leading-[1.5] group-hover:text-[hsl(207,60%,30%)] transition-colors">{post.title}</p>
-                      <p className="text-[11px] font-body font-normal text-[hsl(220,10%,55%)] mt-1">{post.date}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
             </div>
 
             {/* ===== CTA Sidebar — TrucksOnTheMap ===== */}
@@ -234,18 +234,6 @@ const BlogPost = () => {
               >
                 Learn More
               </a>
-            </div>
-
-            {/* Tags cloud */}
-            <div className="mt-10">
-              <h3 className="text-[13px] font-display font-light tracking-[0.15em] uppercase text-[hsl(220,20%,15%)] mb-5">Tags</h3>
-              <div className="flex flex-wrap gap-2">
-                {["Logistics", "Transport", "Tracking", "Fleet", "Visibility", "Scheduling", "ETA", "Freight"].map(tag => (
-                  <span key={tag} className="px-3 py-1.5 text-[11px] font-body font-normal text-[hsl(220,10%,45%)] border border-[hsl(220,12%,88%)] rounded-sm hover:border-[hsl(207,60%,30%)] hover:text-[hsl(207,60%,30%)] transition-colors cursor-pointer">
-                    {tag}
-                  </span>
-                ))}
-              </div>
             </div>
           </aside>
         </div>
