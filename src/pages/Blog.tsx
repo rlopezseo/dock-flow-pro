@@ -150,7 +150,7 @@ const Blog = () => {
       <div className="w-full h-[52vh] min-h-[400px] max-h-[520px] relative">
         <img src={heroImg} alt="TrucksOnTheMap Blog" className="w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,5%)]/70 to-[hsl(220,20%,5%)]/40" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-16">
           <p className="text-[12px] font-body font-normal tracking-[0.2em] uppercase text-primary-foreground/60 mb-4">
             Blog & Insights
           </p>
