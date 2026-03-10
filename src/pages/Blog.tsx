@@ -63,7 +63,7 @@ const articles = [
     slug: "geofencing-freight-milestones",
     title: "Geofencing and Automated Milestones: Eliminating Manual Status Updates",
     excerpt: "A well-designed geofence infrastructure reduces the manual event confirmation workload on both the carrier and the shipper operations team to near zero.",
-    category: "Fleet Management",
+    category: "Empty Miles",
     date: "Feb 10, 2026",
     readTime: "7 min read",
     image: imgDock,
