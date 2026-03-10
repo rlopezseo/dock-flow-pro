@@ -106,9 +106,12 @@ const articles = [
   },
 ];
 
+const ARTICLES_PER_PAGE = 6;
+
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
   const ctaRef = useRef(null);
   const ctaInView = useInView(ctaRef, { once: true, margin: "-80px" });
 
@@ -122,6 +125,22 @@ const Blog = () => {
       return matchesCategory && matchesSearch;
     });
   }, [searchQuery, activeCategory]);
+
+  const totalPages = Math.ceil(filteredArticles.length / ARTICLES_PER_PAGE);
+  const paginatedArticles = filteredArticles.slice(
+    (currentPage - 1) * ARTICLES_PER_PAGE,
+    currentPage * ARTICLES_PER_PAGE
+  );
+
+  // Reset page when filters change
+  const handleCategoryChange = (cat: string) => {
+    setActiveCategory(cat);
+    setCurrentPage(1);
+  };
+  const handleSearchChange = (val: string) => {
+    setSearchQuery(val);
+    setCurrentPage(1);
+  };
 
   return (
     <div className="min-h-screen bg-[hsl(0,0%,100%)]">
