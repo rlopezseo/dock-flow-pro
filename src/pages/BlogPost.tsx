@@ -338,8 +338,10 @@ const BlogPost = () => {
               <h3>UK-EU Cross-Border Post-Brexit</h3>
 
               <p>
-                <strong>UK-EU Cross-Border Post-Brexit:</strong> Since the end of the Brexit transition period, UK-EU freight movements require customs declarations in both directions. Delays at Dover, Folkestone, and Calais are unpredictable and have a material impact on delivery schedules. Freight visibility platforms monitoring UK-EU shipments provide both the shipper and consignee with early warning of border delays, allowing them to adjust receiving schedules or activate contingency stock.
+                Since the end of the Brexit transition period, UK-EU freight movements require customs declarations in both directions. Delays at Dover, Folkestone, and Calais are unpredictable and have a material impact on delivery schedules. Freight visibility platforms monitoring UK-EU shipments provide both the shipper and consignee with early warning of border delays, allowing them to adjust receiving schedules or activate contingency stock.
               </p>
+
+              <h3>Intermodal Road-Rail Connections</h3>
 
               <p>
                 <strong>Intermodal Road-Rail Connections:</strong> Shippers using intermodal services where road freight connects to rail or barge legs need to track the handover between transport modes. A truck arriving late at a rail terminal may miss the connection, requiring rerouting. Visibility platforms that monitor road legs in real time allow terminal operators to hold connections for loads confirmed as en route and within a recoverable time window.
