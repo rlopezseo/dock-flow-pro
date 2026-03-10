@@ -168,7 +168,7 @@ const Blog = () => {
               type="text"
               placeholder="Search articles..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => handleSearchChange(e.target.value)}
               className="w-full pl-11 pr-5 py-3 rounded-full bg-[hsl(0,0%,100%)]/10 backdrop-blur-md border border-[hsl(0,0%,100%)]/15 text-[13px] font-body font-normal text-[hsl(0,0%,100%)] placeholder:text-[hsl(0,0%,100%)]/40 focus:outline-none focus:border-[hsl(0,0%,100%)]/30 focus:bg-[hsl(0,0%,100%)]/15 transition-all"
             />
           </div>
