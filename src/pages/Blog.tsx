@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Search, Clock, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Search, Clock, ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
