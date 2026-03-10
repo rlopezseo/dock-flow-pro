@@ -440,9 +440,13 @@ const BlogPost = () => {
                 For shippers and forwarders evaluating freight visibility alongside empty miles reduction, TrucksOnTheMap provides both capabilities on a single platform. Visibility data on where trucks are and when they will complete deliveries feeds directly into the load matching logic, enabling carriers to receive return load offers before they finish unloading.
               </p>
 
-              <blockquote>
-                "Operations teams that currently spend significant time chasing carriers for status updates, managing inbound calls from consignees asking where loads are, and resolving carrier performance disputes without objective data are the primary users of the platform. The implementation timeline for standard TMS integrations is 2 to 4 weeks. Carriers without existing telematics connectivity are onboarded through the driver application with same-day activation."
-              </blockquote>
+              <p>
+                Operations teams that currently spend significant time chasing carriers for status updates, managing inbound calls from consignees asking where loads are, and resolving carrier performance disputes without objective data are the primary users of the platform. The implementation timeline for standard TMS integrations is 2 to 4 weeks. Carriers without existing telematics connectivity are onboarded through the driver application with same-day activation.
+              </p>
+
+              <p>
+                To see how TrucksOnTheMap works with your specific carrier mix and routes, book a 30-minute discovery call at trucksonthemap.com.
+              </p>
             </div>
 
             {/* Share buttons */}
