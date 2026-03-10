@@ -15,11 +15,11 @@ import imgHighway from "@/assets/blog/blog-highway-trucks.jpg";
 
 const categories = [
   "All",
+  "Empty Miles",
   "Freight Visibility",
-  "Fleet Management",
-  "Supply Chain",
-  "Technology",
-  "Industry Insights",
+  "Freight Booking",
+  "European Freight",
+  "Sustainable Freight",
 ];
 
 const articles = [
