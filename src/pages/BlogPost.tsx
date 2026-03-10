@@ -375,9 +375,6 @@ const BlogPost = () => {
                 Platforms that offer pre-built connectors for common TMS vendors including SAP Transportation Management, Oracle TMS, and specialist European platforms reduce integration timelines substantially. The critical question when evaluating a visibility platform is not whether integration is possible, but whether a pre-built connector exists for the specific TMS version in use.
               </p>
 
-              <blockquote>
-                "The critical question when evaluating a visibility platform is not whether integration is possible, but whether a pre-built connector exists for the specific TMS version in use."
-              </blockquote>
 
               <h2 id="geofencing">What Is the Role of Geofencing in Freight Visibility?</h2>
 
