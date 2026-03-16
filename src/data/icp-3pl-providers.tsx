@@ -1,5 +1,8 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import hero3pl from "@/assets/hero-3pl-providers.jpg";
+import imgDispatch from "@/assets/ind-3pl-dispatch.jpg";
+import imgClient from "@/assets/ind-3pl-client.jpg";
+import imgCrossdock from "@/assets/ind-3pl-crossdock.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -31,29 +34,29 @@ const config: ICPPageConfig = {
       "A dispatcher managing thirty subcarriers across fifteen European corridors doesn't have a unified view of who has trucks where next Tuesday. They have a contact list and tribal knowledge. That knowledge is a single point of failure when the dispatcher is unavailable or a corridor sees unexpected volume.",
       "TrucksOnTheMap replaces tribal knowledge with structured data. Every subcarrier publishes available capacity to a shared map. The dispatcher sees the entire network - five days forward - without making a single call.",
     ],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
+    image: imgDispatch,
   },
   comparison: {
     headline: "What 3PL Operations Look Like When You Can Actually See Your Network",
     subtext: "Three shifts that turn reactive dispatching into proactive freight management.",
     items: [
-      { label: "Subcarrier Availability", without: "3PL dispatchers contact subcarriers individually each morning to establish which trucks are available on which corridors. The process consumes two to three hours of dispatcher time daily. Confirmations arrive at different times. Allocation decisions are made before the full picture is clear.", withTotm: "Every contracted subcarrier publishes their available capacity to a shared geographic map, updated continuously. The dispatcher opens one interface and sees the entire network - organised by corridor, vehicle type, and five-day forward window. Job allocation takes minutes, not a morning.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { label: "SLA Protection", without: "When a subcarrier drops a job at short notice and the 3PL covers it on the spot market at 30 to 50 percent above contracted rates, the margin on that shipment disappears. If the client has a cost-plus contract, the invoice conversation follows. If they have a fixed-rate contract, the loss is absorbed entirely.", withTotm: "Pre-commitment workflows require subcarriers to confirm availability against upcoming jobs before the dispatcher needs to fill them. Jobs are covered before they become urgent. Spot market bookings become an exception. Capacity security reaches 99.9 percent.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
-      { label: "Client Reporting", without: "When a shipper client asks their account manager where a shipment is, the expected answer is immediate. \"I'll check and call you back\" is an answer that erodes client confidence over time, regardless of how accurate the eventual update is.", withTotm: "Live GPS tracking and calculated ETA for every active shipment across the subcarrier network. Account managers access current position and arrival time for any job without contacting the dispatcher or the driver. The client gets an answer while they are still on the call.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { label: "Subcarrier Availability", without: "3PL dispatchers contact subcarriers individually each morning to establish which trucks are available on which corridors. The process consumes two to three hours of dispatcher time daily. Confirmations arrive at different times. Allocation decisions are made before the full picture is clear.", withTotm: "Every contracted subcarrier publishes their available capacity to a shared geographic map, updated continuously. The dispatcher opens one interface and sees the entire network - organised by corridor, vehicle type, and five-day forward window. Job allocation takes minutes, not a morning.", image: imgDispatch },
+      { label: "SLA Protection", without: "When a subcarrier drops a job at short notice and the 3PL covers it on the spot market at 30 to 50 percent above contracted rates, the margin on that shipment disappears. If the client has a cost-plus contract, the invoice conversation follows. If they have a fixed-rate contract, the loss is absorbed entirely.", withTotm: "Pre-commitment workflows require subcarriers to confirm availability against upcoming jobs before the dispatcher needs to fill them. Jobs are covered before they become urgent. Spot market bookings become an exception. Capacity security reaches 99.9 percent.", image: imgCrossdock },
+      { label: "Client Reporting", without: "When a shipper client asks their account manager where a shipment is, the expected answer is immediate. \"I'll check and call you back\" is an answer that erodes client confidence over time, regardless of how accurate the eventual update is.", withTotm: "Live GPS tracking and calculated ETA for every active shipment across the subcarrier network. Account managers access current position and arrival time for any job without contacting the dispatcher or the driver. The client gets an answer while they are still on the call.", image: imgClient },
     ],
   },
   features: {
     headline: "Built for 3PL Operations Teams. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "A unified geographic view of subcarrier capacity across all active corridors, updated continuously, covering a five-day forward window. Every contracted carrier's available trucks in one interface.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "99.9% Capacity Security", description: "Subcarrier pre-commitment workflows that guarantee job coverage before the booking window closes. Spot market exposure reduced to planned exceptions.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
-      { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time data for every active shipment, accessible by dispatchers and account managers without contacting the subcarrier.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { title: "PriceIndex - 90-Day Rate Intelligence", description: "Market rate benchmarking across your active corridors. Validate subcarrier rate cards against current market conditions before contract renewal.", image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80&auto=format" },
+      { title: "Availability Forecast Map", description: "A unified geographic view of subcarrier capacity across all active corridors, updated continuously, covering a five-day forward window. Every contracted carrier's available trucks in one interface.", image: imgDispatch },
+      { title: "99.9% Capacity Security", description: "Subcarrier pre-commitment workflows that guarantee job coverage before the booking window closes. Spot market exposure reduced to planned exceptions.", image: imgCrossdock },
+      { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time data for every active shipment, accessible by dispatchers and account managers without contacting the subcarrier.", image: imgClient },
+      { title: "PriceIndex - 90-Day Rate Intelligence", description: "Market rate benchmarking across your active corridors. Validate subcarrier rate cards against current market conditions before contract renewal.", image: imgDispatch },
     ],
   },
   stats: {
     headline: "Proven Results Across 3PL Operations in Europe",
-    backgroundImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
+    backgroundImage: imgCrossdock,
     items: [
       { value: "−7%", description: "Reduction in total freight costs for 3PLs that replaced morning call rounds with live subcarrier availability data." },
       { value: "−31%", description: "Reduction in empty kilometres across the subcarrier network. Lower deadhead rates mean better per-kilometre margins." },
@@ -67,7 +70,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
+    backgroundImage: imgDispatch,
   },
   objections: {
     headline: "Common Questions",
@@ -88,12 +91,12 @@ const config: ICPPageConfig = {
     subtext: "Book a 30-minute demo. We'll show you a live map of subcarrier availability on your actual corridors - not a generic product tour.",
     ctaPrimary: "Book Your Live Map Demo",
     ctaSecondary: "Calculate My ROI",
-    backgroundImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&q=85&auto=format",
+    backgroundImage: imgCrossdock,
   },
   sectionImages: {
-    narrative: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
-    comparison: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1920&q=80&auto=format",
-    features: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85&auto=format",
+    narrative: imgDispatch,
+    comparison: imgCrossdock,
+    features: imgClient,
   },
 };
 

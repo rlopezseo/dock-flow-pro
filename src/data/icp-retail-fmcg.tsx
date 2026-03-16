@@ -1,5 +1,8 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import heroRetailFmcg from "@/assets/hero-retail-fmcg.jpg";
+import imgDc from "@/assets/ind-retail-dc.jpg";
+import imgShelves from "@/assets/ind-retail-shelves.jpg";
+import imgDelivery from "@/assets/ind-retail-delivery.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -31,29 +34,29 @@ const config: ICPPageConfig = {
       "You don't know whether your carrier has trucks on that corridor until you call. When capacity fails mid-campaign, you find out at the last moment - and the spot market is your only option. Penalty charges, lost shelf space, delisted SKUs compound fast.",
       "TrucksOnTheMap makes carrier capacity visible before you need it. A five-day availability map across your distribution corridors means you secure trucks the week before peak, not the night before.",
     ],
-    image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=85&auto=format",
+    image: imgDc,
   },
   comparison: {
     headline: "What Planning Looks Like When You Can Actually See",
     subtext: "Three shifts that turn reactive freight scrambles into proactive supply chain execution.",
     items: [
-      { label: "Promotion Readiness", without: "You confirm carrier capacity two days before the promotion. By then, the best trucks are gone. You scramble or you pay spot rates.", withTotm: "A 5-day availability map shows carrier capacity across your distribution corridors before you need to commit. Secure trucks the week before peak. Not the night before.", image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&q=80&auto=format" },
-      { label: "Replenishment Continuity", without: "Mid-campaign, a carrier drops a run. You find out when the depot calls. Shelves empty. Retailer penalises. Margin evaporates.", withTotm: "99.9% capacity security. Contracted carriers pre-commit to your replenishment schedule for the full campaign window. No gaps. No spot market exposure.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
-      { label: "Inbound & Outbound Visibility", without: "You have no idea when the truck will arrive at the DC or the store. Your answer to the retailer is: \"We're checking.\"", withTotm: "Live tracking with ETA per drop-off point. Confirm delivery windows to retailers in 10 seconds. Not after three calls.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { label: "Promotion Readiness", without: "You confirm carrier capacity two days before the promotion. By then, the best trucks are gone. You scramble or you pay spot rates.", withTotm: "A 5-day availability map shows carrier capacity across your distribution corridors before you need to commit. Secure trucks the week before peak. Not the night before.", image: imgDc },
+      { label: "Replenishment Continuity", without: "Mid-campaign, a carrier drops a run. You find out when the depot calls. Shelves empty. Retailer penalises. Margin evaporates.", withTotm: "99.9% capacity security. Contracted carriers pre-commit to your replenishment schedule for the full campaign window. No gaps. No spot market exposure.", image: imgShelves },
+      { label: "Inbound & Outbound Visibility", without: "You have no idea when the truck will arrive at the DC or the store. Your answer to the retailer is: \"We're checking.\"", withTotm: "Live tracking with ETA per drop-off point. Confirm delivery windows to retailers in 10 seconds. Not after three calls.", image: imgDelivery },
     ],
   },
   features: {
     headline: "Built for Supply Chain Planners. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "See carrier capacity across your distribution network - 5 days forward, by corridor. Know what's available before the promotion window opens.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "99.9% Capacity Security", description: "Contracted carriers pre-commit to your replenishment and promotion schedules. Spot market exposure reduced to planned exceptions only.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
-      { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every shipment, every delivery point. Answer retailer delivery questions in 10 seconds, not 10 minutes.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { title: "MassUpload", description: "Bulk job creation for high-frequency replenishment cycles. Upload entire promotion delivery schedules across multiple DCs in a single action.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
+      { title: "Availability Forecast Map", description: "See carrier capacity across your distribution network - 5 days forward, by corridor. Know what's available before the promotion window opens.", image: imgDc },
+      { title: "99.9% Capacity Security", description: "Contracted carriers pre-commit to your replenishment and promotion schedules. Spot market exposure reduced to planned exceptions only.", image: imgShelves },
+      { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every shipment, every delivery point. Answer retailer delivery questions in 10 seconds, not 10 minutes.", image: imgDelivery },
+      { title: "MassUpload", description: "Bulk job creation for high-frequency replenishment cycles. Upload entire promotion delivery schedules across multiple DCs in a single action.", image: imgDc },
     ],
   },
   stats: {
     headline: "Proven Results Across Retail and FMCG Supply Chains",
-    backgroundImage: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=85&auto=format",
+    backgroundImage: imgDc,
     items: [
       { value: "−7%", description: "Reduction in total freight costs for retail and FMCG shippers on the platform." },
       { value: "−31%", description: "Reduction in empty kilometres across the carrier network. Lower deadhead rates mean lower cost per pallet." },
@@ -67,7 +70,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=85&auto=format",
+    backgroundImage: imgShelves,
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -88,12 +91,12 @@ const config: ICPPageConfig = {
     subtext: "Book a 30-minute demo. We'll show you a live map of carrier availability on your actual distribution corridors - not a generic product tour.",
     ctaPrimary: "Book Your Live Map Demo",
     ctaSecondary: "Calculate My ROI",
-    backgroundImage: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=85&auto=format",
+    backgroundImage: imgDelivery,
   },
   sectionImages: {
-    narrative: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=85&auto=format",
-    comparison: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1920&q=80&auto=format",
-    features: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85&auto=format",
+    narrative: imgDc,
+    comparison: imgShelves,
+    features: imgDelivery,
   },
 };
 
