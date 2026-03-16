@@ -10,6 +10,7 @@ import ICPShippers from "./pages/ICPShippers";
 import ICPBrokers from "./pages/ICPBrokers";
 import ICPCarriers from "./pages/ICPCarriers";
 import ICPDistributionCenters from "./pages/ICPDistributionCenters";
+import ICPIndustrialAutomotive from "./pages/ICPIndustrialAutomotive";
 
 const queryClient = new QueryClient();
 
