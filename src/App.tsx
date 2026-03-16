@@ -12,6 +12,8 @@ import ICPCarriers from "./pages/ICPCarriers";
 import ICPDistributionCenters from "./pages/ICPDistributionCenters";
 import ICPIndustrialAutomotive from "./pages/ICPIndustrialAutomotive";
 import ICP3PLProviders from "./pages/ICP3PLProviders";
+import ICPRetailFmcg from "./pages/ICPRetailFmcg";
+import ICPPharma from "./pages/ICPPharma";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/dock-scheduling-software-for-distribution-centers" element={<ICPDistributionCenters />} />
           <Route path="/freight-visibility-for-industrial-and-automotive" element={<ICPIndustrialAutomotive />} />
           <Route path="/freight-visibility-for-3pl-providers" element={<ICP3PLProviders />} />
+          <Route path="/freight-visibility-for-retail-and-fmcg" element={<ICPRetailFmcg />} />
+          <Route path="/freight-visibility-for-pharma" element={<ICPPharma />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
