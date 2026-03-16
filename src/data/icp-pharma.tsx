@@ -8,7 +8,7 @@ const config: ICPPageConfig = {
     slug: "freight-visibility-for-pharma",
   },
   hero: {
-    badge: "For Pharma Logistics & Supply Chain Managers",
+    badge: "For Pharmaceutical Industry",
     headline: "GDP Compliance Doesn't End\nat the Warehouse Door.",
     highlightedPart: "It Continues on the Road.",
     subtext: "TrucksOnTheMap gives pharmaceutical supply chain managers a live map of qualified carrier capacity so temperature-sensitive freight moves on compliant trucks - tracked in real time, every kilometre.",
@@ -25,12 +25,11 @@ const config: ICPPageConfig = {
     ],
   },
   narrative: {
-    headline: "Your QA Team Approved the Carrier. Nobody Knows Where the Truck Is Right Now.",
+    headline: "QA Approved the Carrier. Nobody Knows Where the Truck Is.",
     paragraphs: [
-      "You manage logistics for a pharmaceutical manufacturer or distributor. Every shipment you release has passed quality control, been packed to specification, and released by QP sign-off. And then it leaves your facility in a truck you can't see.",
-      "GDP requires documented control over the cold chain - from dispatch to delivery. In practice, you're relying on carrier confirmation calls, driver WhatsApp messages, and temperature logger downloads that arrive after the goods do. When a deviation happens en route, you find out at the destination. The investigation that follows takes weeks. The batch may already be distributed.",
-      "Your approved carrier list is in the QMS. Real-time GPS position of those carriers' trucks is not. Your transport manager knows which carriers are GDP-qualified. They don't know which of those carriers has a reefer truck available on your lane next Monday until they call and ask.",
-      "That's not a transport problem. That's a visibility problem - and in pharma, visibility problems become quality events.",
+      "Every shipment you release has passed quality control and QP sign-off. Then it leaves your facility in a truck you can't see. GDP requires documented cold chain control from dispatch to delivery - but in practice, you rely on driver WhatsApp messages and temperature loggers that arrive after the goods do.",
+      "Your approved carrier list is in the QMS. Real-time GPS position of those carriers' trucks is not. Your transport manager knows which carriers are GDP-qualified - but not which has a reefer available on your lane next Monday until they call.",
+      "TrucksOnTheMap makes qualified carrier capacity visible. A five-day availability map shows GDP-certified reefer capacity across your lanes. Book compliant trucks in three minutes, not three phone calls.",
     ],
     image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&q=85&auto=format",
   },
@@ -47,11 +46,9 @@ const config: ICPPageConfig = {
     headline: "Built for Pharma Supply Chain Teams. Not for IT Departments.",
     items: [
       { title: "Availability Forecast Map", description: "See which GDP-qualified carriers have compliant capacity on your lanes - 5 days out, before you need to confirm the shipment. Visual, auditable, bookable.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. Full audit trail maintained.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "MassUpload", description: "Bulk job creation for high-frequency pharma distribution cycles. Upload entire delivery schedules across multiple lanes in a single action.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
       { title: "99.9% Capacity Security", description: "GDP-qualified carrier pre-commitment workflows that guarantee compliant coverage before the booking window closes. No unqualified substitutions.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every temperature-sensitive shipment. Know what's happening on the road before it becomes a quality event.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { title: "PriceIndex - 90-Day Rate Intelligence", description: "Market rate benchmarking across your active corridors. Validate GDP-carrier rate cards against current market conditions before contract renewal.", image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80&auto=format" },
+      { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and TMS. Freight bookings reflect in your systems without manual data entry. Full audit trail maintained.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
     ],
   },
   stats: {

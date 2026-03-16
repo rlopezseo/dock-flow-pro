@@ -8,10 +8,10 @@ const config: ICPPageConfig = {
     slug: "freight-visibility-for-industrial-and-automotive",
   },
   hero: {
-    badge: "For Industrial Manufacturing & Automotive Production",
+    badge: "For Industrial & Automotive",
     headline: "Your ERP Plans Production.\nNot Carrier Availability.",
     highlightedPart: "We Fix That Gap.",
-    subtext: "TrucksOnTheMap gives industrial and automotive logistics managers a live geographic map of contracted carrier availability - five days forward, across every active corridor - so inbound components arrive before the line stops and outbound shipments leave before the dock fills.",
+    subtext: "TrucksOnTheMap gives industrial and automotive logistics managers a live map of contracted carrier availability - five days forward, across every active corridor - so inbound components arrive before the line stops.",
     ctaPrimary: "See Your Capacity Map",
     ctaSecondary: "How It Works",
     image: heroIndustrialAutomotive,
@@ -25,12 +25,11 @@ const config: ICPPageConfig = {
     ],
   },
   narrative: {
-    headline: "The Information Gap Between Your ERP and Your Carrier Network Is Where Production Delays Begin",
+    headline: "Your ERP Models Production. Not Carrier Capacity.",
     paragraphs: [
-      "Industrial and automotive logistics managers operate enterprise resource planning systems - SAP, Oracle, or equivalent - that model production schedules, component demand, and outbound dispatch timing with precision. What ERP systems do not model is the real-time availability of the road freight capacity required to execute those schedules.",
-      "Carrier availability in road freight is a dynamic attribute. A contracted carrier operating on a Stuttgart-to-Barcelona corridor may have three available tractor units on a given Monday and zero on the following Wednesday. That availability is known to the carrier's fleet manager the moment a prior booking is confirmed. It is not known to the industrial logistics planner until they call and ask.",
-      "The standard response to this information asymmetry is the morning call round: four to eight contracted carriers, contacted sequentially, asked the same question about the same corridors, producing confirmations that arrive across a two-to-four-hour window. By the time the planner has complete availability data, the optimal booking window for the cheapest certified trucks on the highest-priority lanes has often closed.",
-      "TrucksOnTheMap eliminates the call round by making carrier availability a visible, bookable data layer. The platform aggregates truck availability from contracted carriers into a five-day forecast map organised by corridor, load type, and vehicle class. A transport planner managing inbound aluminium castings from a Czech supplier and outbound finished axle assemblies to a French OEM sees both carrier pools on the same map, books both in under ten minutes, and moves to the next task.",
+      "SAP tells you what needs to ship. It tells you nothing about which carriers have trucks available on your corridors next Tuesday. That gap is where production delays begin.",
+      "The morning call round - four to eight carriers, contacted sequentially, confirmations arriving over two to four hours - means the optimal booking window for the best trucks on priority lanes has often closed by the time you have the full picture.",
+      "TrucksOnTheMap eliminates the call round. A five-day forecast map shows contracted carrier capacity by corridor, vehicle class, and load type. Book inbound and outbound in under ten minutes.",
     ],
     image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=85&auto=format",
   },
@@ -46,12 +45,10 @@ const config: ICPPageConfig = {
   features: {
     headline: "Built for Industrial and Automotive Logistics. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "A geographic map of contracted carrier capacity across inbound and outbound corridors, updated continuously, covering a five-day forward window. Organised by vehicle class, load type, and lane. Visual, filterable, bookable without leaving the interface.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings made on TrucksOnTheMap reflect in ERP without manual data entry. No parallel workflows. No reconciliation overhead.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "MassUpload", description: "Bulk job creation for high-frequency dispatch operations. Industrial shippers running daily or weekly cycles across multiple plants upload entire job schedules in a single action.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
+      { title: "Availability Forecast Map", description: "A geographic map of contracted carrier capacity across inbound and outbound corridors, updated continuously, covering a five-day forward window. Organised by vehicle class, load type, and lane.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
+      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
       { title: "99.9% Capacity Security", description: "Contracted carrier pre-commitment workflows that close the gap between scheduled demand and confirmed supply before the booking window opens.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position data and arrival time calculation for every shipment, every drop-off point, updated continuously throughout transit.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { title: "PriceIndex - 90-Day Rate Intelligence", description: "Market rate benchmarking across your active corridors. Know whether your contracted rates reflect current market conditions before the next carrier negotiation.", image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80&auto=format" },
     ],
   },
   stats: {

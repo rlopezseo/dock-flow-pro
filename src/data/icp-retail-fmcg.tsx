@@ -8,7 +8,7 @@ const config: ICPPageConfig = {
     slug: "freight-visibility-for-retail-and-fmcg",
   },
   hero: {
-    badge: "For Retail & FMCG Supply Chain Teams",
+    badge: "For Retail & FMCG",
     headline: "Promotions Don't Wait\nfor Trucks. Yours Are Late.",
     highlightedPart: "Fix That Today.",
     subtext: "TrucksOnTheMap gives retail and FMCG supply chain planners a live map of carrier capacity so your shelves are full on promotion day - not three days after.",
@@ -25,11 +25,10 @@ const config: ICPPageConfig = {
     ],
   },
   narrative: {
-    headline: "You Planned the Campaign Six Weeks Ago. The Carrier Found Out This Morning.",
+    headline: "The Campaign Is Planned. The Carrier Found Out This Morning.",
     paragraphs: [
-      "You run supply chain for a retail or FMCG brand. You've coordinated the promotion, confirmed the slot with the retailer, briefed the warehouse. The only thing standing between a successful campaign and an empty shelf is getting the product there on time.",
-      "And yet freight is still the variable you can't control. You know when the promotion starts. You don't know whether your carrier has trucks available on that corridor that week until you call them. You don't know if capacity will hold through the peak until it doesn't. When it fails, you find out at the last moment - and by then, the spot market is your only option.",
-      "Retail doesn't forgive late deliveries. Penalty charges, lost shelf space, delisted SKUs - the cost of a missed delivery window compounds fast. The problem isn't your logistics team. It's that freight capacity is invisible until it becomes a crisis.",
+      "You've coordinated the promotion, confirmed the slot with the retailer, briefed the warehouse. The only thing between a successful campaign and an empty shelf is getting the product there on time. And freight is still the variable you can't control.",
+      "You don't know whether your carrier has trucks on that corridor until you call. When capacity fails mid-campaign, you find out at the last moment - and the spot market is your only option. Penalty charges, lost shelf space, delisted SKUs compound fast.",
       "TrucksOnTheMap makes carrier capacity visible before you need it. A five-day availability map across your distribution corridors means you secure trucks the week before peak, not the night before.",
     ],
     image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=85&auto=format",
@@ -47,11 +46,9 @@ const config: ICPPageConfig = {
     headline: "Built for Supply Chain Planners. Not for IT Departments.",
     items: [
       { title: "Availability Forecast Map", description: "See carrier capacity across your distribution network - 5 days forward, by corridor. Know what's available before the promotion window opens.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "MassUpload", description: "Bulk job creation for high-frequency replenishment cycles. Upload entire promotion delivery schedules across multiple DCs in a single action.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
       { title: "99.9% Capacity Security", description: "Contracted carriers pre-commit to your replenishment and promotion schedules. Spot market exposure reduced to planned exceptions only.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every shipment, every delivery point. Answer retailer delivery questions in 10 seconds, not 10 minutes.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { title: "PriceIndex - 90-Day Rate Intelligence", description: "Market rate benchmarking across your active corridors. Know whether your contracted rates reflect current conditions before the next carrier negotiation.", image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80&auto=format" },
+      { title: "MassUpload", description: "Bulk job creation for high-frequency replenishment cycles. Upload entire promotion delivery schedules across multiple DCs in a single action.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
     ],
   },
   stats: {
