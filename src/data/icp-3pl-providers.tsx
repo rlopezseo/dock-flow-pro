@@ -8,10 +8,10 @@ const config: ICPPageConfig = {
     slug: "freight-visibility-for-3pl-providers",
   },
   hero: {
-    badge: "For 3PL Operations Directors & Account Managers",
+    badge: "For 3PL Providers",
     headline: "Your SLA Says Reliability.\nYour Subcarrier Network Says Maybe.",
     highlightedPart: "Close That Gap.",
-    subtext: "TrucksOnTheMap gives 3PL operations teams a live map of subcarrier capacity across active corridors - five days forward - so dispatchers allocate jobs to confirmed trucks, SLAs hold without spot market exposure, and account managers answer client questions in real time.",
+    subtext: "TrucksOnTheMap gives 3PL operations teams a live map of subcarrier capacity across active corridors - five days forward - so dispatchers allocate jobs to confirmed trucks and SLAs hold without spot market exposure.",
     ctaPrimary: "See Your Network on the Map",
     ctaSecondary: "How It Works",
     image: hero3pl,
@@ -25,12 +25,11 @@ const config: ICPPageConfig = {
     ],
   },
   narrative: {
-    headline: "The Gap Between Your SLA and Your Subcarrier Network Is Where Client Relationships Break",
+    headline: "Your SLA Promises Reliability. Your Subcarrier Network Doesn't Guarantee It.",
     paragraphs: [
-      "A 3PL's commercial value proposition is reliability. Shippers outsource freight to a 3PL because they want a single accountable party who guarantees capacity, manages carrier relationships, and delivers real-time visibility - the things they cannot efficiently build themselves.",
-      "Operationally, that reliability depends on a subcarrier network that the 3PL cannot directly control. Subcontracted carriers have their own fleet management constraints, their own booking cycles, their own communication habits. When a large shipper asks their 3PL account manager where a shipment is, the account manager asks the dispatcher, who calls the subcarrier, who calls the driver. The answer that reaches the client is three steps removed from the source and arrives after the conversation should have ended.",
-      "The deeper problem is capacity visibility. A 3PL dispatcher managing thirty active subcarriers across fifteen European corridors does not have a unified view of which carriers have available trucks on which lanes next Tuesday. They have a contact list and a history of who tends to have capacity on which routes. That tribal knowledge is valuable. It is also a single point of failure when the dispatcher is unavailable, when a carrier changes their operating patterns, or when a client corridor sees unexpected volume.",
-      "TrucksOnTheMap replaces tribal knowledge with structured data. Every subcarrier in the network publishes their available capacity to a shared map. The dispatcher sees who has trucks where, five days forward, without making a single call.",
+      "Shippers outsource freight to a 3PL because they want a single accountable party who guarantees capacity and delivers real-time visibility. Operationally, that reliability depends on a subcarrier network you cannot directly control.",
+      "A dispatcher managing thirty subcarriers across fifteen European corridors doesn't have a unified view of who has trucks where next Tuesday. They have a contact list and tribal knowledge. That knowledge is a single point of failure when the dispatcher is unavailable or a corridor sees unexpected volume.",
+      "TrucksOnTheMap replaces tribal knowledge with structured data. Every subcarrier publishes available capacity to a shared map. The dispatcher sees the entire network - five days forward - without making a single call.",
     ],
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
   },
@@ -46,9 +45,7 @@ const config: ICPPageConfig = {
   features: {
     headline: "Built for 3PL Operations Teams. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "A unified geographic view of subcarrier capacity across all active corridors, updated continuously, covering a five-day forward window. Every contracted carrier's available trucks in one interface. No calls required.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "SAP / Oracle OTM Interface", description: "Integration with existing TMS and ERP systems used by the 3PL and their shipper clients. Bookings flow between platforms without manual reconciliation.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "MassUpload", description: "Bulk job upload for 3PLs managing high-frequency dispatch across multiple client accounts simultaneously.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&auto=format" },
+      { title: "Availability Forecast Map", description: "A unified geographic view of subcarrier capacity across all active corridors, updated continuously, covering a five-day forward window. Every contracted carrier's available trucks in one interface.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
       { title: "99.9% Capacity Security", description: "Subcarrier pre-commitment workflows that guarantee job coverage before the booking window closes. Spot market exposure reduced to planned exceptions.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time data for every active shipment, accessible by dispatchers and account managers without contacting the subcarrier.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
       { title: "PriceIndex - 90-Day Rate Intelligence", description: "Market rate benchmarking across your active corridors. Validate subcarrier rate cards against current market conditions before contract renewal.", image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80&auto=format" },
