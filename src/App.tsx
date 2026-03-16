@@ -26,6 +26,7 @@ const App = () => (
           <Route path="/freight-visibility-software-for-brokers" element={<ICPBrokers />} />
           <Route path="/fleet-visibility-software-for-carriers" element={<ICPCarriers />} />
           <Route path="/dock-scheduling-software-for-distribution-centers" element={<ICPDistributionCenters />} />
+          <Route path="/freight-visibility-for-industrial-and-automotive" element={<ICPIndustrialAutomotive />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
