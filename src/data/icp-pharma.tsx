@@ -1,5 +1,8 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import heroPharma from "@/assets/hero-pharma.jpg";
+import imgColdchain from "@/assets/ind-pharma-coldchain.jpg";
+import imgQa from "@/assets/ind-pharma-qa.jpg";
+import imgTransit from "@/assets/ind-pharma-transit.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -31,29 +34,29 @@ const config: ICPPageConfig = {
       "Your approved carrier list is in the QMS. Real-time GPS position of those carriers' trucks is not. Your transport manager knows which carriers are GDP-qualified - but not which has a reefer available on your lane next Monday until they call.",
       "TrucksOnTheMap makes qualified carrier capacity visible. A five-day availability map shows GDP-certified reefer capacity across your lanes. Book compliant trucks in three minutes, not three phone calls.",
     ],
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&q=85&auto=format",
+    image: imgQa,
   },
   comparison: {
     headline: "What Compliant Freight Looks Like When You Can Actually See",
     subtext: "Three shifts that close the gap between GDP requirements and freight execution.",
     items: [
-      { label: "Qualified Carrier Availability", without: "Your transport planner calls approved carriers every Monday to check reefer availability. Two can't confirm until Wednesday. You plan on incomplete data - and compliance risk.", withTotm: "A 5-day availability map shows every GDP-qualified carrier's free reefer capacity across your lanes. Book the right truck - compliant, documented, confirmed - in 3 minutes.", image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80&auto=format" },
-      { label: "Cold Chain Continuity", without: "When a qualified carrier drops a booking, your backup is an unvetted spot market carrier. One compliant carrier short means one non-compliant deviation report.", withTotm: "99.9% capacity security. Contracted GDP-qualified carriers pre-commit to your lanes. Cold chain continuity guaranteed. No unqualified substitutions.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
-      { label: "Real-Time Cold Chain Monitoring", without: "You find out about a temperature excursion when the driver arrives and hands over the data logger. The batch is at the customer. The deviation has already happened.", withTotm: "Real-time freight tracking shows live position and ETA per delivery point. Know what's happening on the road before it becomes a quality event.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { label: "Qualified Carrier Availability", without: "Your transport planner calls approved carriers every Monday to check reefer availability. Two can't confirm until Wednesday. You plan on incomplete data - and compliance risk.", withTotm: "A 5-day availability map shows every GDP-qualified carrier's free reefer capacity across your lanes. Book the right truck - compliant, documented, confirmed - in 3 minutes.", image: imgColdchain },
+      { label: "Cold Chain Continuity", without: "When a qualified carrier drops a booking, your backup is an unvetted spot market carrier. One compliant carrier short means one non-compliant deviation report.", withTotm: "99.9% capacity security. Contracted GDP-qualified carriers pre-commit to your lanes. Cold chain continuity guaranteed. No unqualified substitutions.", image: imgQa },
+      { label: "Real-Time Cold Chain Monitoring", without: "You find out about a temperature excursion when the driver arrives and hands over the data logger. The batch is at the customer. The deviation has already happened.", withTotm: "Real-time freight tracking shows live position and ETA per delivery point. Know what's happening on the road before it becomes a quality event.", image: imgTransit },
     ],
   },
   features: {
     headline: "Built for Pharma Supply Chain Teams. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "See which GDP-qualified carriers have compliant capacity on your lanes - 5 days out, before you need to confirm the shipment. Visual, auditable, bookable.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "99.9% Capacity Security", description: "GDP-qualified carrier pre-commitment workflows that guarantee compliant coverage before the booking window closes. No unqualified substitutions.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
-      { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every temperature-sensitive shipment. Know what's happening on the road before it becomes a quality event.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and TMS. Freight bookings reflect in your systems without manual data entry. Full audit trail maintained.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
+      { title: "Availability Forecast Map", description: "See which GDP-qualified carriers have compliant capacity on your lanes - 5 days out, before you need to confirm the shipment. Visual, auditable, bookable.", image: imgColdchain },
+      { title: "99.9% Capacity Security", description: "GDP-qualified carrier pre-commitment workflows that guarantee compliant coverage before the booking window closes. No unqualified substitutions.", image: imgQa },
+      { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every temperature-sensitive shipment. Know what's happening on the road before it becomes a quality event.", image: imgTransit },
+      { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and TMS. Freight bookings reflect in your systems without manual data entry. Full audit trail maintained.", image: imgQa },
     ],
   },
   stats: {
     headline: "Proven Results Across Pharmaceutical Supply Chains",
-    backgroundImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&q=85&auto=format",
+    backgroundImage: imgTransit,
     items: [
       { value: "−7%", description: "Reduction in total freight costs for pharma shippers using qualified carrier visibility." },
       { value: "−31%", description: "Reduction in empty kilometres across the GDP-qualified carrier network." },
@@ -67,7 +70,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&q=85&auto=format",
+    backgroundImage: imgColdchain,
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -88,12 +91,12 @@ const config: ICPPageConfig = {
     subtext: "Book a 30-minute demo. We'll show you a live map of GDP-qualified carrier availability on your actual corridors - not a generic product tour.",
     ctaPrimary: "Book Your Live Map Demo",
     ctaSecondary: "Calculate My ROI",
-    backgroundImage: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1920&q=85&auto=format",
+    backgroundImage: imgTransit,
   },
   sectionImages: {
-    narrative: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&q=85&auto=format",
-    comparison: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1920&q=80&auto=format",
-    features: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85&auto=format",
+    narrative: imgQa,
+    comparison: imgColdchain,
+    features: imgTransit,
   },
 };
 

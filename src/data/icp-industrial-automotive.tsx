@@ -1,5 +1,8 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import heroIndustrialAutomotive from "@/assets/hero-industrial-automotive.jpg";
+import imgPlanning from "@/assets/ind-automotive-planning.jpg";
+import imgJit from "@/assets/ind-automotive-jit.jpg";
+import imgTracking from "@/assets/ind-automotive-tracking.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -31,29 +34,29 @@ const config: ICPPageConfig = {
       "The morning call round - four to eight carriers, contacted sequentially, confirmations arriving over two to four hours - means the optimal booking window for the best trucks on priority lanes has often closed by the time you have the full picture.",
       "TrucksOnTheMap eliminates the call round. A five-day forecast map shows contracted carrier capacity by corridor, vehicle class, and load type. Book inbound and outbound in under ten minutes.",
     ],
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=85&auto=format",
+    image: imgPlanning,
   },
   comparison: {
     headline: "What Planning Looks Like When You Can Actually See",
     subtext: "Three shifts that close the gap between production scheduling and freight execution.",
     items: [
-      { label: "Carrier Availability", without: "Industrial logistics planners allocate freight based on carrier confirmations collected through sequential phone calls. Confirmations arrive incomplete, arrive late, or do not arrive. Planning proceeds on partial data.", withTotm: "A geographic availability map shows every contracted carrier's free vehicles across inbound component corridors and outbound finished goods lanes - not for today, but for the next five working days. Planners see capacity before they need it.", image: "https://images.unsplash.com/photo-1504222490345-c075b6008014?w=800&q=80&auto=format" },
-      { label: "Capacity Security", without: "Spot market bookings - triggered when contracted carriers cannot confirm capacity in time - cost between 30 and 50 percent above contracted rates. On high-volume corridors running daily or weekly cycles, repeated spot exposure collapses the freight cost model.", withTotm: "Carriers confirm availability against upcoming jobs before the planner needs to ask. Capacity security reaches 99.9 percent across active platform users. Freight cost per unit drops. The spot market becomes an exception, not a weekly occurrence.", image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&q=80&auto=format" },
-      { label: "Real-Time Tracking", without: "Production lines require inbound components to arrive within defined time windows. OEM partners require outbound deliveries at confirmed dock slots. The logistics planner needs current shipment position data - not end-of-day confirmations, not driver callbacks.", withTotm: "Live GPS position and calculated ETA for every drop-off point on the route. When a component delivery is running forty minutes behind schedule, the planner knows before the line supervisor does. Delivery confirmations take ten seconds.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { label: "Carrier Availability", without: "Industrial logistics planners allocate freight based on carrier confirmations collected through sequential phone calls. Confirmations arrive incomplete, arrive late, or do not arrive. Planning proceeds on partial data.", withTotm: "A geographic availability map shows every contracted carrier's free vehicles across inbound component corridors and outbound finished goods lanes - not for today, but for the next five working days. Planners see capacity before they need it.", image: imgPlanning },
+      { label: "Capacity Security", without: "Spot market bookings - triggered when contracted carriers cannot confirm capacity in time - cost between 30 and 50 percent above contracted rates. On high-volume corridors running daily or weekly cycles, repeated spot exposure collapses the freight cost model.", withTotm: "Carriers confirm availability against upcoming jobs before the planner needs to ask. Capacity security reaches 99.9 percent across active platform users. Freight cost per unit drops. The spot market becomes an exception, not a weekly occurrence.", image: imgJit },
+      { label: "Real-Time Tracking", without: "Production lines require inbound components to arrive within defined time windows. OEM partners require outbound deliveries at confirmed dock slots. The logistics planner needs current shipment position data - not end-of-day confirmations, not driver callbacks.", withTotm: "Live GPS position and calculated ETA for every drop-off point on the route. When a component delivery is running forty minutes behind schedule, the planner knows before the line supervisor does. Delivery confirmations take ten seconds.", image: imgTracking },
     ],
   },
   features: {
     headline: "Built for Industrial and Automotive Logistics. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "A geographic map of contracted carrier capacity across inbound and outbound corridors, updated continuously, covering a five-day forward window. Organised by vehicle class, load type, and lane.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
-      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "99.9% Capacity Security", description: "Contracted carrier pre-commitment workflows that close the gap between scheduled demand and confirmed supply before the booking window opens.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
-      { title: "Real-Time Tracking with ETA per Drop", description: "Live position data and arrival time calculation for every shipment, every drop-off point, updated continuously throughout transit.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
+      { title: "Availability Forecast Map", description: "A geographic map of contracted carrier capacity across inbound and outbound corridors, updated continuously, covering a five-day forward window. Organised by vehicle class, load type, and lane.", image: imgPlanning },
+      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: imgJit },
+      { title: "99.9% Capacity Security", description: "Contracted carrier pre-commitment workflows that close the gap between scheduled demand and confirmed supply before the booking window opens.", image: imgJit },
+      { title: "Real-Time Tracking with ETA per Drop", description: "Live position data and arrival time calculation for every shipment, every drop-off point, updated continuously throughout transit.", image: imgTracking },
     ],
   },
   stats: {
     headline: "Proven Results Across Industrial and Automotive Supply Chains",
-    backgroundImage: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&q=85&auto=format",
+    backgroundImage: imgTracking,
     items: [
       { value: "−7%", description: "Reduction in freight costs per unit shipped across industrial and automotive manufacturers on the platform." },
       { value: "−31%", description: "Reduction in empty kilometres driven across the carrier network. Fewer deadhead runs mean lower cost per tonne." },
@@ -67,7 +70,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&q=85&auto=format",
+    backgroundImage: imgPlanning,
   },
   objections: {
     headline: "Common Questions",
@@ -88,12 +91,12 @@ const config: ICPPageConfig = {
     subtext: "Book a 30-minute demo. We'll show you a live map of carrier availability on your actual corridors - not a generic product tour.",
     ctaPrimary: "Book Your Live Map Demo",
     ctaSecondary: "Calculate My ROI",
-    backgroundImage: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&q=85&auto=format",
+    backgroundImage: imgTracking,
   },
   sectionImages: {
-    narrative: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1200&q=85&auto=format",
-    comparison: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1920&q=80&auto=format",
-    features: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85&auto=format",
+    narrative: imgPlanning,
+    comparison: imgJit,
+    features: imgPlanning,
   },
 };
 
