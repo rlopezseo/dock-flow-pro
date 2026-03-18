@@ -150,7 +150,7 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
             <span className="inline-block px-5 py-2 rounded-full text-[11px] font-body font-normal tracking-[0.2em] uppercase text-white/90 border border-white/15 bg-white/[0.08] backdrop-blur-xl mb-7">
               {c.badge}
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-display font-extralight leading-[1.08] tracking-tight mb-5 text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.1rem] font-display font-extralight leading-[1.08] tracking-tight mb-5 text-white">
               {c.headline.split('\n').map((line, i, arr) => (
                 <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
               ))}
