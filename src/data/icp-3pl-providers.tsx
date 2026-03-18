@@ -7,6 +7,7 @@ import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 import imgDashboard from "@/assets/cap-dashboard.jpg";
 import imgNetwork from "@/assets/cap-network.jpg";
 import imgFleet from "@/assets/cap-fleet.jpg";
+import imgTracking from "@/assets/cap-tracking.jpg";
 
 const config: ICPPageConfig = {
   meta: {
