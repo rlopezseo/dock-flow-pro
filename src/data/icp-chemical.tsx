@@ -3,6 +3,9 @@ import heroChemical from "@/assets/hero-chemical.jpg";
 import imgTankers from "@/assets/ind-chemical-tankers.jpg";
 import imgHse from "@/assets/ind-chemical-hse.jpg";
 import imgTransit from "@/assets/ind-chemical-transit.jpg";
+import imgDashboard from "@/assets/cap-dashboard.jpg";
+import imgNetwork from "@/assets/cap-network.jpg";
+import imgTracking from "@/assets/cap-tracking.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -40,9 +43,9 @@ const config: ICPPageConfig = {
     headline: "What Compliant Freight Looks Like When You Can Actually See",
     subtext: "Three shifts that close the gap between ADR requirements and freight execution.",
     items: [
-      { label: "ADR-Certified Carrier Availability", without: "You call certified carriers to check which vehicles are available on your hazardous corridors. Half confirm late. You plan with incomplete information and elevated compliance risk.", withTotm: "A 5-day map shows every ADR-certified carrier's compliant capacity by corridor, vehicle class, and hazard class coverage. Book the right vehicle before urgency creates compliance pressure.", image: imgTankers },
-      { label: "Regulatory Continuity", without: "When an ADR carrier drops a booking, the fallback is the spot market. One uncertified substitution is one HSE incident, one deviation report, one regulatory exposure.", withTotm: "99.9% capacity security. ADR-certified carriers pre-commit to your lanes. Compliant capacity locked before urgency develops. No uncertified alternatives. No exposure.", image: imgHse },
-      { label: "In-Transit Visibility", without: "You have no real-time position data on hazardous freight in transit. You find out about route deviations or delays when the driver calls - or when the consignee does.", withTotm: "Real-time tracking with live position and ETA at every drop-off point. Know where your ADR freight is at every moment, without waiting for a call.", image: imgTransit },
+      { label: "ADR-Certified Carrier Availability", without: "You call certified carriers to check which vehicles are available on your hazardous corridors. Half confirm late. You plan with incomplete information and elevated compliance risk.", withTotm: "A 5-day map shows every ADR-certified carrier's compliant capacity by corridor, vehicle class, and hazard class coverage. Book the right vehicle before urgency creates compliance pressure.", image: imgDashboard },
+      { label: "Regulatory Continuity", without: "When an ADR carrier drops a booking, the fallback is the spot market. One uncertified substitution is one HSE incident, one deviation report, one regulatory exposure.", withTotm: "99.9% capacity security. ADR-certified carriers pre-commit to your lanes. Compliant capacity locked before urgency develops. No uncertified alternatives. No exposure.", image: imgNetwork },
+      { label: "In-Transit Visibility", without: "You have no real-time position data on hazardous freight in transit. You find out about route deviations or delays when the driver calls - or when the consignee does.", withTotm: "Real-time tracking with live position and ETA at every drop-off point. Know where your ADR freight is at every moment, without waiting for a call.", image: imgTracking },
     ],
   },
   features: {
@@ -95,7 +98,7 @@ const config: ICPPageConfig = {
   },
   sectionImages: {
     narrative: imgHse,
-    comparison: imgTankers,
+    comparison: imgDashboard,
     features: imgTransit,
   },
 };
