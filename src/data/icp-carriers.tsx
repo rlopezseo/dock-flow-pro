@@ -17,7 +17,7 @@ const config: ICPPageConfig = {
   },
   authorityBar: {
     items: [
-      { value: "30.2%", label: "Empty-run reduction (DHL)" },
+      { value: "30%", label: "Empty-run reduction" },
       { value: "Free TMS", label: "No cost to join" },
       { value: "2-6 wks", label: "To measurable ROI" },
       { value: "4.7★", label: "Driver app rating" },
@@ -58,7 +58,7 @@ const config: ICPPageConfig = {
     items: [
       { value: "−30%", description: "Empty runs, the single biggest cost reduction lever for any asset-based carrier." },
       { value: "+7%", description: "Higher profit per freight job through better freight matching and rate intelligence." },
-      { value: "30.2%", description: "Empty-run reduction achieved by DHL. The world's largest carrier validates the result." },
+      { value: "85%", description: "Of matched backhaul freight accepted by carriers within 4 hours of notification." },
       { value: "2-6", description: "Weeks to measurable ROI. Fastest of any user group on the platform." },
       { value: "Free", description: "No cost to join, full transport management functionality from day one." },
     ],
