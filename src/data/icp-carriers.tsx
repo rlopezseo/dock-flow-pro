@@ -58,7 +58,7 @@ const config: ICPPageConfig = {
     items: [
       { value: "−30%", description: "Empty runs, the single biggest cost reduction lever for any asset-based carrier." },
       { value: "+7%", description: "Higher profit per freight job through better freight matching and rate intelligence." },
-      { value: "30.2%", description: "Empty-run reduction achieved by DHL. The world's largest carrier validates the result." },
+      { value: "85%", description: "Of matched backhaul freight accepted by carriers within 4 hours of notification." },
       { value: "2-6", description: "Weeks to measurable ROI. Fastest of any user group on the platform." },
       { value: "Free", description: "No cost to join, full transport management functionality from day one." },
     ],
