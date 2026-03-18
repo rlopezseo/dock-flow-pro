@@ -98,7 +98,7 @@ const config: ICPPageConfig = {
   },
   sectionImages: {
     narrative: imgHse,
-    comparison: imgTankers,
+    comparison: imgDashboard,
     features: imgTransit,
   },
 };
