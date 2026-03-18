@@ -6,6 +6,8 @@ import imgTransit from "@/assets/ind-chemical-transit.jpg";
 import imgDashboard from "@/assets/cap-dashboard.jpg";
 import imgNetwork from "@/assets/cap-network.jpg";
 import imgTracking from "@/assets/cap-tracking.jpg";
+import imgFleet from "@/assets/cap-fleet.jpg";
+import imgIntegrations from "@/assets/cap-integrations.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -45,13 +47,13 @@ const config: ICPPageConfig = {
     items: [
       { label: "ADR-Certified Carrier Availability", without: "You call certified carriers to check which vehicles are available on your hazardous corridors. Half confirm late. You plan with incomplete information and elevated compliance risk.", withTotm: "A 5-day map shows every ADR-certified carrier's compliant capacity by corridor, vehicle class, and hazard class coverage. Book the right vehicle before urgency creates compliance pressure.", image: imgDashboard },
       { label: "Regulatory Continuity", without: "When an ADR carrier drops a booking, the fallback is the spot market. One uncertified substitution is one HSE incident, one deviation report, one regulatory exposure.", withTotm: "99.9% capacity security. ADR-certified carriers pre-commit to your lanes. Compliant capacity locked before urgency develops. No uncertified alternatives. No exposure.", image: imgNetwork },
-      { label: "In-Transit Visibility", without: "You have no real-time position data on hazardous freight in transit. You find out about route deviations or delays when the driver calls - or when the consignee does.", withTotm: "Real-time tracking with live position and ETA at every drop-off point. Know where your ADR freight is at every moment, without waiting for a call.", image: imgTracking },
+      { label: "In-Transit Visibility", without: "You have no real-time position data on hazardous freight in transit. You find out about route deviations or delays when the driver calls - or when the consignee does.", withTotm: "Real-time tracking with live position and ETA at every drop-off point. Know where your ADR freight is at every moment, without waiting for a call.", image: imgFleet },
     ],
   },
   features: {
     headline: "Built for Chemical Logistics Teams. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "ADR-certified carrier capacity across hazardous corridors, filterable by hazard class, vehicle equipment code, and UN number compatibility. 5 days forward. Bookable from the map.", image: imgTankers },
+      { title: "Availability Forecast Map", description: "ADR-certified carrier capacity across hazardous corridors, filterable by hazard class, vehicle equipment code, and UN number compatibility. 5 days forward. Bookable from the map.", image: imgIntegrations },
       { title: "99.9% Capacity Security", description: "ADR-certified carrier pre-commitment workflows that guarantee compliant coverage before the booking window closes. No uncertified substitutions. No regulatory exposure.", image: imgHse },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every hazardous freight shipment. Know where your ADR freight is at every moment without waiting for a call.", image: imgTransit },
       { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and TMS. Freight bookings reflect in your systems without manual data entry. Full hazmat documentation trail maintained.", image: imgHse },
