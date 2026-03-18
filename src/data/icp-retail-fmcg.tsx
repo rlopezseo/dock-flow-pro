@@ -3,6 +3,7 @@ import heroRetailFmcg from "@/assets/hero-retail-fmcg.jpg";
 import imgDc from "@/assets/ind-retail-dc.jpg";
 import imgShelves from "@/assets/ind-retail-shelves.jpg";
 import imgDelivery from "@/assets/ind-retail-delivery.jpg";
+import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {

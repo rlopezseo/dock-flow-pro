@@ -3,6 +3,7 @@ import heroPharma from "@/assets/hero-pharma.jpg";
 import imgColdchain from "@/assets/ind-pharma-coldchain.jpg";
 import imgQa from "@/assets/ind-pharma-qa.jpg";
 import imgTransit from "@/assets/ind-pharma-transit.jpg";
+import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {

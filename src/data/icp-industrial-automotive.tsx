@@ -4,6 +4,7 @@ import imgPlanning from "@/assets/ind-automotive-planning.jpg";
 import imgJit from "@/assets/ind-automotive-jit.jpg";
 import imgTracking from "@/assets/ind-automotive-tracking.jpg";
 import imgAllOnOne from "@/assets/cap-all-on-one-industrial-cropped.png";
+import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {

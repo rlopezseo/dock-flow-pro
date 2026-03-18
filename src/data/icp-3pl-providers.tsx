@@ -3,6 +3,7 @@ import hero3pl from "@/assets/hero-3pl-providers.jpg";
 import imgDispatch from "@/assets/ind-3pl-dispatch.jpg";
 import imgClient from "@/assets/ind-3pl-client.jpg";
 import imgCrossdock from "@/assets/ind-3pl-crossdock.jpg";
+import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {
