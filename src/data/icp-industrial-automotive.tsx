@@ -3,6 +3,7 @@ import heroIndustrialAutomotive from "@/assets/hero-industrial-automotive.jpg";
 import imgPlanning from "@/assets/ind-automotive-planning.jpg";
 import imgJit from "@/assets/ind-automotive-jit.jpg";
 import imgTracking from "@/assets/ind-automotive-tracking.jpg";
+import imgAllOnOne from "@/assets/cap-all-on-one-industrial.png";
 
 const config: ICPPageConfig = {
   meta: {
