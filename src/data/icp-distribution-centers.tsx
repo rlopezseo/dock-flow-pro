@@ -57,14 +57,15 @@ const config: ICPPageConfig = {
     headline: "What DC Managers Are Seeing After GO LIVE",
     backgroundImage: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=85&auto=format",
     cardMeta: [
-      { label: "Queuing incidents", badge: "Yard performance data" },
       { label: "Validated result", badge: "Apollo Tyres case study" },
+      { label: "GO LIVE timeline", badge: "Implementation benchmark" },
       { label: "User rating", badge: "Warehouse staff feedback" },
       { label: "ISO 27001 Certified", badge: "Security & compliance" },
     ],
     items: [
       { value: "~Zero", description: "Queuing incidents. Carriers arrive when their dock slot is ready, not before." },
-      { value: "+80%", description: "Truck arrival accuracy. Dock utilization transforms when you know what's arriving." },
+      { value: "+80%", description: "Truck arrival accuracy validated in live dock operations after self-booking and slot discipline were introduced." },
+      { value: "7 Weeks", description: "Guaranteed GO LIVE timeline including dock setup, carrier onboarding, and warehouse team training." },
       { value: "4.7★", description: "User rating from warehouse floor staff who use TrucksSlot daily." },
       { value: "ISO 27001", description: "Certified. Full digital audit trail for every arrival, loading start, and departure." },
     ],
