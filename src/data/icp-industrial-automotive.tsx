@@ -97,7 +97,7 @@ const config: ICPPageConfig = {
   sectionImages: {
     narrative: imgPlanning,
     comparison: imgJit,
-    features: imgPlanning,
+    features: imgAllOnOne,
   },
 };
 
