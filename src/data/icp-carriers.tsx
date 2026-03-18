@@ -26,8 +26,8 @@ const config: ICPPageConfig = {
   narrative: {
     headline: "You Have the Jobs. You Can't Match Them to the Trucks.",
     paragraphs: [
-      "Asset-based carriers often have access to freight jobs — but they can't always match trucks with jobs that load in the same location. So trucks travel empty to the pickup point. Not because there's no freight, but because the transport planner has limited visibility of which trucks unload where, and which available jobs start where and when.",
-      "Nobody drives all the way back empty from Rotterdam to Budapest. Instead, the driver waits until a job that fits more or less is secured. But this introduces another massive cost beyond empty running — the most valuable asset, the truck driver's time, is wasted sitting idle.",
+      "Asset-based carriers often have access to freight jobs, but they can't always match trucks with jobs that load in the same location. So trucks travel empty to the pickup point. Not because there's no freight, but because the transport planner has limited visibility of which trucks unload where, and which available jobs start where and when.",
+      "Nobody drives all the way back empty from Rotterdam to Budapest. Instead, the driver waits until a job that fits more or less is secured. But this introduces another massive cost beyond empty running: the most valuable asset, the truck driver's time, is wasted sitting idle.",
       "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre and every idle hour in their cash flow.",
     ],
     image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1200&q=85&auto=format",
