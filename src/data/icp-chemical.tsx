@@ -60,6 +60,8 @@ const config: ICPPageConfig = {
       { title: "99.9% Capacity Security", description: "ADR-certified carrier pre-commitment workflows that guarantee compliant coverage before the booking window closes. No uncertified substitutions. No regulatory exposure.", image: imgHse },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every hazardous freight shipment. Know where your ADR freight is at every moment without waiting for a call.", image: imgTransit },
       { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and TMS. Freight bookings reflect in your systems without manual data entry. Full hazmat documentation trail maintained.", image: imgHse },
+      { title: "MassUpload", description: "Upload entire shipment schedules in a single file. The platform allocates them across your ADR-certified carrier network by corridor and availability. What took a morning takes 4 minutes.", image: imgTransit },
+      { title: "PriceIndex — 90-Day Rate Intelligence", description: "Market rate benchmarking across your ADR corridors. Validate carrier rate cards against current conditions before contract renewal.", image: imgDashboard },
     ],
   },
   stats: {
