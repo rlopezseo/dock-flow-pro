@@ -3,6 +3,9 @@ import heroChemical from "@/assets/hero-chemical.jpg";
 import imgTankers from "@/assets/ind-chemical-tankers.jpg";
 import imgHse from "@/assets/ind-chemical-hse.jpg";
 import imgTransit from "@/assets/ind-chemical-transit.jpg";
+import imgDashboard from "@/assets/cap-dashboard.jpg";
+import imgNetwork from "@/assets/cap-network.jpg";
+import imgTracking from "@/assets/cap-tracking.jpg";
 
 const config: ICPPageConfig = {
   meta: {
