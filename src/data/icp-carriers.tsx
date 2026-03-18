@@ -1,6 +1,7 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import capFullVisibility from "@/assets/cap-full-visibility.png";
 import capAllOnOne from "@/assets/cap-all-on-one.png";
+import heroCarriers from "@/assets/hero-carriers.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -15,7 +16,7 @@ const config: ICPPageConfig = {
     subtext: "TrucksOnTheMap gives trucking companies and asset-based carriers fleet visibility software that eliminates empty runs, matches trucks to freight automatically, and gets shippers to come looking for your capacity.",
     ctaPrimary: "Calculate My Empty-Run Cost",
     ctaSecondary: "See How It Works",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
+    image: heroCarriers,
   },
   authorityBar: {
     items: [
