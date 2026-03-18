@@ -10,6 +10,7 @@ import imgFleet from "@/assets/cap-fleet.jpg";
 import imgIntegrations from "@/assets/cap-integrations.jpg";
 import imgDock from "@/assets/features-dock.jpg";
 import imgFullVisibility from "@/assets/cap-full-visibility.png";
+import imgFullVisibilityCropped from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {
