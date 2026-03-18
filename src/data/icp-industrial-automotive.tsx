@@ -54,6 +54,8 @@ const config: ICPPageConfig = {
       { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: imgAllOnOne },
       { title: "99.9% Capacity Security", description: "Contracted carrier pre-commitment workflows that close the gap between scheduled demand and confirmed supply before the booking window opens.", image: imgAllOnOne },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position data and arrival time calculation for every shipment, every drop-off point, updated continuously throughout transit.", image: imgAllOnOne },
+      { title: "MassUpload", description: "Upload entire production schedules in a single file. The platform allocates shipments across your carrier network by corridor, vehicle class, and availability.", image: imgAllOnOne },
+      { title: "PriceIndex — 90-Day Rate Intelligence", description: "Market rate benchmarking across your inbound and outbound corridors. Validate carrier rate cards against current market conditions before contract renewal.", image: imgAllOnOne },
     ],
   },
   stats: {

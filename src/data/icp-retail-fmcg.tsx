@@ -53,6 +53,8 @@ const config: ICPPageConfig = {
       { title: "99.9% Capacity Security", description: "Contracted carriers pre-commit to your replenishment and promotion schedules. Spot market exposure reduced to planned exceptions only.", image: imgShelves },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every shipment, every delivery point. Answer retailer delivery questions in 10 seconds, not 10 minutes.", image: imgDelivery },
       { title: "MassUpload", description: "Bulk job creation for high-frequency replenishment cycles. Upload entire promotion delivery schedules across multiple DCs in a single action.", image: imgDc },
+      { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and WMS. Freight bookings reflect in your systems without manual data entry. Full delivery documentation maintained.", image: imgShelves },
+      { title: "PriceIndex — 90-Day Rate Intelligence", description: "Market rate benchmarking across your distribution corridors. Validate carrier rate cards against current conditions before contract renewal.", image: imgDelivery },
     ],
   },
   stats: {

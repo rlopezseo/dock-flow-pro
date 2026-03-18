@@ -53,6 +53,8 @@ const config: ICPPageConfig = {
       { title: "99.9% Capacity Security", description: "GDP-qualified carrier pre-commitment workflows that guarantee compliant coverage before the booking window closes. No unqualified substitutions.", image: imgQa },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every temperature-sensitive shipment. Know what's happening on the road before it becomes a quality event.", image: imgTransit },
       { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and TMS. Freight bookings reflect in your systems without manual data entry. Full audit trail maintained.", image: imgQa },
+      { title: "MassUpload", description: "Upload entire shipment schedules in a single file. The platform allocates them across your GDP-qualified carrier network by corridor and availability.", image: imgTransit },
+      { title: "PriceIndex — 90-Day Rate Intelligence", description: "Market rate benchmarking across your pharma corridors. Validate qualified carrier rate cards against current conditions before contract renewal.", image: imgColdchain },
     ],
   },
   stats: {
