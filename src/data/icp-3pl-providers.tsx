@@ -8,6 +8,7 @@ import imgDashboard from "@/assets/cap-dashboard.jpg";
 import imgNetwork from "@/assets/cap-network.jpg";
 import imgFleet from "@/assets/cap-fleet.jpg";
 import imgTracking from "@/assets/cap-tracking.jpg";
+import imgIntegrations from "@/assets/cap-integrations.jpg";
 
 const config: ICPPageConfig = {
   meta: {
