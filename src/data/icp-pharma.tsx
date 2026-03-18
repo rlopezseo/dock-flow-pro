@@ -4,6 +4,9 @@ import imgColdchain from "@/assets/ind-pharma-coldchain.jpg";
 import imgQa from "@/assets/ind-pharma-qa.jpg";
 import imgTransit from "@/assets/ind-pharma-transit.jpg";
 import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
+import imgDashboard from "@/assets/cap-dashboard.jpg";
+import imgNetwork from "@/assets/cap-network.jpg";
+import imgIntegrations from "@/assets/cap-integrations.jpg";
 
 const config: ICPPageConfig = {
   meta: {
