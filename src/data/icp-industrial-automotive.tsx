@@ -48,6 +48,7 @@ const config: ICPPageConfig = {
   },
   features: {
     headline: "Built for Industrial and Automotive Logistics. Not for IT Departments.",
+    imageContain: true,
     items: [
       { title: "Availability Forecast Map", description: "A geographic map of contracted carrier capacity across inbound and outbound corridors, updated continuously, covering a five-day forward window. Organised by vehicle class, load type, and lane.", image: imgAllOnOne },
       { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: imgAllOnOne },

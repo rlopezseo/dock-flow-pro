@@ -29,6 +29,7 @@ export interface ICPPageConfig {
   features: {
     headline: string;
     subtext?: string;
+    imageContain?: boolean;
     items: {
       title: string;
       description: string;
