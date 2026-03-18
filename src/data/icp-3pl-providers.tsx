@@ -4,6 +4,9 @@ import imgDispatch from "@/assets/ind-3pl-dispatch.jpg";
 import imgClient from "@/assets/ind-3pl-client.jpg";
 import imgCrossdock from "@/assets/ind-3pl-crossdock.jpg";
 import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
+import imgDashboard from "@/assets/cap-dashboard.jpg";
+import imgNetwork from "@/assets/cap-network.jpg";
+import imgFleet from "@/assets/cap-fleet.jpg";
 
 const config: ICPPageConfig = {
   meta: {
