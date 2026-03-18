@@ -1,4 +1,5 @@
 import { ICPPageConfig } from "@/types/icp-page";
+import heroBrokers from "@/assets/hero-brokers.jpg";
 
 const config: ICPPageConfig = {
   meta: {
