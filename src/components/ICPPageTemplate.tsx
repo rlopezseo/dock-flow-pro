@@ -301,7 +301,7 @@ const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
               <img
                 src={narrativeImg}
                 alt="Fleet tracking control room"
-                className="w-full aspect-square object-cover"
+                className="w-full aspect-[4/3] object-cover"
                 loading="lazy"
               />
               {/* Gradient overlay for depth */}
