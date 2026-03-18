@@ -3,6 +3,7 @@ import heroIndustrialAutomotive from "@/assets/hero-industrial-automotive.jpg";
 import imgPlanning from "@/assets/ind-automotive-planning.jpg";
 import imgJit from "@/assets/ind-automotive-jit.jpg";
 import imgTracking from "@/assets/ind-automotive-tracking.jpg";
+import imgAllOnOne from "@/assets/cap-all-on-one-industrial.png";
 
 const config: ICPPageConfig = {
   meta: {
@@ -48,10 +49,10 @@ const config: ICPPageConfig = {
   features: {
     headline: "Built for Industrial and Automotive Logistics. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "A geographic map of contracted carrier capacity across inbound and outbound corridors, updated continuously, covering a five-day forward window. Organised by vehicle class, load type, and lane.", image: imgPlanning },
-      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: imgJit },
-      { title: "99.9% Capacity Security", description: "Contracted carrier pre-commitment workflows that close the gap between scheduled demand and confirmed supply before the booking window opens.", image: imgJit },
-      { title: "Real-Time Tracking with ETA per Drop", description: "Live position data and arrival time calculation for every shipment, every drop-off point, updated continuously throughout transit.", image: imgTracking },
+      { title: "Availability Forecast Map", description: "A geographic map of contracted carrier capacity across inbound and outbound corridors, updated continuously, covering a five-day forward window. Organised by vehicle class, load type, and lane.", image: imgAllOnOne },
+      { title: "SAP / Oracle OTM Interface", description: "Direct integration with enterprise resource planning and transport management systems. Freight bookings reflect in ERP without manual data entry. No parallel workflows.", image: imgAllOnOne },
+      { title: "99.9% Capacity Security", description: "Contracted carrier pre-commitment workflows that close the gap between scheduled demand and confirmed supply before the booking window opens.", image: imgAllOnOne },
+      { title: "Real-Time Tracking with ETA per Drop", description: "Live position data and arrival time calculation for every shipment, every drop-off point, updated continuously throughout transit.", image: imgAllOnOne },
     ],
   },
   stats: {
@@ -96,7 +97,7 @@ const config: ICPPageConfig = {
   sectionImages: {
     narrative: imgPlanning,
     comparison: imgJit,
-    features: imgPlanning,
+    features: imgAllOnOne,
   },
 };
 
