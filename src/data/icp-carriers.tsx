@@ -17,7 +17,7 @@ const config: ICPPageConfig = {
   },
   authorityBar: {
     items: [
-      { value: "30.2%", label: "Empty-run reduction (DHL)" },
+      { value: "30%", label: "Empty-run reduction" },
       { value: "Free TMS", label: "No cost to join" },
       { value: "2-6 wks", label: "To measurable ROI" },
       { value: "4.7★", label: "Driver app rating" },
