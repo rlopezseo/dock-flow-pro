@@ -499,7 +499,7 @@ const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
           {/* Left — Showcase image panel */}
           <FadeUp className="lg:col-span-2 lg:sticky lg:top-28">
-            <div className={`relative rounded-2xl overflow-hidden aspect-[3/4] lg:aspect-auto lg:h-full lg:min-h-[540px] ${(c.imageContain || activeItem.image?.includes('cap-full-visibility')) ? "bg-[hsl(210,15%,97%)]" : "bg-[hsl(220,20%,10%)]"}`}>
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/4] lg:aspect-auto lg:h-full lg:min-h-[540px] bg-[hsl(220,20%,10%)]">
               <motion.img
                 key={activeItem.image || activeFeature}
                 src={activeItem.image || config.sectionImages.features}
