@@ -14,7 +14,7 @@ const config: ICPPageConfig = {
     subtext: "TrucksOnTheMap gives freight brokers, speditions, and freight forwarders the speed, shipment visibility, and margin intelligence to stop losing jobs to faster operators and start scaling without hiring.",
     ctaPrimary: "Calculate My ROI",
     ctaSecondary: "See How It Works",
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=85&auto=format",
+    image: heroBrokers,
   },
   authorityBar: {
     items: [
