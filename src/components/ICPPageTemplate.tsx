@@ -504,7 +504,7 @@ const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
                 key={activeItem.image || activeFeature}
                 src={activeItem.image || config.sectionImages.features}
                 alt={activeItem.title}
-                className={`w-full h-full ${c.imageContain ? "object-contain" : "object-cover"}`}
+                className={`w-full h-full ${(c.imageContain || activeItem.image?.includes('cap-full-visibility')) ? "object-contain" : "object-cover"}`}
                 initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
