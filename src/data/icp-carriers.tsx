@@ -56,7 +56,7 @@ const config: ICPPageConfig = {
     headline: "Numbers That Fleet Owners Care About",
     backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80&auto=format",
     items: [
-      { value: "−1%", description: "Empty runs, the single biggest cost reduction lever for any asset-based carrier." },
+      { value: "−30%", description: "Empty runs, the single biggest cost reduction lever for any asset-based carrier." },
       { value: "+7%", description: "Higher profit per freight job through better freight matching and rate intelligence." },
       { value: "30.2%", description: "Empty-run reduction achieved by DHL. The world's largest carrier validates the result." },
       { value: "2-6", description: "Weeks to measurable ROI. Fastest of any user group on the platform." },
