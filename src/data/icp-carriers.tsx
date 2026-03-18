@@ -2,6 +2,18 @@ import { ICPPageConfig } from "@/types/icp-page";
 import capFullVisibility from "@/assets/cap-full-visibility.png";
 import capAllOnOne from "@/assets/cap-all-on-one.png";
 import heroCarriers from "@/assets/hero-carriers.jpg";
+import narrativeTrucksIdle from "@/assets/carriers/narrative-trucks-idle.jpg";
+import compEmptyRuns from "@/assets/carriers/comp-empty-runs.jpg";
+import compFleetVisibility from "@/assets/carriers/comp-fleet-visibility.jpg";
+import compFreightMatching from "@/assets/carriers/comp-freight-matching.jpg";
+import featTrucksmatch from "@/assets/carriers/feat-trucksmatch.jpg";
+import featTms from "@/assets/carriers/feat-tms.jpg";
+import featDriverApp from "@/assets/carriers/feat-driver-app.jpg";
+import featPriceindex from "@/assets/carriers/feat-priceindex.jpg";
+import featNetwork from "@/assets/carriers/feat-network.jpg";
+import statsBg from "@/assets/carriers/stats-bg.jpg";
+import testimonialBg from "@/assets/carriers/testimonial-bg.jpg";
+import ctaFinalBg from "@/assets/carriers/cta-final-bg.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -33,31 +45,31 @@ const config: ICPPageConfig = {
       "Nobody drives all the way back empty from Rotterdam to Budapest. Instead, the driver waits until a job that fits more or less is secured. But this introduces another massive cost beyond empty running: the most valuable asset, the truck driver's time, is wasted sitting idle.",
       "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre and every idle hour in their cash flow.",
     ],
-    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1200&q=85&auto=format",
+    image: narrativeTrucksIdle,
   },
   comparison: {
     headline: "What Your Fleet Looks Like When Trucks Match Freight, Not the Other Way Around",
     subtext: "Three changes that transform a trucking company from cost-center to profit machine.",
     items: [
-      { label: "Empty Runs", without: "25-35% of kilometres driven empty. Fuel burned, drivers paid, zero revenue. Your biggest invisible cost.", withTotm: "Empty run ratio drops 30%. TrucksMatch AI finds return loads before your truck reaches the drop-off. Every kilometre earns.", image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80&auto=format" },
-      { label: "Fleet Visibility", without: "Your fleet availability lives in your dispatcher's head and a WhatsApp group. Shippers can't find you. You can't find freight.", withTotm: "Live availability map shows your free trucks to trusted shippers and brokers. They book directly, no calls, no middlemen.", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80&auto=format" },
-      { label: "Freight Matching", without: "Finding a backhaul means load boards, 10 phone calls, and racing anonymous competitors on price. The lowest bid wins.", withTotm: "AI matches freight to your trucks by position, route preference, and cargo type, at contracted rates, not spot-market scraps.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format" },
+      { label: "Empty Runs", without: "25-35% of kilometres driven empty. Fuel burned, drivers paid, zero revenue. Your biggest invisible cost.", withTotm: "Empty run ratio drops 30%. TrucksMatch AI finds return loads before your truck reaches the drop-off. Every kilometre earns.", image: compEmptyRuns },
+      { label: "Fleet Visibility", without: "Your fleet availability lives in your dispatcher's head and a WhatsApp group. Shippers can't find you. You can't find freight.", withTotm: "Live availability map shows your free trucks to trusted shippers and brokers. They book directly, no calls, no middlemen.", image: compFleetVisibility },
+      { label: "Freight Matching", without: "Finding a backhaul means load boards, 10 phone calls, and racing anonymous competitors on price. The lowest bid wins.", withTotm: "AI matches freight to your trucks by position, route preference, and cargo type, at contracted rates, not spot-market scraps.", image: compFreightMatching },
     ],
   },
   features: {
     headline: "Practical Tools for Fleet Operators Who Don't Have Time for Complex Software",
     items: [
       { title: "Availability Forecast - Share Once, Earn Always", description: "Input where your trucks will be and when. The platform shares your capacity with your trusted shipper and broker network automatically. Set your availability and let contracted freight come to you.", image: capAllOnOne },
-      { title: "TrucksMatch - AI-Powered Freight Matching", description: "When a truck completes a delivery, TrucksMatch instantly identifies the best-fit backhaul freight job based on current location, route preference, cargo type, and your pricing floor. The return load problem becomes a notification.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format" },
-      { title: "Free TMS for Carriers", description: "Full transport management functionality: job overview, driver communication, document management, proof of delivery, included at no extra cost. If your current dispatch software doesn't match you with freight automatically, TrucksOnTheMap replaces it. Free.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format" },
-      { title: "Driver App - Built for One-Handed Truck Cab Use", description: "Job updates, turn-by-turn navigation, proof of delivery capture, and status confirmation in one screen, designed for drivers who are driving. DHL rolled this out to hundreds of drivers. Training time: under one hour.", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&auto=format" },
-      { title: "PriceIndex - 90-Day Market Rate Intelligence", description: "See average, low, and spot freight rates for every corridor you operate, updated continuously. Know the market rate before every negotiation. Stop taking below-market rates.", image: "https://images.unsplash.com/photo-1642790106117-e829e14a795f?w=800&q=80&auto=format" },
-      { title: "Invite-Only Network", description: "You control exactly which shippers and brokers see your fleet data. Your capacity is visible to your trusted partners, nobody else. This is not a load board where you race anonymous competitors on price.", image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format" },
+      { title: "TrucksMatch - AI-Powered Freight Matching", description: "When a truck completes a delivery, TrucksMatch instantly identifies the best-fit backhaul freight job based on current location, route preference, cargo type, and your pricing floor. The return load problem becomes a notification.", image: featTrucksmatch },
+      { title: "Free TMS for Carriers", description: "Full transport management functionality: job overview, driver communication, document management, proof of delivery, included at no extra cost. If your current dispatch software doesn't match you with freight automatically, TrucksOnTheMap replaces it. Free.", image: featTms },
+      { title: "Driver App - Built for One-Handed Truck Cab Use", description: "Job updates, turn-by-turn navigation, proof of delivery capture, and status confirmation in one screen, designed for drivers who are driving. DHL rolled this out to hundreds of drivers. Training time: under one hour.", image: featDriverApp },
+      { title: "PriceIndex - 90-Day Market Rate Intelligence", description: "See average, low, and spot freight rates for every corridor you operate, updated continuously. Know the market rate before every negotiation. Stop taking below-market rates.", image: featPriceindex },
+      { title: "Invite-Only Network", description: "You control exactly which shippers and brokers see your fleet data. Your capacity is visible to your trusted partners, nobody else. This is not a load board where you race anonymous competitors on price.", image: featNetwork },
     ],
   },
   stats: {
     headline: "Numbers That Fleet Owners Care About",
-    backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=80&auto=format",
+    backgroundImage: statsBg,
     items: [
       { value: "−30%", description: "Empty runs, the single biggest cost reduction lever for any asset-based carrier." },
       { value: "+7%", description: "Higher profit per freight job through better freight matching and rate intelligence." },
@@ -71,7 +83,7 @@ const config: ICPPageConfig = {
     author: "Tamás Forray",
     role: "Division Head (Logistics)",
     company: "Apollo Tyres Hungary",
-    backgroundImage: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1920&q=85&auto=format",
+    backgroundImage: testimonialBg,
   },
   objections: {
     headline: "You're Probably Thinking...",
@@ -92,11 +104,11 @@ const config: ICPPageConfig = {
     subtext: "Fleet visibility, freight matching, rate intelligence, and a free TMS. No credit card. Live in days, not weeks.",
     ctaPrimary: "Add My First Truck Free",
     ctaSecondary: "Calculate My Empty-Run Cost",
-    backgroundImage: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1920&q=85&auto=format",
+    backgroundImage: ctaFinalBg,
   },
   sectionImages: {
-    narrative: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=85&auto=format",
-    comparison: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb95?w=1920&q=80&auto=format",
+    narrative: narrativeTrucksIdle,
+    comparison: compFreightMatching,
     features: capFullVisibility,
   },
 };
