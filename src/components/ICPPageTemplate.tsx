@@ -314,8 +314,8 @@ const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-xl rounded-xl p-5 shadow-[0_8px_30px_hsl(220_20%_50%/0.12)] border border-white/80"
             >
-              <p className="text-2xl font-display font-light text-primary leading-none mb-1">25–35%</p>
-              <p className="text-[11px] text-muted-foreground font-body">of kilometres driven empty</p>
+              <p className="text-2xl font-display font-light text-primary leading-none mb-1">99,99%</p>
+              <p className="text-[11px] text-muted-foreground font-body">of RFQs recorded</p>
             </motion.div>
           </motion.div>
         </div>
