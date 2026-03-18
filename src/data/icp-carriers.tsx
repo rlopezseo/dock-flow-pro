@@ -24,12 +24,11 @@ const config: ICPPageConfig = {
     ],
   },
   narrative: {
-    headline: "You Know Exactly What an Empty Kilometre Costs. That's the Problem.",
+    headline: "You Have the Jobs. You Can't Match Them to the Trucks.",
     paragraphs: [
-      "When a truck delivers in Rotterdam and needs to get back to Budapest, you have three options. Post on a load board and race to the bottom on price. Call your network contacts and hope someone picks up. Drive 1,200km empty.",
-      "Option three happens more often than it should. Industry average: 25-35% of all kilometres driven without cargo. On a 40-truck fleet, that's not a statistic. That's hundreds of thousands of euros in fuel, driver wages, and vehicle wear, every year, generating zero revenue.",
-      "The freight management problem for carriers isn't visibility in the traditional sense. Project44 and FourKites were built for shippers and 3PLs tracking ocean containers. They weren't built for an asset-based trucking company trying to eliminate backhaul waste on Central European road corridors.",
-      "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre in their cash flow.",
+      "Asset-based carriers often have access to freight jobs — but they can't always match trucks with jobs that load in the same location. So trucks travel empty to the pickup point. Not because there's no freight, but because the transport planner has limited visibility of which trucks unload where, and which available jobs start where and when.",
+      "Nobody drives all the way back empty from Rotterdam to Budapest. Instead, the driver waits until a job that fits more or less is secured. But this introduces another massive cost beyond empty running — the most valuable asset, the truck driver's time, is wasted sitting idle.",
+      "TrucksOnTheMap was built from inside the road freight industry, for carriers who own the trucks and feel every empty kilometre and every idle hour in their cash flow.",
     ],
     image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1200&q=85&auto=format",
   },
