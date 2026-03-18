@@ -496,7 +496,7 @@ const FeaturesBlock = ({ config }: { config: ICPPageConfig }) => {
           </div>
         </FadeUp>
 
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-stretch">
           {/* Left — Showcase image panel */}
           <FadeUp className="lg:col-span-2 lg:sticky lg:top-28">
             <div className="relative rounded-2xl overflow-hidden aspect-[3/4] lg:aspect-auto lg:h-full lg:min-h-[540px] bg-[hsl(220,20%,10%)]">
