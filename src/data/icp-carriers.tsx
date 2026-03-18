@@ -1,5 +1,6 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import capFullVisibility from "@/assets/cap-full-visibility.png";
+import capAllOnOne from "@/assets/cap-all-on-one.png";
 
 const config: ICPPageConfig = {
   meta: {
