@@ -3,6 +3,7 @@ import hero3pl from "@/assets/hero-3pl-providers.jpg";
 import imgDispatch from "@/assets/ind-3pl-dispatch.jpg";
 import imgClient from "@/assets/ind-3pl-client.jpg";
 import imgCrossdock from "@/assets/ind-3pl-crossdock.jpg";
+import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {
@@ -48,7 +49,7 @@ const config: ICPPageConfig = {
   features: {
     headline: "Built for 3PL Operations Teams. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "A unified geographic view of subcarrier capacity across all active corridors, updated continuously, covering a five-day forward window. Every contracted carrier's available trucks in one interface.", image: imgDispatch },
+      { title: "Availability Forecast Map", description: "A unified geographic view of subcarrier capacity across all active corridors, updated continuously, covering a five-day forward window. Every contracted carrier's available trucks in one interface.", image: imgFullVisibility },
       { title: "99.9% Capacity Security", description: "Subcarrier pre-commitment workflows that guarantee job coverage before the booking window closes. Spot market exposure reduced to planned exceptions.", image: imgCrossdock },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time data for every active shipment, accessible by dispatchers and account managers without contacting the subcarrier.", image: imgClient },
       { title: "PriceIndex - 90-Day Rate Intelligence", description: "Market rate benchmarking across your active corridors. Validate subcarrier rate cards against current market conditions before contract renewal.", image: imgDispatch },

@@ -3,6 +3,7 @@ import heroRetailFmcg from "@/assets/hero-retail-fmcg.jpg";
 import imgDc from "@/assets/ind-retail-dc.jpg";
 import imgShelves from "@/assets/ind-retail-shelves.jpg";
 import imgDelivery from "@/assets/ind-retail-delivery.jpg";
+import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {
@@ -48,7 +49,7 @@ const config: ICPPageConfig = {
   features: {
     headline: "Built for Supply Chain Planners. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "See carrier capacity across your distribution network - 5 days forward, by corridor. Know what's available before the promotion window opens.", image: imgDc },
+      { title: "Availability Forecast Map", description: "See carrier capacity across your distribution network - 5 days forward, by corridor. Know what's available before the promotion window opens.", image: imgFullVisibility },
       { title: "99.9% Capacity Security", description: "Contracted carriers pre-commit to your replenishment and promotion schedules. Spot market exposure reduced to planned exceptions only.", image: imgShelves },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every shipment, every delivery point. Answer retailer delivery questions in 10 seconds, not 10 minutes.", image: imgDelivery },
       { title: "MassUpload", description: "Bulk job creation for high-frequency replenishment cycles. Upload entire promotion delivery schedules across multiple DCs in a single action.", image: imgDc },

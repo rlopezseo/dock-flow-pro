@@ -3,6 +3,7 @@ import heroPharma from "@/assets/hero-pharma.jpg";
 import imgColdchain from "@/assets/ind-pharma-coldchain.jpg";
 import imgQa from "@/assets/ind-pharma-qa.jpg";
 import imgTransit from "@/assets/ind-pharma-transit.jpg";
+import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 
 const config: ICPPageConfig = {
   meta: {
@@ -48,7 +49,7 @@ const config: ICPPageConfig = {
   features: {
     headline: "Built for Pharma Supply Chain Teams. Not for IT Departments.",
     items: [
-      { title: "Availability Forecast Map", description: "See which GDP-qualified carriers have compliant capacity on your lanes - 5 days out, before you need to confirm the shipment. Visual, auditable, bookable.", image: imgColdchain },
+      { title: "Availability Forecast Map", description: "See which GDP-qualified carriers have compliant capacity on your lanes - 5 days out, before you need to confirm the shipment. Visual, auditable, bookable.", image: imgFullVisibility },
       { title: "99.9% Capacity Security", description: "GDP-qualified carrier pre-commitment workflows that guarantee compliant coverage before the booking window closes. No unqualified substitutions.", image: imgQa },
       { title: "Real-Time Tracking with ETA per Drop", description: "Live position and arrival time for every temperature-sensitive shipment. Know what's happening on the road before it becomes a quality event.", image: imgTransit },
       { title: "SAP / Oracle OTM Interface", description: "Direct integration with ERP and TMS. Freight bookings reflect in your systems without manual data entry. Full audit trail maintained.", image: imgQa },
