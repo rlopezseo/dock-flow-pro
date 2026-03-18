@@ -1,4 +1,5 @@
 import { ICPPageConfig } from "@/types/icp-page";
+import capFullVisibility from "@/assets/cap-full-visibility.png";
 
 const config: ICPPageConfig = {
   meta: {
