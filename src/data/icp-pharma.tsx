@@ -101,7 +101,7 @@ const config: ICPPageConfig = {
   },
   sectionImages: {
     narrative: imgQa,
-    comparison: imgColdchain,
+    comparison: imgDashboard,
     features: imgTransit,
   },
 };
