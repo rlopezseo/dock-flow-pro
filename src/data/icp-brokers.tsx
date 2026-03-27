@@ -1,6 +1,9 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import heroBrokers from "@/assets/hero-brokers.jpg";
 import imgBrokersNarrative from "@/assets/brokers-narrative.png";
+import imgJobThroughput from "@/assets/brokers-job-throughput.png";
+import imgShipmentVisibility from "@/assets/brokers-shipment-visibility.png";
+import imgRateIntelligence from "@/assets/brokers-rate-intelligence.png";
 
 const config: ICPPageConfig = {
   meta: {
