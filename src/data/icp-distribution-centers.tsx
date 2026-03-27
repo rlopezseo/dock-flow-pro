@@ -1,4 +1,5 @@
 import { ICPPageConfig } from "@/types/icp-page";
+import imgNarrative from "@/assets/dc/narrative-dock.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -31,7 +32,7 @@ const config: ICPPageConfig = {
       "Inbound freight visibility is the gap at the core of this problem. Your dock schedule tells you what should happen. It tells you nothing about what is actually approaching. The shipper knows. The carrier knows. The driver knows. By the time you find out, the truck is already at your gate.",
       "Your distribution center is the last physical bottleneck in the entire supply chain. Every delay upstream arrives at your dock and expects you to absorb it. What you actually need is to see it coming before it arrives.",
     ],
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=85&auto=format",
+    image: imgNarrative,
   },
   comparison: {
     headline: "What Your Dock Looks Like When You Know What's Coming Before It Arrives",
