@@ -6,6 +6,7 @@ import imgCrossdock from "@/assets/ind-3pl-crossdock.jpg";
 import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 import imgDashboard from "@/assets/cap-dashboard.jpg";
 import imgNetwork from "@/assets/cap-network.jpg";
+import imgAvailabilityMap from "@/assets/carrier-availability-map.png";
 import imgFleet from "@/assets/cap-fleet.jpg";
 import imgTracking from "@/assets/cap-tracking.jpg";
 import imgIntegrations from "@/assets/cap-integrations.jpg";
