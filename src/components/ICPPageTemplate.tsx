@@ -200,7 +200,7 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
                 transition={{ duration: 0.6, delay: 0.5 + i * 0.15 }}
                 className="bg-white/[0.06] backdrop-blur-xl border border-white/[0.1] rounded-2xl p-5 hover:bg-white/[0.1] transition-all duration-500"
               >
-                <p className="text-xl font-display font-extralight text-white mb-1">{stat.value}</p>
+                <p className="text-xl font-display font-extralight text-white mb-1">{stat.heroValue || stat.value}</p>
                 <p className="text-[11px] text-white/50 font-body leading-relaxed">{stat.description}</p>
               </motion.div>
             ))}
