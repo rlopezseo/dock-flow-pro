@@ -1,7 +1,7 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import heroShippers from "@/assets/hero-shippers.jpg";
 import imgChallenge from "@/assets/shippers-challenge.png";
-import imgFreightMap from "@/assets/europe-freight-map.jpg";
+import imgFreightMap from "@/assets/carrier-availability-map.png";
 
 const config: ICPPageConfig = {
   meta: {
