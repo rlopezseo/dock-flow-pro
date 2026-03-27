@@ -36,7 +36,7 @@ const config: ICPPageConfig = {
       "You don't know whether your carrier has trucks on that corridor until you call. When capacity fails mid-campaign, you find out at the last moment - and the spot market is your only option. Penalty charges, lost shelf space, delisted SKUs compound fast.",
       "TrucksOnTheMap makes carrier capacity visible before you need it. A five-day availability map across your distribution corridors means you secure trucks the week before peak, not the night before.",
     ],
-    image: imgDc,
+    image: imgNarrativeChallenge,
   },
   comparison: {
     headline: "What Planning Looks Like When You Can Actually See",
