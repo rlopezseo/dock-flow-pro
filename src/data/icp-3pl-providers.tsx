@@ -19,7 +19,7 @@ const config: ICPPageConfig = {
   },
   hero: {
     badge: "For 3PL Providers",
-    headline: "Your SLA Says Reliability.\nYour Subcarrier Network Says Maybe.",
+    headline: "Your SLA Says Reliability.\nYour Subcarrier Network\nSays Maybe.",
     highlightedPart: "Close That Gap.",
     subtext: "TrucksOnTheMap gives 3PL operations teams a live map of subcarrier capacity across active corridors - five days forward - so dispatchers allocate jobs to confirmed trucks and SLAs hold without spot market exposure.",
     ctaPrimary: "See Your Network on the Map",
