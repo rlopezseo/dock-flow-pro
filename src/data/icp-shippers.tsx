@@ -1,6 +1,7 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import heroShippers from "@/assets/hero-shippers.jpg";
 import imgChallenge from "@/assets/shippers-challenge.png";
+import imgFreightMap from "@/assets/europe-freight-map.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -39,7 +40,7 @@ const config: ICPPageConfig = {
     headline: "What Planning Looks Like When You Can Actually See",
     subtext: "From guessing to knowing - three shifts that change how freight gets planned.",
     items: [
-      { label: "Carrier Availability", without: "Every morning you call 3 carriers per load to check who has trucks. Half don't answer. You plan freight on incomplete information.", withTotm: "A 7+ days availability forecast map shows every trusted carrier's free trucks across your routes. Book the best one in 3 minutes.", image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&auto=format" },
+      { label: "Carrier Availability", without: "Every morning you call 3 carriers per load to check who has trucks. Half don't answer. You plan freight on incomplete information.", withTotm: "A 7+ days availability forecast map shows every trusted carrier's free trucks across your routes. Book the best one in 3 minutes.", image: imgFreightMap },
       { label: "Capacity Security", without: "When capacity runs short, you pay 30-50% more on the spot market. Your budget is a fiction by Thursday.", withTotm: "99.9% capacity security. Contracted carriers pre-commit to your jobs before you need to ask. Freight cost per tonne drops.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
       { label: "Live Tracking", without: "You have no idea where the truck is until the driver calls. Management asks 'where are our trucks?' and you don't know.", withTotm: "Real-time freight tracking shows live position and ETA at every drop-off point. Answer delivery questions in 10 seconds.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
     ],
