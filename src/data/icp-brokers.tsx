@@ -1,5 +1,6 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import heroBrokers from "@/assets/hero-brokers.jpg";
+import imgBrokersNarrative from "@/assets/brokers-narrative.png";
 
 const config: ICPPageConfig = {
   meta: {
@@ -32,7 +33,7 @@ const config: ICPPageConfig = {
       "Freight visibility in brokerage isn't just about knowing where a truck is. It's about having the data to confirm faster, allocate smarter, and give your shipper clients the real-time shipment tracking they expect from a 3PL, even when you're running a 20-person operation.",
       "Your team is talented. They know freight. They know your carriers. But 80% of their day is admin: copy-paste, WhatsApp follow-ups, status calls, manual load matching. That should be automated. The brokerages growing fastest in Central Europe aren't smarter than yours. They've just stopped doing those things manually.",
     ],
-    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&q=85&auto=format",
+    image: imgBrokersNarrative,
   },
   comparison: {
     headline: "What a Brokerage Looks Like When Speed Becomes Your Weapon",
