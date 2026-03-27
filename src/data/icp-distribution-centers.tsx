@@ -1,4 +1,5 @@
 import { ICPPageConfig } from "@/types/icp-page";
+import imgNarrative from "@/assets/dc/narrative-dock.jpg";
 
 const config: ICPPageConfig = {
   meta: {
