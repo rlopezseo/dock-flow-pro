@@ -42,7 +42,7 @@ const config: ICPPageConfig = {
     paragraphs: [
       "Every shipment is classified by UN number, hazard class, and packing group. Every carrier holds ADR certification. Every vehicle carries the correct equipment code. Everything is documented. And then you try to book the truck - and your certified carrier has zero vehicles available on your corridor next Tuesday.",
       "Spot market ADR freight carries two risks simultaneously: cost and compliance. A carrier who can move quickly is not necessarily one whose certification, driver training, and equipment codes your HSE team has reviewed.",
-      "TrucksOnTheMap makes ADR-certified capacity visible. A five-day map shows compliant carrier availability by corridor, hazard class, and vehicle equipment code. Book certified vehicles before urgency creates compliance pressure.",
+      "TrucksOnTheMap makes ADR-certified capacity visible. A seven-day map shows compliant carrier availability by corridor, hazard class, and vehicle equipment code. Book certified vehicles before urgency creates compliance pressure.",
     ],
     image: imgHse,
   },
