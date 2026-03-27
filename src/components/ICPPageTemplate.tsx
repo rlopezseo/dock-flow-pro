@@ -358,7 +358,7 @@ const ComparisonBlock = ({ config }: { config: ICPPageConfig }) => {
               <div className="grid lg:grid-cols-12 gap-8 lg:gap-0 items-stretch">
                 {/* Image side */}
                 <div className={`relative overflow-hidden rounded-2xl ${i % 2 === 0 ? 'lg:col-span-6' : 'lg:col-span-6 lg:col-start-7'}`}>
-                  <div className="relative aspect-[16/10] lg:aspect-[16/9] overflow-hidden">
+                  <div className="relative aspect-[16/10] lg:aspect-[16/10.5] overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.label}
