@@ -6,6 +6,7 @@ import imgTransit from "@/assets/ind-chemical-transit.jpg";
 import imgDashboard from "@/assets/cap-dashboard.jpg";
 import imgNetwork from "@/assets/cap-network.jpg";
 import imgRegulatory from "@/assets/ind-chemical-regulatory.jpg";
+import imgAvailabilityMap from "@/assets/carrier-availability-map.png";
 import imgTracking from "@/assets/cap-tracking.jpg";
 import imgFleet from "@/assets/cap-fleet.jpg";
 import imgIntegrations from "@/assets/cap-integrations.jpg";
