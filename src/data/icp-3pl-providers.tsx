@@ -76,8 +76,8 @@ const config: ICPPageConfig = {
       { value: "ISO 27001", description: "Certified. Enterprise-grade security and GDPR compliance for all freight and client data." },
     ],
     cardMeta: [
-      { label: "Revenue uplift", badge: "Freight matching data" },
       { label: "Faster", badge: "Validated result" },
+      { label: "Revenue uplift", badge: "Freight matching data" },
     ],
   },
   testimonial: {
