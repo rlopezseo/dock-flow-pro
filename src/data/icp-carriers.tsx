@@ -4,7 +4,7 @@ import capAllOnOne from "@/assets/cap-all-on-one.png";
 import heroCarriers from "@/assets/hero-carriers.jpg";
 import narrativeTrucksIdle from "@/assets/carriers/narrative-trucks-idle.jpg";
 import compEmptyRuns from "@/assets/carriers/comp-empty-runs.jpg";
-import compFleetVisibility from "@/assets/carriers/comp-fleet-visibility.jpg";
+import compFleetVisibility from "@/assets/capacity-security.png";
 import compFreightMatching from "@/assets/carriers/comp-freight-matching.jpg";
 import featTrucksmatch from "@/assets/carriers/feat-trucksmatch.jpg";
 import featTms from "@/assets/carriers/feat-tms.jpg";
