@@ -6,7 +6,7 @@ import imgTransit from "@/assets/ind-pharma-transit.jpg";
 import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
 import imgNetwork from "@/assets/cap-network.jpg";
 
-// v4 - pharma comparison 01 image updated
+// v5 - pharma comparison 02 coldchain image updated
 const config: ICPPageConfig = {
   meta: {
     title: "GDP-Compliant Carrier Visibility for Pharma Supply Chains | TrucksOnTheMap",
