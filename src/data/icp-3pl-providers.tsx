@@ -31,7 +31,7 @@ const config: ICPPageConfig = {
   authorityBar: {
     items: [
       { value: "−7%", label: "Total freight costs" },
-      { value: "−31%", label: "Empty kilometres" },
+      { value: "3x", label: "Faster planning" },
       { value: "99.99%", label: "SLA compliance" },
       { value: "ISO 27001", label: "Certified platform" },
     ],
