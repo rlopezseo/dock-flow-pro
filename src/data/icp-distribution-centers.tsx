@@ -1,5 +1,8 @@
 import { ICPPageConfig } from "@/types/icp-page";
 import imgNarrative from "@/assets/dc/narrative-dock.jpg";
+import compDockQueuing from "@/assets/dc/comp-dock-queuing.jpg";
+import compEtaAccuracy from "@/assets/carrier-availability-map.png";
+import compSlotBooking from "@/assets/dc/comp-slot-booking.jpg";
 
 const config: ICPPageConfig = {
   meta: {
@@ -38,9 +41,9 @@ const config: ICPPageConfig = {
     headline: "What Your Dock Looks Like When You Know What's Coming Before It Arrives",
     subtext: "Three shifts that turn a reactive loading dock into a precision operation.",
     items: [
-      { label: "Dock Queuing", without: "Trucks queue on public roads. Police get called. Plant management walks out to the yard. The same chaos every peak day.", withTotm: "Every truck has a pre-booked slot, arrives at its assigned gate on time, and moves in without queuing. Zero yard congestion.", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format" },
-      { label: "ETA Accuracy", without: "One late truck cascades into three disrupted dock slots, an overtime shift, and a forklift team standing idle.", withTotm: "Live ETA updates trigger automatic dock rescheduling before the delay reaches your yard. Your team responds, not reacts.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80&auto=format" },
-      { label: "Slot Booking", without: "Every carrier time slot goes through the coordinator manually. 40 calls per day just to book dock windows.", withTotm: "Carriers book their own slots through a self-service portal. The coordinator manages exceptions, not every booking.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&q=80&auto=format" },
+      { label: "Dock Queuing", without: "Trucks queue on public roads. Police get called. Plant management walks out to the yard. The same chaos every peak day.", withTotm: "Every truck has a pre-booked slot, arrives at its assigned gate on time, and moves in without queuing. Zero yard congestion.", image: compDockQueuing },
+      { label: "ETA Accuracy", without: "One late truck cascades into three disrupted dock slots, an overtime shift, and a forklift team standing idle.", withTotm: "Live ETA updates trigger automatic dock rescheduling before the delay reaches your yard. Your team responds, not reacts.", image: compEtaAccuracy },
+      { label: "Slot Booking", without: "Every carrier time slot goes through the coordinator manually. 40 calls per day just to book dock windows.", withTotm: "Carriers book their own slots through a self-service portal. The coordinator manages exceptions, not every booking.", image: compSlotBooking },
     ],
   },
   features: {
