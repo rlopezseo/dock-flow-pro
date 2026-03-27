@@ -91,9 +91,13 @@ const AnimatedValue = ({ value, inView }: { value: string; inView: boolean }) =>
       duration: 1.8,
       ease: [0.25, 0.46, 0.45, 0.94],
       onUpdate: (v) => setDisplay(v),
+      onComplete: () => setDisplay(target),
     });
 
-    return () => controls.stop();
+    return () => {
+      controls.stop();
+      setDisplay(target);
+    };
   }, [inView, target, value]);
 
   if (!match || Number.isNaN(target)) return <span>{value}</span>;
