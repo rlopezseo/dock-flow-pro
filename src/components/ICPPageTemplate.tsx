@@ -150,11 +150,20 @@ const HeroBlock = ({ config }: { config: ICPPageConfig }) => {
             <span className="inline-block px-5 py-2 rounded-full text-[11px] font-body font-normal tracking-[0.2em] uppercase text-white/90 border border-white/15 bg-white/[0.08] backdrop-blur-xl mb-7">
               {c.badge}
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.1rem] font-display font-extralight leading-[1.28] tracking-tight mb-5 text-white">
-              {c.headline.split('\n').map((line, i, arr) => (
-                <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
-              ))}
-              {c.highlightedPart && (
+            <h1 className={`text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.1rem] font-display font-extralight leading-[1.28] tracking-tight mb-5 text-white ${c.titleClassName ?? ""}`}>
+              {c.headline.split('\n').map((line, i, arr) => {
+                const isLastLine = i === arr.length - 1;
+                const showInlineHighlight = isLastLine && c.highlightedPart && c.highlightedInline;
+
+                return (
+                  <span key={i}>
+                    {line}
+                    {showInlineHighlight && <span className="text-white/40">{c.highlightedPart}</span>}
+                    {i < arr.length - 1 && <br />}
+                  </span>
+                );
+              })}
+              {c.highlightedPart && !c.highlightedInline && (
                 <><br /><span className="text-white/40">{c.highlightedPart}</span></>
               )}
             </h1>
