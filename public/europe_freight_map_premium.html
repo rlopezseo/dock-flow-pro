@@ -1,0 +1,193 @@
+<div id="mc" style="background:#0a1628;border-radius:14px;overflow:hidden;width:100%;aspect-ratio:4/3;position:relative;"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+const W=680,H=510;
+const svg=d3.select('#mc').append('svg').attr('width','100%').attr('viewBox',`0 0 ${W} ${H}`).style('display','block');
+
+const defs=svg.append('defs');
+
+// Glow filter for routes
+const gf=defs.append('filter').attr('id','rglow').attr('x','-30%').attr('y','-30%').attr('width','160%').attr('height','160%');
+gf.append('feGaussianBlur').attr('stdDeviation','2.5').attr('result','blur');
+const rgm=gf.append('feMerge');
+rgm.append('feMergeNode').attr('in','blur');
+rgm.append('feMergeNode').attr('in','SourceGraphic');
+
+// Glow filter for nodes
+const nf=defs.append('filter').attr('id','nglow').attr('x','-100%').attr('y','-100%').attr('width','300%').attr('height','300%');
+nf.append('feGaussianBlur').attr('stdDeviation','4').attr('result','blur');
+const nfm=nf.append('feMerge');
+nfm.append('feMergeNode').attr('in','blur');
+nfm.append('feMergeNode').attr('in','SourceGraphic');
+
+// Country gradient
+const cg=defs.append('linearGradient').attr('id','cgrad').attr('x1','0').attr('y1','0').attr('x2','0').attr('y2','1');
+cg.append('stop').attr('offset','0%').attr('stop-color','#162236');
+cg.append('stop').attr('offset','100%').attr('stop-color','#0d1a2a');
+
+// Vignette
+const vg=defs.append('radialGradient').attr('id','vg').attr('cx','50%').attr('cy','50%').attr('r','68%');
+vg.append('stop').attr('offset','0%').attr('stop-color','#0a1628').attr('stop-opacity',0);
+vg.append('stop').attr('offset','75%').attr('stop-color','#0a1628').attr('stop-opacity',0.4);
+vg.append('stop').attr('offset','100%').attr('stop-color','#0a1628').attr('stop-opacity',0.92);
+
+// Edge gradient for routes
+defs.append('linearGradient').attr('id','rg1').attr('gradientUnits','userSpaceOnUse')
+  .selectAll('stop').data([{o:'0%',op:0.2},{o:'50%',op:1},{o:'100%',op:0.2}]).join('stop')
+  .attr('offset',d=>d.o).attr('stop-color','#8ab4d4').attr('stop-opacity',d=>d.op);
+
+svg.append('rect').attr('width',W).attr('height',H).attr('fill','#0a1628');
+
+const proj=d3.geoMercator().center([13,52]).scale(730).translate([W*0.38,H*0.54]);
+const geoPath=d3.geoPath().projection(proj);
+
+const cities=[
+  {name:'Rotterdam', xy:[4.47,51.92], trucks:14},
+  {name:'Hamburg',   xy:[9.99,53.55], trucks:11},
+  {name:'Antwerp',   xy:[4.40,51.22], trucks:9},
+  {name:'Paris',     xy:[2.35,48.85], trucks:12},
+  {name:'Frankfurt', xy:[8.68,50.11], trucks:16},
+  {name:'Warsaw',    xy:[21.01,52.23],trucks:8},
+  {name:'Prague',    xy:[14.42,50.08],trucks:7},
+  {name:'Milan',     xy:[9.19,45.46], trucks:10},
+  {name:'Barcelona', xy:[2.15,41.38], trucks:6},
+  {name:'Vienna',    xy:[16.37,48.21],trucks:9},
+];
+
+const routes=[
+  ['Rotterdam','Hamburg',0.9],['Rotterdam','Antwerp',0.85],
+  ['Hamburg','Frankfurt',0.95],['Hamburg','Warsaw',0.7],
+  ['Antwerp','Paris',0.9],['Paris','Barcelona',0.75],
+  ['Paris','Milan',0.8],['Frankfurt','Prague',0.85],
+  ['Frankfurt','Vienna',0.8],['Prague','Warsaw',0.7],
+  ['Warsaw','Vienna',0.65],['Milan','Vienna',0.75],
+  ['Antwerp','Frankfurt',0.6],['Rotterdam','Paris',0.55],
+];
+
+function pt(name){const c=cities.find(x=>x.name===name);return proj(c.xy);}
+
+fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+  .then(r=>r.json())
+  .then(world=>{
+    const countries=topojson.feature(world,world.objects.countries);
+
+    // Country fills
+    svg.append('g').selectAll('path')
+      .data(countries.features).join('path')
+      .attr('d',geoPath)
+      .attr('fill','url(#cgrad)')
+      .attr('stroke','#2a4a6a')
+      .attr('stroke-width',0.6)
+      .attr('opacity',0.9);
+
+    // Country borders subtle inner highlight
+    svg.append('g').selectAll('path')
+      .data(countries.features).join('path')
+      .attr('d',geoPath)
+      .attr('fill','none')
+      .attr('stroke','#3a5f80')
+      .attr('stroke-width',0.25)
+      .attr('opacity',0.3);
+
+    // Route glow layer (fat, blurred)
+    routes.forEach(([a,b,w])=>{
+      const [x1,y1]=pt(a),[x2,y2]=pt(b);
+      const mx=(x1+x2)/2, my=(y1+y2)/2 - Math.hypot(x2-x1,y2-y1)*0.12;
+      svg.append('path')
+        .attr('d',`M${x1},${y1} Q${mx},${my} ${x2},${y2}`)
+        .attr('fill','none')
+        .attr('stroke','#5a8ab0')
+        .attr('stroke-width', w*6)
+        .attr('opacity',0.04)
+        .attr('stroke-linecap','round');
+    });
+
+    // Routes — mid glow
+    routes.forEach(([a,b,w])=>{
+      const [x1,y1]=pt(a),[x2,y2]=pt(b);
+      const mx=(x1+x2)/2, my=(y1+y2)/2 - Math.hypot(x2-x1,y2-y1)*0.12;
+      svg.append('path')
+        .attr('d',`M${x1},${y1} Q${mx},${my} ${x2},${y2}`)
+        .attr('fill','none')
+        .attr('stroke','#6a9ec4')
+        .attr('stroke-width', w*2.5)
+        .attr('opacity',0.15)
+        .attr('stroke-linecap','round');
+    });
+
+    // Routes — sharp core line
+    routes.forEach(([a,b,w])=>{
+      const [x1,y1]=pt(a),[x2,y2]=pt(b);
+      const mx=(x1+x2)/2, my=(y1+y2)/2 - Math.hypot(x2-x1,y2-y1)*0.12;
+      svg.append('path')
+        .attr('d',`M${x1},${y1} Q${mx},${my} ${x2},${y2}`)
+        .attr('fill','none')
+        .attr('stroke','#8ab4d4')
+        .attr('stroke-width', w*1.2)
+        .attr('opacity', w*0.75)
+        .attr('stroke-linecap','round');
+    });
+
+    // Animated flow dots on routes
+    routes.slice(0,6).forEach(([a,b],i)=>{
+      const [x1,y1]=pt(a),[x2,y2]=pt(b);
+      const mx=(x1+x2)/2, my=(y1+y2)/2 - Math.hypot(x2-x1,y2-y1)*0.12;
+      const pathEl=svg.append('path')
+        .attr('d',`M${x1},${y1} Q${mx},${my} ${x2},${y2}`)
+        .attr('fill','none').attr('stroke','none').attr('id',`rp${i}`);
+      const dot=svg.append('circle').attr('r',2.5)
+        .attr('fill','#b8d4e8').attr('opacity',0.85);
+      const len=pathEl.node().getTotalLength();
+      function animate(){
+        dot.attr('cx',x1).attr('cy',y1);
+        dot.transition().duration(2800+i*400).ease(d3.easeLinear)
+          .tween('pos',()=>t=>{
+            const p=pathEl.node().getPointAtLength(t*len);
+            dot.attr('cx',p.x).attr('cy',p.y);
+          })
+          .on('end',animate);
+      }
+      setTimeout(animate, i*600);
+    });
+
+    // Node pulse rings
+    cities.forEach((c,i)=>{
+      const [cx,cy]=proj(c.xy);
+      const pulse=svg.append('circle').attr('cx',cx).attr('cy',cy).attr('r',8)
+        .attr('fill','none').attr('stroke','#7b9cbe').attr('stroke-width',0.8).attr('opacity',0);
+      function pulsate(){
+        pulse.attr('r',6).attr('opacity',0.5)
+          .transition().duration(1600).ease(d3.easeQuadOut)
+          .attr('r',18).attr('opacity',0)
+          .on('end',pulsate);
+      }
+      setTimeout(pulsate, i*220);
+    });
+
+    // Node outer ring
+    cities.forEach(c=>{
+      const [cx,cy]=proj(c.xy);
+      svg.append('circle').attr('cx',cx).attr('cy',cy).attr('r',6)
+        .attr('fill','none').attr('stroke','#7b9cbe').attr('stroke-width',1).attr('opacity',0.55);
+      svg.append('circle').attr('cx',cx).attr('cy',cy).attr('r',2.8)
+        .attr('fill','#a0c4e0').attr('opacity',1).attr('filter','url(#nglow)');
+    });
+
+    // City labels
+    cities.forEach(c=>{
+      const [cx,cy]=proj(c.xy);
+      const off = cx > W*0.5 ? [10,4] : [-10,4];
+      const anchor = cx > W*0.5 ? 'start' : 'end';
+      svg.append('text').attr('x',cx+off[0]).attr('y',cy+off[1])
+        .attr('fill','#8ab0cc').attr('opacity',0.7)
+        .attr('font-family','system-ui,sans-serif').attr('font-size',9.5)
+        .attr('font-weight',500).attr('text-anchor',anchor)
+        .attr('letter-spacing','0.02em')
+        .text(c.name);
+    });
+
+    // Vignette on top
+    svg.append('rect').attr('width',W).attr('height',H).attr('fill','url(#vg)');
+  });
+</script>
