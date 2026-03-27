@@ -8,6 +8,7 @@ import imgDashboard from "@/assets/cap-dashboard.jpg";
 import imgNetwork from "@/assets/cap-network.jpg";
 import imgIntegrations from "@/assets/cap-integrations.jpg";
 
+// v2 - force rebuild
 const config: ICPPageConfig = {
   meta: {
     title: "GDP-Compliant Carrier Visibility for Pharma Supply Chains | TrucksOnTheMap",
