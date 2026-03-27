@@ -4,6 +4,7 @@ import imgDc from "@/assets/ind-retail-dc.jpg";
 import imgShelves from "@/assets/ind-retail-shelves.jpg";
 import imgDelivery from "@/assets/ind-retail-delivery.jpg";
 import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
+import imgNarrativeChallenge from "@/assets/retail-fmcg/narrative-challenge.jpg";
 
 const config: ICPPageConfig = {
   meta: {
