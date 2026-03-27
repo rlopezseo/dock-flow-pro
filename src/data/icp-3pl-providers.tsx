@@ -69,15 +69,15 @@ const config: ICPPageConfig = {
     headline: "Proven Results Across 3PL Operations in Europe",
     backgroundImage: imgCrossdock,
     items: [
-      { value: "−31%", description: "Reduction in total freight costs for 3PLs that replaced morning call rounds with live subcarrier availability data." },
       { value: "200%", description: "200% faster, fully secure—work only with your trusted carriers so you can guarantee the quality your customers require." },
+      { value: "−31%", description: "Reduction in total freight costs for 3PLs that replaced morning call rounds with live subcarrier availability data." },
       { value: "99,99%", description: "99,99% visibility on your carriers' daily quotes—just one click away." },
       { value: "7 Weeks", description: "Guaranteed GO LIVE. Operational before your next quarterly review." },
       { value: "ISO 27001", description: "Certified. Enterprise-grade security and GDPR compliance for all freight and client data." },
     ],
     cardMeta: [
-      { label: "Revenue uplift", badge: "Freight matching data" },
       { label: "Faster", badge: "Validated result" },
+      { label: "Revenue uplift", badge: "Freight matching data" },
     ],
   },
   testimonial: {
