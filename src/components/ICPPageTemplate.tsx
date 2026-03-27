@@ -72,13 +72,17 @@ const FadeUp = ({ children, className = "", delay = 0 }: { children: React.React
 
 /* ─── Animated Counter ─── */
 const AnimatedValue = ({ value, inView }: { value: string; inView: boolean }) => {
-  const match = value.match(/([+-−]?)(\d+\.?\d*)(.*)/);
+  const match = value.match(/([+-−]?)(\d+[.,]?\d*)(.*)/);
   const [display, setDisplay] = useState(0);
 
   const prefix = match?.[1] ?? "";
-  const numStr = match?.[2] ?? "0";
+  const numStr = match?.[2]?.replace(",", ".") ?? "0";
   const suffix = match?.[3] ?? "";
   const target = Number.parseFloat(numStr);
+  const useComma = match?.[2]?.includes(",") ?? false;
+
+  // Determine decimal places from original value
+  const decimalPlaces = numStr.includes(".") ? numStr.split(".")[1].length : 0;
 
   useEffect(() => {
     if (!inView || !match || Number.isNaN(target)) return;
@@ -94,8 +98,9 @@ const AnimatedValue = ({ value, inView }: { value: string; inView: boolean }) =>
 
   if (!match || Number.isNaN(target)) return <span>{value}</span>;
 
-  const formatted = target % 1 === 0 ? Math.round(display).toString() : display.toFixed(1);
-  return <span>{prefix}{formatted}{suffix}</span>;
+  const formatted = decimalPlaces === 0 ? Math.round(display).toString() : display.toFixed(decimalPlaces);
+  const displayStr = useComma ? formatted.replace(".", ",") : formatted;
+  return <span>{prefix}{displayStr}{suffix}</span>;
 };
 
 /* ─── Feature icons mapping ─── */
