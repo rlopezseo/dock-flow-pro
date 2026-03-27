@@ -87,16 +87,17 @@ const AnimatedValue = ({ value, inView }: { value: string; inView: boolean }) =>
   useEffect(() => {
     if (!inView || !match || Number.isNaN(target)) return;
 
+    let completed = false;
     const controls = animate(0, target, {
       duration: 1.8,
       ease: [0.25, 0.46, 0.45, 0.94],
       onUpdate: (v) => setDisplay(v),
-      onComplete: () => setDisplay(target),
+      onComplete: () => { completed = true; setDisplay(target); },
     });
 
     return () => {
       controls.stop();
-      setDisplay(target);
+      if (!completed) setDisplay(target);
     };
   }, [inView, target, value]);
 
