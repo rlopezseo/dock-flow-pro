@@ -299,7 +299,7 @@ const NarrativeBlock = ({ config }: { config: ICPPageConfig }) => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_hsl(207_60%_30%/0.15),0_8px_24px_hsl(220_20%_50%/0.08)]">
               <img
-                src={narrativeImg}
+                src={c.image || narrativeImg}
                 alt="Fleet tracking control room"
                 className="w-full aspect-[4/3] object-cover"
                 loading="lazy"
