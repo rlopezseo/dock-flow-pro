@@ -4,11 +4,9 @@ import imgColdchain from "@/assets/ind-pharma-coldchain.jpg";
 import imgQa from "@/assets/ind-pharma-qa.jpg";
 import imgTransit from "@/assets/ind-pharma-transit.jpg";
 import imgFullVisibility from "@/assets/cap-full-visibility-cropped.png";
-import imgDashboard from "@/assets/cap-dashboard.jpg";
 import imgNetwork from "@/assets/cap-network.jpg";
-import imgIntegrations from "@/assets/cap-integrations.jpg";
 
-// v2 - force rebuild
+// v3 - pharma comparison images updated
 const config: ICPPageConfig = {
   meta: {
     title: "GDP-Compliant Carrier Visibility for Pharma Supply Chains | TrucksOnTheMap",
@@ -46,8 +44,8 @@ const config: ICPPageConfig = {
     subtext: "Three shifts that close the gap between GDP requirements and freight execution.",
     items: [
       { label: "Qualified Carrier Availability", without: "Your transport planner calls approved carriers every Monday to check reefer availability. Two can't confirm until Wednesday. You plan on incomplete data - and compliance risk.", withTotm: "A 5-day availability map shows every GDP-qualified carrier's free reefer capacity across your lanes. Book the right truck - compliant, documented, confirmed - in 3 minutes.", image: imgNetwork },
-      { label: "Cold Chain Continuity", without: "When a qualified carrier drops a booking, your backup is an unvetted spot market carrier. One compliant carrier short means one non-compliant deviation report.", withTotm: "99.9% capacity security. Contracted GDP-qualified carriers pre-commit to your lanes. Cold chain continuity guaranteed. No unqualified substitutions.", image: imgDashboard },
-      { label: "Real-Time Cold Chain Monitoring", without: "You find out about a temperature excursion when the driver arrives and hands over the data logger. The batch is at the customer. The deviation has already happened.", withTotm: "Real-time freight tracking shows live position and ETA per delivery point. Know what's happening on the road before it becomes a quality event.", image: imgIntegrations },
+      { label: "Cold Chain Continuity", without: "When a qualified carrier drops a booking, your backup is an unvetted spot market carrier. One compliant carrier short means one non-compliant deviation report.", withTotm: "99.9% capacity security. Contracted GDP-qualified carriers pre-commit to your lanes. Cold chain continuity guaranteed. No unqualified substitutions.", image: imgColdchain },
+      { label: "Real-Time Cold Chain Monitoring", without: "You find out about a temperature excursion when the driver arrives and hands over the data logger. The batch is at the customer. The deviation has already happened.", withTotm: "Real-time freight tracking shows live position and ETA per delivery point. Know what's happening on the road before it becomes a quality event.", image: imgTransit },
     ],
   },
   features: {
@@ -102,7 +100,7 @@ const config: ICPPageConfig = {
   },
   sectionImages: {
     narrative: imgQa,
-    comparison: imgDashboard,
+    comparison: imgColdchain,
     features: imgTransit,
   },
 };
