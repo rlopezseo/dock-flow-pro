@@ -2,6 +2,8 @@ import { ICPPageConfig } from "@/types/icp-page";
 import heroShippers from "@/assets/hero-shippers.jpg";
 import imgChallenge from "@/assets/shippers-challenge.png";
 import imgFreightMap from "@/assets/carrier-availability-map.png";
+import imgCapacitySecurity from "@/assets/capacity-security.png";
+import imgCarrierVisibility from "@/assets/carrier-visibility.jpg";
 
 const config: ICPPageConfig = {
   meta: {
