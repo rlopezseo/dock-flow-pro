@@ -8,10 +8,12 @@ export interface ICPPageConfig {
     badge: string;
     headline: string;
     highlightedPart?: string;
+    highlightedInline?: boolean;
     subtext: string;
     ctaPrimary: string;
     ctaSecondary?: string;
     image: string;
+    titleClassName?: string;
   };
   authorityBar: {
     items: { value: string; label: string }[];
