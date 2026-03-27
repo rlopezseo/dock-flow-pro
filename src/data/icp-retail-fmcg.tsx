@@ -45,9 +45,9 @@ const config: ICPPageConfig = {
     headline: "What Planning Looks Like When You Can Actually See",
     subtext: "Three shifts that turn reactive freight scrambles into proactive supply chain execution.",
     items: [
-      { label: "Promotion Readiness", without: "You confirm carrier capacity two days before the promotion. By then, the best trucks are gone. You scramble or you pay spot rates.", withTotm: "A 5-day availability map shows carrier capacity across your distribution corridors before you need to commit. Secure trucks the week before peak. Not the night before.", image: imgDc },
-      { label: "Replenishment Continuity", without: "Mid-campaign, a carrier drops a run. You find out when the depot calls. Shelves empty. Retailer penalises. Margin evaporates.", withTotm: "99.9% capacity security. Contracted carriers pre-commit to your replenishment schedule for the full campaign window. No gaps. No spot market exposure.", image: imgShelves },
-      { label: "Inbound & Outbound Visibility", without: "You have no idea when the truck will arrive at the DC or the store. Your answer to the retailer is: \"We're checking.\"", withTotm: "Live tracking with ETA per drop-off point. Confirm delivery windows to retailers in 10 seconds. Not after three calls.", image: imgDelivery },
+      { label: "Promotion Readiness", without: "You confirm carrier capacity two days before the promotion. By then, the best trucks are gone. You scramble or you pay spot rates.", withTotm: "A 5-day availability map shows carrier capacity across your distribution corridors before you need to commit. Secure trucks the week before peak. Not the night before.", image: imgCompPromotion },
+      { label: "Replenishment Continuity", without: "Mid-campaign, a carrier drops a run. You find out when the depot calls. Shelves empty. Retailer penalises. Margin evaporates.", withTotm: "99.9% capacity security. Contracted carriers pre-commit to your replenishment schedule for the full campaign window. No gaps. No spot market exposure.", image: imgCompReplenishment },
+      { label: "Inbound & Outbound Visibility", without: "You have no idea when the truck will arrive at the DC or the store. Your answer to the retailer is: \"We're checking.\"", withTotm: "Live tracking with ETA per drop-off point. Confirm delivery windows to retailers in 10 seconds. Not after three calls.", image: imgCompInbound },
     ],
   },
   features: {
