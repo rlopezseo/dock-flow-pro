@@ -18,7 +18,7 @@ import imgChemicalTankers from "@/assets/ind-chemical-tankers.jpg";
 import imgPharmaTransit from "@/assets/ind-pharma-transit.jpg";
 import img3plCrossdock from "@/assets/ind-3pl-crossdock.jpg";
 import imgAutomotivePlanning from "@/assets/ind-automotive-planning.jpg";
-import imgBlogHighway from "@/assets/blog/blog-highway-trucks.jpg";
+import imgBlogListing from "@/assets/blog/blog-listing-hero.jpg";
 import imgCapDashboard from "@/assets/cap-dashboard.jpg";
 import imgCapFleet from "@/assets/cap-fleet.jpg";
 
