@@ -20,7 +20,8 @@ import img3plCrossdock from "@/assets/ind-3pl-crossdock.jpg";
 import imgAutomotivePlanning from "@/assets/ind-automotive-planning.jpg";
 import imgBlogListing from "@/assets/blog/blog-listing-hero.jpg";
 import imgCapDashboard from "@/assets/cap-dashboard.jpg";
-import imgCapFleet from "@/assets/cap-fleet.jpg";
+import imgEuropeMap from "@/assets/europe-freight-map.jpg";
+import imgCapTracking from "@/assets/cap-tracking.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
