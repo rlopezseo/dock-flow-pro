@@ -22,6 +22,7 @@ import imgBlogListing from "@/assets/blog/blog-listing-hero.jpg";
 import imgCapDashboard from "@/assets/cap-dashboard.jpg";
 import imgEuropeMap from "@/assets/europe-freight-map.jpg";
 import imgCapTracking from "@/assets/cap-tracking.jpg";
+import imgHeroPharma from "@/assets/hero-pharma.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
