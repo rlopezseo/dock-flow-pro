@@ -18,9 +18,10 @@ import imgChemicalTankers from "@/assets/ind-chemical-tankers.jpg";
 import imgPharmaTransit from "@/assets/ind-pharma-transit.jpg";
 import img3plCrossdock from "@/assets/ind-3pl-crossdock.jpg";
 import imgAutomotivePlanning from "@/assets/ind-automotive-planning.jpg";
-import imgBlogHighway from "@/assets/blog/blog-highway-trucks.jpg";
+import imgBlogListing from "@/assets/blog/blog-listing-hero.jpg";
 import imgCapDashboard from "@/assets/cap-dashboard.jpg";
-import imgCapFleet from "@/assets/cap-fleet.jpg";
+import imgEuropeMap from "@/assets/europe-freight-map.jpg";
+import imgCapTracking from "@/assets/cap-tracking.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
@@ -82,15 +83,15 @@ const panels: Record<string, PanelConfig> = {
   },
   industries: {
     items: industriesItems,
-    featured: { image: imgAutomotivePlanning, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
+    featured: { image: imgCapTracking, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
   },
   blog: {
     items: blogItems,
-    featured: { image: imgBlogHighway, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
+    featured: { image: imgBlogListing, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
   },
   about: {
     items: aboutItems,
-    featured: { image: imgCapFleet, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
+    featured: { image: imgEuropeMap, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
   },
 };
 
