@@ -91,7 +91,7 @@ const panels: Record<string, PanelConfig> = {
   },
   about: {
     items: aboutItems,
-    featured: { image: imgCapFleet, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
+    featured: { image: imgEuropeMap, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
   },
 };
 
