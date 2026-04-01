@@ -74,7 +74,7 @@ const panels: Record<string, PanelConfig> = {
   platform: {
     items: platformItems,
     featured: { image: imgCapDashboard, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms freight operations from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
-    cta: { icon: DollarSign, text: "View Pricing", href: "#contact" },
+    
   },
   solutions: {
     items: solutionsItems,
@@ -243,17 +243,17 @@ const PanelContent = ({
       )}
     </div>
 
-    <div className="col-span-2 bg-[hsl(220,15%,97%)] p-6 flex flex-col justify-between">
-      <div className="rounded-xl overflow-hidden mb-4">
+    <div className="col-span-2 bg-[hsl(220,15%,97%)] p-6 flex flex-col">
+      <div className="rounded-xl overflow-hidden flex-1 mb-4">
         <img
           src={featuredImage}
           alt={config.featured.title}
-          className="w-full h-36 object-cover transition-all duration-500"
+          className="w-full h-full object-cover transition-all duration-500"
         />
       </div>
       <div>
         <p className="text-sm font-display font-normal text-[hsl(207,30%,12%)] mb-1.5">{config.featured.title}</p>
-        <p className="text-[11px] text-[hsl(207,15%,50%)] font-body leading-relaxed mb-5">{config.featured.desc}</p>
+        <p className="text-[11px] text-[hsl(207,15%,50%)] font-body leading-relaxed mb-4">{config.featured.desc}</p>
       </div>
       <a
         href={config.featured.href}
