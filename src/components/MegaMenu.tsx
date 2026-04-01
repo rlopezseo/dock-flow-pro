@@ -74,7 +74,7 @@ const panels: Record<string, PanelConfig> = {
   platform: {
     items: platformItems,
     featured: { image: imgCapDashboard, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms freight operations from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
-    cta: { icon: DollarSign, text: "View Pricing", href: "#contact" },
+    
   },
   solutions: {
     items: solutionsItems,
