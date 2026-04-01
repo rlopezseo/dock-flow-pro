@@ -17,9 +17,19 @@ import heroRetail from "@/assets/hero-retail-fmcg.jpg";
 import heroPharma from "@/assets/hero-pharma.jpg";
 import heroChemical from "@/assets/hero-chemical.jpg";
 import capNetwork from "@/assets/cap-network.jpg";
+import featuresDock from "@/assets/features-dock.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
+
+const platformItems: MenuItem[] = [
+  { icon: CalendarClock, title: "Dock Scheduling", desc: "Automated appointment booking & capacity management", href: "/dock-scheduling-software-for-distribution-centers" },
+  { icon: Eye, title: "Freight Visibility", desc: "Real-time tracking from gate to departure", href: "/freight-management-software-for-shippers" },
+  { icon: Truck, title: "Load Matching", desc: "Reduce empty miles with intelligent matching", href: "/freight-management-software-for-shippers" },
+  { icon: Sparkles, title: "Backhaul Optimization", desc: "AI-powered optimization for return loads", href: "/freight-management-software-for-shippers" },
+  { icon: BarChart3, title: "Predictive ETA", desc: "AI-powered freight arrival predictions", href: "/freight-management-software-for-shippers" },
+  { icon: Plug, title: "Yard Management", desc: "Digital truck yard optimization", href: "/dock-scheduling-software-for-distribution-centers" },
+];
 
 const solutionsItems: MenuItem[] = [
   { icon: Package, title: "Shippers", desc: "End-to-end freight management & visibility", href: "/freight-management-software-for-shippers" },
