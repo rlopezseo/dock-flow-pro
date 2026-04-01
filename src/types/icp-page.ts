@@ -42,7 +42,7 @@ export interface ICPPageConfig {
     headline: string;
     backgroundImage: string;
     items: { value: string; heroValue?: string; description: string }[];
-    cardMeta?: { label: string; badge: string }[];
+    cardMeta?: { label: string; badge: string; chart?: string }[];
   };
   testimonial: {
     quote: string;
