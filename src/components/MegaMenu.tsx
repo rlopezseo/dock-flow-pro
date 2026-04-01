@@ -7,17 +7,20 @@ import {
   ChevronRight
 } from "lucide-react";
 
-import heroShippers from "@/assets/hero-shippers.jpg";
-import heroBrokers from "@/assets/hero-brokers.jpg";
-import heroCarriers from "@/assets/hero-carriers.jpg";
-import heroDock from "@/assets/hero-dock.jpg";
-import heroIndustrial from "@/assets/hero-industrial-automotive.jpg";
-import hero3pl from "@/assets/hero-3pl-providers.jpg";
-import heroRetail from "@/assets/hero-retail-fmcg.jpg";
-import heroPharma from "@/assets/hero-pharma.jpg";
-import heroChemical from "@/assets/hero-chemical.jpg";
-import capNetwork from "@/assets/cap-network.jpg";
-import featuresDock from "@/assets/features-dock.jpg";
+import imgCarrierVisibility from "@/assets/carrier-visibility.jpg";
+import imgNarrativeDock from "@/assets/dc/narrative-dock.jpg";
+import imgTrucksIdle from "@/assets/carriers/narrative-trucks-idle.jpg";
+import imgDockQueuing from "@/assets/dc/comp-dock-queuing.jpg";
+import imgEmptyRuns from "@/assets/carriers/comp-empty-runs.jpg";
+import imgFreightMatching from "@/assets/carriers/comp-freight-matching.jpg";
+import imgRetailDC from "@/assets/ind-retail-dc.jpg";
+import imgChemicalTankers from "@/assets/ind-chemical-tankers.jpg";
+import imgPharmaTransit from "@/assets/ind-pharma-transit.jpg";
+import img3plCrossdock from "@/assets/ind-3pl-crossdock.jpg";
+import imgAutomotivePlanning from "@/assets/ind-automotive-planning.jpg";
+import imgBlogHighway from "@/assets/blog/blog-highway-trucks.jpg";
+import imgCapDashboard from "@/assets/cap-dashboard.jpg";
+import imgCapFleet from "@/assets/cap-fleet.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
@@ -70,24 +73,24 @@ interface PanelConfig {
 const panels: Record<string, PanelConfig> = {
   platform: {
     items: platformItems,
-    featured: { image: featuresDock, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms freight operations from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
+    featured: { image: imgCapDashboard, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms freight operations from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
     cta: { icon: DollarSign, text: "View Pricing", href: "#contact" },
   },
   solutions: {
     items: solutionsItems,
-    featured: { image: heroShippers, title: "Find your solution", desc: "Every operation is different. Discover the freight management solution built for yours.", href: "/freight-management-software-for-shippers", label: "Explore Solutions" },
+    featured: { image: imgCarrierVisibility, title: "Find your solution", desc: "Every operation is different. Discover the freight management solution built for yours.", href: "/freight-management-software-for-shippers", label: "Explore Solutions" },
   },
   industries: {
     items: industriesItems,
-    featured: { image: heroIndustrial, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
+    featured: { image: imgAutomotivePlanning, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
   },
   blog: {
     items: blogItems,
-    featured: { image: capNetwork, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
+    featured: { image: imgBlogHighway, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
   },
   about: {
     items: aboutItems,
-    featured: { image: heroShippers, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
+    featured: { image: imgCapFleet, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
   },
 };
 
@@ -101,20 +104,20 @@ const menuLabels: Record<string, string> = {
 
 const menuKeys = ["platform", "solutions", "industries", "blog", "about"];
 
-/* ─── Images for Solutions hover ─── */
+/* ─── Images for hover ─── */
 const solutionImages: Record<string, string> = {
-  Shippers: heroShippers,
-  Brokers: heroBrokers,
-  Carriers: heroCarriers,
-  "Distribution Centers": heroDock,
+  Shippers: imgCarrierVisibility,
+  Brokers: imgFreightMatching,
+  Carriers: imgTrucksIdle,
+  "Distribution Centers": imgNarrativeDock,
 };
 
 const industryImages: Record<string, string> = {
-  "Industrial & Automotive": heroIndustrial,
-  "3PL Providers": hero3pl,
-  "Retail & FMCG": heroRetail,
-  Pharma: heroPharma,
-  Chemical: heroChemical,
+  "Industrial & Automotive": imgAutomotivePlanning,
+  "3PL Providers": img3plCrossdock,
+  "Retail & FMCG": imgRetailDC,
+  Pharma: imgPharmaTransit,
+  Chemical: imgChemicalTankers,
 };
 
 /* ─── Component ─── */
