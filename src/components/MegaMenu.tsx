@@ -4,24 +4,8 @@ import {
   Truck, Package, Factory, ShoppingCart, Pill, FlaskConical,
   BookOpen, Eye, Route, CalendarCheck, Mail, LogIn, UserPlus, CalendarDays,
   CalendarClock, BarChart3, Plug, Sparkles, DollarSign, ArrowRight,
-  ChevronRight
+  ChevronRight, Shield, Globe, Zap, Layers, MapPin
 } from "lucide-react";
-
-import imgCarrierVisibility from "@/assets/carrier-visibility.jpg";
-import imgNarrativeDock from "@/assets/dc/narrative-dock.jpg";
-import imgTrucksIdle from "@/assets/carriers/narrative-trucks-idle.jpg";
-import imgDockQueuing from "@/assets/dc/comp-dock-queuing.jpg";
-import imgEmptyRuns from "@/assets/carriers/comp-empty-runs.jpg";
-import imgFreightMatching from "@/assets/carriers/comp-freight-matching.jpg";
-import imgRetailDC from "@/assets/ind-retail-dc.jpg";
-import imgChemicalTankers from "@/assets/ind-chemical-tankers.jpg";
-import imgPharmaTransit from "@/assets/ind-pharma-transit.jpg";
-import img3plCrossdock from "@/assets/ind-3pl-crossdock.jpg";
-import imgAutomotivePlanning from "@/assets/ind-automotive-planning.jpg";
-import imgBlogListing from "@/assets/blog/blog-listing-hero.jpg";
-import imgCapDashboard from "@/assets/cap-dashboard.jpg";
-import imgEuropeMap from "@/assets/europe-freight-map.jpg";
-import imgCapTracking from "@/assets/cap-tracking.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
