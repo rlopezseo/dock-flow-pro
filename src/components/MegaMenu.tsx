@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Truck, Package, Factory, ShoppingCart, Pill, FlaskConical,
   BookOpen, Eye, Route, CalendarCheck, Mail, LogIn, UserPlus, CalendarDays,
+  CalendarClock, BarChart3, Plug, Sparkles, DollarSign, ArrowRight,
   ChevronRight
 } from "lucide-react";
 
@@ -16,9 +17,19 @@ import heroRetail from "@/assets/hero-retail-fmcg.jpg";
 import heroPharma from "@/assets/hero-pharma.jpg";
 import heroChemical from "@/assets/hero-chemical.jpg";
 import capNetwork from "@/assets/cap-network.jpg";
+import featuresDock from "@/assets/features-dock.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
+
+const platformItems: MenuItem[] = [
+  { icon: CalendarClock, title: "Dock Scheduling", desc: "Automated appointment booking & capacity management", href: "/dock-scheduling-software-for-distribution-centers" },
+  { icon: Eye, title: "Freight Visibility", desc: "Real-time tracking from gate to departure", href: "/freight-management-software-for-shippers" },
+  { icon: Truck, title: "Load Matching", desc: "Reduce empty miles with intelligent matching", href: "/freight-management-software-for-shippers" },
+  { icon: Sparkles, title: "Backhaul Optimization", desc: "AI-powered optimization for return loads", href: "/freight-management-software-for-shippers" },
+  { icon: BarChart3, title: "Predictive ETA", desc: "AI-powered freight arrival predictions", href: "/freight-management-software-for-shippers" },
+  { icon: Plug, title: "Yard Management", desc: "Digital truck yard optimization", href: "/dock-scheduling-software-for-distribution-centers" },
+];
 
 const solutionsItems: MenuItem[] = [
   { icon: Package, title: "Shippers", desc: "End-to-end freight management & visibility", href: "/freight-management-software-for-shippers" },
@@ -53,9 +64,15 @@ interface PanelConfig {
   items: MenuItem[];
   featured: { image: string; title: string; desc: string; href: string; label: string };
   columns?: number;
+  cta?: { icon: typeof DollarSign; text: string; href: string };
 }
 
 const panels: Record<string, PanelConfig> = {
+  platform: {
+    items: platformItems,
+    featured: { image: featuresDock, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms freight operations from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
+    cta: { icon: DollarSign, text: "View Pricing", href: "#contact" },
+  },
   solutions: {
     items: solutionsItems,
     featured: { image: heroShippers, title: "Find your solution", desc: "Every operation is different. Discover the freight management solution built for yours.", href: "/freight-management-software-for-shippers", label: "Explore Solutions" },
@@ -75,13 +92,14 @@ const panels: Record<string, PanelConfig> = {
 };
 
 const menuLabels: Record<string, string> = {
+  platform: "Platform",
   solutions: "Solutions",
   industries: "Industries",
   blog: "Blog",
   about: "About",
 };
 
-const menuKeys = ["solutions", "industries", "blog", "about"];
+const menuKeys = ["platform", "solutions", "industries", "blog", "about"];
 
 /* ─── Images for Solutions hover ─── */
 const solutionImages: Record<string, string> = {
@@ -208,11 +226,18 @@ const PanelContent = ({
       <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-gray-400 mb-3 px-3">
         {menuLabels[menuKey]}
       </p>
-      <div className="space-y-0.5">
+      <div className="flex-1 space-y-0.5">
         {config.items.map((item) => (
           <MenuLink key={item.title} item={item} onHover={onItemHover} />
         ))}
       </div>
+      {config.cta && (
+        <div className="mt-auto pt-3 border-t border-gray-100">
+          <a href={config.cta.href} className="flex items-center gap-2 px-3 py-2 text-xs font-body text-primary hover:text-primary/80 transition-colors">
+            <config.cta.icon className="w-3.5 h-3.5" /> {config.cta.text} <ArrowRight className="w-3 h-3 ml-auto" />
+          </a>
+        </div>
+      )}
     </div>
 
     <div className="col-span-2 bg-[hsl(220,15%,97%)] p-6 flex flex-col justify-between">
