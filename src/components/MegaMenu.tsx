@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Truck, Package, Factory, ShoppingCart, Pill, FlaskConical,
   BookOpen, Eye, Route, CalendarCheck, Mail, LogIn, UserPlus, CalendarDays,
+  CalendarClock, BarChart3, Plug, Sparkles, DollarSign, ArrowRight,
   ChevronRight
 } from "lucide-react";
 
