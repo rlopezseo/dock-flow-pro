@@ -64,6 +64,7 @@ interface PanelConfig {
   items: MenuItem[];
   featured: { image: string; title: string; desc: string; href: string; label: string };
   columns?: number;
+  cta?: { icon: typeof DollarSign; text: string; href: string };
 }
 
 const panels: Record<string, PanelConfig> = {
