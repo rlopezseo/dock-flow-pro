@@ -801,6 +801,7 @@ const StatsBlock = ({ config }: { config: ICPPageConfig }) => {
                       {meta.chart === "lineUp" && <MiniLineUp color={meta.color} />}
                       {meta.chart === "bar" && <MiniBarChart color={meta.color} />}
                       {meta.chart === "dots" && <MiniDots color={meta.color} />}
+                      {meta.chart === "stars" && <MiniStars color={meta.color} />}
                     </div>
                   </div>
 

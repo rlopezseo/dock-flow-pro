@@ -71,6 +71,12 @@ const config: ICPPageConfig = {
       { value: "7 Weeks", description: "Guaranteed GO LIVE. Operational before your next promotion cycle." },
       { value: "ISO 27001", description: "Certified. Enterprise-grade security and compliance for your freight and retail data." },
     ],
+    cardMeta: [
+      { label: "Revenue uplift", badge: "Freight matching data", chart: "stars" },
+      { label: "Validated result", badge: "Platform analytics", chart: "bar" },
+      { label: "Onboarding speed", badge: "Median across fleets", chart: "lineUp" },
+      { label: "ISO 27001 Certified", badge: "Security & compliance", chart: "dots" },
+    ],
   },
   testimonial: {
     quote: "The TrucksOnTheMap transport management module has been proving its value at our company for years. It enables efficient and transparent, real-time communication with multiple carriers we work with, saving our transport planners a huge amount of energy and countless phone calls.",
