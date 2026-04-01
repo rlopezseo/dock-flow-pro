@@ -92,13 +92,14 @@ const panels: Record<string, PanelConfig> = {
 };
 
 const menuLabels: Record<string, string> = {
+  platform: "Platform",
   solutions: "Solutions",
   industries: "Industries",
   blog: "Blog",
   about: "About",
 };
 
-const menuKeys = ["solutions", "industries", "blog", "about"];
+const menuKeys = ["platform", "solutions", "industries", "blog", "about"];
 
 /* ─── Images for Solutions hover ─── */
 const solutionImages: Record<string, string> = {
