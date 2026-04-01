@@ -42,6 +42,13 @@ const blogItems: MenuItem[] = [
   { icon: Truck, title: "Freight Booking", desc: "Digital capacity procurement", href: "/blog?category=Freight+Booking" },
 ];
 
+const aboutItems: MenuItem[] = [
+  { icon: Mail, title: "Contact", desc: "Get in touch with our team", href: "#contact" },
+  { icon: LogIn, title: "Log In", desc: "Access your account", href: "#contact" },
+  { icon: UserPlus, title: "Register", desc: "Create your free account", href: "#contact" },
+  { icon: CalendarDays, title: "Book Free Consultation", desc: "Schedule a call with our experts", href: "#contact" },
+];
+
 interface PanelConfig {
   items: MenuItem[];
   featured: { image: string; title: string; desc: string; href: string; label: string };
