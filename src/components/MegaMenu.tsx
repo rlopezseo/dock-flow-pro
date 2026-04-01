@@ -84,7 +84,7 @@ const panels: Record<string, PanelConfig> = {
   },
   industries: {
     items: industriesItems,
-    featured: { image: imgHeroPharma, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
+    featured: { image: imgHeroAutomotive, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },, desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
   },
   blog: {
     items: blogItems,
