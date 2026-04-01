@@ -68,6 +68,10 @@ const panels: Record<string, PanelConfig> = {
     items: blogItems,
     featured: { image: capNetwork, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
   },
+  about: {
+    items: aboutItems,
+    featured: { image: heroShippers, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
+  },
 };
 
 const menuLabels: Record<string, string> = {
