@@ -2,8 +2,8 @@ import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Truck, Package, Factory, ShoppingCart, Pill, FlaskConical,
-  BookOpen, Eye, Route, CalendarCheck,
-  ArrowRight, ChevronRight
+  BookOpen, Eye, Route, CalendarCheck, Mail, LogIn, UserPlus, CalendarDays,
+  ChevronRight
 } from "lucide-react";
 
 import heroShippers from "@/assets/hero-shippers.jpg";
@@ -42,6 +42,13 @@ const blogItems: MenuItem[] = [
   { icon: Truck, title: "Freight Booking", desc: "Digital capacity procurement", href: "/blog?category=Freight+Booking" },
 ];
 
+const aboutItems: MenuItem[] = [
+  { icon: Mail, title: "Contact", desc: "Get in touch with our team", href: "#contact" },
+  { icon: LogIn, title: "Log In", desc: "Access your account", href: "#contact" },
+  { icon: UserPlus, title: "Register", desc: "Create your free account", href: "#contact" },
+  { icon: CalendarDays, title: "Book Free Consultation", desc: "Schedule a call with our experts", href: "#contact" },
+];
+
 interface PanelConfig {
   items: MenuItem[];
   featured: { image: string; title: string; desc: string; href: string; label: string };
@@ -61,15 +68,20 @@ const panels: Record<string, PanelConfig> = {
     items: blogItems,
     featured: { image: capNetwork, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
   },
+  about: {
+    items: aboutItems,
+    featured: { image: heroShippers, title: "Let's talk freight", desc: "Book a free consultation and discover how TrucksOnTheMap can transform your logistics operations.", href: "#contact", label: "Book a Demo" },
+  },
 };
 
 const menuLabels: Record<string, string> = {
   solutions: "Solutions",
   industries: "Industries",
   blog: "Blog",
+  about: "About",
 };
 
-const menuKeys = ["solutions", "industries", "blog"];
+const menuKeys = ["solutions", "industries", "blog", "about"];
 
 /* ─── Images for Solutions hover ─── */
 const solutionImages: Record<string, string> = {
