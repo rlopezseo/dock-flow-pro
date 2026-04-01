@@ -2,8 +2,8 @@ import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Truck, Package, Factory, ShoppingCart, Pill, FlaskConical,
-  BookOpen, Eye, Route, CalendarCheck,
-  ArrowRight, ChevronRight
+  BookOpen, Eye, Route, CalendarCheck, Mail, LogIn, UserPlus, CalendarDays,
+  ChevronRight
 } from "lucide-react";
 
 import heroShippers from "@/assets/hero-shippers.jpg";
