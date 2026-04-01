@@ -1,110 +1,107 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  CalendarClock, Eye, Truck, BarChart3, Plug, DollarSign,
-  Factory, ShoppingCart, Snowflake, Package, ArrowDownUp, Pill,
-  HardHat, BookOpen, FileText, Calculator, Sparkles,
-  Users, Shield, Handshake, Mail, ArrowRight, ChevronRight
+  Truck, Package, Factory, ShoppingCart, Pill, FlaskConical,
+  BookOpen, Eye, Route, CalendarCheck,
+  ArrowRight, ChevronRight
 } from "lucide-react";
 
-import imgDock from "@/assets/features-dock.jpg";
-import imgRetail from "@/assets/usecase-retail.jpg";
-import imgColdchain from "@/assets/usecase-coldchain.jpg";
-import imgManufacturing from "@/assets/usecase-manufacturing.jpg";
-import img3pl from "@/assets/usecase-3pl.jpg";
+import heroShippers from "@/assets/hero-shippers.jpg";
+import heroBrokers from "@/assets/hero-brokers.jpg";
+import heroCarriers from "@/assets/hero-carriers.jpg";
+import heroDock from "@/assets/hero-dock.jpg";
+import heroIndustrial from "@/assets/hero-industrial-automotive.jpg";
+import hero3pl from "@/assets/hero-3pl-providers.jpg";
+import heroRetail from "@/assets/hero-retail-fmcg.jpg";
+import heroPharma from "@/assets/hero-pharma.jpg";
+import heroChemical from "@/assets/hero-chemical.jpg";
+import capNetwork from "@/assets/cap-network.jpg";
 
 /* ─── Menu Data ─── */
-type MenuItem = { icon: typeof CalendarClock; title: string; desc: string; href: string };
-
-const platformItems: MenuItem[] = [
-  { icon: CalendarClock, title: "Dock Scheduling", desc: "Automated appointment booking & capacity management", href: "/" },
-  { icon: Eye, title: "Freight Visibility", desc: "Real-time tracking from gate to departure", href: "/freight-visibility" },
-  { icon: Truck, title: "Load Matching", desc: "Reduce empty miles with intelligent matching", href: "/load-matching" },
-  { icon: Sparkles, title: "Backhaul Optimization", desc: "AI-powered optimization for return loads", href: "/backhaul-optimization" },
-  { icon: BarChart3, title: "Predictive ETA", desc: "AI-powered freight arrival predictions", href: "/predictive-eta" },
-  { icon: Plug, title: "Yard Management", desc: "Digital truck yard optimization", href: "/yard-management" },
-];
+type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
 
 const solutionsItems: MenuItem[] = [
-  { icon: Package, title: "3PL & Logistics", desc: "Multi-client dock management at scale", href: "/solutions/3pl" },
-  { icon: ArrowDownUp, title: "Inbound & Outbound", desc: "Unified scheduling for both directions", href: "/solutions/inbound-outbound" },
-  { icon: Snowflake, title: "Cold Chain", desc: "Temperature-controlled dock operations", href: "/solutions/cold-chain" },
-  { icon: Factory, title: "Manufacturing", desc: "JIT delivery synced with production lines", href: "/solutions/manufacturing" },
-  { icon: ShoppingCart, title: "Retail Distribution", desc: "High-volume DC appointment management", href: "/solutions/retail" },
+  { icon: Package, title: "Shippers", desc: "End-to-end freight management & visibility", href: "/freight-management-software-for-shippers" },
+  { icon: Eye, title: "Brokers", desc: "Real-time visibility for brokerage operations", href: "/freight-visibility-software-for-brokers" },
+  { icon: Truck, title: "Carriers", desc: "Fleet visibility & capacity optimization", href: "/fleet-visibility-software-for-carriers" },
+  { icon: CalendarCheck, title: "Distribution Centers", desc: "Dock scheduling & yard management", href: "/dock-scheduling-software-for-distribution-centers" },
 ];
 
 const industriesItems: MenuItem[] = [
-  { icon: Factory, title: "Automotive & JIT", desc: "Just-in-time supply chain precision", href: "/industries/automotive" },
-  { icon: Pill, title: "Pharmaceutical", desc: "Compliance-ready scheduling", href: "/industries/pharmaceutical" },
-  { icon: ShoppingCart, title: "FMCG & Retail", desc: "Peak season capacity planning", href: "/industries/fmcg-retail" },
-  { icon: HardHat, title: "Construction Materials", desc: "Heavy freight coordination", href: "/industries/construction" },
-  { icon: Factory, title: "Manufacturing", desc: "Production-synced dock ops", href: "/industries/manufacturing" },
-  { icon: Package, title: "3PL Providers", desc: "Multi-tenant warehouse scheduling", href: "/industries/3pl" },
+  { icon: Factory, title: "Industrial & Automotive", desc: "JIT supply chain precision", href: "/freight-visibility-for-industrial-and-automotive" },
+  { icon: Package, title: "3PL Providers", desc: "Multi-client freight orchestration", href: "/freight-visibility-for-3pl-providers" },
+  { icon: ShoppingCart, title: "Retail & FMCG", desc: "Peak season capacity planning", href: "/freight-visibility-for-retail-and-fmcg" },
+  { icon: Pill, title: "Pharma", desc: "Compliance-ready cold chain scheduling", href: "/freight-visibility-for-pharma" },
+  { icon: FlaskConical, title: "Chemical", desc: "ADR-certified freight coordination", href: "/freight-visibility-for-chemical-industry" },
 ];
 
-const resourcesItems: MenuItem[] = [
-  { icon: BookOpen, title: "Blog", desc: "Insights on dock scheduling & logistics", href: "/blog" },
-  { icon: FileText, title: "Case Studies", desc: "Real results from real customers", href: "/resources/case-studies" },
-  { icon: BookOpen, title: "Glossary", desc: "Logistics terminology explained", href: "/resources/glossary" },
-  { icon: Calculator, title: "ROI Calculator", desc: "See your potential savings", href: "/tools/roi-calculator" },
-  { icon: Calculator, title: "Empty Miles Calculator", desc: "Calculate your waste reduction", href: "/tools/empty-miles-calculator" },
-];
-
-const companyItems: MenuItem[] = [
-  { icon: Users, title: "About Us", desc: "Our mission & team", href: "/about" },
-  { icon: Users, title: "Careers", desc: "Join our growing team", href: "/careers" },
-  { icon: Handshake, title: "Partners", desc: "Partner ecosystem", href: "/partners" },
-  { icon: Shield, title: "Security", desc: "Enterprise-grade protection", href: "/security" },
-  { icon: Mail, title: "Contact", desc: "Get in touch", href: "#contact" },
+const blogItems: MenuItem[] = [
+  { icon: BookOpen, title: "Blog", desc: "All insights on freight & logistics", href: "/blog" },
+  { icon: Eye, title: "Freight Visibility", desc: "Track & trace across European corridors", href: "/blog?category=Freight+Visibility" },
+  { icon: Route, title: "Empty Miles", desc: "Reduce waste, optimize return loads", href: "/blog?category=Empty+Miles" },
+  { icon: Truck, title: "Freight Booking", desc: "Digital capacity procurement", href: "/blog?category=Freight+Booking" },
 ];
 
 interface PanelConfig {
   items: MenuItem[];
-  featured?: { image: string; title: string; desc: string; href: string; label: string };
+  featured: { image: string; title: string; desc: string; href: string; label: string };
   columns?: number;
-  cta?: { icon: typeof DollarSign; text: string; href: string };
 }
 
 const panels: Record<string, PanelConfig> = {
-  platform: {
-    items: platformItems,
-    featured: { image: imgDock, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms dock scheduling from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
-    cta: { icon: DollarSign, text: "View Pricing", href: "/pricing" },
-  },
   solutions: {
     items: solutionsItems,
-    featured: { image: imgRetail, title: "Find your use case", desc: "Every operation is different. Discover the solution built for yours.", href: "/solutions", label: "Explore Solutions" },
+    featured: { image: heroShippers, title: "Find your solution", desc: "Every operation is different. Discover the freight management solution built for yours.", href: "/freight-management-software-for-shippers", label: "Explore Solutions" },
   },
   industries: {
     items: industriesItems,
-    columns: 2,
-    featured: { image: imgManufacturing, title: "Industry expertise", desc: "Dock scheduling solutions tailored to your sector's unique demands.", href: "/industries", label: "All Industries" },
+    featured: { image: heroIndustrial, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
   },
   blog: {
-    items: resourcesItems,
-    featured: { image: imgColdchain, title: "Latest insights", desc: "Stay ahead with logistics intelligence, case studies, and tools.", href: "/blog", label: "Read the Blog" },
-  },
-  about: {
-    items: companyItems,
-    featured: { image: img3pl, title: "Our story", desc: "Built by logistics professionals, for logistics professionals.", href: "/about", label: "Learn More" },
+    items: blogItems,
+    featured: { image: capNetwork, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
   },
 };
 
-const menuKeys = ["platform", "solutions", "industries", "blog", "about"];
+const menuLabels: Record<string, string> = {
+  solutions: "Solutions",
+  industries: "Industries",
+  blog: "Blog",
+};
+
+const menuKeys = ["solutions", "industries", "blog"];
+
+/* ─── Images for Solutions hover ─── */
+const solutionImages: Record<string, string> = {
+  Shippers: heroShippers,
+  Brokers: heroBrokers,
+  Carriers: heroCarriers,
+  "Distribution Centers": heroDock,
+};
+
+const industryImages: Record<string, string> = {
+  "Industrial & Automotive": heroIndustrial,
+  "3PL Providers": hero3pl,
+  "Retail & FMCG": heroRetail,
+  Pharma: heroPharma,
+  Chemical: heroChemical,
+};
 
 /* ─── Component ─── */
 const MegaMenu = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const open = useCallback((key: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setHoveredItem(null);
     setActiveMenu(key);
   }, []);
 
   const close = useCallback(() => {
-    timeoutRef.current = setTimeout(() => setActiveMenu(null), 180);
+    timeoutRef.current = setTimeout(() => { setActiveMenu(null); setHoveredItem(null); }, 180);
   }, []);
 
   const cancelClose = useCallback(() => {
@@ -113,24 +110,31 @@ const MegaMenu = () => {
 
   const isOpen = activeMenu !== null;
 
+  const getFeaturedImage = () => {
+    if (!activeMenu) return "";
+    if (hoveredItem) {
+      if (activeMenu === "solutions" && solutionImages[hoveredItem]) return solutionImages[hoveredItem];
+      if (activeMenu === "industries" && industryImages[hoveredItem]) return industryImages[hoveredItem];
+    }
+    return panels[activeMenu].featured.image;
+  };
+
   return (
     <div ref={containerRef} className="hidden lg:flex items-center gap-0.5 relative" onMouseLeave={close}>
-      {/* Nav buttons */}
       {menuKeys.map((key) => (
         <button
           key={key}
           onMouseEnter={() => open(key)}
-          className={`px-3.5 py-2 text-xs font-body font-normal transition-colors duration-200 rounded-md ${
+          className={`px-3.5 py-2 text-xs font-body font-normal transition-colors duration-200 rounded-md capitalize ${
             activeMenu === key
               ? "text-foreground bg-white/10"
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          {key}
+          {menuLabels[key]}
         </button>
       ))}
 
-      {/* Single fixed-size panel — content crossfades */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -158,7 +162,12 @@ const MegaMenu = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.15 }}
                   >
-                    <PanelContent config={panels[activeMenu]} menuKey={activeMenu} />
+                    <PanelContent
+                      config={panels[activeMenu]}
+                      menuKey={activeMenu}
+                      featuredImage={getFeaturedImage()}
+                      onItemHover={setHoveredItem}
+                    />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -171,58 +180,57 @@ const MegaMenu = () => {
 };
 
 /* ─── Universal Panel Layout ─── */
-const PanelContent = ({ config, menuKey }: { config: PanelConfig; menuKey: string }) => (
-  <div className="grid grid-cols-5 min-h-[340px]">
-    {/* Left — Links */}
+const PanelContent = ({
+  config,
+  menuKey,
+  featuredImage,
+  onItemHover,
+}: {
+  config: PanelConfig;
+  menuKey: string;
+  featuredImage: string;
+  onItemHover: (title: string | null) => void;
+}) => (
+  <div className="grid grid-cols-5 min-h-[320px]">
     <div className="col-span-3 p-6 flex flex-col">
       <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-gray-400 mb-3 px-3">
-        {menuKey}
+        {menuLabels[menuKey]}
       </p>
-      <div className={`flex-1 ${config.columns === 2 ? "grid grid-cols-2 gap-x-2 gap-y-0.5 content-start" : "space-y-0.5"}`}>
+      <div className="space-y-0.5">
         {config.items.map((item) => (
-          <MenuLink key={item.title} item={item} />
+          <MenuLink key={item.title} item={item} onHover={onItemHover} />
         ))}
       </div>
-      {config.cta && (
-        <div className="mt-auto pt-3 border-t border-gray-100">
-          <a href={config.cta.href} className="flex items-center gap-2 px-3 py-2 text-xs font-body text-primary hover:text-primary/80 transition-colors">
-            <config.cta.icon className="w-3.5 h-3.5" /> {config.cta.text} <ArrowRight className="w-3 h-3 ml-auto" />
-          </a>
-        </div>
-      )}
     </div>
 
-    {/* Right — Featured visual */}
     <div className="col-span-2 bg-[hsl(220,15%,97%)] p-6 flex flex-col justify-between">
-      {config.featured && (
-        <>
-          <div className="rounded-xl overflow-hidden mb-4">
-            <img
-              src={config.featured.image}
-              alt={config.featured.title}
-              className="w-full h-36 object-cover hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-          <div>
-            <p className="text-sm font-display font-normal text-[hsl(207,30%,12%)] mb-1.5">{config.featured.title}</p>
-            <p className="text-[11px] text-[hsl(207,15%,50%)] font-body leading-relaxed mb-5">{config.featured.desc}</p>
-          </div>
-          <a
-            href={config.featured.href}
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary text-primary-foreground text-xs font-body rounded-full hover:bg-primary/90 transition-colors w-fit"
-          >
-            {config.featured.label} <ChevronRight className="w-3 h-3" />
-          </a>
-        </>
-      )}
+      <div className="rounded-xl overflow-hidden mb-4">
+        <img
+          src={featuredImage}
+          alt={config.featured.title}
+          className="w-full h-36 object-cover transition-all duration-500"
+        />
+      </div>
+      <div>
+        <p className="text-sm font-display font-normal text-[hsl(207,30%,12%)] mb-1.5">{config.featured.title}</p>
+        <p className="text-[11px] text-[hsl(207,15%,50%)] font-body leading-relaxed mb-5">{config.featured.desc}</p>
+      </div>
+      <a
+        href={config.featured.href}
+        className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary text-primary-foreground text-xs font-body rounded-full hover:bg-primary/90 transition-colors w-fit"
+      >
+        {config.featured.label} <ChevronRight className="w-3 h-3" />
+      </a>
     </div>
   </div>
 );
 
 /* ─── Link Row ─── */
-const MenuLink = ({ item }: { item: MenuItem }) => (
+const MenuLink = ({ item, onHover }: { item: MenuItem; onHover: (title: string | null) => void }) => (
   <a
     href={item.href}
+    onMouseEnter={() => onHover(item.title)}
+    onMouseLeave={() => onHover(null)}
     className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-[hsl(220,15%,95%)] transition-colors duration-200 group"
   >
     <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors duration-200">
