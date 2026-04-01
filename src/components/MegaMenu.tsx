@@ -124,7 +124,7 @@ const industryImages: Record<string, string> = {
 
 /* ─── Component ─── */
 const MegaMenu = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>("industries");
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
