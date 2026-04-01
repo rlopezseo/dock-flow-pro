@@ -136,7 +136,7 @@ const MegaMenu = () => {
   }, []);
 
   const close = useCallback(() => {
-    timeoutRef.current = setTimeout(() => { setActiveMenu(null); setHoveredItem(null); }, 180);
+    // Temporarily disabled for review
   }, []);
 
   const cancelClose = useCallback(() => {
