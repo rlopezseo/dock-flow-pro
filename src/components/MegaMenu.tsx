@@ -7,17 +7,20 @@ import {
   ChevronRight
 } from "lucide-react";
 
-import heroShippers from "@/assets/hero-shippers.jpg";
-import heroBrokers from "@/assets/hero-brokers.jpg";
-import heroCarriers from "@/assets/hero-carriers.jpg";
-import heroDock from "@/assets/hero-dock.jpg";
-import heroIndustrial from "@/assets/hero-industrial-automotive.jpg";
-import hero3pl from "@/assets/hero-3pl-providers.jpg";
-import heroRetail from "@/assets/hero-retail-fmcg.jpg";
-import heroPharma from "@/assets/hero-pharma.jpg";
-import heroChemical from "@/assets/hero-chemical.jpg";
-import capNetwork from "@/assets/cap-network.jpg";
-import featuresDock from "@/assets/features-dock.jpg";
+import imgCarrierVisibility from "@/assets/carrier-visibility.jpg";
+import imgNarrativeDock from "@/assets/dc/narrative-dock.jpg";
+import imgTrucksIdle from "@/assets/carriers/narrative-trucks-idle.jpg";
+import imgDockQueuing from "@/assets/dc/comp-dock-queuing.jpg";
+import imgEmptyRuns from "@/assets/carriers/comp-empty-runs.jpg";
+import imgFreightMatching from "@/assets/carriers/comp-freight-matching.jpg";
+import imgRetailDC from "@/assets/ind-retail-dc.jpg";
+import imgChemicalTankers from "@/assets/ind-chemical-tankers.jpg";
+import imgPharmaTransit from "@/assets/ind-pharma-transit.jpg";
+import img3plCrossdock from "@/assets/ind-3pl-crossdock.jpg";
+import imgAutomotivePlanning from "@/assets/ind-automotive-planning.jpg";
+import imgBlogHighway from "@/assets/blog/blog-highway-trucks.jpg";
+import imgCapDashboard from "@/assets/cap-dashboard.jpg";
+import imgCapFleet from "@/assets/cap-fleet.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
