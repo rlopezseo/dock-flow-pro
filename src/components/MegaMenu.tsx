@@ -22,6 +22,7 @@ import imgBlogListing from "@/assets/blog/blog-listing-hero.jpg";
 import imgCapDashboard from "@/assets/cap-dashboard.jpg";
 import imgEuropeMap from "@/assets/europe-freight-map.jpg";
 import imgCapTracking from "@/assets/cap-tracking.jpg";
+import imgHeroPharma from "@/assets/hero-pharma.jpg";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
@@ -83,7 +84,7 @@ const panels: Record<string, PanelConfig> = {
   },
   industries: {
     items: industriesItems,
-    featured: { image: imgCapTracking, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
+    featured: { image: imgHeroPharma, title: "Industry expertise", desc: "Freight visibility solutions tailored to your sector's unique demands.", href: "/freight-visibility-for-industrial-and-automotive", label: "All Industries" },
   },
   blog: {
     items: blogItems,
