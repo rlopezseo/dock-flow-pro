@@ -87,7 +87,7 @@ const panels: Record<string, PanelConfig> = {
   },
   blog: {
     items: blogItems,
-    featured: { image: imgBlogHighway, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
+    featured: { image: imgBlogListing, title: "Latest insights", desc: "Stay ahead with logistics intelligence, European freight trends, and operational best practices.", href: "/blog", label: "Read the Blog" },
   },
   about: {
     items: aboutItems,
