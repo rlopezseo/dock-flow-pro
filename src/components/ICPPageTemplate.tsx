@@ -660,6 +660,19 @@ const MiniDots = ({ color = "hsl(45,80%,55%)" }: { color?: string }) => (
   </div>
 );
 
+const MiniStars = ({ color = "hsl(45,80%,55%)", filled = 5 }: { color?: string; filled?: number }) => (
+  <div className="flex items-center gap-1 mt-auto pt-2">
+    {[...Array(5)].map((_, i) => (
+      <svg key={i} viewBox="0 0 20 20" className="w-4 h-4" style={{ opacity: i < filled ? 0.9 : 0.2 }}>
+        <path
+          d="M10 1.5l2.47 5.01L18 7.27l-4 3.9.94 5.51L10 14.14l-4.94 2.54L6 11.17l-4-3.9 5.53-.76L10 1.5z"
+          fill={color}
+        />
+      </svg>
+    ))}
+  </div>
+);
+
 const defaultCardMeta = [
   { color: "hsl(207,60%,35%)", label: "Revenue uplift", badge: "Freight matching data", chart: "lineUp" },
   { color: "hsl(207,50%,40%)", label: "Validated result", badge: "DHL case study", chart: "bar" },
