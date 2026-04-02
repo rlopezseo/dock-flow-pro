@@ -516,7 +516,7 @@ const CTAFinalSection = () => {
           <p className="text-white/40 font-body text-xs tracking-[0.25em] uppercase mb-4">Ready to Switch?</p>
           <h2 className="text-3xl md:text-5xl font-display font-light tracking-tight text-white mb-5 leading-tight">
             Leave Legacy Behind.{" "}
-            <span className="text-white/40">Start in Days.</span>
+            <span className="text-white/40">Start in Weeks.</span>
           </h2>
           <p className="text-white/50 font-body font-normal text-sm mb-10 leading-relaxed">
             Book a 15-minute demo and see why logistics leaders across Europe are switching to TrucksOnTheMap. Free migration support included.
