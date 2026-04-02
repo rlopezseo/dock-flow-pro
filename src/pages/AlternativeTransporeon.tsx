@@ -194,73 +194,33 @@ const HeroSection = () => (
         </motion.div>
 
         {/* Right column — Logo comparison graphic */}
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center">
-          <div className="relative w-full max-w-sm">
-            {/* TOTM Card */}
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-end">
+          <div className="relative w-full max-w-xs flex flex-col items-center gap-6">
+            {/* TOTM Logo */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="relative bg-white/[0.1] backdrop-blur-2xl border border-white/[0.15] rounded-2xl p-6 mb-4 hover:bg-white/[0.14] transition-all duration-500"
+              className="flex items-center justify-center"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center p-1.5 shadow-lg">
-                  <img src={logoTotm} alt="TrucksOnTheMap" className="h-5 w-auto object-contain" />
-                </div>
-                <div>
-                  <p className="text-sm font-display font-normal text-white">TrucksOnTheMap</p>
-                  <p className="text-[10px] text-white/50 font-body">The challenger</p>
-                </div>
-              </div>
-              <div className="space-y-2">
-                {["Go live in days", "Transparent pricing", "Premium UX", "Direct support"].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-[hsl(150,50%,40%)]/20 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-2.5 h-2.5 text-[hsl(150,50%,45%)]" />
-                    </div>
-                    <span className="text-[11px] text-white/70 font-body">{item}</span>
-                  </div>
-                ))}
-              </div>
-              {/* Winner badge */}
-              <div className="absolute -top-2 -right-2 px-3 py-1 rounded-full bg-[hsl(150,50%,40%)] text-[9px] font-body font-medium text-white tracking-wider uppercase shadow-lg">
-                Recommended
-              </div>
+              <img src={logoTotm} alt="TrucksOnTheMap" className="h-10 w-auto brightness-0 invert drop-shadow-[0_0_25px_rgba(255,255,255,0.25)]" />
             </motion.div>
 
             {/* VS divider */}
-            <div className="flex items-center justify-center my-2">
+            <div className="flex items-center justify-center">
               <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
                 <span className="text-xs font-display font-bold text-white/80">VS</span>
               </div>
             </div>
 
-            {/* Transporeon Card */}
+            {/* Transporeon Logo */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="relative bg-white/[0.05] backdrop-blur-xl border border-white/[0.08] rounded-2xl p-6 opacity-70 mt-4"
+              className="flex items-center justify-center opacity-30"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center p-1.5">
-                  <img src={logoTransporeon} alt="Transporeon" className="h-4 w-auto object-contain" />
-                </div>
-                <div>
-                  <p className="text-sm font-display font-normal text-white/80">Transporeon</p>
-                  <p className="text-[10px] text-white/40 font-body">A Trimble Company</p>
-                </div>
-              </div>
-              <div className="space-y-2">
-                {["Months to implement", "Complex pricing tiers", "Legacy interface", "Tiered support"].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-white/[0.06] flex items-center justify-center flex-shrink-0">
-                      <X className="w-2.5 h-2.5 text-white/30" />
-                    </div>
-                    <span className="text-[11px] text-white/40 font-body">{item}</span>
-                  </div>
-                ))}
-              </div>
+              <img src={logoTransporeon} alt="Transporeon" className="h-7 w-auto brightness-0 invert" />
             </motion.div>
           </div>
         </motion.div>
