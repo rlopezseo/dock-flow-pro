@@ -406,10 +406,11 @@ const TestimonialSection = () => {
 
   return (
     <section className="relative py-28 overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 bg-[hsl(210,20%,88%)]" />
       <div className="absolute inset-0">
-        <img src={bgTestimonials} alt="" className="w-full h-full object-cover opacity-[0.04]" loading="lazy" />
-        <div className="absolute inset-0 bg-[hsl(210,20%,97%)]" />
+        <img src={heroImg} alt="" className="w-full h-full object-cover opacity-[0.3]" loading="lazy" />
       </div>
+      <div className="absolute inset-0 bg-[hsl(210,15%,92%)]/75 backdrop-blur-[2px]" />
       <div className="container relative z-10">
         <motion.div initial={{ opacity: 0, y: 25 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center mb-16">
           <p className="text-primary font-display text-xs tracking-[0.25em] uppercase mb-4">What Our Clients Say</p>
