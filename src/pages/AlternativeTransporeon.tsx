@@ -163,7 +163,7 @@ const AlternativeTransporeon = () => {
 
 /* ═══════════ HERO ═══════════ */
 const HeroSection = () => (
-  <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pb-28 overflow-hidden">
+  <section className="relative min-h-[100vh] flex items-end pb-20 md:pb-28 pt-32 overflow-hidden">
     <div className="absolute inset-0">
       <img src={heroImg} alt="European freight operations" className="w-full h-full object-cover scale-105" loading="eager" />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,7%)]/75 to-[hsl(220,20%,7%)]/55" />
@@ -171,7 +171,7 @@ const HeroSection = () => (
     </div>
 
     <div className="container relative z-10">
-      <div className="grid lg:grid-cols-5 gap-12 items-start">
+      <div className="grid lg:grid-cols-5 gap-12 items-end">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }} className="lg:col-span-3">
           <span className="inline-block px-5 py-2 rounded-full text-[11px] font-body font-normal tracking-[0.2em] uppercase text-white/90 border border-white/15 bg-white/[0.08] backdrop-blur-xl mb-7">
             Alternative to Transporeon
@@ -194,7 +194,7 @@ const HeroSection = () => (
         </motion.div>
 
         {/* Right column — Logo comparison graphic */}
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-start pt-4">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-start self-start mt-8">
           <div className="relative w-full flex flex-col items-center gap-10">
             {/* TOTM Logo */}
             <motion.div
