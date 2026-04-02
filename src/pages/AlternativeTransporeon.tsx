@@ -68,7 +68,7 @@ const LogoBannerStrip = () => {
 /* ═══════════ COMPARISON DATA ═══════════ */
 const comparisonFeatures = [
   { category: "Setup & Onboarding", features: [
-    { name: "Time to go live", totm: "Days", competitor: "Weeks to months", winner: "totm" },
+    { name: "Time to go live", totm: "Under 8 weeks", competitor: "3-6 months", winner: "totm" },
     { name: "Onboarding complexity", totm: "Self-service, guided setup", competitor: "Dedicated project team required", winner: "totm" },
     { name: "Free TMS included", totm: true, competitor: false, winner: "totm" },
     { name: "No credit card required", totm: true, competitor: false, winner: "totm" },
@@ -97,7 +97,7 @@ const comparisonFeatures = [
 ];
 
 const switchReasons = [
-  { icon: Zap, title: "Go Live in Days, Not Months", description: "No lengthy implementation projects. Our guided onboarding gets you operational within days, with full support from senior engineers." },
+  { icon: Zap, title: "Go Live in Weeks, Not Months", description: "No lengthy implementation projects. Our guided onboarding gets you fully operational in under 8 weeks, with full support from senior engineers." },
   { icon: Shield, title: "Enterprise Security, Startup Speed", description: "ISO 27001 certified, GDPR compliant, and SOC2 ready. All the security guarantees without the bureaucratic overhead." },
   { icon: BarChart3, title: "Transparent, Predictable Pricing", description: "No hidden fees, no surprise invoices. Pay only for what you use with clear per-shipment pricing that scales with your business." },
   { icon: Globe, title: "European Road Freight Specialist", description: "Purpose-built for European logistics corridors. Deep understanding of CEE routes, regulations, and carrier networks." },
@@ -152,7 +152,7 @@ const HeroSection = () => (
             <br /><span className="text-white/40">Trucks On The Map</span>
           </h1>
           <p className="text-[13px] sm:text-sm text-white/65 max-w-xl font-body font-normal leading-[1.9] mb-10">
-            Same enterprise-grade visibility. Faster implementation. Transparent pricing. Premium UX. Go live in days, not months - without the complexity of legacy platforms.
+            Same enterprise-grade visibility. Faster implementation. Transparent pricing. Premium UX. Go live in weeks, not months - without the complexity of legacy platforms.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#contact" className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-body font-normal text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-500 shadow-[0_0_30px_hsl(207,60%,30%/0.3)]">
@@ -516,7 +516,7 @@ const CTAFinalSection = () => {
           <p className="text-white/40 font-body text-xs tracking-[0.25em] uppercase mb-4">Ready to Switch?</p>
           <h2 className="text-3xl md:text-5xl font-display font-light tracking-tight text-white mb-5 leading-tight">
             Leave Legacy Behind.{" "}
-            <span className="text-white/40">Start in Days.</span>
+            <span className="text-white/40">Start in Weeks.</span>
           </h2>
           <p className="text-white/50 font-body font-normal text-sm mb-10 leading-relaxed">
             Book a 15-minute demo and see why logistics leaders across Europe are switching to TrucksOnTheMap. Free migration support included.
