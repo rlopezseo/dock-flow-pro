@@ -194,8 +194,8 @@ const HeroSection = () => (
         </motion.div>
 
         {/* Right column — Logo comparison graphic */}
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-end">
-          <div className="relative w-full max-w-xs flex flex-col items-center gap-6">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-center">
+          <div className="relative w-full flex flex-col items-center gap-10">
             {/* TOTM Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -203,13 +203,13 @@ const HeroSection = () => (
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex items-center justify-center"
             >
-              <img src={logoTotm} alt="TrucksOnTheMap" className="h-10 w-auto brightness-0 invert drop-shadow-[0_0_25px_rgba(255,255,255,0.25)]" />
+              <img src={logoTotm} alt="TrucksOnTheMap" className="h-20 w-auto brightness-0 invert drop-shadow-[0_0_40px_rgba(255,255,255,0.3)]" />
             </motion.div>
 
             {/* VS divider */}
             <div className="flex items-center justify-center">
-              <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
-                <span className="text-xs font-display font-bold text-white/80">VS</span>
+              <div className="w-14 h-14 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center">
+                <span className="text-base font-display font-bold text-white/80">VS</span>
               </div>
             </div>
 
@@ -220,7 +220,7 @@ const HeroSection = () => (
               transition={{ duration: 0.6, delay: 0.8 }}
               className="flex items-center justify-center opacity-30"
             >
-              <img src={logoTransporeon} alt="Transporeon" className="h-7 w-auto brightness-0 invert" />
+              <img src={logoTransporeon} alt="Transporeon" className="h-14 w-auto brightness-0 invert" />
             </motion.div>
           </div>
         </motion.div>
