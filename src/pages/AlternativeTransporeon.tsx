@@ -152,7 +152,7 @@ const HeroSection = () => (
             <br /><span className="text-white/40">Trucks On The Map</span>
           </h1>
           <p className="text-[13px] sm:text-sm text-white/65 max-w-xl font-body font-normal leading-[1.9] mb-10">
-            Same enterprise-grade visibility. Faster implementation. Transparent pricing. Premium UX. Go live in days, not months - without the complexity of legacy platforms.
+            Same enterprise-grade visibility. Faster implementation. Transparent pricing. Premium UX. Go live in weeks, not months - without the complexity of legacy platforms.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#contact" className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-body font-normal text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-500 shadow-[0_0_30px_hsl(207,60%,30%/0.3)]">
