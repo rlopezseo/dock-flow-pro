@@ -145,7 +145,7 @@ const HeroSection = () => (
       <div className="grid lg:grid-cols-5 gap-12 items-end">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }} className="lg:col-span-3">
           <span className="inline-block px-5 py-2 rounded-full text-[11px] font-body font-normal tracking-[0.2em] uppercase text-white/90 border border-white/15 bg-white/[0.08] backdrop-blur-xl mb-7">
-            Alternative to Transporeon
+            Best Transporeon Alternative
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.1rem] font-display font-extralight leading-[1.55] tracking-tight mb-5 text-white">
             The Smarter Alternative to Transporeon is
