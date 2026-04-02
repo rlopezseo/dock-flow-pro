@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-import heroImg from "@/assets/hero-shippers.jpg";
+import heroImg from "@/assets/hero-alternative.jpg";
 import bgCtaFinal from "@/assets/bg-cta-final.jpg";
 import bgHowItWorks from "@/assets/bg-howitworks.jpg";
 import bgTestimonials from "@/assets/bg-testimonials.jpg";
