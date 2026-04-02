@@ -194,7 +194,7 @@ const HeroSection = () => (
         </motion.div>
 
         {/* Right column — Logo comparison graphic */}
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-start pt-4">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-start self-start mt-8">
           <div className="relative w-full flex flex-col items-center gap-10">
             {/* TOTM Logo */}
             <motion.div
