@@ -40,34 +40,6 @@ const FadeUp = ({ children, className = "", delay = 0 }: { children: React.React
   );
 };
 
-const AnimatedValue = ({ value, inView }: { value: string; inView: boolean }) => {
-  const match = value.match(/([+-−]?)(\d+[.,]?\d*)(.*)/);
-  const [display, setDisplay] = useState(0);
-  const prefix = match?.[1] ?? "";
-  const numStr = match?.[2]?.replace(",", ".") ?? "0";
-  const suffix = match?.[3] ?? "";
-  const target = Number.parseFloat(numStr);
-  const useComma = match?.[2]?.includes(",") ?? false;
-  const decimalPlaces = numStr.includes(".") ? numStr.split(".")[1].length : 0;
-
-  useEffect(() => {
-    if (!inView || !match || Number.isNaN(target)) return;
-    let completed = false;
-    const controls = animate(0, target, {
-      duration: 1.8,
-      ease: [0.25, 0.46, 0.45, 0.94],
-      onUpdate: (v) => setDisplay(v),
-      onComplete: () => { completed = true; setDisplay(target); },
-    });
-    return () => { controls.stop(); if (!completed) setDisplay(target); };
-  }, [inView, target, value]);
-
-  if (!match || Number.isNaN(target)) return <span>{value}</span>;
-  const formatted = decimalPlaces === 0 ? Math.round(display).toString() : display.toFixed(decimalPlaces);
-  const displayStr = useComma ? formatted.replace(".", ",") : formatted;
-  return <span>{prefix}{displayStr}{suffix}</span>;
-};
-
 const LogoBannerStrip = () => {
   const logos = [...clientLogos, ...clientLogos];
   return (
