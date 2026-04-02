@@ -174,10 +174,10 @@ const HeroSection = () => (
       <div className="grid lg:grid-cols-5 gap-12 items-end">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }} className="lg:col-span-3">
           <span className="inline-block px-5 py-2 rounded-full text-[11px] font-body font-normal tracking-[0.2em] uppercase text-white/90 border border-white/15 bg-white/[0.08] backdrop-blur-xl mb-7">
-            Alternative to Transporeon
+            Best Transporeon Alternative
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.1rem] font-display font-extralight leading-[1.28] tracking-tight mb-5 text-white">
-            The Smarter Alternative{"\n"}to Transporeon
+            The Smarter Alternative to Transporeon is <span className="text-primary font-light">TrucksOnTheMap</span>
             <br /><span className="text-white/40">for European Road Freight</span>
           </h1>
           <p className="text-[13px] sm:text-sm text-white/65 max-w-xl font-body font-normal leading-[1.9] mb-10">
@@ -204,8 +204,8 @@ const HeroSection = () => (
               className="relative bg-white/[0.1] backdrop-blur-2xl border border-white/[0.15] rounded-2xl p-6 mb-4 hover:bg-white/[0.14] transition-all duration-500"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center p-1.5 shadow-lg">
-                  <img src={logoTotm} alt="TrucksOnTheMap" className="h-5 w-auto object-contain" />
+                <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center p-2 shadow-xl">
+                  <img src={logoTotm} alt="TrucksOnTheMap" className="h-10 w-auto object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-display font-normal text-white">TrucksOnTheMap</p>
@@ -243,8 +243,8 @@ const HeroSection = () => (
               className="relative bg-white/[0.05] backdrop-blur-xl border border-white/[0.08] rounded-2xl p-6 opacity-70 mt-4"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center p-1.5">
-                  <img src={logoTransporeon} alt="Transporeon" className="h-4 w-auto object-contain" />
+                <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center p-2">
+                  <img src={logoTransporeon} alt="Transporeon" className="h-10 w-auto object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-display font-normal text-white/80">Transporeon</p>
