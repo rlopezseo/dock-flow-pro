@@ -97,7 +97,7 @@ const comparisonFeatures = [
 ];
 
 const switchReasons = [
-  { icon: Zap, title: "Go Live in Days, Not Months", description: "No lengthy implementation projects. Our guided onboarding gets you operational within days, with full support from senior engineers." },
+  { icon: Zap, title: "Go Live in Weeks, Not Months", description: "No lengthy implementation projects. Our guided onboarding gets you fully operational in under 8 weeks, with full support from senior engineers." },
   { icon: Shield, title: "Enterprise Security, Startup Speed", description: "ISO 27001 certified, GDPR compliant, and SOC2 ready. All the security guarantees without the bureaucratic overhead." },
   { icon: BarChart3, title: "Transparent, Predictable Pricing", description: "No hidden fees, no surprise invoices. Pay only for what you use with clear per-shipment pricing that scales with your business." },
   { icon: Globe, title: "European Road Freight Specialist", description: "Purpose-built for European logistics corridors. Deep understanding of CEE routes, regulations, and carrier networks." },
