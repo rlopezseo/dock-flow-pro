@@ -195,66 +195,20 @@ const HeroSection = () => (
 
         {/* Right column — Logo face-off */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.4, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex items-center justify-center">
-          <div className="relative flex flex-col items-center gap-6">
-            {/* TOTM — Hero, glowing */}
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.6 }}
-            >
-              <div className="absolute inset-0 blur-3xl bg-primary/20 scale-150 rounded-full" />
-              <img
-                src={logoTotm}
-                alt="TrucksOnTheMap"
-                className="relative h-28 w-auto object-contain brightness-0 invert drop-shadow-[0_0_60px_rgba(255,255,255,0.3)]"
-              />
-              <motion.span
-                className="absolute -right-3 -top-3 px-3 py-1 rounded-full text-[10px] font-body font-semibold tracking-wider uppercase bg-primary text-primary-foreground shadow-lg"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
-              >
-                ★ Winner
-              </motion.span>
+          <div className="relative flex items-center gap-10">
+            {/* TOTM — bright */}
+            <motion.div className="relative" initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.6 }}>
+              <div className="absolute inset-0 blur-3xl bg-primary/15 scale-150 rounded-full" />
+              <img src={logoTotm} alt="TrucksOnTheMap" className="relative h-36 w-auto object-contain brightness-0 invert drop-shadow-[0_0_50px_rgba(255,255,255,0.2)]" />
             </motion.div>
 
-            {/* VS divider */}
-            <div className="flex items-center gap-4 w-full">
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-              <motion.span
-                className="text-xs font-display font-bold tracking-[0.3em] uppercase text-white/25"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-              >
-                vs
-              </motion.span>
-              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            </div>
+            {/* VS */}
+            <motion.span className="text-3xl font-display font-bold text-white/20" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1, type: "spring", stiffness: 200 }}>
+              vs
+            </motion.span>
 
-            {/* Transporeon — faded, with strikethrough line */}
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.8 }}
-            >
-              <img
-                src={logoTransporeon}
-                alt="Transporeon"
-                className="h-20 w-auto object-contain brightness-0 invert opacity-20 grayscale"
-              />
-              {/* Diagonal strikethrough */}
-              <motion.div
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 1.4, duration: 0.5, ease: "easeOut" }}
-              >
-                <div className="w-[120%] h-[2px] bg-gradient-to-r from-transparent via-red-500/40 to-transparent -rotate-12" />
-              </motion.div>
-            </motion.div>
+            {/* Transporeon — semi-transparent */}
+            <motion.img src={logoTransporeon} alt="Transporeon" className="h-32 w-auto object-contain brightness-0 invert opacity-25" initial={{ opacity: 0, x: 40 }} animate={{ opacity: 0.25, x: 0 }} transition={{ duration: 0.9, delay: 0.8 }} />
           </div>
         </motion.div>
       </div>
