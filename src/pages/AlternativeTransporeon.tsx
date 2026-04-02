@@ -150,7 +150,6 @@ const AlternativeTransporeon = () => {
           <LogoBannerStrip />
           <ComparisonTableSection />
           <WhySwitchSection />
-          <StatsSection />
           <TestimonialSection />
           <FAQSection />
           <CTAFinalSection />
