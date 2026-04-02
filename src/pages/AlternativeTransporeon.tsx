@@ -204,8 +204,8 @@ const HeroSection = () => (
               className="relative bg-white/[0.1] backdrop-blur-2xl border border-white/[0.15] rounded-2xl p-6 mb-4 hover:bg-white/[0.14] transition-all duration-500"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center p-1.5 shadow-lg">
-                  <img src={logoTotm} alt="TrucksOnTheMap" className="h-5 w-auto object-contain" />
+                <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center p-2 shadow-xl">
+                  <img src={logoTotm} alt="TrucksOnTheMap" className="h-10 w-auto object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-display font-normal text-white">TrucksOnTheMap</p>
