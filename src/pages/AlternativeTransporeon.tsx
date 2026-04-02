@@ -163,7 +163,7 @@ const AlternativeTransporeon = () => {
 
 /* ═══════════ HERO ═══════════ */
 const HeroSection = () => (
-  <section className="relative min-h-[100vh] flex items-end pb-20 md:pb-28 pt-32 overflow-hidden">
+  <section className="relative min-h-[100vh] flex items-center pt-32 pb-20 md:pb-28 overflow-hidden">
     <div className="absolute inset-0">
       <img src={heroImg} alt="European freight operations" className="w-full h-full object-cover scale-105" loading="eager" />
       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,20%,5%)] via-[hsl(220,20%,7%)]/75 to-[hsl(220,20%,7%)]/55" />
