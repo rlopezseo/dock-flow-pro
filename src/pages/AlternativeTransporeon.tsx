@@ -103,7 +103,7 @@ const comparisonFeatures = [
   ]},
   { category: "Pricing & Flexibility", features: [
     { name: "Transparent pricing", totm: "Pay-per-use, no hidden fees", competitor: "Enterprise licensing, complex tiers", winner: "totm" },
-    { name: "Minimum commitment", totm: "None", competitor: "12–36 month contracts", winner: "totm" },
+    { name: "Minimum commitment", totm: "None", competitor: "12-36 month contracts", winner: "totm" },
     { name: "SME-friendly", totm: true, competitor: false, winner: "totm" },
   ]},
   { category: "Technology & UX", features: [
@@ -130,7 +130,7 @@ const switchReasons = [
   { icon: BarChart3, title: "Transparent, Predictable Pricing", description: "No hidden fees, no surprise invoices. Pay only for what you use with clear per-shipment pricing that scales with your business." },
   { icon: Globe, title: "European Road Freight Specialist", description: "Purpose-built for European logistics corridors. Deep understanding of CEE routes, regulations, and carrier networks." },
   { icon: Users, title: "Direct Access to Decision Makers", description: "No ticket queues, no chatbots. Direct access to senior team members who understand logistics, not just software." },
-  { icon: Eye, title: "Real-Time Visibility That Actually Works", description: "Multi-source tracking with AI-powered ETAs. Not just a dot on a map — actionable intelligence for every shipment." },
+  { icon: Eye, title: "Real-Time Visibility That Actually Works", description: "Multi-source tracking with AI-powered ETAs. Not just a dot on a map - actionable intelligence for every shipment." },
 ];
 
 /* ═══════════ PAGE ═══════════ */
@@ -177,11 +177,11 @@ const HeroSection = () => (
             Alternative to Transporeon
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-[2.8rem] lg:text-[3.1rem] font-display font-extralight leading-[1.28] tracking-tight mb-5 text-white">
-            The Smarter Alternative{"\n"}to Transporeon
-            <br /><span className="text-white/40">for European Road Freight</span>
+            The Smarter Alternative to Transporeon is
+            <br /><span className="text-white/40">Trucks On The Map</span>
           </h1>
           <p className="text-[13px] sm:text-sm text-white/65 max-w-xl font-body font-normal leading-[1.9] mb-10">
-            Same enterprise-grade visibility. Faster implementation. Transparent pricing. Premium UX. Go live in days, not months — without the complexity of legacy platforms.
+            Same enterprise-grade visibility. Faster implementation. Transparent pricing. Premium UX. Go live in days, not months - without the complexity of legacy platforms.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#contact" className="group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full text-sm font-body font-normal text-primary-foreground bg-primary hover:bg-primary/90 transition-all duration-500 shadow-[0_0_30px_hsl(207,60%,30%/0.3)]">
@@ -193,7 +193,7 @@ const HeroSection = () => (
           </div>
         </motion.div>
 
-        {/* Right column — Logo comparison graphic */}
+        {/* Right column - Logo comparison graphic */}
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.4 }} className="lg:col-span-2 hidden lg:flex flex-col items-center justify-center self-center">
           <div className="relative w-full flex flex-col items-center gap-10">
             {/* TOTM Logo */}
@@ -363,7 +363,7 @@ const WhySwitchSection = () => {
               6 Reasons to Make the Move
             </h2>
             <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed">
-              We're not trying to replace every feature. We're focused on what European shippers and carriers actually need — done exceptionally well.
+              We're not trying to replace every feature. We're focused on what European shippers and carriers actually need - done exceptionally well.
             </p>
           </div>
         </FadeUp>
@@ -536,11 +536,11 @@ const TestimonialSection = () => {
 
 /* ═══════════ FAQ ═══════════ */
 const faqItems = [
-  { question: "How long does it take to migrate from Transporeon?", answer: "Most companies complete the migration within 1–2 weeks. Our team handles data migration, carrier onboarding, and integration setup. You maintain parallel operations during the transition so there's zero disruption to your supply chain." },
-  { question: "Can I keep my existing carrier network?", answer: "Absolutely. We integrate with your existing carriers regardless of what platform they use. Our API-first architecture means your carriers can connect via their preferred telematics or even basic GPS — no app installation required." },
+  { question: "How long does it take to migrate from Transporeon?", answer: "Most companies complete the migration within 1-2 weeks. Our team handles data migration, carrier onboarding, and integration setup. You maintain parallel operations during the transition so there's zero disruption to your supply chain." },
+  { question: "Can I keep my existing carrier network?", answer: "Absolutely. We integrate with your existing carriers regardless of what platform they use. Our API-first architecture means your carriers can connect via their preferred telematics or even basic GPS - no app installation required." },
   { question: "Is the platform suitable for enterprise-scale operations?", answer: "Yes. We handle millions of shipments for companies like Saint-Gobain and Apollo Tyres. Our infrastructure is ISO 27001 certified, GDPR compliant, and built for 99.99% uptime across all European corridors." },
-  { question: "What about multi-modal shipments?", answer: "We're specialists in European road freight — and we do it exceptionally well. If you need a platform that's laser-focused on road logistics with deep CEE expertise, TrucksOnTheMap is the right choice. For ocean or air freight, we integrate with dedicated platforms." },
-  { question: "How does pricing compare to Transporeon?", answer: "Our customers typically report 40–50% savings on platform fees. We offer transparent per-shipment pricing with no minimum commitments, no setup fees, and a free TMS included. No hidden costs, no surprise invoices." },
+  { question: "What about multi-modal shipments?", answer: "We're specialists in European road freight - and we do it exceptionally well. If you need a platform that's laser-focused on road logistics with deep CEE expertise, TrucksOnTheMap is the right choice. For ocean or air freight, we integrate with dedicated platforms." },
+  { question: "How does pricing compare to Transporeon?", answer: "Our customers typically report 40-50% savings on platform fees. We offer transparent per-shipment pricing with no minimum commitments, no setup fees, and a free TMS included. No hidden costs, no surprise invoices." },
   { question: "Do you offer a trial period?", answer: "Yes. We offer a full-featured pilot program where you can test the platform with real shipments before committing. Book a demo and we'll set up a customized trial for your specific use case." },
 ];
 
