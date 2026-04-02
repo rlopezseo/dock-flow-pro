@@ -403,61 +403,6 @@ const WhySwitchSection = () => {
   );
 };
 
-/* ═══════════ STATS ═══════════ */
-const stats = [
-  { value: "−31%", description: "Empty-run reduction for carriers switching from legacy platforms" },
-  { value: "3x", description: "Faster implementation compared to Transporeon's typical onboarding" },
-  { value: "99,99%", description: "SLA compliance maintained across all European corridors" },
-  { value: "47%", description: "Average cost saving on platform fees vs. Transporeon licensing" },
-];
-
-const StatsSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
-  return (
-    <section className="relative py-28 lg:py-36 overflow-hidden" ref={ref}>
-      <div className="absolute inset-0 bg-[hsl(210,20%,88%)]" />
-      <div className="absolute inset-0">
-        <img src={heroImg} alt="" className="w-full h-full object-cover opacity-[0.3]" loading="lazy" />
-      </div>
-      <div className="absolute inset-0 bg-[hsl(210,15%,92%)]/75 backdrop-blur-[2px]" />
-
-      <div className="container relative z-10">
-        <FadeUp>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-primary font-body text-xs tracking-[0.25em] uppercase mb-5">The Numbers</p>
-            <h2 className="text-3xl md:text-[2.75rem] font-display font-extralight tracking-tight text-foreground leading-[1.12] mb-5">
-              Real Results from Real Migrations
-            </h2>
-            <p className="text-sm text-muted-foreground font-body font-normal leading-relaxed max-w-lg mx-auto">
-              Companies that switched from Transporeon to TrucksOnTheMap report measurable improvements across every KPI.
-            </p>
-          </div>
-        </FadeUp>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="relative rounded-2xl overflow-hidden bg-white/40 backdrop-blur-2xl border border-white/50 shadow-sm hover:shadow-lg hover:bg-white/55 transition-all duration-500 p-7 text-center"
-            >
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-              <p className="text-3xl sm:text-4xl font-display font-extralight leading-none tracking-tight text-primary mb-3">
-                <AnimatedValue value={stat.value} inView={inView} />
-              </p>
-              <p className="text-[11px] sm:text-[12px] text-muted-foreground font-body font-normal leading-[1.8]">{stat.description}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 /* ═══════════ TESTIMONIALS ═══════════ */
 const testimonials = [
   {
