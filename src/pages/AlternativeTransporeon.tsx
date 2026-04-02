@@ -68,7 +68,7 @@ const LogoBannerStrip = () => {
 /* ═══════════ COMPARISON DATA ═══════════ */
 const comparisonFeatures = [
   { category: "Setup & Onboarding", features: [
-    { name: "Time to go live", totm: "Days", competitor: "Weeks to months", winner: "totm" },
+    { name: "Time to go live", totm: "Under 8 weeks", competitor: "3-6 months", winner: "totm" },
     { name: "Onboarding complexity", totm: "Self-service, guided setup", competitor: "Dedicated project team required", winner: "totm" },
     { name: "Free TMS included", totm: true, competitor: false, winner: "totm" },
     { name: "No credit card required", totm: true, competitor: false, winner: "totm" },
