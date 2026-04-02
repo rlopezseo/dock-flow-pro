@@ -243,8 +243,8 @@ const HeroSection = () => (
               className="relative bg-white/[0.05] backdrop-blur-xl border border-white/[0.08] rounded-2xl p-6 opacity-70 mt-4"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center p-1.5">
-                  <img src={logoTransporeon} alt="Transporeon" className="h-4 w-auto object-contain" />
+                <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center p-2">
+                  <img src={logoTransporeon} alt="Transporeon" className="h-10 w-auto object-contain" />
                 </div>
                 <div>
                   <p className="text-sm font-display font-normal text-white/80">Transporeon</p>
