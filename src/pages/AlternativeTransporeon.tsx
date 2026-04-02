@@ -1,5 +1,5 @@
-import { motion, useInView, animate } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 import { ArrowUpRight, Check, X, Zap, Shield, BarChart3, Globe, Clock, Users, Truck, Eye, Quote, ChevronRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
