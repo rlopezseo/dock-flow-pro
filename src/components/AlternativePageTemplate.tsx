@@ -103,6 +103,34 @@ const AlternativePageTemplate = ({ config, competitorLogo }: Props) => {
     document.title = config.meta.title;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", config.meta.description);
+
+    // FAQPage JSON-LD structured data for Google rich snippets
+    const existingLd = document.querySelector('script[data-faq-ld]');
+    if (existingLd) existingLd.remove();
+
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: config.faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-faq-ld", "true");
+    script.textContent = JSON.stringify(faqLd);
+    document.head.appendChild(script);
+
+    return () => {
+      const el = document.querySelector('script[data-faq-ld]');
+      if (el) el.remove();
+    };
   }, [config]);
 
   return (
