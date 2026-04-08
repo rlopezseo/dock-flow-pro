@@ -23,6 +23,10 @@ import AlternativeAlpega from "./pages/AlternativeAlpega";
 import AlternativeTimoCom from "./pages/AlternativeTimoCom";
 import AlternativeFourKites from "./pages/AlternativeFourKites";
 import AlternativeOntruck from "./pages/AlternativeOntruck";
+import CarbonVisibility from "./pages/CarbonVisibility";
+import ECmr from "./pages/ECmr";
+import TimeSlotManagement from "./pages/TimeSlotManagement";
+import FreightExchange from "./pages/FreightExchange";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +55,10 @@ const App = () => (
           <Route path="/alternative-to-timocom" element={<AlternativeTimoCom />} />
           <Route path="/alternative-to-fourkites" element={<AlternativeFourKites />} />
           <Route path="/alternative-to-ontruck" element={<AlternativeOntruck />} />
+          <Route path="/carbon-visibility-software" element={<CarbonVisibility />} />
+          <Route path="/ecmr-electronic-consignment-note" element={<ECmr />} />
+          <Route path="/time-slot-management-software" element={<TimeSlotManagement />} />
+          <Route path="/freight-exchange-spot-market" element={<FreightExchange />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
