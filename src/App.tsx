@@ -23,6 +23,10 @@ import AlternativeAlpega from "./pages/AlternativeAlpega";
 import AlternativeTimoCom from "./pages/AlternativeTimoCom";
 import AlternativeFourKites from "./pages/AlternativeFourKites";
 import AlternativeOntruck from "./pages/AlternativeOntruck";
+import CarbonVisibility from "./pages/CarbonVisibility";
+import ECmr from "./pages/ECmr";
+import TimeSlotManagement from "./pages/TimeSlotManagement";
+import FreightExchange from "./pages/FreightExchange";
 
 const queryClient = new QueryClient();
 
