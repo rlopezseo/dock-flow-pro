@@ -168,7 +168,7 @@ const HeroSection = ({ config, competitorLogo }: { config: AlternativePageConfig
             </div>
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.8 }} className="flex items-center justify-center opacity-30">
               {competitorLogo ? (
-                <img src={competitorLogo} alt={config.competitor.name} className="h-14 w-auto brightness-0 invert" />
+                <img src={competitorLogo} alt={config.competitor.name} className="h-24 md:h-32 w-auto brightness-0 invert" />
               ) : (
                 <span className="text-2xl font-display font-light text-white tracking-wide">{config.competitor.name}</span>
               )}
