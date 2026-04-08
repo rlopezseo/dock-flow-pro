@@ -16,6 +16,13 @@ import ICPRetailFmcg from "./pages/ICPRetailFmcg";
 import ICPPharma from "./pages/ICPPharma";
 import ICPChemical from "./pages/ICPChemical";
 import AlternativeTransporeon from "./pages/AlternativeTransporeon";
+import AlternativeShippeo from "./pages/AlternativeShippeo";
+import AlternativeProject44 from "./pages/AlternativeProject44";
+import AlternativeSennder from "./pages/AlternativeSennder";
+import AlternativeAlpega from "./pages/AlternativeAlpega";
+import AlternativeTimoCom from "./pages/AlternativeTimoCom";
+import AlternativeFourKites from "./pages/AlternativeFourKites";
+import AlternativeOntruck from "./pages/AlternativeOntruck";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +44,13 @@ const App = () => (
           <Route path="/freight-visibility-for-pharma" element={<ICPPharma />} />
           <Route path="/freight-visibility-for-chemical-industry" element={<ICPChemical />} />
           <Route path="/alternative-to-transporeon" element={<AlternativeTransporeon />} />
+          <Route path="/alternative-to-shippeo" element={<AlternativeShippeo />} />
+          <Route path="/alternative-to-project44" element={<AlternativeProject44 />} />
+          <Route path="/alternative-to-sennder" element={<AlternativeSennder />} />
+          <Route path="/alternative-to-alpega" element={<AlternativeAlpega />} />
+          <Route path="/alternative-to-timocom" element={<AlternativeTimoCom />} />
+          <Route path="/alternative-to-fourkites" element={<AlternativeFourKites />} />
+          <Route path="/alternative-to-ontruck" element={<AlternativeOntruck />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<NotFound />} />
