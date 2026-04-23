@@ -205,9 +205,9 @@ export const BookDemoProvider = ({ children }: { children: ReactNode }) => {
                       />
                       <span className="text-[11px] text-muted-foreground font-body leading-snug">
                         I agree to the{" "}
-                        <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">Terms &amp; Conditions</a>
+                        <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-muted-foreground/80 underline underline-offset-2 decoration-white/20 hover:text-foreground hover:decoration-white/40 transition-colors">Terms &amp; Conditions</a>
                         {" "}and{" "}
-                        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">Privacy Policy</a>
+                        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground/80 underline underline-offset-2 decoration-white/20 hover:text-foreground hover:decoration-white/40 transition-colors">Privacy Policy</a>
                         , and consent to be contacted by TrucksOnTheMap.
                       </span>
                     </label>
