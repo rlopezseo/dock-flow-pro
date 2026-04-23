@@ -69,6 +69,7 @@ export const BookDemoProvider = ({ children }: { children: ReactNode }) => {
       country: String(form.get("country") || ""),
       fleetSize: String(form.get("fleetSize") || ""),
       message: String(form.get("message") || ""),
+      consent: form.get("consent") ? "on" : "",
     };
 
     const parsed = schema.safeParse(data);
