@@ -14,6 +14,8 @@ const trustSignals = [
   "Safe platform",
   "No IT needed",
   "Go live in seven weeks",
+  "SAP & Oracle ready",
+  "Trusted by 500+ shippers",
 ];
 
 import imgCapacity from "@/assets/modules/pillar-capacity.png";
@@ -185,7 +187,7 @@ const ModulesPanel = () => {
 
         {/* Trust signals widget */}
         <div className="mx-3 mt-4 rounded-xl bg-gradient-to-r from-[hsl(207,40%,97%)] via-white to-[hsl(207,40%,97%)] border border-[hsl(207,30%,90%)] px-4 py-3">
-          <div className="flex items-center justify-between gap-2 flex-wrap">
+          <div className="grid grid-cols-3 gap-x-4 gap-y-2">
             {trustSignals.map((label) => (
               <div key={label} className="flex items-center gap-2">
                 <Check className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={2.5} />
