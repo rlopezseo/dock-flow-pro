@@ -6,7 +6,7 @@ import {
   Radio, Clock, Bell, FileCheck, Smartphone, AlertTriangle,
   CalendarCheck, Layers, PackageCheck, Globe2, RefreshCw,
   Sparkles, Repeat, Wrench, Gauge,
-  Award, ShieldCheck, ServerOff, Rocket,
+  Award, ShieldCheck, ServerOff, Rocket, Check,
 } from "lucide-react";
 
 const trustSignals = [
