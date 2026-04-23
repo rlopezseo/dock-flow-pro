@@ -27,6 +27,7 @@ import CarbonVisibility from "./pages/CarbonVisibility";
 import ECmr from "./pages/ECmr";
 import TimeSlotManagement from "./pages/TimeSlotManagement";
 import FreightExchange from "./pages/FreightExchange";
+import { BookDemoProvider } from "./components/BookDemoDialog";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <BookDemoProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/freight-management-software-for-shippers" replace />} />
@@ -64,6 +66,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      </BookDemoProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
