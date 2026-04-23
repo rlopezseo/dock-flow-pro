@@ -3,10 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/logo-trucksonthemap.png";
 import MegaMenu from "./MegaMenu";
+import { useBookDemo } from "./BookDemoDialog";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { open: openBookDemo } = useBookDemo();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -46,15 +48,15 @@ const Navbar = () => {
           </div>
 
           <div className="hidden lg:flex items-center gap-6">
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground font-body font-normal transition-colors">
+            <button onClick={openBookDemo} className="text-sm text-muted-foreground hover:text-foreground font-body font-normal transition-colors">
               get in contact
-            </a>
-            <a href="#contact" className="inline-flex items-center gap-1.5 px-5 py-2 border border-white/20 rounded-full text-sm font-body font-normal text-foreground hover:bg-white/5 transition-colors">
+            </button>
+            <button onClick={openBookDemo} className="inline-flex items-center gap-1.5 px-5 py-2 border border-white/20 rounded-full text-sm font-body font-normal text-foreground hover:bg-white/5 transition-colors">
               register <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-            <a href="#contact" className="inline-flex items-center gap-1.5 px-5 py-2 bg-primary text-primary-foreground rounded-full text-sm font-body font-normal hover:bg-primary/90 transition-colors">
-              log in <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
+            </button>
+            <button onClick={openBookDemo} className="inline-flex items-center gap-1.5 px-5 py-2 bg-primary text-primary-foreground rounded-full text-sm font-body font-normal hover:bg-primary/90 transition-colors">
+              book a demo <ArrowUpRight className="w-3.5 h-3.5" />
+            </button>
           </div>
 
           <button
@@ -84,14 +86,14 @@ const Navbar = () => {
               <a href="/predictive-eta" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">predictive ETA</a>
               <a href="/yard-management" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">yard management</a>
               <a href="/backhaul-optimization" className="text-muted-foreground font-body font-normal py-3 border-b border-white/5">backhaul optimization</a>
-              <a href="#contact" className="text-muted-foreground font-body font-normal py-3">get in contact</a>
+              <button onClick={() => { openBookDemo(); setMenuOpen(false); }} className="text-left text-muted-foreground font-body font-normal py-3">get in contact</button>
               <div className="flex gap-3 pt-4">
-                <a href="#contact" className="flex-1 text-center px-4 py-3 border border-white/20 rounded-full text-sm font-body font-normal text-foreground">
+                <button onClick={() => { openBookDemo(); setMenuOpen(false); }} className="flex-1 text-center px-4 py-3 border border-white/20 rounded-full text-sm font-body font-normal text-foreground">
                   register
-                </a>
-                <a href="#contact" className="flex-1 text-center px-4 py-3 bg-primary text-primary-foreground rounded-full text-sm font-body font-normal">
-                  log in
-                </a>
+                </button>
+                <button onClick={() => { openBookDemo(); setMenuOpen(false); }} className="flex-1 text-center px-4 py-3 bg-primary text-primary-foreground rounded-full text-sm font-body font-normal">
+                  book a demo
+                </button>
               </div>
             </div>
           </motion.div>
