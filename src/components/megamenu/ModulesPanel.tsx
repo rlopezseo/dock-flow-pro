@@ -190,7 +190,9 @@ const ModulesPanel = () => {
           <div className="grid grid-cols-[max-content_max-content_max-content] justify-between gap-x-4 gap-y-2.5">
             {trustSignals.map((label) => (
               <div key={label} className="flex items-center gap-1.5">
-                <Check className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={3} />
+                <span className="w-4 h-4 rounded-full border border-primary/60 flex items-center justify-center shrink-0 bg-transparent">
+                  <Check className="w-2.5 h-2.5 text-primary" strokeWidth={3} />
+                </span>
                 <p className="text-[10.5px] font-body text-[hsl(207,30%,20%)] leading-none whitespace-nowrap">
                   {label}
                 </p>
