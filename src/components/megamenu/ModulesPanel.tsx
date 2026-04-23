@@ -29,6 +29,8 @@ type Pillar = {
   desc: string;
   href: string;
   modules: SubModule[];
+  stats: { value: string; label: string }[];
+  footnote: string;
 };
 
 const pillars: Pillar[] = [
@@ -47,6 +49,12 @@ const pillars: Pillar[] = [
       { icon: LineChart, title: "PriceIndex 90-day", desc: "Lane benchmark trends" },
       { icon: Upload, title: "MassUpload", desc: "Bulk freight onboarding" },
     ],
+    stats: [
+      { value: "12k+", label: "Carriers" },
+      { value: "32", label: "Countries" },
+      { value: "90d", label: "Forecast" },
+    ],
+    footnote: "Connected to SAP TM, Oracle OTM and major European TMS.",
   },
   {
     key: "visibility",
@@ -63,6 +71,12 @@ const pillars: Pillar[] = [
       { icon: Smartphone, title: "Driver App", desc: "On-route mobile companion" },
       { icon: AlertTriangle, title: "Exception Alerts", desc: "Delays & incident triggers" },
     ],
+    stats: [
+      { value: "98%", label: "Track rate" },
+      { value: "30s", label: "Refresh" },
+      { value: "200+", label: "Telematics" },
+    ],
+    footnote: "ISO 27001 compliant. GDPR ready. Trusted by Tier-1 shippers.",
   },
   {
     key: "schedule",
@@ -79,6 +93,12 @@ const pillars: Pillar[] = [
       { icon: RefreshCw, title: "Real-time Status Updates", desc: "Live ops sync" },
       { icon: Globe2, title: "Any-Device Access", desc: "Mobile, tablet & desktop" },
     ],
+    stats: [
+      { value: "-42%", label: "Wait time" },
+      { value: "24/7", label: "Self-service" },
+      { value: "5min", label: "Setup" },
+    ],
+    footnote: "Designed for distribution centers, plants and cross-docks.",
   },
   {
     key: "match",
@@ -96,6 +116,12 @@ const pillars: Pillar[] = [
       { icon: Gauge, title: "Revenue-per-Truck Dashboard", desc: "Fleet profitability KPIs" },
       { icon: LineChart, title: "90-day PriceIndex", desc: "Spot market benchmark" },
     ],
+    stats: [
+      { value: "+18%", label: "Revenue/truck" },
+      { value: "-27%", label: "Empty miles" },
+      { value: "Free", label: "For carriers" },
+    ],
+    footnote: "Built for carriers and brokers across European corridors.",
   },
 ];
 
