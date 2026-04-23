@@ -6,7 +6,15 @@ import {
   Radio, Clock, Bell, FileCheck, Smartphone, AlertTriangle,
   CalendarCheck, Layers, PackageCheck, Globe2, RefreshCw,
   Sparkles, Repeat, Wrench, Gauge,
+  Award, ShieldCheck, ServerOff, Rocket,
 } from "lucide-react";
+
+const trustSignals = [
+  { icon: Award, label: "25 years", sub: "industry experience" },
+  { icon: ShieldCheck, label: "Safe platform", sub: "ISO-grade security" },
+  { icon: ServerOff, label: "No IT needed", sub: "zero infrastructure" },
+  { icon: Rocket, label: "Go live", sub: "in seven weeks" },
+];
 
 import imgCapacity from "@/assets/modules/pillar-capacity.png";
 import imgVisibility from "@/assets/modules/pillar-visibility.png";
