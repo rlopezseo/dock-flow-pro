@@ -10,10 +10,10 @@ import {
 } from "lucide-react";
 
 const trustSignals = [
-  { icon: Award, label: "25 years", sub: "industry experience" },
-  { icon: ShieldCheck, label: "Safe platform", sub: "ISO-grade security" },
-  { icon: ServerOff, label: "No IT needed", sub: "zero infrastructure" },
-  { icon: Rocket, label: "Go live", sub: "in seven weeks" },
+  { icon: Award, label: "25 years", sub: "Experience" },
+  { icon: ShieldCheck, label: "Safe platform", sub: "ISO-grade" },
+  { icon: ServerOff, label: "No IT needed", sub: "Zero setup" },
+  { icon: Rocket, label: "Go live in seven weeks", sub: "Fast onboarding" },
 ];
 
 import imgCapacity from "@/assets/modules/pillar-capacity.png";
