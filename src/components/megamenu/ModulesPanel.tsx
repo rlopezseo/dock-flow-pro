@@ -186,12 +186,12 @@ const ModulesPanel = () => {
         </div>
 
         {/* Trust signals widget */}
-        <div className="mx-1 mt-4 rounded-xl bg-gradient-to-r from-[hsl(207,40%,97%)] via-white to-[hsl(207,40%,97%)] border border-[hsl(207,30%,90%)] px-3.5 py-2.5">
-          <div className="grid grid-cols-3 gap-x-4 gap-y-2">
+        <div className="mx-0 mt-4 rounded-xl bg-gradient-to-r from-[hsl(207,40%,97%)] via-white to-[hsl(207,40%,97%)] border border-[hsl(207,30%,90%)] px-4 py-3">
+          <div className="grid grid-cols-[max-content_max-content_max-content] justify-between gap-x-4 gap-y-2.5">
             {trustSignals.map((label) => (
-              <div key={label} className="flex items-center gap-1.5 min-w-0">
+              <div key={label} className="flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={3} />
-                <p className="text-[11px] font-body text-[hsl(207,30%,20%)] leading-tight break-words">
+                <p className="text-[10.5px] font-body text-[hsl(207,30%,20%)] leading-none whitespace-nowrap">
                   {label}
                 </p>
               </div>
