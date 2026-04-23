@@ -29,8 +29,6 @@ type Pillar = {
   desc: string;
   href: string;
   modules: SubModule[];
-  stats: { value: string; label: string }[];
-  footnote: string;
 };
 
 const pillars: Pillar[] = [
@@ -49,12 +47,6 @@ const pillars: Pillar[] = [
       { icon: LineChart, title: "PriceIndex 90-day", desc: "Lane benchmark trends" },
       { icon: Upload, title: "MassUpload", desc: "Bulk freight onboarding" },
     ],
-    stats: [
-      { value: "12k+", label: "Carriers" },
-      { value: "32", label: "Countries" },
-      { value: "90d", label: "Forecast" },
-    ],
-    footnote: "Connected to SAP TM, Oracle OTM and major European TMS.",
   },
   {
     key: "visibility",
@@ -71,12 +63,6 @@ const pillars: Pillar[] = [
       { icon: Smartphone, title: "Driver App", desc: "On-route mobile companion" },
       { icon: AlertTriangle, title: "Exception Alerts", desc: "Delays & incident triggers" },
     ],
-    stats: [
-      { value: "98%", label: "Track rate" },
-      { value: "30s", label: "Refresh" },
-      { value: "200+", label: "Telematics" },
-    ],
-    footnote: "ISO 27001 compliant. GDPR ready. Trusted by Tier-1 shippers.",
   },
   {
     key: "schedule",
@@ -93,12 +79,6 @@ const pillars: Pillar[] = [
       { icon: RefreshCw, title: "Real-time Status Updates", desc: "Live ops sync" },
       { icon: Globe2, title: "Any-Device Access", desc: "Mobile, tablet & desktop" },
     ],
-    stats: [
-      { value: "-42%", label: "Wait time" },
-      { value: "24/7", label: "Self-service" },
-      { value: "5min", label: "Setup" },
-    ],
-    footnote: "Designed for distribution centers, plants and cross-docks.",
   },
   {
     key: "match",
@@ -116,12 +96,6 @@ const pillars: Pillar[] = [
       { icon: Gauge, title: "Revenue-per-Truck Dashboard", desc: "Fleet profitability KPIs" },
       { icon: LineChart, title: "90-day PriceIndex", desc: "Spot market benchmark" },
     ],
-    stats: [
-      { value: "+18%", label: "Revenue/truck" },
-      { value: "-27%", label: "Empty miles" },
-      { value: "Free", label: "For carriers" },
-    ],
-    footnote: "Built for carriers and brokers across European corridors.",
   },
 ];
 
@@ -200,27 +174,11 @@ const ModulesPanel = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-
-        {/* Footnote bar */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`fn-${activePillar}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="mt-3 pt-3 border-t border-gray-100 px-3"
-          >
-            <p className="text-[10px] font-body text-[hsl(207,15%,50%)] leading-relaxed">
-              {current.footnote}
-            </p>
-          </motion.div>
-        </AnimatePresence>
       </div>
 
       {/* Right: Pillar preview */}
       <div className="col-span-2 bg-white p-6 flex flex-col border-l border-gray-100">
-        <div className="rounded-xl overflow-hidden mb-4 bg-white flex items-center justify-center p-3 h-[140px]">
+        <div className="rounded-xl overflow-hidden flex-1 mb-4 bg-white flex items-center justify-center p-4">
           <AnimatePresence mode="wait">
             <motion.img
               key={current.image + current.key}
@@ -234,8 +192,7 @@ const ModulesPanel = () => {
             />
           </AnimatePresence>
         </div>
-
-        <div className="flex-1">
+        <div>
           <div className="flex items-center gap-2 mb-1.5">
             <p className="text-sm font-display font-normal text-[hsl(207,30%,12%)]">
               {current.title}
@@ -249,31 +206,7 @@ const ModulesPanel = () => {
           <p className="text-[11px] text-[hsl(207,15%,50%)] font-body leading-relaxed mb-4">
             {current.desc}
           </p>
-
-          {/* Stats row */}
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={`stats-${activePillar}`}
-              initial={{ opacity: 0, y: 4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="grid grid-cols-3 gap-2 mb-4 pb-4 border-b border-gray-100"
-            >
-              {current.stats.map((s) => (
-                <div key={s.label} className="text-left">
-                  <p className="text-[15px] font-display font-normal text-primary leading-none">
-                    {s.value}
-                  </p>
-                  <p className="text-[9px] font-body tracking-[0.05em] uppercase text-[hsl(207,15%,55%)] mt-1">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
         </div>
-
         <a
           href={current.href}
           className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary text-primary-foreground text-[11px] font-body rounded-full hover:bg-primary/90 transition-colors w-fit"
