@@ -4,7 +4,7 @@ import {
   Truck, Package, Factory, ShoppingCart, Pill, FlaskConical,
   BookOpen, Eye, Route, CalendarCheck, Mail, LogIn, UserPlus, CalendarDays,
   CalendarClock, BarChart3, Plug, Sparkles, DollarSign, ArrowRight,
-  ChevronRight
+  ChevronRight, Leaf, FileSignature, Repeat
 } from "lucide-react";
 
 import imgCarrierVisibility from "@/assets/carrier-visibility.jpg";
@@ -29,12 +29,12 @@ import ModulesPanel from "@/components/megamenu/ModulesPanel";
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
 
 const platformItems: MenuItem[] = [
-  { icon: CalendarClock, title: "Dock Scheduling", desc: "Automated appointment booking & capacity management", href: "/dock-scheduling-software-for-distribution-centers" },
+  { icon: Repeat, title: "Freight Exchange Platform", desc: "European spot market for shippers and carriers", href: "/freight-exchange-spot-market" },
+  { icon: CalendarClock, title: "Time Slot Management Software", desc: "Automated dock appointment booking", href: "/time-slot-management-software" },
   { icon: Eye, title: "Freight Visibility", desc: "Real-time tracking from gate to departure", href: "/freight-management-software-for-shippers" },
+  { icon: FileSignature, title: "eCMR Software", desc: "Digital consignment notes & paperless ePOD", href: "/ecmr-electronic-consignment-note" },
+  { icon: Leaf, title: "Carbon Visibility Software", desc: "CO₂ emissions tracking & ESG reporting", href: "/carbon-visibility-software" },
   { icon: Truck, title: "Load Matching", desc: "Reduce empty miles with intelligent matching", href: "/freight-management-software-for-shippers" },
-  { icon: Sparkles, title: "Backhaul Optimization", desc: "AI-powered optimization for return loads", href: "/freight-management-software-for-shippers" },
-  { icon: BarChart3, title: "Predictive ETA", desc: "AI-powered freight arrival predictions", href: "/freight-management-software-for-shippers" },
-  { icon: Plug, title: "Yard Management", desc: "Digital truck yard optimization", href: "/dock-scheduling-software-for-distribution-centers" },
 ];
 
 const solutionsItems: MenuItem[] = [
