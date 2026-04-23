@@ -13,9 +13,9 @@ const trustSignals = [
   "25 years experience",
   "Safe platform",
   "No IT needed",
-  "Go live in seven weeks",
+  "Go live in 7 weeks",
   "SAP & Oracle ready",
-  "Trusted by 500+ shippers",
+  "Trusted by Industry Leaders",
 ];
 
 import imgCapacity from "@/assets/modules/pillar-capacity.png";
