@@ -37,6 +37,7 @@ const schema = z.object({
   country: z.string().trim().min(2, "Country is required").max(60),
   fleetSize: z.string().min(1, "Select your operation size"),
   message: z.string().trim().max(800).optional().or(z.literal("")),
+  consent: z.literal("on", { errorMap: () => ({ message: "You must accept the Terms & Privacy Policy" }) }),
 });
 
 const trustItems = [
