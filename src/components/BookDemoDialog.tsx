@@ -41,7 +41,7 @@ const schema = z.object({
 });
 
 const trustItems = [
-  { icon: ShieldCheck, title: "Safe & Secure Platform", desc: "ISO 27001 compliant. GDPR ready. Enterprise-grade infrastructure trusted by Tier-1 shippers." },
+  { icon: ShieldCheck, title: "Safe & Secure Platform", desc: "ISO 27001 compliant. GDPR ready. Enterprise-grade infrastructure trusted by Tier-1 shippers, carriers, brokers and distribution centers." },
   { icon: Users, title: "Invite-Only Carrier Network", desc: "Vetted European carriers across 32 countries. No spam loadboards. Quality over quantity." },
   { icon: Award, title: "25+ Years in Logistics", desc: "Built by freight operators, not generic software vendors. Real industry know-how baked in." },
   { icon: CalendarCheck, title: "Free Expert Consultation", desc: "30-minute working session with a freight logistics expert. Tailored to your operation. No sales pitch." },
