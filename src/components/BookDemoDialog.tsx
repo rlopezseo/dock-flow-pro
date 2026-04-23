@@ -188,11 +188,11 @@ export const BookDemoProvider = ({ children }: { children: ReactNode }) => {
                         className="flex h-9 w-full rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                       >
                         <option value="" disabled className="bg-[hsl(220,8%,12%)]">Select your monthly volume</option>
-                        <option value="<100" className="bg-[hsl(220,8%,12%)]">Less than 100 shipments / month</option>
-                        <option value="100-500" className="bg-[hsl(220,8%,12%)]">100 - 500 shipments / month</option>
-                        <option value="500-2000" className="bg-[hsl(220,8%,12%)]">500 - 2,000 shipments / month</option>
-                        <option value="2000-10000" className="bg-[hsl(220,8%,12%)]">2,000 - 10,000 shipments / month</option>
-                        <option value="10000+" className="bg-[hsl(220,8%,12%)]">10,000+ shipments / month</option>
+                        <option value="<100" className="bg-[hsl(220,8%,12%)]">Less than 100 loads / month</option>
+                        <option value="100-500" className="bg-[hsl(220,8%,12%)]">100 - 500 loads / month</option>
+                        <option value="500-2000" className="bg-[hsl(220,8%,12%)]">500 - 2,000 loads / month</option>
+                        <option value="2000-10000" className="bg-[hsl(220,8%,12%)]">2,000 - 10,000 loads / month</option>
+                        <option value="10000+" className="bg-[hsl(220,8%,12%)]">10,000+ loads / month</option>
                       </select>
                       {errors.fleetSize && <p className="text-[11px] text-destructive mt-1 font-body">{errors.fleetSize}</p>}
                     </div>
