@@ -199,12 +199,16 @@ const MegaMenu = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.15 }}
                   >
-                    <PanelContent
-                      config={panels[activeMenu]}
-                      menuKey={activeMenu}
-                      featuredImage={getFeaturedImage()}
-                      onItemHover={setHoveredItem}
-                    />
+                    {activeMenu === "modules" ? (
+                      <ModulesPanel />
+                    ) : (
+                      <PanelContent
+                        config={panels[activeMenu]}
+                        menuKey={activeMenu}
+                        featuredImage={getFeaturedImage()}
+                        onItemHover={setHoveredItem}
+                      />
+                    )}
                   </motion.div>
                 )}
               </AnimatePresence>
