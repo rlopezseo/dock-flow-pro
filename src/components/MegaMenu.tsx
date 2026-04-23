@@ -80,6 +80,7 @@ interface PanelConfig {
 const panels: Record<string, PanelConfig> = {
   platform: {
     items: platformItems,
+    columns: 2,
     featured: { image: imgCapDashboard, title: "See the platform in action", desc: "Watch how TrucksOnTheMap transforms freight operations from chaos to clockwork.", href: "#contact", label: "Request a Demo" },
     
   },
@@ -241,9 +242,9 @@ const PanelContent = ({
       <p className="text-[10px] font-body font-normal tracking-[0.2em] uppercase text-gray-400 mb-3 px-3">
         {menuLabels[menuKey]}
       </p>
-      <div className="flex-1 space-y-0.5">
+      <div className={`flex-1 ${config.columns === 2 ? "grid grid-cols-2 gap-x-1 gap-y-0.5" : "space-y-0.5"}`}>
         {config.items.map((item) => (
-          <MenuLink key={item.title} item={item} onHover={onItemHover} />
+          <MenuLink key={item.title} item={item} onHover={onItemHover} compact={config.columns === 2} />
         ))}
       </div>
       {config.cta && (
@@ -278,21 +279,21 @@ const PanelContent = ({
 );
 
 /* ─── Link Row ─── */
-const MenuLink = ({ item, onHover }: { item: MenuItem; onHover: (title: string | null) => void }) => (
+const MenuLink = ({ item, onHover, compact = false }: { item: MenuItem; onHover: (title: string | null) => void; compact?: boolean }) => (
   <a
     href={item.href}
     onMouseEnter={() => onHover(item.title)}
     onMouseLeave={() => onHover(null)}
-    className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-[hsl(220,15%,95%)] transition-colors duration-200 group"
+    className={`flex items-start gap-2.5 ${compact ? "px-2.5 py-2" : "px-3 py-2.5"} rounded-xl hover:bg-[hsl(220,15%,95%)] transition-colors duration-200 group`}
   >
-    <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors duration-200">
-      <item.icon className="w-4 h-4 text-primary" />
+    <div className={`${compact ? "w-8 h-8" : "w-9 h-9"} rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors duration-200`}>
+      <item.icon className={`${compact ? "w-3.5 h-3.5" : "w-4 h-4"} text-primary`} />
     </div>
     <div className="min-w-0">
-      <p className="text-[13px] font-display font-normal text-[hsl(207,30%,12%)] group-hover:text-primary transition-colors duration-200">
+      <p className={`${compact ? "text-[12px] leading-tight" : "text-[13px]"} font-display font-normal text-[hsl(207,30%,12%)] group-hover:text-primary transition-colors duration-200`}>
         {item.title}
       </p>
-      <p className="text-[11px] text-[hsl(207,15%,55%)] font-body leading-snug mt-0.5">{item.desc}</p>
+      <p className={`${compact ? "text-[10px]" : "text-[11px]"} text-[hsl(207,15%,55%)] font-body leading-snug mt-0.5 line-clamp-2`}>{item.desc}</p>
     </div>
   </a>
 );
