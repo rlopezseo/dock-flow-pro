@@ -219,7 +219,7 @@ export const BookDemoProvider = ({ children }: { children: ReactNode }) => {
                       className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground h-10 text-sm font-body mt-1"
                     >
                       {submitting ? "Sending..." : (
-                        <>Book my free consultation <ArrowUpRight className="w-4 h-4" /></>
+                        <>Book a free consultation <ArrowUpRight className="w-4 h-4" /></>
                       )}
                     </Button>
 
