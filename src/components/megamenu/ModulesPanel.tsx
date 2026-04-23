@@ -150,22 +150,22 @@ const ModulesPanel = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}
               transition={{ duration: 0.18 }}
-              className="grid grid-cols-2 gap-x-1 gap-y-0.5"
+              className="grid grid-cols-2 gap-x-2 gap-y-1"
             >
               {current.modules.map((m) => (
                 <a
                   key={m.title}
                   href={current.href}
-                  className="flex items-start gap-2.5 px-2.5 py-2 rounded-lg hover:bg-[hsl(220,15%,95%)] transition-colors duration-200 group"
+                  className="flex items-start gap-3 px-3 py-2.5 rounded-xl hover:bg-[hsl(220,15%,95%)] transition-colors duration-200 group"
                 >
-                  <div className="w-7 h-7 rounded-md bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors duration-200 mt-0.5">
-                    <m.icon className="w-3.5 h-3.5 text-primary" />
+                  <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors duration-200 mt-0.5">
+                    <m.icon className="w-4 h-4 text-primary" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-[12px] font-display font-normal text-[hsl(207,30%,12%)] group-hover:text-primary transition-colors duration-200 leading-tight">
+                    <p className="text-[13px] font-display font-normal text-[hsl(207,30%,12%)] group-hover:text-primary transition-colors duration-200 leading-tight">
                       {m.title}
                     </p>
-                    <p className="text-[10px] text-[hsl(207,15%,55%)] font-body leading-snug mt-0.5">
+                    <p className="text-[11px] text-[hsl(207,15%,55%)] font-body leading-snug mt-0.5">
                       {m.desc}
                     </p>
                   </div>
