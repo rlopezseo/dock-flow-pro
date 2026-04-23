@@ -182,6 +182,34 @@ const ModulesPanel = () => {
             </motion.div>
           </AnimatePresence>
         </div>
+
+        {/* Trust signals widget */}
+        <div className="mx-3 mt-4 rounded-xl bg-gradient-to-r from-[hsl(207,40%,97%)] via-white to-[hsl(207,40%,97%)] border border-[hsl(207,30%,90%)] px-4 py-3">
+          <div className="grid grid-cols-4 gap-3">
+            {trustSignals.map((t, i) => (
+              <div
+                key={t.label}
+                className={`flex items-center gap-2.5 ${
+                  i < trustSignals.length - 1
+                    ? "border-r border-[hsl(207,30%,90%)] pr-3"
+                    : ""
+                }`}
+              >
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <t.icon className="w-3.5 h-3.5 text-primary" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-display text-[hsl(207,30%,12%)] leading-tight whitespace-nowrap">
+                    {t.label}
+                  </p>
+                  <p className="text-[9px] font-body text-[hsl(207,15%,55%)] leading-tight tracking-wide uppercase mt-0.5">
+                    {t.sub}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Right: Pillar preview */}
