@@ -169,8 +169,8 @@ const ModulesPanel = () => {
       </div>
 
       {/* Right: Pillar preview */}
-      <div className="col-span-2 bg-[hsl(220,15%,97%)] p-6 flex flex-col">
-        <div className="rounded-xl overflow-hidden flex-1 mb-4 bg-[hsl(207,30%,12%)] flex items-center justify-center">
+      <div className="col-span-2 bg-white p-6 flex flex-col border-l border-gray-100">
+        <div className="rounded-xl overflow-hidden flex-1 mb-4 bg-white flex items-center justify-center p-4">
           <AnimatePresence mode="wait">
             <motion.img
               key={current.image}
