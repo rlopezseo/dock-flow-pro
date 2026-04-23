@@ -286,14 +286,14 @@ const MenuLink = ({ item, onHover, compact = false }: { item: MenuItem; onHover:
     onMouseLeave={() => onHover(null)}
     className={`flex items-start gap-2.5 ${compact ? "px-2.5 py-2" : "px-3 py-2.5"} rounded-xl hover:bg-[hsl(220,15%,95%)] transition-colors duration-200 group`}
   >
-    <div className={`${compact ? "w-8 h-8" : "w-9 h-9"} rounded-lg bg-primary/8 flex items-center justify-center shrink-0 group-hover:bg-primary/15 transition-colors duration-200`}>
-      <item.icon className={`${compact ? "w-3.5 h-3.5" : "w-4 h-4"} text-primary`} />
+    <div className={`${compact ? "w-7 h-7" : "w-9 h-9"} flex items-center justify-center shrink-0`}>
+      <item.icon className={`${compact ? "w-4 h-4" : "w-4 h-4"} text-primary`} strokeWidth={1.75} />
     </div>
-    <div className="min-w-0">
+    <div className="min-w-0 flex-1">
       <p className={`${compact ? "text-[12px] leading-tight" : "text-[13px]"} font-display font-normal text-[hsl(207,30%,12%)] group-hover:text-primary transition-colors duration-200`}>
         {item.title}
       </p>
-      <p className={`${compact ? "text-[10px]" : "text-[11px]"} text-[hsl(207,15%,55%)] font-body leading-snug mt-0.5 line-clamp-2`}>{item.desc}</p>
+      <p className={`${compact ? "text-[10px]" : "text-[11px]"} text-[hsl(207,15%,55%)] font-body leading-snug mt-0.5`}>{item.desc}</p>
     </div>
   </a>
 );
