@@ -23,6 +23,7 @@ import imgCapDashboard from "@/assets/cap-dashboard.jpg";
 import imgEuropeMap from "@/assets/europe-freight-map.jpg";
 import imgCapTracking from "@/assets/cap-tracking.jpg";
 import imgHeroAutomotive from "@/assets/hero-industrial-automotive.jpg";
+import ModulesPanel from "@/components/megamenu/ModulesPanel";
 
 /* ─── Menu Data ─── */
 type MenuItem = { icon: typeof Truck; title: string; desc: string; href: string };
@@ -98,13 +99,14 @@ const panels: Record<string, PanelConfig> = {
 
 const menuLabels: Record<string, string> = {
   platform: "Platform",
+  modules: "Modules",
   solutions: "Solutions",
   industries: "Industries",
   blog: "Blog",
   about: "About",
 };
 
-const menuKeys = ["platform", "solutions", "industries", "blog", "about"];
+const menuKeys = ["platform", "modules", "solutions", "industries", "blog", "about"];
 
 /* ─── Images for hover ─── */
 const solutionImages: Record<string, string> = {
