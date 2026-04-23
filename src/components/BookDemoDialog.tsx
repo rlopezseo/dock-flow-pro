@@ -37,6 +37,7 @@ const schema = z.object({
   country: z.string().trim().min(2, "Country is required").max(60),
   fleetSize: z.string().min(1, "Select your operation size"),
   message: z.string().trim().max(800).optional().or(z.literal("")),
+  consent: z.literal("on", { errorMap: () => ({ message: "You must accept the Terms & Privacy Policy" }) }),
 });
 
 const trustItems = [
@@ -68,6 +69,7 @@ export const BookDemoProvider = ({ children }: { children: ReactNode }) => {
       country: String(form.get("country") || ""),
       fleetSize: String(form.get("fleetSize") || ""),
       message: String(form.get("message") || ""),
+      consent: form.get("consent") ? "on" : "",
     };
 
     const parsed = schema.safeParse(data);
@@ -195,6 +197,22 @@ export const BookDemoProvider = ({ children }: { children: ReactNode }) => {
                       {errors.fleetSize && <p className="text-[11px] text-destructive mt-1 font-body">{errors.fleetSize}</p>}
                     </div>
 
+                    <label className="flex items-start gap-2 pt-1 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        name="consent"
+                        className="mt-0.5 h-4 w-4 shrink-0 rounded border border-white/25 bg-white/5 accent-primary cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                      />
+                      <span className="text-[11px] text-muted-foreground font-body leading-snug">
+                        I agree to the{" "}
+                        <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">Terms &amp; Conditions</a>
+                        {" "}and{" "}
+                        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-2 hover:text-primary transition-colors">Privacy Policy</a>
+                        , and consent to be contacted by TrucksOnTheMap.
+                      </span>
+                    </label>
+                    {errors.consent && <p className="text-[11px] text-destructive font-body">{errors.consent}</p>}
+
                     <Button
                       type="submit"
                       disabled={submitting}
@@ -205,9 +223,6 @@ export const BookDemoProvider = ({ children }: { children: ReactNode }) => {
                       )}
                     </Button>
 
-                    <p className="text-[10px] text-muted-foreground/70 font-body text-center pt-0.5 leading-relaxed">
-                      By submitting, you agree to be contacted by TrucksOnTheMap. GDPR compliant.
-                    </p>
                   </form>
                 </>
               )}
