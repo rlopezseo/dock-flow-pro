@@ -10,10 +10,10 @@ import {
 } from "lucide-react";
 
 const trustSignals = [
-  { icon: Award, label: "25 years", sub: "Experience" },
-  { icon: ShieldCheck, label: "Safe platform", sub: "ISO-grade" },
-  { icon: ServerOff, label: "No IT needed", sub: "Zero setup" },
-  { icon: Rocket, label: "Go live in seven weeks", sub: "Fast onboarding" },
+  "25 years experience",
+  "Safe platform",
+  "No IT needed",
+  "Go live in seven weeks",
 ];
 
 import imgCapacity from "@/assets/modules/pillar-capacity.png";
@@ -184,24 +184,14 @@ const ModulesPanel = () => {
         </div>
 
         {/* Trust signals widget */}
-        <div className="mx-3 mt-4 rounded-xl bg-gradient-to-r from-[hsl(207,40%,97%)] via-white to-[hsl(207,40%,97%)] border border-[hsl(207,30%,90%)] px-3 py-2.5">
-          <div className="flex items-center justify-between gap-2">
-            {trustSignals.map((t, i) => (
-              <div key={t.label} className="flex items-center gap-2 flex-1 min-w-0">
-                <div className="w-7 h-7 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
-                  <t.icon className="w-3.5 h-3.5 text-primary" />
-                </div>
-                <div className="min-w-0 leading-tight">
-                  <p className="text-[11px] font-display text-[hsl(207,30%,12%)] leading-[1.15]">
-                    {t.label}
-                  </p>
-                  <p className="text-[9px] font-body text-[hsl(207,15%,55%)] tracking-[0.08em] uppercase mt-0.5 leading-[1.15]">
-                    {t.sub}
-                  </p>
-                </div>
-                {i < trustSignals.length - 1 && (
-                  <div className="h-7 w-px bg-[hsl(207,30%,90%)] ml-2" />
-                )}
+        <div className="mx-3 mt-4 rounded-xl bg-gradient-to-r from-[hsl(207,40%,97%)] via-white to-[hsl(207,40%,97%)] border border-[hsl(207,30%,90%)] px-4 py-3">
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            {trustSignals.map((label) => (
+              <div key={label} className="flex items-center gap-2">
+                <Check className="w-3.5 h-3.5 text-primary shrink-0" strokeWidth={2.5} />
+                <p className="text-[12px] font-body text-[hsl(207,30%,20%)] leading-none whitespace-nowrap">
+                  {label}
+                </p>
               </div>
             ))}
           </div>
