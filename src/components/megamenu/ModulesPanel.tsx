@@ -200,11 +200,27 @@ const ModulesPanel = () => {
             </motion.div>
           </AnimatePresence>
         </div>
+
+        {/* Footnote bar */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={`fn-${activePillar}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="mt-3 pt-3 border-t border-gray-100 px-3"
+          >
+            <p className="text-[10px] font-body text-[hsl(207,15%,50%)] leading-relaxed">
+              {current.footnote}
+            </p>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Right: Pillar preview */}
       <div className="col-span-2 bg-white p-6 flex flex-col border-l border-gray-100">
-        <div className="rounded-xl overflow-hidden flex-1 mb-4 bg-white flex items-center justify-center p-4">
+        <div className="rounded-xl overflow-hidden mb-4 bg-white flex items-center justify-center p-3 h-[140px]">
           <AnimatePresence mode="wait">
             <motion.img
               key={current.image + current.key}
@@ -218,7 +234,8 @@ const ModulesPanel = () => {
             />
           </AnimatePresence>
         </div>
-        <div>
+
+        <div className="flex-1">
           <div className="flex items-center gap-2 mb-1.5">
             <p className="text-sm font-display font-normal text-[hsl(207,30%,12%)]">
               {current.title}
@@ -232,7 +249,31 @@ const ModulesPanel = () => {
           <p className="text-[11px] text-[hsl(207,15%,50%)] font-body leading-relaxed mb-4">
             {current.desc}
           </p>
+
+          {/* Stats row */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`stats-${activePillar}`}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="grid grid-cols-3 gap-2 mb-4 pb-4 border-b border-gray-100"
+            >
+              {current.stats.map((s) => (
+                <div key={s.label} className="text-left">
+                  <p className="text-[15px] font-display font-normal text-primary leading-none">
+                    {s.value}
+                  </p>
+                  <p className="text-[9px] font-body tracking-[0.05em] uppercase text-[hsl(207,15%,55%)] mt-1">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
+
         <a
           href={current.href}
           className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary text-primary-foreground text-[11px] font-body rounded-full hover:bg-primary/90 transition-colors w-fit"
