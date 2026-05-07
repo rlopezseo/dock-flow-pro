@@ -143,7 +143,8 @@ const MegaMenu = () => {
   }, []);
 
   const close = useCallback(() => {
-    timeoutRef.current = setTimeout(() => { setActiveMenu(null); setHoveredItem(null); }, 180);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => { setActiveMenu(null); setHoveredItem(null); }, 400);
   }, []);
 
   const cancelClose = useCallback(() => {
