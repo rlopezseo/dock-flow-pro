@@ -131,7 +131,7 @@ const industryImages: Record<string, string> = {
 
 /* ─── Component ─── */
 const MegaMenu = () => {
-  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>("modules");
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -144,7 +144,7 @@ const MegaMenu = () => {
 
   const close = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => { setActiveMenu(null); setHoveredItem(null); }, 400);
+    timeoutRef.current = null;
   }, []);
 
   const cancelClose = useCallback(() => {
@@ -163,7 +163,7 @@ const MegaMenu = () => {
   };
 
   return (
-    <div ref={containerRef} className="hidden lg:flex items-center gap-0.5 relative" onMouseLeave={close}>
+    <div ref={containerRef} className="hidden lg:flex items-center gap-0.5 relative">
       {menuKeys.map((key) => (
         <button
           key={key}
@@ -186,7 +186,6 @@ const MegaMenu = () => {
             exit={{ opacity: 0, y: 6 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
             onMouseEnter={cancelClose}
-            onMouseLeave={close}
             className="fixed z-[100] pt-2"
             style={{
               top: containerRef.current ? containerRef.current.getBoundingClientRect().bottom : 80,
