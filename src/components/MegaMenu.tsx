@@ -143,7 +143,8 @@ const MegaMenu = () => {
   }, []);
 
   const close = useCallback(() => {
-    timeoutRef.current = setTimeout(() => { setActiveMenu(null); setHoveredItem(null); }, 180);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => { setActiveMenu(null); setHoveredItem(null); }, 400);
   }, []);
 
   const cancelClose = useCallback(() => {
@@ -186,9 +187,9 @@ const MegaMenu = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
             onMouseEnter={cancelClose}
             onMouseLeave={close}
-            className="fixed z-[100]"
+            className="fixed z-[100] pt-2"
             style={{
-              top: containerRef.current ? containerRef.current.getBoundingClientRect().bottom + 4 : 80,
+              top: containerRef.current ? containerRef.current.getBoundingClientRect().bottom : 80,
               left: "50%",
               marginLeft: "-390px",
               width: "780px",
